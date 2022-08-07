@@ -72,6 +72,14 @@
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
     <Content Include="Media\Banner\Burgerbanner2.png" />
     <Content Include="Media\Banner\cafebanner.png" />
+    <Content Include="Media\Home\event1.jpg" />
+    <Content Include="Media\Home\event4.jpg" />
+    <Content Include="Media\Home\felix_K.jpeg" />
+    <Content Include="Media\Home\intro_video.mov" />
+    <Content Include="Media\Home\intro_video.ogg" />
+    <Content Include="Media\Home\intro_video.webm" />
+    <Content Include="Media\Home\iswarya_M.jpeg" />
+    <Content Include="Media\Home\Recommend.jpg" />
     <Content Include="Media\Icons\favicon.ico" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
     <Content Include="sb_index.aspx" />
