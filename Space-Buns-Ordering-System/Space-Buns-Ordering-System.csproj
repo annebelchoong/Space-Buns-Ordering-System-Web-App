@@ -83,6 +83,12 @@
     <Content Include="Media\Home\Recommend.jpg" />
     <Content Include="Media\Icons\favicon.ico" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
+    <Content Include="Media\Promotions\Alien Day.png" />
+    <Content Include="Media\Promotions\Big Blast.jpg" />
+    <Content Include="Media\Promotions\Buy1Free1.png" />
+    <Content Include="Media\Promotions\Fiery Fiesta.jpg" />
+    <Content Include="Media\Promotions\HariRayaPoster.png" />
+    <Content Include="Media\Promotions\Meat Mania.jpeg" />
     <Content Include="sb_index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -115,6 +121,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Javascript\" />
+    <Folder Include="Media\Events\" />
+    <Folder Include="Media\LoginandSignup\" />
+    <Folder Include="Media\menuBurgers\" />
+    <Folder Include="Media\Reviews\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
