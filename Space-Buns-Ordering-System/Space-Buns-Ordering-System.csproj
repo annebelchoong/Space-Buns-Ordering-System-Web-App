@@ -89,6 +89,13 @@
     <Content Include="Media\Promotions\Fiery Fiesta.jpg" />
     <Content Include="Media\Promotions\HariRayaPoster.png" />
     <Content Include="Media\Promotions\Meat Mania.jpeg" />
+    <Content Include="Media\Reviews\Featured.png" />
+    <Content Include="Media\Reviews\Review 1.png" />
+    <Content Include="Media\Reviews\Review 2.png" />
+    <Content Include="Media\Reviews\Review 3.png" />
+    <Content Include="Media\Reviews\Review 4.png" />
+    <Content Include="Media\Reviews\Review 5.png" />
+    <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -124,7 +131,6 @@
     <Folder Include="Media\Events\" />
     <Folder Include="Media\LoginandSignup\" />
     <Folder Include="Media\menuBurgers\" />
-    <Folder Include="Media\Reviews\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
