@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterLayout.css" />
+    <Content Include="Javascript\sb_index.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
     <Content Include="Media\Banner\Burgerbanner2.png" />
@@ -127,7 +128,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Javascript\" />
     <Folder Include="Media\Events\" />
     <Folder Include="Media\LoginandSignup\" />
     <Folder Include="Media\menuBurgers\" />
