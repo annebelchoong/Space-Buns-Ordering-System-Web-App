@@ -7,6 +7,7 @@
 }
 
 body {
+
 }
 
 * {
@@ -45,6 +46,7 @@ html {
     display: flex;
     justify-content: space-around;
     width: 800px;
+    
 }
 
     .navbar-links li {
@@ -78,6 +80,27 @@ html {
     #order a:hover, #order a:active {
         background-color: #252627;
         border-bottom: 0;
+        transition: 250ms;
+    }
+
+label.navbar-mobileNav {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#checkbox {
+    display: none;
+}
+
+.navbar-login a {
+    font-size: 24px;
+    color: white;
+}
+
+    .navbar-login a:hover, .navbar-login a:active {
+        color: #252627;
         transition: 250ms;
     }
 
@@ -364,3 +387,5 @@ footer.footer {
         transform: translateX(0%);
     }
 }
+
+
