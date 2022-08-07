@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_index.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_index" %>
+﻿<%@ Page Title="Home | Space Buns" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_index.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -52,12 +52,12 @@
                         alt="Recommendations Image">
 
                     <map name="recommend-map">
-                        <area href="sb_menu.html" shape="default" title="Go to Menu">
-                        <area href="sb_menu.html#beef" coords="40,50,340,390" shape="rect" alt="Beef Menu">
-                        <area href="sb_menu.html#chicken" coords="450,50,750,390" shape="rect" alt="Chicken Menu">
-                        <area href="sb_menu.html#meatless" coords="835,49,1140,390" shape="rect" alt="Meatless Menu">
-                        <area href="sb_menu.html#fish" coords="235,435,540,780" shape="rect" alt="Fish Menu">
-                        <area href="sb_menu.html#lamb" coords="690,435,990,780" shape="rect" alt="Lamb Menu">
+                        <area href="sb_menu.aspx" shape="default" title="Go to Menu" alt="Menu">
+                        <area href="sb_menu.aspx#beef" coords="40,50,340,390" shape="rect" alt="Beef Menu">
+                        <area href="sb_menu.aspx#chicken" coords="450,50,750,390" shape="rect" alt="Chicken Menu">
+                        <area href="sb_menu.aspx#meatless" coords="835,49,1140,390" shape="rect" alt="Meatless Menu">
+                        <area href="sb_menu.aspx#fish" coords="235,435,540,780" shape="rect" alt="Fish Menu">
+                        <area href="sb_menu.aspx#lamb" coords="690,435,990,780" shape="rect" alt="Lamb Menu">
                     </map>
                 </div>
             </article>
@@ -139,7 +139,7 @@
                                 <img id="felixK" src="Media/Home/felix_K.jpeg">
                             </a>
                             <p>
-                                <a href="sb_reviews.html">
+                                <a href="sb_reviews.aspx">
                                     "Superb burger every single time I come here. It has a nice balance
                                     of flavour and the juiciness of the patty when you take a bite simple makes you
                                     crave
@@ -153,7 +153,7 @@
                                 <img id="iswaryaM" src="Media/Home/iswarya_M.jpeg">
                             </a>
                             <p>
-                                <a href="sb_reviews.html">
+                                <a href="sb_reviews.aspx">
                                     "The patty, the buns - all made to perfection. It's clear why there's a lot of hype
                                     about this burger joint. Both the chicken and lamb burgers have amazing textures
                                     and taste heavenly and the buns are so fluffy"
