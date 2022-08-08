@@ -70,6 +70,7 @@
     <Content Include="CSS\sb_events.css" />
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterLayout.css" />
+    <Content Include="Javascript\sb_events.js" />
     <Content Include="Javascript\sb_index.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
