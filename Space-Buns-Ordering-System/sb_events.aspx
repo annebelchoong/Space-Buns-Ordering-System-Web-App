@@ -95,6 +95,7 @@
                     <form class="form">  <!--need to redone using table-->
                         <div class="row">
                             <div class="input-group w50">
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                                 <input type="text" name="name" placeholder="Name" class="input-control" required>
                             </div>
                             <div class="input-group w50">
