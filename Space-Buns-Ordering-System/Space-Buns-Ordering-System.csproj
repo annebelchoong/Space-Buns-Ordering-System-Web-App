@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\sb_events.css" />
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterLayout.css" />
     <Content Include="Javascript\sb_index.js" />
@@ -97,6 +98,10 @@
     <Content Include="Media\Reviews\Review 4.png" />
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
+    <Content Include="Media\Events\event1.jpg" />
+    <Content Include="Media\Events\event2.jpg" />
+    <Content Include="Media\Events\event3.jpg" />
+    <Content Include="Media\Events\event4.jpg" />
     <Content Include="sb_events.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="Web.config" />
@@ -136,7 +141,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Media\Events\" />
     <Folder Include="Media\LoginandSignup\" />
     <Folder Include="Media\menuBurgers\" />
   </ItemGroup>
