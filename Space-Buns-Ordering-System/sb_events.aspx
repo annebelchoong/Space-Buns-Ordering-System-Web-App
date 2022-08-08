@@ -100,7 +100,7 @@
             </div>
             <div class="row">
                 <div class="rsvp-form" >
-                    <div class="form" onsubmit="ReserveSuccess()">  
+                    <div class="form" >  
                         <div class="row">
                             <div class="input-group w50">
                                 <input type="text" name="name" placeholder="Name" class="input-control" required>
@@ -134,7 +134,7 @@
                         <div class="row">
                             <div class="input-group">
                                 <!--<button type="submit" class="btn-1">Submit</button>-->
-                                <asp:Button ID="btnSubmit" class="btn-1" runat="server" Text="Submit" />
+                                <asp:Button ID="btnSubmit" class="btn-1" runat="server" Text="Submit" onsubmit="ReserveSuccess()"/>
                             </div>
                         </div>
                     </div>
