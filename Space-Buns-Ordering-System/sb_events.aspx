@@ -1,8 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_events.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_events" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="CSS/sb_events.css" rel="stylesheet" />
+
+     <div class="cafeBanner">
+            <div class="bannerCaption">
+                <h1>Events.</h1>
+            </div>
+        </div>
+
     <div class="events-container">
         <section class="eventsTitle sec-width" id="eventsTitle">
             <div class="title">
@@ -92,10 +100,9 @@
             </div>
             <div class="row">
                 <div class="rsvp-form">
-                    <form class="form">  <!--need to redone using table-->
+                    <div class="form">  <!--need to redone using table-->
                         <div class="row">
                             <div class="input-group w50">
-                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                                 <input type="text" name="name" placeholder="Name" class="input-control" required>
                             </div>
                             <div class="input-group w50">
@@ -129,7 +136,7 @@
                                 <button type="submit" class="btn-1">Submit</button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </section>
