@@ -75,6 +75,10 @@
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
     <Content Include="Media\Banner\Burgerbanner2.png" />
     <Content Include="Media\Banner\cafebanner.png" />
+    <Content Include="Media\Events\event1.jpg" />
+    <Content Include="Media\Events\event2.jpg" />
+    <Content Include="Media\Events\event3.jpg" />
+    <Content Include="Media\Events\event4.jpg" />
     <Content Include="Media\Home\event1.jpg" />
     <Content Include="Media\Home\event4.jpg" />
     <Content Include="Media\Home\felix_K.jpeg" />
@@ -85,6 +89,22 @@
     <Content Include="Media\Home\Recommend.jpg" />
     <Content Include="Media\Icons\favicon.ico" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
+    <Content Include="Media\LoginandSignup\logbackg2.jpg" />
+    <Content Include="Media\menuBurgers\beef1.jpg" />
+    <Content Include="Media\menuBurgers\beef2.jpg" />
+    <Content Include="Media\menuBurgers\beef3.jpg" />
+    <Content Include="Media\menuBurgers\chicken1.jpg" />
+    <Content Include="Media\menuBurgers\chicken2.jpg" />
+    <Content Include="Media\menuBurgers\chicken3.jpg" />
+    <Content Include="Media\menuBurgers\fish1.jpg" />
+    <Content Include="Media\menuBurgers\fish2.jpeg" />
+    <Content Include="Media\menuBurgers\fish3.jpg" />
+    <Content Include="Media\menuBurgers\lamb1.jpg" />
+    <Content Include="Media\menuBurgers\lamb2.jpg" />
+    <Content Include="Media\menuBurgers\lamb3.jpg" />
+    <Content Include="Media\menuBurgers\meatless1.jpg" />
+    <Content Include="Media\menuBurgers\meatless2.jpg" />
+    <Content Include="Media\menuBurgers\meatless3.jpg" />
     <Content Include="Media\Promotions\Alien Day.png" />
     <Content Include="Media\Promotions\Big Blast.jpg" />
     <Content Include="Media\Promotions\Buy1Free1.png" />
@@ -143,11 +163,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Media\Events\" />
-    <Folder Include="Media\LoginandSignup\" />
-    <Folder Include="Media\menuBurgers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
