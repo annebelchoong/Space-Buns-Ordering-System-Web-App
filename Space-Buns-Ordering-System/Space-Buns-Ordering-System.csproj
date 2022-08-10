@@ -87,8 +87,14 @@
     <Content Include="Media\Home\intro_video.webm" />
     <Content Include="Media\Home\iswarya_M.jpeg" />
     <Content Include="Media\Home\Recommend.jpg" />
+    <Content Include="Media\Icons\favepay.svg" />
     <Content Include="Media\Icons\favicon.ico" />
+    <Content Include="Media\Icons\GrabPay.svg" />
+    <Content Include="Media\Icons\mastercard.svg" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
+    <Content Include="Media\Icons\SpaceBunsMarker.svg" />
+    <Content Include="Media\Icons\touch-n-go-ewallet.svg" />
+    <Content Include="Media\Icons\visa.svg" />
     <Content Include="Media\LoginandSignup\logbackg2.jpg" />
     <Content Include="Media\menuBurgers\beef1.jpg" />
     <Content Include="Media\menuBurgers\beef2.jpg" />
