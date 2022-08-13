@@ -1,0 +1,45 @@
+﻿@charset "utf-8";
+
+body {
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+.navbar-fixedtop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    background-color: #1A1A1A;
+    font-family: Verdana, sans-serif;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar-logo, .navbar-login {
+    padding: 30px;
+}
+
+
+    .navbar-login a {
+        font-size: 24px;
+        color: white;
+    }
+
+.dashboard-sidebar {
+    background-color: #1A1A1A;
+    max-width: 500px;
+    display: flex;
+    float: left;
+}
