@@ -42,32 +42,6 @@ html {
 }
 
 
-.navbar-links {
-    display: flex;
-    justify-content: space-around;
-    width: 800px;
-    
-}
-
-    .navbar-links li {
-        list-style-type: none;
-    }
-
-    .navbar-links a {
-        color: white;
-        text-decoration: none;
-        font-size: 0.9em;
-    }
-
-        .navbar-links a:visited, .navbar-links a:link {
-            color: white;
-        }
-
-        .navbar-links a:hover, .navbar-links a:active {
-            padding-bottom: 0.5em;
-            border-bottom: 3px solid white;
-            transition: 250ms;
-        }
 
 #order a {
     background-color: #ffffff;
