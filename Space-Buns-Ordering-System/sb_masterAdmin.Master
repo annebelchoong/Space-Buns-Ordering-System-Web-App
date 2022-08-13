@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_masterAdmin.Master.cs" Inherits="Space_Buns_Ordering_System.sb_admin_master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" href="Media/Icons/favicon.ico">
+    <link href="CSS/sb_masterAdminLayout.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav id="navbar" class="navbar-fixedtop">
+
+            <div class="navbar-logo">
+                <a href="sb_index.aspx"><img src="Media/Icons/SpaceBunsLogo.png" alt="Space Buns Logo" width="70px"></a>
+            </div>
+          
+            <div class="navbar-login">
+                <a href="sb_login.html"><i class="far fa-user-circle"></i></a>
+            </div>
+
+        </nav>
+        <div class="dashboard-sidebar">
+            test
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

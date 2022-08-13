@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\sb_index.css" />
+    <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
     <Content Include="Javascript\sb_index.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
@@ -123,11 +124,26 @@
     <Content Include="Media\Reviews\Review 4.png" />
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
+    <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sb_adminDashboard.aspx.cs">
+      <DependentUpon>sb_adminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_adminDashboard.aspx.designer.cs">
+      <DependentUpon>sb_adminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_masterAdmin.Master.cs">
+      <DependentUpon>sb_masterAdmin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_masterAdmin.Master.designer.cs">
+      <DependentUpon>sb_masterAdmin.Master</DependentUpon>
+    </Compile>
     <Compile Include="sb_index.aspx.cs">
       <DependentUpon>sb_index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -146,6 +162,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="sb_master.Master" />
+    <Content Include="sb_masterAdmin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
