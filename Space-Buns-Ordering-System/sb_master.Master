@@ -18,7 +18,6 @@
             <nav id="navbar" class="navbar-fixedtop">
 
             <div class="navbar-logo">
-                <!--a-- href="sb_index.aspx"><img src="Media/Icons/SpaceBunsLogo.png" alt="Space Buns Logo" width="70px"></!--a-->
                 <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>              
             </div>
             <div class="navbar-links">
@@ -50,9 +49,7 @@
         <div class="footer-container">
             <div class="footer-right">
                 <div class="footer-logo">
-                <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink>              
-                    <%--<a href="sb_index.html"><img src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo"
-                            width="150px"></a>--%>
+                <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink> 
                 </div>
             </div>
             <div class="footer-left">
@@ -70,17 +67,6 @@
                         <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/Order.aspx">Privacy Policy</asp:HyperLink>
                     </div>
                     </div>
-                   
-                   <%-- <ul class="footer-links">
-                        <li class="footer-item-menu"><a href="sb_menu.html"> Menu</a></li>
-                        <li class="footer-item-promotions"><a href="sb_promotions.html"> Promotions</a></li>
-                        <li class="footer-item-events"><a href="sb_events.html"> Events</a></li>
-                        <li class="footer-item-reviews"><a href="sb_reviews.html"> Reviews</a></li>
-                        <li class="footer-item-aboutUs"><a href="sb_aboutUs.html"> About Us</a></li>
-                        <li class="footer-item-contactUs"><a href="sb_contactUs.html"> Contact Us</a></li>
-                        <li class="footer-item-order"><a href="sb_orderNow.html"> Order Now</a></li>
-                        <li class="footer-item-privacyPolicy"><a href="sb_privacyPolicy.html"> Privacy Policy</a></li>
-                    </ul>--%>
                 </div>
 
                 <div class="followUs">
@@ -93,11 +79,6 @@
                     <div class="copyright">
                         <p>&#169; 2021 by Space Buns Sdn Bhd. <br>All Right Not Reserved</p>
                     </div>
-                    <!-- 
-                    <div class="copyright-small">
-                        <p>&#169; 2021 by Space Burger Sdn Bhd. All Right Not Reserved</p>
-                    </div> -->
-
                 </div>
             </div>
         </div>
