@@ -54,7 +54,7 @@ html {
         transition: 250ms;
     }
 
-#hlOrder{
+#hlNavOrder{
     background-color: #ffffff;
     color: #B97836;
     border-radius: 20px;
@@ -62,7 +62,7 @@ html {
     vertical-align: middle;
 }
 
-    #hlOrder:hover {
+    #hlNavOrder:hover {
         background-color: #252627;
         border-bottom: 0;
         transition: 250ms;
@@ -192,12 +192,15 @@ footer.footer {
     font-size: 1.0em;
 }
 
-.footer-links-1, .footer-links-2{
+.footer-links-1, .footer-links-2 {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 20px;
+    padding-right: 70px;
 }
 
-footer-links-items {
+.footer-links-items {
     padding: 5px 0px 5px 0px;
 }
 
@@ -225,7 +228,7 @@ footer-links-items {
 
 .footer h4 {
     color: #B97836;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     font-weight: bold;
     font-size: 1.2em
 }
