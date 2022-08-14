@@ -18,17 +18,16 @@
             <nav id="navbar" class="navbar-fixedtop">
 
             <div class="navbar-logo">
-                <a href="sb_index.aspx"><img src="Media/Icons/SpaceBunsLogo.png" alt="Space Buns Logo" width="70px"></a>
+                <!--a-- href="sb_index.aspx"><img src="Media/Icons/SpaceBunsLogo.png" alt="Space Buns Logo" width="70px"></!--a-->
+                <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>              
             </div>
-            <ul class="navbar-links">
-                <li class="navbar-item" id="menu"><a href="sb_menu.aspx"> Menu</a></li>
-                <!--li class="navbar-item" id="promotions"><a href="sb_promotions.html"> Promotions</a></!--li-->
-                <li class="navbar-item" id="events"><a href="sb_events.html"> Events</a></li>
-                <!--li class="navbar-item" id="reviews"><a href="sb_reviews.html"> Reviews</a></li-->
-                <li class="navbar-item" id="aboutUs"><a href="sb_aboutUs.aspx"> About Us</a></li>
-                <li class="navbar-item" id="contactUs"><a href="sb_contactUs.html"> Contact Us</a></li>
-                <li class="navbar-item" id="order"><a href="sb_orderNow.html"> Order Now</a></li>
-            </ul>
+            <div class="navbar-links">
+                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/Menu.aspx">Menu</asp:HyperLink>
+                <asp:HyperLink ID="hlNavEvents" runat="server" CssClass="navbar-links" NavigateUrl="~/Events.aspx">Events</asp:HyperLink>
+                <asp:HyperLink ID="hlNavAboutUs" runat="server" CssClass="navbar-links" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/ContactUs.aspx">Contact Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/Order.aspx">Order Now</asp:HyperLink>
+            </div>
           
             <div class="navbar-login">
                 <a href="sb_login.html"><i class="far fa-user-circle"></i></a>
@@ -51,14 +50,28 @@
         <div class="footer-container">
             <div class="footer-right">
                 <div class="footer-logo">
-                    <a href="sb_index.html"><img src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo"
-                            width="150px"></a>
+                <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink>              
+                    <%--<a href="sb_index.html"><img src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo"
+                            width="150px"></a>--%>
                 </div>
             </div>
             <div class="footer-left">
                 <div class="ourStore">
                     <h4>Our Store</h4>
-                    <ul class="footer-links">
+                    <div class="footer-links">
+                         <div class="footer-links-1">
+                        <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/Menu.aspx">Menu</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/Events.aspx">Events</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+                    </div>
+                    <div class="footer-links-2">
+                         <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/ContactUs.aspx">Contact Us</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/Order.aspx">Order Now</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/Order.aspx">Privacy Policy</asp:HyperLink>
+                    </div>
+                    </div>
+                   
+                   <%-- <ul class="footer-links">
                         <li class="footer-item-menu"><a href="sb_menu.html"> Menu</a></li>
                         <li class="footer-item-promotions"><a href="sb_promotions.html"> Promotions</a></li>
                         <li class="footer-item-events"><a href="sb_events.html"> Events</a></li>
@@ -67,15 +80,15 @@
                         <li class="footer-item-contactUs"><a href="sb_contactUs.html"> Contact Us</a></li>
                         <li class="footer-item-order"><a href="sb_orderNow.html"> Order Now</a></li>
                         <li class="footer-item-privacyPolicy"><a href="sb_privacyPolicy.html"> Privacy Policy</a></li>
-                    </ul>
+                    </ul>--%>
                 </div>
 
                 <div class="followUs">
                     <h4>Follow Us</h4>
                     <div class="footer-socialLinks">
-                        <a href="https://www.facebook.com/" target="_blank"><i class='fab fa-facebook-f'></i></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class='fab fa-instagram'></i></i></a>
-                        <a href="https://twitter.com/" target="_blank"><i class='fab fa-twitter'></i></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class='fab fa-facebook-f'></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class='fab fa-instagram'></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class='fab fa-twitter'></i></a>
                     </div>
                     <div class="copyright">
                         <p>&#169; 2021 by Space Buns Sdn Bhd. <br>All Right Not Reserved</p>
