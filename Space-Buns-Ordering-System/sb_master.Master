@@ -56,7 +56,7 @@
                     <h4>Our Store</h4>
                     <div class="footer-links">
                          <div class="footer-links-1">
-                        <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_enu.aspx">Menu</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
                         <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
                         <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
                     </div>
