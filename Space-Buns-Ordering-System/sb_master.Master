@@ -21,11 +21,11 @@
                 <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>              
             </div>
             <div class="navbar-links">
-                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/Menu.aspx">Menu</asp:HyperLink>
-                <asp:HyperLink ID="hlNavEvents" runat="server" CssClass="navbar-links" NavigateUrl="~/Events.aspx">Events</asp:HyperLink>
-                <asp:HyperLink ID="hlNavAboutUs" runat="server" CssClass="navbar-links" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
-                <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/ContactUs.aspx">Contact Us</asp:HyperLink>
-                <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/Order.aspx">Order Now</asp:HyperLink>
+                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
+                <asp:HyperLink ID="hlNavEvents" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
+                <asp:HyperLink ID="hlNavAboutUs" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
             </div>
           
             <div class="navbar-login">
@@ -39,7 +39,6 @@
                 <h1>Delicious.</h1>
             </div>
         </div>
-                
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
@@ -57,14 +56,14 @@
                     <h4>Our Store</h4>
                     <div class="footer-links">
                          <div class="footer-links-1">
-                        <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/Menu.aspx">Menu</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/Events.aspx">Events</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_enu.aspx">Menu</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
                     </div>
                     <div class="footer-links-2">
-                         <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/ContactUs.aspx">Contact Us</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/Order.aspx">Order Now</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/Order.aspx">Privacy Policy</asp:HyperLink>
+                         <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_privacyPolicy.aspx">Privacy Policy</asp:HyperLink>
                     </div>
                     </div>
                 </div>
