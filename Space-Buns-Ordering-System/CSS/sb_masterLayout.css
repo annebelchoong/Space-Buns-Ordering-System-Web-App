@@ -195,8 +195,6 @@ footer.footer {
 .footer-links-1, .footer-links-2 {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    margin-right: 20px;
     padding-right: 70px;
 }
 
@@ -305,9 +303,8 @@ footer.footer {
     .footer-links {
         column-gap: 30px;
         text-align: left;
-        /* display: flex;
-        flex-flow: column;
-        align-items: center; */
+        display: flex;
+        flex-direction: column;
     }
 
     .followUs {
