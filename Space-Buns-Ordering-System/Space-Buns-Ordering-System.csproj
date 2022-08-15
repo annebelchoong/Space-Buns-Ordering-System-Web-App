@@ -127,6 +127,7 @@
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_index.aspx" />
+    <Content Include="sb_order.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,13 @@
     </Compile>
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sb_order.aspx.cs">
+      <DependentUpon>sb_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_order.aspx.designer.cs">
+      <DependentUpon>sb_order.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
