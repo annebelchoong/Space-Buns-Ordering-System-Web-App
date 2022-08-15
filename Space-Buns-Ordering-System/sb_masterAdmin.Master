@@ -14,26 +14,6 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <nav id="navbar" class="navbar-fixedtop">
-
-            <div class="navbar-logo">
-                <a href="sb_index.aspx"><img src="Media/Icons/SpaceBunsLogo.png" alt="Space Buns Logo" width="70px"></a>
-            </div>
-          
-            <div class="navbar-login">
-                <a href="sb_login.html"><i class="far fa-user-circle"></i></a>
-            </div>
-
-        </nav>
-        <div class="dashboard-sidebar">
-            test
-        </div>
-
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+   
 </body>
 </html>

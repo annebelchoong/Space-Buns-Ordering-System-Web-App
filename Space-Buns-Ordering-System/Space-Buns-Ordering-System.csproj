@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sb_accountTest.aspx" />
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
@@ -130,6 +131,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="sb_accountTest.aspx.cs">
+      <DependentUpon>sb_accountTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_accountTest.aspx.designer.cs">
+      <DependentUpon>sb_accountTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sb_aboutUs.aspx.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>
