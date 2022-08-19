@@ -67,6 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\sb_account.mdf" />
+    <Content Include="App_Data\sb_account_log.ldf">
+      <DependentUpon>sb_account.mdf</DependentUpon>
+    </Content>
+    <Content Include="CSS\sb_register.css" />
     <Content Include="sb_accountTest.aspx" />
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
@@ -129,6 +134,7 @@
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="Web.config" />
+    <Content Include="sb_registerTest.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="sb_accountTest.aspx.cs">
@@ -173,6 +179,13 @@
     </Compile>
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sb_registerTest.aspx.cs">
+      <DependentUpon>sb_registerTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_registerTest.aspx.designer.cs">
+      <DependentUpon>sb_registerTest.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
