@@ -71,6 +71,7 @@
     <Content Include="App_Data\sb_account_log.ldf">
       <DependentUpon>sb_account.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\sb_login.css" />
     <Content Include="CSS\sb_register.css" />
     <Content Include="sb_accountTest.aspx" />
     <Content Include="CSS\sb_index.css" />

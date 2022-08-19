@@ -1,0 +1,148 @@
+﻿@charset "utf-8";
+
+body {
+}
+
+html {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Media/Banner/Backgroundimg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#companylogo {
+    transition: transform .5s ease;
+}
+
+    #companylogo:hover {
+        transform: scale(1.2);
+    }
+
+div.loginRow {
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+.logInput {
+    border-radius: 6px;
+    border: 1px #B97836 solid;
+    background-color: #1A1A1A;
+    margin: 10px 0px;
+    padding: 10px;
+}
+
+fieldset {
+    width: 35%;
+    height: 50%;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    border: #B97836 2px solid;
+    border-radius: 20px;
+}
+
+form {
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 30px;
+}
+
+legend {
+    text-align: center;
+    font-family: 'Amsterdam Variation_2', 'Segoe UI', Verdana, sans-serif;
+    color: #B97836;
+    font-size: 5em;
+}
+
+input {
+    text-align: center;
+    outline: none;
+    color: white;
+}
+
+div.forgotPass a {
+    text-align: center;
+    padding-top: 10px;
+    color: aliceblue;
+}
+
+div.logPass {
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    color: aliceblue;
+}
+
+input[type=checkbox] {
+    margin: 0 5px;
+}
+
+input[type=text], input[type=password] {
+    height: 30px;
+}
+
+input:focus {
+    border: 1px solid white;
+}
+
+div.logSubmit {
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+#loginButton {
+    transition: transform .2s ease;
+    width: 80px;
+    height: 35px;
+    background-color: #1A1A1A;
+    color: #B97836;
+    font-weight: bold;
+    border-radius: 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 1px #B97836 solid;
+    font-size: 1em;
+}
+
+    #loginButton:hover {
+        text-decoration: none;
+        color: white;
+        background-color: #B97836;
+        transition: 250ms;
+    }
+
+div.notMember a {
+    text-align: center;
+    text-decoration: none;
+    color: aliceblue;
+    padding-bottom: 5%;
+}
+
+    div.notMember a:hover {
+        text-decoration: underline;
+        color: #B97836;
+        transition: 250ms;
+    }
+
+@media only screen and (max-width:767px) {
+    div.forgotp, div.logPass, input[type=submit], div.logSubmit, div.notMember a {
+        text-align: center;
+        float: none;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1000px) {
+    fieldset {
+        width: 350px
+    }
+}
+
+@media (max-width: 375px) {
+    fieldset {
+        width: 90%;
+    }
+}
