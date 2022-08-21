@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Checkout.aspx" />
     <Content Include="CSS\sb_aboutUs.css" />
+    <Content Include="CSS\sb_checkout.css" />
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
