@@ -2,6 +2,8 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
+<%@ Register Assembly="TimePicker" Namespace="MKB.TimePicker" TagPrefix="cc1" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,7 +20,7 @@
             padding: 20px 0px 24px 10px;
             position: relative;
             width: 450px;
-            height: 66px;
+            height: 300px;
             background-color: white;
             border: 1px solid black;
         }
@@ -59,30 +61,59 @@
             </asp:Panel>
             <asp:Panel ID="pnlPickup" runat="server">
                 Select your preferred branch<br />
-                <div id="map_pickUp" style="width:70%; height:500px; border-radius: 30px;"></div>  
+                <div id="map_pickUp" style="width:70%; height:500px; border-radius: 30px;"></div>
+                    <div id="branch-content-1">
+                        <img width="50px" src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo"/>
+                    <div id="branch-content-2">
+                        <a href="https://www.google.com/maps" target="_blank">Directions</a>
+                        <br />
+                        <asp:Button ID="btnSelect" runat="server" Text="Select" />
+                    <%--<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>--%>
+                    </div>
+                </div>
             </asp:Panel>
             <div>
-                <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlDateTime" TargetControlID="btnConfirm" BackgroundCssClass="modalBackground"></ajaxToolkit:ModalPopupExtender>
-                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" PopupButtonID="btnCalendar" Format="dd/MMM/yyyy" PopupPosition="BottomRight" TargetControlID="txtDate" />
-            
+                
+                
             </div>
             <asp:Panel ID="pnlDateTime" runat="server" CssClass="modalpopup">
+                <div class="close-btn">
+                    <asp:Button ID="btnClose" runat="server" Text="&times;" />
+                </div>
                 <asp:Label ID="lblDeliveryType" runat="server"></asp:Label>
                 <br />
                 <div>
                     Date<br />
-                    <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
-                    <asp:Button ID="btnCalendar" runat="server" Text="Calendar" />
+                    <asp:DropDownList ID="ddlDates" runat="server">
+                    </asp:DropDownList>
                 </div>
                 <div>
                     Time<br />
+<%--                    <cc1:TimeSelector ID="TimeSelector1" runat="server">
+</cc1:TimeSelector>--%>
+                    <asp:DropDownList ID="ddlTime" runat="server" >
+
+                    </asp:DropDownList>
+
                 </div>
                 <br />
+                <div class="delay-text">
+                            <p>
+                                Note : There may be a variance of 10-15 mins from
+                                your selected pickup/delivery time during peak hours.
+                                But we will do our best to have your order ready as
+                                close to your selected time as possible 🙂
+                            </p>
+                        </div>
+                <asp:Button ID="btnOrder" runat="server" Text="Order Now" />
             </asp:Panel>
         </div>
         <div>
             <ajaxToolkit:CollapsiblePanelExtender ID="CollapsiblePanelExtender1" runat="server" Collapsed="True" CollapseControlID="btnPickup" ExpandControlID="btnDelivery" TargetControlID="pnlDelivery" />
             <ajaxToolkit:CollapsiblePanelExtender ID="CollapsiblePanelExtender2" runat="server" Collapsed="True" CollapseControlID="btnDelivery" ExpandControlID="btnPickup" TargetControlID="pnlPickup" />
+            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlDateTime" TargetControlID="btnConfirm" BackgroundCssClass="modalBackground" CancelControlID="btnClose"></ajaxToolkit:ModalPopupExtender>
+            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="pnlDateTime" BackgroundCssClass="modalBackground" CancelControlID="btnClose" TargetControlID="btnSelect"></ajaxToolkit:ModalPopupExtender>
+            <%--<ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" PopupButtonID="txtDate" Format="dd/MM/yyyy" PopupPosition="BottomRight" TargetControlID="txtDate" />--%>
         </div>
     </form>
         <script src="Javascript/sb_order.js"></script>
