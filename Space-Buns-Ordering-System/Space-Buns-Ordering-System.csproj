@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SpaceBunsDatabase.mdf" />
+    <Content Include="App_Data\SpaceBunsDatabase_log.ldf">
+      <DependentUpon>SpaceBunsDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
