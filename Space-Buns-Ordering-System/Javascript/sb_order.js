@@ -63,7 +63,7 @@ function getPickUpMap() {
                     branches.title + ' branch</h3>' +
                     '<a href="https://www.google.com/maps" target="_blank">Directions</a></br>' +
                     //btnSelect +
-                    '<button id="pickup-button" class="button" onclick="pickupText()">Select</button>' +
+                    '<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>' +
                     "</div>"
                 );
                 infoWindow1.open(pickUpMap, branchMarker);
