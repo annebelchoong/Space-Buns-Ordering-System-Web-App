@@ -37,54 +37,84 @@ namespace Space_Buns_Ordering_System
                 {
                     new SessionLineItemOptions
                     {
-                    Name = "Double Trouble",
-                    Description = "Crispy chicken thigh, " +
-                    "shredded pickles with spicy creamy mayo, " +
-                    "with hot fragrant bun.",
-                    Amount = 1700,
-                    Images = new List<string>() {
-                        "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg"
-                    },
-                    //Price = "price_H5ggYwtDq4fbrJ",
+                    PriceData = new SessionLineItemPriceDataOptions
+                        {
+                        Currency = "myr",
+                        UnitAmount = 1700,
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                        Name = "Double Trouble",
+                        Description = "Crispy chicken thigh, " +
+                        "shredded pickles with spicy creamy mayo, " +
+                        "with hot fragrant bun.",
+                        //Amount = 1700,
+                        Images = new List<string>() {
+                            "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg"
+                        },
+                        //Price = "price_H5ggYwtDq4fbrJ",
+                        },
+
+
+                        },
                     Quantity = 2,
-                    Currency = "myr",
                     },
 
                     new SessionLineItemOptions
                     {
-                    Name = "Salmon Fillet",
-                    Description = "Salmon patty, " +
-                    "served with slices of tomatoes, lettuce, onions and mayo.",
-                    Amount = 1600,
-                    Images = new List<string>() {
-                        "https://spacebuns.web.app/Media/menuBurgers/fish1.jpg"
-                    },
+                    PriceData = new SessionLineItemPriceDataOptions                        {
+                        Currency = "myr",
+                        UnitAmount = 1600,
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                        Name = "Salmon Fillet",
+                        Description = "Salmon patty, " +
+                        "served with slices of tomatoes, lettuce, onions and mayo.",
+                        //Amount = 1600,
+                        Images = new List<string>() {
+                            "https://spacebuns.web.app/Media/menuBurgers/fish1.jpg"
+                        },
+                        },
+
+                        },
+                     Quantity = 1,
+                     },
+
+                    new SessionLineItemOptions
+                    {
+                    PriceData = new SessionLineItemPriceDataOptions                        {
+                        Currency = "myr",
+                        UnitAmount = 1700,
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                        Name = "King of Cheese",
+                        Description = "A triple grilled Beef Patty covered with lots of mozarella cheese.",
+                        //Amount = 1700,
+                        Images = new List<string>() {
+                            "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg"
+                        },
+                        },
+
+                        },
                     Quantity = 1,
-                    Currency = "myr",
                     },
 
                     new SessionLineItemOptions
                     {
-                    Name = "King of Cheese",
-                    Description = "A triple grilled Beef Patty covered with lots of mozarella cheese.",
-                    Amount = 1700,
-                    Images = new List<string>() {
-                        "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg"
-                    },
-                    Quantity = 1,
-                    Currency = "myr",
-                    },
+                    PriceData = new SessionLineItemPriceDataOptions                        {
+                        Currency = "myr",
+                        UnitAmount = 250,
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                        Name = "Cupcake",
+                        Description = "This is a cupcake",
+                        //Amount = 250,
+                        Images = new List<string>() {
+                                "https://media.istockphoto.com/photos/pink-and-white-frosted-cupcake-isolated-on-white-picture-id167120918?k=20&m=167120918&s=612x612&w=0&h=SL7pPaRbqwf-7ewyqIF_aTvhMY-qKSbShkW5BetZtsI="
+                        },
+                        },
 
-                    new SessionLineItemOptions
-                    {
-                    Name = "Cupcake",
-                    Description = "This is a cupcake",
-                    Amount = 250,
-                    Images = new List<string>() {
-                            "https://media.istockphoto.com/photos/pink-and-white-frosted-cupcake-isolated-on-white-picture-id167120918?k=20&m=167120918&s=612x612&w=0&h=SL7pPaRbqwf-7ewyqIF_aTvhMY-qKSbShkW5BetZtsI="
-                    },
+                        },
                     Quantity = 2,
-                    Currency = "myr",
                     },
 
                 },

@@ -13,14 +13,5 @@ namespace Space_Buns_Ordering_System
 
     public partial class sb_checkout
     {
-
-        /// <summary>
-        /// checkout_form control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm checkout_form;
     }
 }
