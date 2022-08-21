@@ -71,6 +71,7 @@
     <Content Include="App_Data\sb_account_log.ldf">
       <DependentUpon>sb_account.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\sb_forgetPw.css" />
     <Content Include="CSS\sb_login.css" />
     <Content Include="CSS\sb_register.css" />
     <Content Include="sb_accountTest.aspx" />
@@ -133,7 +134,9 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
+    <Content Include="sb_forgetPwTest.aspx" />
     <Content Include="sb_index.aspx" />
+    <Content Include="sb_userProfileTest.aspx" />
     <Content Include="Web.config" />
     <Content Include="sb_registerTest.aspx" />
   </ItemGroup>
@@ -159,6 +162,13 @@
     </Compile>
     <Compile Include="sb_adminDashboard.aspx.designer.cs">
       <DependentUpon>sb_adminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_forgetPwTest.aspx.cs">
+      <DependentUpon>sb_forgetPwTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_forgetPwTest.aspx.designer.cs">
+      <DependentUpon>sb_forgetPwTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_masterAdmin.Master.cs">
       <DependentUpon>sb_masterAdmin.Master</DependentUpon>
@@ -187,6 +197,13 @@
     </Compile>
     <Compile Include="sb_registerTest.aspx.designer.cs">
       <DependentUpon>sb_registerTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_userProfileTest.aspx.cs">
+      <DependentUpon>sb_userProfileTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_userProfileTest.aspx.designer.cs">
+      <DependentUpon>sb_userProfileTest.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

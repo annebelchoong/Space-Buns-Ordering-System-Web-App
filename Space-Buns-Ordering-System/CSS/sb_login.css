@@ -18,10 +18,11 @@ html {
         transform: scale(1.2);
     }
 
-div.loginRow {
+loginRow {
     margin: 0 auto;
     padding: 10px;
     margin-top: 5%;
+    text-align: center;
 }
 
 .logInput {
@@ -62,13 +63,13 @@ input {
     color: white;
 }
 
-div.forgotPass a {
+forgotPass a {
     text-align: center;
     padding-top: 10px;
     color: aliceblue;
 }
 
-div.logPass {
+logPass {
     text-align: center;
     padding-bottom: 5%;
     padding-top: 5%;
@@ -80,19 +81,19 @@ input[type=checkbox] {
 }
 
 input[type=text], input[type=password] {
-    height: 30px;
+    height: 12px;
 }
 
 input:focus {
     border: 1px solid white;
 }
 
-div.logSubmit {
+logSubmit {
     text-align: center;
     padding-bottom: 5%;
 }
 
-#loginButton {
+loginButton {
     transition: transform .2s ease;
     width: 80px;
     height: 35px;
@@ -107,25 +108,25 @@ div.logSubmit {
     font-size: 1em;
 }
 
-    #loginButton:hover {
-        text-decoration: none;
-        color: white;
-        background-color: #B97836;
-        transition: 250ms;
-    }
+loginButton:hover {
+    text-decoration: none;
+    color: white;
+    background-color: #B97836;
+    transition: 250ms;
+}
 
-div.notMember a {
+notMember a {
     text-align: center;
     text-decoration: none;
     color: aliceblue;
     padding-bottom: 5%;
 }
 
-    div.notMember a:hover {
-        text-decoration: underline;
-        color: #B97836;
-        transition: 250ms;
-    }
+notMember a:hover {
+    text-decoration: underline;
+    color: #B97836;
+    transition: 250ms;
+}
 
 @media only screen and (max-width:767px) {
     div.forgotp, div.logPass, input[type=submit], div.logSubmit, div.notMember a {
