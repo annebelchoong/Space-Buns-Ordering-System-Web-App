@@ -1,6 +1,7 @@
 ﻿var mapcodep;
 var pickUpMap;
-function getPickUpMap() {
+function initialize() {
+
     mapcodep = new google.maps.Geocoder();
     var pickUpMapChoice = {
         zoom: 11,
@@ -8,7 +9,10 @@ function getPickUpMap() {
         pickUpMapId: google.maps.MapTypeId.ROADMAP
     }
     pickUpMap = new google.maps.Map(document.getElementById('map_pickUp'), pickUpMapChoice);
+}
 
+function getPickUpMap() {
+    initialize();
     var imageMarker = {
         url: 'Media/Icons/SpaceBunsMarker.svg',
         scaledSize: new google.maps.Size(35, 50),
@@ -30,24 +34,16 @@ function getPickUpMap() {
         addMarker(markers[i]);
     }
 
+
     var infoWindow1 = new google.maps.InfoWindow();
-    //var infoWindowNode = document.createElement('div');
-    //var contentString = '<h3 class="branch-title">' +
-    //    branches.title + ' branch</h3>';
-    //var textNode1 = document.createElement('div');
-    //var textNode2 = document.getElementById("branch-content-2");
-    //textNode1.innerHTML = document.getElementById("branch-content-1");
-    //infoWindowNode.appendChild(textNode1);
-    //infoWindowNode.appendChild(contentString);
-    //infoWindowNode.appendChild(textNode2);
-
-
 
     //add Marker
+    google.maps.event.addDomListener(button, 'click', showPopUp);
+
     function addMarker(branches) {
-        //var button = <button id="pickup-button" class="button" onclick="showPopUp()">Select</button>;
-        //var btnSelect = document.createElement('button');
-        //btnSelect.innerHTML = button;
+        var button = '<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>';
+        var btnSelect = document.createElement('button');
+        btnSelect.innerHTML = button;
         var branchMarker = new google.maps.Marker({
             position: branches.coordinates,
             map: pickUpMap,
@@ -62,22 +58,22 @@ function getPickUpMap() {
                     '<h3 class="branch-title">' +
                     branches.title + ' branch</h3>' +
                     '<a href="https://www.google.com/maps" target="_blank">Directions</a></br>' +
-                    //btnSelect +
-                    '<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>' +
+                    btnSelect.innerHTML +
+                    //'<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>' +
                     "</div>"
                 );
                 infoWindow1.open(pickUpMap, branchMarker);
                 pickUpMap.panTo(branches.coordinates);
+
             });
         }
     }
 }
-
 google.maps.event.addDomListener(window, 'load', getPickUpMap);
-window.getPickUpMap = getPickUpMap;
+window.initialize = initialize;
 
     function showPopUp() {
-        var modalPopupBehaviourCtrl = $find('ModalPopupExtender2');
+        var modalPopupBehaviourCtrl = $find('ModalPopupExtender1');
         modalPopupBehaviourCtrl.show();
     }
 
