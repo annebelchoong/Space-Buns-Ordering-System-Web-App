@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5d3023492b1407881d8078f1a5b6ded" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.Admin" Width="1.5" PointX="9.125" PointY="0.875" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.Category" Width="1.5" PointX="14.375" PointY="0.75" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.Customer" Width="1.5" PointX="7" PointY="4.25" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.Invoice" Width="1.5" PointX="15" PointY="4.5" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.Order" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.OrderDetail" Width="1.5" PointX="12.25" PointY="4.375" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.Payment" Width="1.5" PointX="12.125" PointY="7.375" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.Product" Width="1.5" PointX="11.875" PointY="0.5" IsExpanded="true" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="SpaceBunsDatabaseModel.Reservation" Width="1.5" PointX="3.25" PointY="4.25" IsExpanded="true" FillColor="255, 128, 0" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_categoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_customerID" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_orderID" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_orderID_payment" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_productID" ManuallyRouted="false" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_paymentID" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_RescustomerID" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
