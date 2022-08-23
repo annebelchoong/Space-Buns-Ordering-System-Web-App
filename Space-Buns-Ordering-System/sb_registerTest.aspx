@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="CSS/sb_register.css" rel="stylesheet" />
+   <link href="CSS/sb_register.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style2 {
             text-align: center;
@@ -14,6 +14,27 @@
         .auto-style5 {
             width: 544px;
         }
+        .btn{
+            justify-content:center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform .2s ease;
+            width: 90px;
+            height: 40px;
+            background-color: #1A1A1A;
+            color: #B97836;
+            border: 1px #B97836 solid;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+        btn:hover {
+            text-decoration: none;
+            color: white;
+            background-color: #B97836;
+            transition: 250ms;
+        }
+        
     </style>
 </head>
 <body>
@@ -26,7 +47,8 @@
                     style="padding-top: 5%;"> </a>
 
         <div class="auto-style2" >
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" Width="557px">
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" Width="557px" CreateUserButtonText="Sign Up">
+            <CreateUserButtonStyle BackColor="Black" CssClass="btn" />
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server">
                     <ContentTemplate >
@@ -126,7 +148,7 @@
                             </tr>
                             <tr>
                                 <td align="center" class="auto-style5">Already a member?
-                                    <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/sb_accountTest.aspx">Login</asp:HyperLink>
+                                    <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/sb_loginTest.aspx">Login</asp:HyperLink>
                                 </td>
                             </tr>
                             <tr>
@@ -155,9 +177,9 @@
                                 <td>Your account has been successfully created.</td>
                             </tr>
                             <tr>
-                                <td class="auto-style2">
-                                    <asp:Button ID="ContinueButton" runat="server" CausesValidation="False" CommandName="Continue" 
-                                        Text="Continue" ValidationGroup="CreateUserWizard1" />
+                                <td class="auto-style5">
+                                    <asp:Button ID="btnContinue" runat="server" class="btn" CausesValidation="False" CommandName="Continue" 
+                                        Text="Continue" ValidationGroup="CreateUserWizard1" PostBackUrl="~/sb_userProfileTest.aspx" />
                                 </td>
                             </tr>
                         </table>
