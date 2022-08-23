@@ -70,6 +70,7 @@
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
+    <Content Include="CSS\sb_menu.css" />
     <Content Include="Javascript\sb_index.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
@@ -124,12 +125,28 @@
     <Content Include="Media\Reviews\Review 4.png" />
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
+    <Content Include="Menu_cust_test.aspx" />
+    <Content Include="Menu_form.aspx" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu_cust_test.aspx.cs">
+      <DependentUpon>Menu_cust_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu_cust_test.aspx.designer.cs">
+      <DependentUpon>Menu_cust_test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_form.aspx.cs">
+      <DependentUpon>Menu_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu_form.aspx.designer.cs">
+      <DependentUpon>Menu_form.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sb_aboutUs.aspx.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>

@@ -1,0 +1,121 @@
+﻿@charset "utf-8";
+
+@font-face {
+    font-family: Amsterdam Variation_2;
+    src: url('Fonts/Amsterdam\ Variation_2.ttf') format(truetype);
+}
+
+html {
+    scroll-padding-top: 66px;
+    color: #ffffff;
+}
+
+/* ##################### Menu Navigation Styles ###################### */
+
+nav.menu-nav {
+    float: none;
+    position: sticky;
+    top: 65px;
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+}
+
+    nav.menu-nav ul li {
+        list-style-type: none;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+.menu-nav ul li a {
+    color: #ffffff;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bolder
+}
+
+nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
+    text-decoration: none;
+}
+
+.menu-nav a:hover, .menu-nav a:active {
+    color: #B97836;
+    transition: 0.25s;
+}
+
+/* ###################### Menu Item Styles ###################### */
+
+.menu-row {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1140px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.menu-category-name {
+    color: #B97836;
+    padding-left: 65px;
+    font-size: 2em;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.menu-item {
+    text-align: center;
+    margin: 10px;
+}
+
+    .menu-item article > * {
+        padding: 5px;
+    }
+
+    .menu-item img {
+        border-style: none;
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 25px;
+        box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.3);
+        margin-bottom: 10px;
+    }
+
+.menu-item-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #B97836;
+}
+
+.menu-item-desc {
+    font-size: 0.9em;
+}
+
+.menu-item-desc {
+    max-width: fit-content;
+    opacity: 0.6;
+}
+
+.menu-content section:nth-child(even) {
+    background-color: #1A1A1A;
+}
+
+/* ###################### Media Queries ###################### */
+
+@media only screen and (max-width:445px) {
+    nav.menu-nav {
+        font-size: 0.8em;
+    }
+
+    .menu-nav ul li a {
+        padding: 0 8px;
+    }
+}
