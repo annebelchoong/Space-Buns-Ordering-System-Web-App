@@ -170,12 +170,14 @@
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_forgetPwTest.aspx" />
     <Content Include="sb_index.aspx" />
+    <Content Include="sb_userMaintenance.aspx" />
     <Content Include="sb_UserManagement.aspx" />
     <Content Include="sb_userProfileTest.aspx" />
     <Content Include="Web.config" />
     <Content Include="sb_registerTest.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="sb_AdminTest.Master.cs">
       <DependentUpon>sb_AdminTest.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -246,6 +248,13 @@
     </Compile>
     <Compile Include="sb_registerTest.aspx.designer.cs">
       <DependentUpon>sb_registerTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_userMaintenance.aspx.cs">
+      <DependentUpon>sb_userMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_userMaintenance.aspx.designer.cs">
+      <DependentUpon>sb_userMaintenance.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_UserManagement.aspx.cs">
       <DependentUpon>sb_UserManagement.aspx</DependentUpon>

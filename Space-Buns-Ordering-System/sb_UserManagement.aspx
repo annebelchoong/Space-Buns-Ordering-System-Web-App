@@ -23,7 +23,32 @@
                     <asp:Label ID="lblMsg" runat="server" Visible="false"></asp:Label>
                 </div>
 
-                
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <div class="page-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                        </div>
+                                        <div class="card-block">
+                                            <div class="row">
+
+                                                <div class="col-sm-6 col-md-4 col-lg-4">
+                                                    <h4 class="sub-title">Category</h4>
+                                                    <div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </form>
