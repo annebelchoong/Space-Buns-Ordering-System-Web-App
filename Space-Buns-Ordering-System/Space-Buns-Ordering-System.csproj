@@ -43,10 +43,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -71,50 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="aDash.aspx" />
-    <Content Include="CSS\aDash.css" />
-    <Content Include="CSS\sb_adminTest.css" />
-    <Content Include="App_Data\sb_account.mdf" />
-    <Content Include="App_Data\sb_account_log.ldf">
-      <DependentUpon>sb_account.mdf</DependentUpon>
-    </Content>
-    <Content Include="assets\css\animate.css\css\animate.css" />
-    <Content Include="assets\css\bootstrap\css\bootstrap.min.css" />
-    <Content Include="assets\css\jquery.mCustomScrollbar.css" />
-    <Content Include="assets\css\morris.js\css\morris.css" />
-    <Content Include="assets\css\style.css" />
-    <Content Include="assets\icon\icofont\css\icofont.css" />
-    <Content Include="assets\icon\icofont\fonts\icofont.svg" />
-    <Content Include="assets\icon\themify-icons\fonts\themify.svg" />
-    <Content Include="assets\icon\themify-icons\themify-icons.css" />
-    <Content Include="assets\js\bootstrap-growl.min.js" />
-    <Content Include="assets\js\bootstrap\js\bootstrap.min.js" />
-    <Content Include="assets\js\classie.js" />
-    <Content Include="assets\js\classie\classie.js" />
-    <Content Include="assets\js\common-pages.js" />
-    <Content Include="assets\js\demo-12.js" />
-    <Content Include="assets\js\jquery-slimscroll\jquery.slimscroll.js" />
-    <Content Include="assets\js\jquery-ui\jquery-ui.min.js" />
-    <Content Include="assets\js\jquery.mCustomScrollbar.concat.min.js" />
-    <Content Include="assets\js\jquery.mousewheel.min.js" />
-    <Content Include="assets\js\jquery\jquery.min.js" />
-    <Content Include="assets\js\modernizr\css-scrollbars.js" />
-    <Content Include="assets\js\modernizr\modernizr.js" />
-    <Content Include="assets\js\morris.js\morris.js" />
-    <Content Include="assets\js\pcoded.min.js" />
-    <Content Include="assets\js\popper.js\popper.min.js" />
-    <Content Include="assets\js\raphael\raphael.min.js" />
-    <Content Include="assets\js\script.js" />
-    <Content Include="assets\js\script.min.js" />
-    <Content Include="assets\js\SmoothScroll.js" />
-    <Content Include="CSS\sb_forgetPw.css" />
-    <Content Include="CSS\sb_login.css" />
-    <Content Include="CSS\sb_register.css" />
-    <Content Include="CSS\sb_userProfile.css" />
-    <Content Include="Media\userProfile\avatar-4.jpg" />
-    <Content Include="sb_Dashboard.aspx" />
-    <Content Include="Javascript\sb_userProfile.js" />
-    <Content Include="sb_loginTest.aspx" />
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
@@ -174,44 +126,10 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
-    <Content Include="sb_forgetPwTest.aspx" />
     <Content Include="sb_index.aspx" />
-    <Content Include="sb_userMaintenance.aspx" />
-    <Content Include="sb_UserManagement.aspx" />
-    <Content Include="sb_userProfileTest.aspx" />
     <Content Include="Web.config" />
-    <Content Include="sb_registerTest.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="aDash.aspx.cs">
-      <DependentUpon>aDash.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="aDash.aspx.designer.cs">
-      <DependentUpon>aDash.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Connection.cs" />
-    <Compile Include="sb_AdminTest.Master.cs">
-      <DependentUpon>sb_AdminTest.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_AdminTest.Master.designer.cs">
-      <DependentUpon>sb_AdminTest.Master</DependentUpon>
-    </Compile>
-    <Compile Include="sb_Dashboard.aspx.cs">
-      <DependentUpon>sb_Dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_Dashboard.aspx.designer.cs">
-      <DependentUpon>sb_Dashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="sb_loginTest.aspx.cs">
-      <DependentUpon>sb_loginTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_loginTest.aspx.designer.cs">
-      <DependentUpon>sb_loginTest.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sb_aboutUs.aspx.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>
@@ -226,13 +144,6 @@
     </Compile>
     <Compile Include="sb_adminDashboard.aspx.designer.cs">
       <DependentUpon>sb_adminDashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="sb_forgetPwTest.aspx.cs">
-      <DependentUpon>sb_forgetPwTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_forgetPwTest.aspx.designer.cs">
-      <DependentUpon>sb_forgetPwTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_masterAdmin.Master.cs">
       <DependentUpon>sb_masterAdmin.Master</DependentUpon>
@@ -255,54 +166,11 @@
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
     </Compile>
-    <Compile Include="sb_registerTest.aspx.cs">
-      <DependentUpon>sb_registerTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_registerTest.aspx.designer.cs">
-      <DependentUpon>sb_registerTest.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="sb_userMaintenance.aspx.cs">
-      <DependentUpon>sb_userMaintenance.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_userMaintenance.aspx.designer.cs">
-      <DependentUpon>sb_userMaintenance.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="sb_UserManagement.aspx.cs">
-      <DependentUpon>sb_UserManagement.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_UserManagement.aspx.designer.cs">
-      <DependentUpon>sb_UserManagement.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="sb_userProfileTest.aspx.cs">
-      <DependentUpon>sb_userProfileTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_userProfileTest.aspx.designer.cs">
-      <DependentUpon>sb_userProfileTest.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Site1.Master.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Site1.Master.designer.cs">
-      <DependentUpon>Site1.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sb_AdminTest.Master" />
-    <Content Include="assets\icon\icofont\fonts\icofont.eot" />
-    <Content Include="assets\icon\icofont\fonts\icofont.ttf" />
-    <Content Include="assets\icon\icofont\fonts\icofont.woff" />
-    <Content Include="assets\icon\themify-icons\fonts\themify.eot" />
-    <Content Include="assets\icon\themify-icons\fonts\themify.ttf" />
-    <Content Include="assets\icon\themify-icons\fonts\themify.woff" />
     <None Include="packages.config" />
     <Content Include="sb_master.Master" />
     <Content Include="sb_masterAdmin.Master" />
-    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
