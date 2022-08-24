@@ -48,7 +48,9 @@ nav.checkout-bar h1 {
 }
 
 .thankyou-text {
-    display: inline-block;
+    /*    display: inline-block;*/
+    display: flex;
+    justify-content: space-around;
     text-align: center;
     font-size: 3em;
     margin: 30px auto;
@@ -94,7 +96,7 @@ nav.checkout-bar h1 {
 }
 
 /*.order-info-container p {*/
-.order-info-text{
+.order-info-text {
     font-weight: bold;
     font-size: 0.8em;
     color: #8b8888;
@@ -174,11 +176,13 @@ nav.checkout-bar h1 {
     text-align: right;
 }
 
-.total, .data-num, .total-total {
+/*.total, .data-num, .total-total {*/
+.total, #lblDataNum, .total-total {
     padding: 10px;
 }
 
-.data-total, .total-total {
+/*.data-total, .total-total {*/
+#lblDataTotal, .total-total {
     font-size: 1.5em;
     font-weight: bold;
     padding-top: 5px;
@@ -206,6 +210,11 @@ nav.checkout-bar h1 {
         color: #ffffff;
         transition: 250ms;
     }
+
+
+#AdRotator1 {
+    align-items: center;
+}
 
 /* ##################### Scrollbar #################### */
 

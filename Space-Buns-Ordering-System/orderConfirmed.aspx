@@ -10,10 +10,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <%--<h1 class="thankyou-text">Thank You for Ordering!</h1>--%>
-            <strong>
-                <asp:Label ID="lblThankyou" runat="server" Text="Thank You for Ordering!" CssClass="thankyou-text"></asp:Label>
-            </strong>
+            <h1 class="thankyou-text">Thank You for Ordering!</h1>
+<%--                <strong>
+                    <asp:Label ID="lblThankyou" runat="server" Text="Thank You for Ordering!" CssClass="thankyou-text"></asp:Label>
+                </strong>--%>
             <h2 class="orderID">Order ID:
                 <%--<p>O1001</p>--%>
                 <asp:Label ID="lblOrderID" runat="server" Text="O1001" CssClass="orderid-text"></asp:Label>
@@ -102,8 +102,10 @@
                                 <span class="total-total">Total: </span>
                             </div>
                             <div class="total-right">
-                                <span class="data-num">7</span>
-                                <span class="data-total">RM 106.00</span>
+                                <%--<span class="data-num">7</span>--%>
+                                <%--<span class="data-total">RM 106.00</span>--%>
+                                <asp:Label ID="lblDataNum" runat="server" Text="7"></asp:Label>
+                                <asp:Label ID="lblDataTotal" runat="server" Text="RM 106.00"></asp:Label>
                             </div>
                         </div>
 
