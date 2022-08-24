@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu_cust_test.aspx.cs" Inherits="Space_Buns_Ordering_System.Menu_cust_test" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Menu_cust_test.aspx.cs" Inherits="Space_Buns_Ordering_System.Menu_cust_test" MasterPageFile="" %>
 
 <!DOCTYPE html>
 
@@ -13,6 +13,7 @@
             height: 26px;
         }
     </style>
+    
 </head>
 <body>
     <form id="form1" runat="server">

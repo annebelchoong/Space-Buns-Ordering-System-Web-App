@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Category.mdf" />
+    <Content Include="App_Data\Category_log.ldf">
+      <DependentUpon>Category.mdf</DependentUpon>
+    </Content>
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
@@ -125,27 +129,28 @@
     <Content Include="Media\Reviews\Review 4.png" />
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
+    <Content Include="Menu_admin_test.aspx" />
     <Content Include="Menu_cust_test.aspx" />
-    <Content Include="Menu_form.aspx" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Menu_Customer.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu_admin_test.aspx.cs">
+      <DependentUpon>Menu_admin_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu_admin_test.aspx.designer.cs">
+      <DependentUpon>Menu_admin_test.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Menu_cust_test.aspx.cs">
       <DependentUpon>Menu_cust_test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Menu_cust_test.aspx.designer.cs">
       <DependentUpon>Menu_cust_test.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Menu_form.aspx.cs">
-      <DependentUpon>Menu_form.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Menu_form.aspx.designer.cs">
-      <DependentUpon>Menu_form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sb_aboutUs.aspx.cs">
@@ -182,6 +187,13 @@
     </Compile>
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_Customer.aspx.cs">
+      <DependentUpon>Menu_Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu_Customer.aspx.designer.cs">
+      <DependentUpon>Menu_Customer.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
