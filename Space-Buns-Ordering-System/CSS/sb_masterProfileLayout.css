@@ -278,8 +278,10 @@ nav.close ~ .dashboard .top{
     width: 40px;
     border-radius: 50%;
 }
-.dashboard .dash-content{
+.dashboard .dash-content {
     padding-top: 50px;
+    border-bottom: 10px;
+    border-color: #B97836;
 }
 .dash-content .title{
     display: flex;

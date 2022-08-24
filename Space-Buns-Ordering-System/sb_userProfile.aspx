@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <%--<div class="top">
             <i class="uil uil-bars sidebar-toggle"></i>
 
@@ -37,7 +38,7 @@
                 </div>
             </div>--%>
 
-            <div class="activity">
+            <%--<div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
                     <span class="text">Recent Activity</span>
@@ -95,7 +96,7 @@
                         <span class="data-list">Liked</span>
                     </div>
                 </div>
-            </div>
+            </div>--%>
             </div>
 </asp:Content>
 
