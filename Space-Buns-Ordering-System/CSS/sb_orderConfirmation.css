@@ -59,10 +59,11 @@ nav.checkout-bar h1 {
     text-align: center;
 }
 
-    .orderID p {
-        display: inline;
-        color: #B97836;
-    }
+/*    .orderID p {*/
+#lblOrderID {
+    display: inline;
+    color: #B97836;
+}
 
 /* ###################### Layout ###################### */
 
@@ -92,7 +93,8 @@ nav.checkout-bar h1 {
     padding: 1.8em;
 }
 
-.order-info-container p {
+/*.order-info-container p {*/
+.order-info-text{
     font-weight: bold;
     font-size: 0.8em;
     color: #8b8888;
@@ -183,7 +185,12 @@ nav.checkout-bar h1 {
     padding-bottom: 0;
 }
 
-/*.home-button h4 {
+.buttonsContainer {
+    display: flex;
+}
+
+/*.home-button h4 {*/
+.buttons {
     color: #B97836;
     background-color: #1A1A1A;
     border-radius: 25px;
@@ -193,23 +200,8 @@ nav.checkout-bar h1 {
     margin: 10px auto;
 }
 
-    .home-button h4:hover {
-        background-color: #B97836;
-        color: #ffffff;
-        transition: 250ms;
-    }*/
-
-.home-button {
-    color: #B97836;
-    background-color: #1A1A1A;
-    border-radius: 25px;
-    border: 1px #B97836 solid;
-    width: fit-content;
-    padding: 12px 14px;
-    margin: 10px auto;
-}
-
-    .home-button hover {
+    /*.home-button h4:hover {*/
+    .buttons:hover {
         background-color: #B97836;
         color: #ffffff;
         transition: 250ms;

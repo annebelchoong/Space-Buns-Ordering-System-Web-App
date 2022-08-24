@@ -92,7 +92,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\sb_orderConfirmation.css" />
-    <Content Include="orderConfirmed.aspx" />
+    <Content Include="Media\Ads\foodbank.jpg" />
+    <Content Include="Media\Ads\gogreen.jpg" />
     <Content Include="CSS\sb_aboutUs.css" />
     <Content Include="CSS\sb_checkout_test.css" />
     <Content Include="CSS\sb_index.css" />
@@ -157,17 +158,11 @@
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_checkout.aspx" />
     <Content Include="sb_index.aspx" />
-    <Content Include="temptest.aspx" />
+    <Content Include="orderConfirmed.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Ads.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="orderConfirmed.aspx.cs">
-      <DependentUpon>orderConfirmed.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="orderConfirmed.aspx.designer.cs">
-      <DependentUpon>orderConfirmed.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sb_aboutUs.aspx.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>
@@ -211,12 +206,12 @@
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
     </Compile>
-    <Compile Include="temptest.aspx.cs">
-      <DependentUpon>temptest.aspx</DependentUpon>
+    <Compile Include="orderConfirmed.aspx.cs">
+      <DependentUpon>orderConfirmed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="temptest.aspx.designer.cs">
-      <DependentUpon>temptest.aspx</DependentUpon>
+    <Compile Include="orderConfirmed.aspx.designer.cs">
+      <DependentUpon>orderConfirmed.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="orderConfirmed.aspx.cs" Inherits="Space_Buns_Ordering_System.Checkout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="orderConfirmed.aspx.cs" Inherits="Space_Buns_Ordering_System.temptest" %>
 
 <!DOCTYPE html>
 
@@ -10,23 +10,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
-
-            <%--            <strong>Checkout Page</strong>
-            <br />
-            <div class="content-area">
-                <div class="left">
-                    button 1
-                    button 2
-                </div>
-
-                <div class="right">
-                    a picture
-                </div>
-            </div>--%>
-
-            <h1 class="thankyou-text">Thank You for Ordering!</h1>
+            <%--<h1 class="thankyou-text">Thank You for Ordering!</h1>--%>
+            <strong>
+                <asp:Label ID="lblThankyou" runat="server" Text="Thank You for Ordering!" CssClass="thankyou-text"></asp:Label>
+            </strong>
             <h2 class="orderID">Order ID:
-                <p>043CFBM136</p>
+                <%--<p>O1001</p>--%>
+                <asp:Label ID="lblOrderID" runat="server" Text="O1001" CssClass="orderid-text"></asp:Label>
             </h2>
 
             <section>
@@ -36,15 +26,18 @@
                         <div class="order-info-box">
                             <div id="order-location" class="order-info">
                                 <h3>Store Location:</h3>
-                                <p>Subang Jaya - Space Buns</p>
+                                <%--<p>Subang Jaya - Space Buns</p>--%>
+                                <asp:Label ID="lblBranchName" runat="server" Text="Subang Jaya - Space Buns" CssClass="order-info-text"></asp:Label>
                             </div>
                             <div id="order-type" class="order-info">
                                 <h3>Order Type:</h3>
-                                <p>Self Pickup</p>
+                                <%--<p>Self Pickup</p>--%>
+                                <asp:Label ID="lblOrderType" runat="server" Text="Self Pickup" CssClass="order-info-text"></asp:Label>
                             </div>
-                            <div id="order-time" class="order-info">
-                                <h3>Time:</h3>
-                                <p>28 April 2021, 4:30pm</p>
+                            <div id="order-datetime" class="order-info">
+                                <h3>Date and Time:</h3>
+                                <%--<p>28 April 2021, 4:30pm</p>--%>
+                                <asp:Label ID="lblDateTime" runat="server" Text="28 August 2022, 4:30pm" CssClass="order-info-text"></asp:Label>
                             </div>
                         </div>
                     </div>
@@ -62,7 +55,7 @@
 
                                 <tr>
                                     <td>
-                                        <img src="Media/menuBurgers/chicken1.jpg" alt="Chicken 1"/></td>
+                                        <img src="Media/menuBurgers/chicken1.jpg" alt="Chicken 1" /></td>
                                     <td>
                                         <h6>Double Trouble</h6>
                                     </td>
@@ -72,7 +65,7 @@
 
                                 <tr>
                                     <td>
-                                        <img src="Media/menuBurgers/fish1.jpg" alt="Fish 1"/></td>
+                                        <img src="Media/menuBurgers/fish1.jpg" alt="Fish 1" /></td>
                                     <td>
                                         <h6>Salmon Fillet</h6>
                                     </td>
@@ -82,7 +75,7 @@
 
                                 <tr>
                                     <td>
-                                        <img src="Media/menuBurgers/beef1.jpg" alt="Beef 1"/></td>
+                                        <img src="Media/menuBurgers/beef1.jpg" alt="Beef 1" /></td>
                                     <td>
                                         <h6>You Got Beef</h6>
                                     </td>
@@ -92,7 +85,7 @@
 
                                 <tr>
                                     <td>
-                                        <img src="Media/menuBurgers/meatless1.jpg" alt="Meatless 1"/></td>
+                                        <img src="Media/menuBurgers/meatless1.jpg" alt="Meatless 1" /></td>
                                     <td>
                                         <h6>Mushy Shrooms</h6>
                                     </td>
@@ -116,22 +109,18 @@
 
                     </div>
 
-                    <div class="home-button">
-                        <asp:HyperLink ID="btnHome" runat="server" NavigateUrl="~/sb_index.aspx">Back to Home</asp:HyperLink>
+                    <div class="buttonsContainer">
+                        <asp:HyperLink ID="btnHome" runat="server" NavigateUrl="~/sb_index.aspx" CssClass="buttons">Back to Home</asp:HyperLink>
                     </div>
 
-                    <div class="home-button">
-                        <asp:HyperLink ID="btnViewOrder" runat="server" NavigateUrl="~/sb_orderHistory.aspx">View Order</asp:HyperLink>
-                        <%-- <a href="sb_index.html">
-                    <h4>Back to Home</h4>
-                </a>--%>
+                    <div class="buttonsContainer">
+                        <asp:HyperLink ID="btnViewOrder" runat="server" NavigateUrl="~/sb_orderHistory.aspx" CssClass="buttons">View Order</asp:HyperLink>
                     </div>
-
                 </div>
+
             </section>
-
         </div>
+        <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Ads.xml" />
     </form>
-
 </body>
 </html>

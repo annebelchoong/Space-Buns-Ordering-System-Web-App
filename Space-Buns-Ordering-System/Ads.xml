@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad>
+		<ImageUrl>~Media/Ads/foodbank.jpg</ImageUrl>
+		<AlternateText>Food Donation Ad</AlternateText>
+		<NavigateUrl></NavigateUrl>
+	</Ad>
+	<Ad>
+		<ImageUrl>~Media/Ads/gogreen.jpg</ImageUrl>
+		<AlternateText>Go Green Ad</AlternateText>
+		<NavigateUrl></NavigateUrl>
+	</Ad>
+	<Ad>
+		<ImageUrl>~Media/Events/event1.jpg</ImageUrl>
+		<AlternateText>E1</AlternateText>
+		<NavigateUrl></NavigateUrl>
+	</Ad>
+	<Ad>
+		<ImageUrl>~Media/Promotions/Alien Day.jpg</ImageUrl>
+		<AlternateText>Alien Day</AlternateText>
+		<NavigateUrl></NavigateUrl>
+	</Ad>
+</Advertisements>
