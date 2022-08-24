@@ -48,6 +48,7 @@ nav.checkout-bar h1 {
 }
 
 .thankyou-text {
+    display: inline-block;
     text-align: center;
     font-size: 3em;
     margin: 30px auto;

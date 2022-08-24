@@ -153,6 +153,7 @@
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_checkout.aspx" />
     <Content Include="sb_index.aspx" />
+    <Content Include="temptest.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +206,13 @@
     </Compile>
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="temptest.aspx.cs">
+      <DependentUpon>temptest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="temptest.aspx.designer.cs">
+      <DependentUpon>temptest.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
