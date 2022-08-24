@@ -67,13 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adMainDashboard.aspx" />
     <Content Include="CSS\sb_adminTest.css" />
     <Content Include="App_Data\sb_account.mdf" />
     <Content Include="App_Data\sb_account_log.ldf">
       <DependentUpon>sb_account.mdf</DependentUpon>
     </Content>
-    <Content Include="assets\css\animate.css\css\animate.css" />
-    <Content Include="assets\css\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\css\jquery.mCustomScrollbar.css" />
     <Content Include="assets\css\morris.js\css\morris.css" />
     <Content Include="assets\css\style.css" />
@@ -177,7 +176,20 @@
     <Content Include="sb_registerTest.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
+    <Compile Include="adMainDashboard.aspx.cs">
+      <DependentUpon>adMainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adMainDashboard.aspx.designer.cs">
+      <DependentUpon>adMainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminMain.Master.cs">
+      <DependentUpon>adminMain.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminMain.Master.designer.cs">
+      <DependentUpon>adminMain.Master</DependentUpon>
+    </Compile>
     <Compile Include="sb_AdminTest.Master.cs">
       <DependentUpon>sb_AdminTest.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -279,6 +291,7 @@
     <Content Include="assets\icon\themify-icons\fonts\themify.eot" />
     <Content Include="assets\icon\themify-icons\fonts\themify.ttf" />
     <Content Include="assets\icon\themify-icons\fonts\themify.woff" />
+    <Content Include="adminMain.Master" />
     <None Include="packages.config" />
     <Content Include="sb_master.Master" />
     <Content Include="sb_masterAdmin.Master" />

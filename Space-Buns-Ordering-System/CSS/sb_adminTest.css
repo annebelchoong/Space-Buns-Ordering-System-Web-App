@@ -1,70 +1,119 @@
 ﻿body {
 }
 
-@font-face {
-    font-family: 'themify';
-    src: url('fonts/themify.eot?-fvbane');
-    src: url('fonts/themify.eot?#iefix-fvbane') format('embedded-opentype'), url('fonts/themify.woff?-fvbane') format('woff'), url('fonts/themify.ttf?-fvbane') format('truetype'), url('fonts/themify.svg?-fvbane#themify') format('svg');
-    font-weight: normal;
-    font-style: normal;
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+
+@chiahuiyun
+mustafaerden
+/
+responsive-bootstrap5-admin-dashboard
+Public
+Code
+Issues
+1
+Pull requests
+Actions
+Projects
+Security
+Insights
+responsive-bootstrap5-admin-dashboard/styles.css
+@mustafaerden
+mustafaerden final
+Latest commit 154f85a on Apr 17, 2021
+History
+1 contributor
+95 lines (78 sloc) 1.43 KB
+
+:root {
+    --main-bg-color: #009d63;
+    --main-text-color: #009d63;
+    --second-text-color: #bbbec5;
+    --second-bg-color: #c1efde;
 }
 
-[class^="ti-"], [class*=" ti-"] {
-    font-family: 'themify';
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.primary-text {
+    color: var(--main-text-color);
 }
 
-/*ti- icons*/
-.ti-menu:before {
-    content: "\e68e";
+.second-text {
+    color: var(--second-text-color);
 }
 
-.ti-menu-alt:before {
-    content: "\e68f";
+.primary-bg {
+    background-color: var(--main-bg-color);
 }
 
-.ti-more:before {
-    content: "\e6e1";
+.secondary-bg {
+    background-color: var(--second-bg-color);
 }
 
-.ti-more-alt:before {
-    content: "\e6e2";
+.rounded-full {
+    border-radius: 100%;
 }
 
-.ti-fullscreen:before {
-    content: "\e659";
+#wrapper {
+    overflow-x: hidden;
+    background-image: linear-gradient( to right, #baf3d7, #c2f5de, #cbf7e4, #d4f8ea, #ddfaef );
 }
 
-.ti-angle-down:before {
-    content: "\e64b";
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin 0.25s ease-out;
+    -moz-transition: margin 0.25s ease-out;
+    -o-transition: margin 0.25s ease-out;
+    transition: margin 0.25s ease-out;
 }
 
-.ti-layout-sidebar-left:before {
-    content: "\e6f3";
+    #sidebar-wrapper .sidebar-heading {
+        padding: 0.875rem 1.25rem;
+        font-size: 1.2rem;
+    }
+
+    #sidebar-wrapper .list-group {
+        width: 15rem;
+    }
+
+#page-content-wrapper {
+    min-width: 100vw;
 }
 
-.ti-home:before {
-    content: "\e69b";
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
 }
 
-.ti-layers:before {
-    content: "\e62f";
+#menu-toggle {
+    cursor: pointer;
 }
 
-.ti-layers-alt:before {
-    content: "\e630";
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
 }
 
-.ti-direction-alt:before {
-    content: "\e6a9";
+    .list-group-item.active {
+        background-color: transparent;
+        color: var(--main-text-color);
+        font-weight: bold;
+        border: none;
+    }
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: -15rem;
+    }
 }
-
-
