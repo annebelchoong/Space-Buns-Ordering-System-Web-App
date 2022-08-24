@@ -70,6 +70,7 @@
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
+    <Content Include="CSS\sb_masterProfileLayout.css" />
     <Content Include="Javascript\sb_index.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
@@ -127,6 +128,7 @@
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_index.aspx" />
+    <Content Include="sb_userProfile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -166,11 +168,26 @@
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
     </Compile>
+    <Compile Include="sb_masterProfile.Master.cs">
+      <DependentUpon>sb_masterProfile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_masterProfile.Master.designer.cs">
+      <DependentUpon>sb_masterProfile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sb_userProfile.aspx.cs">
+      <DependentUpon>sb_userProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_userProfile.aspx.designer.cs">
+      <DependentUpon>sb_userProfile.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="sb_master.Master" />
     <Content Include="sb_masterAdmin.Master" />
+    <Content Include="sb_masterProfile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

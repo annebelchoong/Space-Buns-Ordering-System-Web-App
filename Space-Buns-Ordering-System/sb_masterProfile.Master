@@ -1,0 +1,214 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_masterProfile.Master.cs" Inherits="Space_Buns_Ordering_System.sb_profileMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+     <link rel="shortcut icon" href="Media/Icons/favicon.ico">
+    <link href="CSS/sb_masterLayout.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <!---------------------------------------------------->
+    <link href="CSS/sb_masterProfileLayout.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav id="navbar" class="navbar-fixedtop">
+
+            <div class="navbar-logo">
+                <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>              
+            </div>
+            <div class="navbar-links">
+                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
+                <asp:HyperLink ID="hlNavEvents" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
+                <asp:HyperLink ID="hlNavAboutUs" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
+            </div>
+          
+            <div class="navbar-login">
+                <a href="sb_login.html"><i class="far fa-user-circle"></i></a>
+            </div>
+
+        </nav>
+
+        <!--Profile start-->
+        <nav>
+        <div class="menu-items">
+            <div>
+                <div class="logo-name">
+                    <div class="logo-image">
+                        <img src="Media/Promotions/Fiery%20Fiesta.jpg" />
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-links">               
+                <li><a href="#">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">User Profile</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Order History</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <%--<div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+            
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>--%>
+
+        <%--<div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <span class="text">Dashboard</span>
+                </div>
+
+                <div class="boxes">
+                    <div class="box box1">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="text">Total Likes</span>
+                        <span class="number">50,120</span>
+                    </div>
+                    <div class="box box2">
+                        <i class="uil uil-comments"></i>
+                        <span class="text">Comments</span>
+                        <span class="number">20,120</span>
+                    </div>
+                    <div class="box box3">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Total Share</span>
+                        <span class="number">10,120</span>
+                    </div>
+                </div>
+            </div>--%>
+
+            <%--<div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Recent Activity</span>
+                </div>
+
+                <div class="activity-data">
+                    <div class="data names">
+                        <span class="data-title">Name</span>
+                        <span class="data-list">Prem Shahi</span>
+                        <span class="data-list">Deepa Chand</span>
+                        <span class="data-list">Manisha Chand</span>
+                        <span class="data-list">Pratima Shahi</span>
+                        <span class="data-list">Man Shahi</span>
+                        <span class="data-list">Ganesh Chand</span>
+                        <span class="data-list">Bikash Chand</span>
+                    </div>
+                    <div class="data email">
+                        <span class="data-title">Email</span>
+                        <span class="data-list">premshahi@gmail.com</span>
+                        <span class="data-list">deepachand@gmail.com</span>
+                        <span class="data-list">prakashhai@gmail.com</span>
+                        <span class="data-list">manishachand@gmail.com</span>
+                        <span class="data-list">pratimashhai@gmail.com</span>
+                        <span class="data-list">manshahi@gmail.com</span>
+                        <span class="data-list">ganeshchand@gmail.com</span>
+                    </div>
+                    <div class="data joined">
+                        <span class="data-title">Joined</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-12</span>
+                        <span class="data-list">2022-02-13</span>
+                        <span class="data-list">2022-02-13</span>
+                        <span class="data-list">2022-02-14</span>
+                        <span class="data-list">2022-02-14</span>
+                        <span class="data-list">2022-02-15</span>
+                    </div>
+                    <div class="data type">
+                        <span class="data-title">Type</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                        <span class="data-list">New</span>
+                        <span class="data-list">Member</span>
+                    </div>
+                    <div class="data status">
+                        <span class="data-title">Status</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                        <span class="data-list">Liked</span>
+                    </div>
+                </div>
+            </div>--%>
+    </section>
+        <!--profile end-->
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-right">
+                <div class="footer-logo">
+                <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink> 
+                </div>
+            </div>
+            <div class="footer-left">
+                <div class="ourStore">
+                    <h4>Our Store</h4>
+                    <div class="footer-links">
+                         <div class="footer-links-1">
+                        <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
+                    </div>
+                    <div class="footer-links-2">
+                         <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
+                        <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_privacyPolicy.aspx">Privacy Policy</asp:HyperLink>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="followUs">
+                    <h4>Follow Us</h4>
+                    <div class="footer-socialLinks">
+                        <a href="https://www.facebook.com/" target="_blank"><i class='fab fa-facebook-f'></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i class='fab fa-instagram'></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class='fab fa-twitter'></i></a>
+                    </div>
+                    <div class="copyright">
+                        <p>&#169; 2021 by Space Buns Sdn Bhd. <br>All Right Not Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    </form>
+</body>
+</html>
