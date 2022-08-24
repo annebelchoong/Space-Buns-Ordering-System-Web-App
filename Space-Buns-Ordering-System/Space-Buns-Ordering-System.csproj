@@ -75,6 +75,7 @@
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
     <Content Include="CSS\sb_menu.css" />
+    <Content Include="CSS\Style.css" />
     <Content Include="Javascript\sb_index.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
@@ -129,6 +130,8 @@
     <Content Include="Media\Reviews\Review 4.png" />
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
+    <Content Include="MenuAdminTest.aspx" />
+    <Content Include="Menu_admin_category.aspx" />
     <Content Include="Menu_admin_test.aspx" />
     <Content Include="Menu_cust_test.aspx" />
     <Content Include="sb_aboutUs.aspx" />
@@ -138,6 +141,20 @@
     <Content Include="Menu_Customer.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MenuAdminTest.aspx.cs">
+      <DependentUpon>MenuAdminTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuAdminTest.aspx.designer.cs">
+      <DependentUpon>MenuAdminTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu_admin_category.aspx.cs">
+      <DependentUpon>Menu_admin_category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu_admin_category.aspx.designer.cs">
+      <DependentUpon>Menu_admin_category.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Menu_admin_test.aspx.cs">
       <DependentUpon>Menu_admin_test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
