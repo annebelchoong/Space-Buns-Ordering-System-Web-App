@@ -48,10 +48,7 @@
         <fieldset
             style="text-align: center; background-image: url(Media/Login&Signup/logbackg2.jpg); background-size: contain;">
             <legend>Login</legend>
-            <a href="sb_master.Master">
-                <img id="companylogo" src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo" width="120px"
-                    style="padding-top: 5%;">
-            </a>
+            <asp:HyperLink ID="lnkSpaceBunsLogo" runat="server" ImageHeight="80px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx"></asp:HyperLink>
 
             <div class="auto-style1">
                 <asp:Login ID="Login1" runat="server" Width="81%">

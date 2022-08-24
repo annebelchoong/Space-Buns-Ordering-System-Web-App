@@ -29,6 +29,7 @@
             border: 1px #B97836 solid;
             font-weight: bold;
             border-radius: 20px;
+             margin-left:120px;
         }
         btn:hover {
             text-decoration: none;
@@ -38,18 +39,24 @@
         }
         
     </style>
+    <script src="jquery-3.6.0.min.js"></script>
+ <script type="text/javascript">
+     $(document).ready(function () {
+         var btn = $("#CreateUserWizard1___CustomNav0_StepNextButtonButton");
+         btn.parent().attr('align', 'left');
+
+     });
+ </script>
 </head>
 <body>
     <form id="form1" runat="server" >
         <fieldset
             style="text-align: center;background-image: url(Media/Login&Signup/logbackg2.jpg); background-size: contain;">
              <legend>Sign Up</legend>
-            <a href="sb_master.Master">
-                <img id="companylogo" src="Media/Icons/SpaceBunsLogo.png" alt="Space Buns Logo" width="120px"
-                    style="padding-top: 5%;"> </a>
+             <asp:HyperLink ID="lnkSpaceBunLogo" runat="server" ImageHeight="80px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx"></asp:HyperLink>
 
         <div class="auto-style2" >
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" Width="557px" CreateUserButtonText="Sign Up">
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" Width="557px" align="center" CreateUserButtonText="Sign Up">
             <CreateUserButtonStyle BackColor="Black" CssClass="btn" />
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server">

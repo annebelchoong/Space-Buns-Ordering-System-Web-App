@@ -19,10 +19,10 @@ namespace Space_Buns_Ordering_System
         {
             if (!IsPostBack)
             {
-                if (Session["userId"] == null)
-                {
-                    Response.Redirect("sb_loginTest.aspx");
-                }
+                //if (Session["userId"] == null)
+                //{
+                //    Response.Redirect("sb_loginTest.aspx");
+                //}
                 //else
                 //{
                 //    getUserDetails();

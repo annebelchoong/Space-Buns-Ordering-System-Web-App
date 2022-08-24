@@ -6,8 +6,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="CSS/sb_userProfile.css" rel="stylesheet" />
     <script src="Javascript/sb_userProfile.js"></script>
+    <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css"/>
     </head>
 <body>
 <%--    <%
@@ -27,15 +29,99 @@
                         <div class="card-title mb-4">
                             <div class="d-flex justify-content-start">
                                 <div class="image-container">
+                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                    <div class="middle">
+                                        <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
+                                        <input type="file" style="display: none;" id="profilePicture" name="file" />
+                                    </div>
                                     <%--<img src="<%= Utils.GetImageUrl(imageUrl) %>" id="imgProfile" 
                                         style="width:150px; height:150px;" class="img-thumnail"/>--%>
-                                    <div class="middle pt-2">
+                                    <div class="middle pt-2" style="left: 54%; top: 10200%">
                                         <a href="sb_registerTest.aspx?id=<%Response.Write(Session["userId"]);
                                             %>" class="btn btn-warning">
                                             <i class="fa fa-pencil"></i>Edit Deatils
                                         </a>
                                     </div>
                                 </div>
+                                <!--Temporary start--> 
+                                <div class="userData ml-3">
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">Some Name</a></h2>
+                                    <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Video Uploads</h6>
+                                    <h6 class="d-block"><a href="javascript:void(0)">300</a> Blog Posts</h6>
+                                </div>
+                                <div class="ml-auto">
+                                    <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                </div>
+                            </div>
+                        
+
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="nav nav-tabs mb-4" id="myTab1" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="basicInfo-tab1" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Basic Info</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="connectedServices-tab1" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Connected Services</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content ml-1" id="myTabContent1">
+                                    <div class="tab-pane fade show active" id="basicInfo1" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                        
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Full Name</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Jamshaid Kamran
+                                            </div>
+                                        </div>
+                                        <hr />
+
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Birth Date</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                March 22, 1994.
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Something</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Something
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Something</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Something
+                                            </div>
+                                        </div>
+                                        <hr />
+                                        <div class="row">
+                                            <div class="col-sm-3 col-md-2 col-5">
+                                                <label style="font-weight:bold;">Something</label>
+                                            </div>
+                                            <div class="col-md-8 col-6">
+                                                Something
+                                            </div>
+                                        </div>
+                                        <hr />
+                                      </div>
+                                    </div>
+
+                            </div>
+                                        <!--Temporary start--> 
                                 <!--User Details-->
                                 <div class="userData ml-3">
                                     <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">
@@ -85,9 +171,9 @@
                         </div>
 
                          <div class="tab-content ml-1" id="myTabContent">
-                             <%--Basic User Info Start--%>
-                              <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
-                                  <asp:Repeater ID="rUserProfile" runat="server">
+                             <%--<%--Basic User Info Start--%>
+                             <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                   <%--<asp:Repeater ID="rUserProfile" runat="server">
                                       <ItemTemplate>
 
                                           <div class="row">
@@ -95,16 +181,16 @@
                                                 <label style="font-weight:bold;">Full Name</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                               <%-- <%@ Eval("Name") %>--%>
+                                                <%@ Eval("Name") %>
                                             </div>
                                         </div>
-                                        <hr /> <!--1 horizontal row-->
+                                        <hr /> 
                                           <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Userame</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                              <%--  <%@ Eval("Userame") %>--%>
+                                              <%@ Eval("Userame") %>
                                             </div>
                                         </div>
                                         <hr /> <!--1 horizontal row-->
@@ -113,40 +199,40 @@
                                                 <label style="font-weight:bold;">Phone No</label>
                                             </div>
                                             <div class="col-md-8 col-6">
-                                               <%-- <%@ Eval("PhoneNo") %>--%>
+                                               <%@ Eval("PhoneNo") %>
                                             </div>
                                         </div>
-                                        <hr /> <!--1 horizontal row-->
+                                        <hr /> 
                                           <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Email</label>
                                             </div>
-                                            <div class="col-md-8 col-6">
-                                               <%-- <%@ Eval("Email") %>--%>
+                                            <div class="col-md-8 col-6">--%>
+                                               <%--<%@ Eval("Email") %>
                                             </div>
                                         </div>
-                                        <hr /> <!--1 horizontal row-->
+                                        <hr /> 
                                           <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Post Code</label>
                                             </div>
-                                            <div class="col-md-8 col-6">
-                                              <%--  <%@ Eval("PostCode") %>--%>
-                                            </div>
+                                            <div class="col-md-8 col-6">--%>
+                                              <%-- <%@ Eval("PostCode") %>
+                                           </div>
                                         </div>
-                                        <hr /> <!--1 horizontal row-->
+                                        <hr /> 
                                           <div class="row">
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Address</label>
                                             </div>
-                                            <div class="col-md-8 col-6">
-                                               <%-- <%@ Eval("Address") %>--%>
+                                            <div class="col-md-8 col-6">--%>
+                                                <%--<%@ Eval("Address") %>
                                             </div>
                                         </div>
-                                        <hr /> <!--1 horizontal row-->
+                                        <hr /> 
 
-                                      </ItemTemplate>
-                                  </asp:Repeater>
+                                     </ItemTemplate>
+                                  </asp:Repeater>--%>
                               </div>
                              <%--Basic User Info End--%>
 
@@ -155,6 +241,7 @@
                                  <h3>Order History</h3>
                              </div>
                              <%--Order History End--%>
+                             
                          </div>
 
                     </div>

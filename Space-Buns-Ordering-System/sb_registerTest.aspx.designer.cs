@@ -24,6 +24,15 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// lnkSpaceBunLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkSpaceBunLogo;
+
+        /// <summary>
         /// CreateUserWizard1 control.
         /// </summary>
         /// <remarks>
