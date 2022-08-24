@@ -8,7 +8,7 @@
 <head runat="server">
     <title></title>
     <style>
-        .row{
+        .row {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -43,36 +43,36 @@
                 <ContentTemplate>
                     <div>
                         <ajaxToolkit:Accordion ID="Accordion1" runat="server" FadeTransitions="True" TransitionDuration="350" RequireOpenedPane="False" Height="528px" SelectedIndex="-1">
-                            <Panes>
+                            <panes>
                                 <ajaxToolkit:AccordionPane ID="Pane1" runat="server">
-                                    <Header>
+                                    <header>
                                         Add-on Patties
-                                    </Header>
-                                    <Content>
+                                    </header>
+                                    <content>
                                         <asp:RadioButtonList ID="RadioButtonList3" runat="server">
                                             <asp:ListItem>Add 1 more patty</asp:ListItem>
                                             <asp:ListItem>Add 2 more chicken patties</asp:ListItem>
                                         </asp:RadioButtonList>
-                                    </Content>
+                                    </content>
 
                                 </ajaxToolkit:AccordionPane>
                                 <ajaxToolkit:AccordionPane ID="Pane2" runat="server">
-                                    <Header>
+                                    <header>
                                         Choices of sides
-                                    </Header>
-                                    <Content>
+                                    </header>
+                                    <content>
                                         <asp:RadioButtonList ID="RadioButtonList2" runat="server">
                                             <asp:ListItem>Fries</asp:ListItem>
                                             <asp:ListItem>Wedges</asp:ListItem>
                                         </asp:RadioButtonList>
-                                    </Content>
+                                    </content>
 
                                 </ajaxToolkit:AccordionPane>
                                 <ajaxToolkit:AccordionPane ID="Pane3" runat="server">
-                                    <Header>
+                                    <header>
                                         Choices of beverages
-                                    </Header>
-                                    <Content>
+                                    </header>
+                                    <content>
                                         <asp:RadioButtonList ID="RadioButtonList4" runat="server">
                                             <asp:ListItem>Coke</asp:ListItem>
                                             <asp:ListItem>Pepsi</asp:ListItem>
@@ -81,34 +81,34 @@
                                             <asp:ListItem>Fanta Orange</asp:ListItem>
                                             <asp:ListItem>Heaven n Earth Ice Lemon Tea</asp:ListItem>
                                         </asp:RadioButtonList>
-                                    </Content>
+                                    </content>
 
                                 </ajaxToolkit:AccordionPane>
                                 <ajaxToolkit:AccordionPane ID="Pane4" runat="server" ContentCssClass="test">
-                                    <Header>
+                                    <header>
                                         Add-on Sauce
-                                    </Header>
-                                    <Content>
+                                    </header>
+                                    <content>
                                         <asp:RadioButtonList ID="RadioButtonList5" runat="server" Width="50%">
                                             <asp:ListItem>BBQ Sauce</asp:ListItem>
                                             <asp:ListItem>Cheese sauce</asp:ListItem>
                                             <asp:ListItem>Spicy Mayo</asp:ListItem>
                                             <asp:ListItem>Mustard</asp:ListItem>
                                         </asp:RadioButtonList>
-                                    </Content>
+                                    </content>
 
                                 </ajaxToolkit:AccordionPane>
-                            </Panes>
+                            </panes>
                         </ajaxToolkit:Accordion>
                     </div>
-                    <div class ="quantityContainer">
-                        <div class ="decrementButton">
+                    <div class="quantityContainer">
+                        <div class="decrementButton">
                             <asp:Button ID="btnDecrement" runat="server" Text="-" />
                         </div>
                         <div class="quantityNumber">
                             <asp:TextBox ID="txtQuantity" runat="server" Text="1"></asp:TextBox>
                         </div>
-                        <div class ="incrementButton">
+                        <div class="incrementButton">
                             <asp:Button ID="btnIncrement" runat="server" Text="+" />
                         </div>
                     </div>
@@ -121,6 +121,59 @@
                     <asp:AsyncPostBackTrigger ControlID="rblSetSelection" EventName="SelectedIndexChanged" />
                 </Triggers>
             </asp:UpdatePanel>
+
+        </asp:Panel>
+
+        <asp:Panel ID="pnlCart" runat="server">
+            <div class="cartNavBar">
+                <div>
+                    <h2>Your cart</h2>
+                    You've added
+                <asp:Label ID="lblNumOfItems" runat="server"></asp:Label>
+                    &nbsp;items
+                </div>
+                <div class="close-btn">
+                    <asp:Button ID="btnCloseCart" runat="server" Text="&times;" />
+                </div>
+            </div>
+            <div class="addressAndTime">
+            </div>
+            <div class="cart">
+                <div class="products">
+                    <div class="product">
+                        <div>
+                            <asp:Image ID="Image2" runat="server" />
+                        </div>
+                        <div class="productTop">
+                            <div class="productName">
+                                Crispy Deluxe
+                            </div>
+                            <div class="deleteProduct">
+                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Media/Order/trash-can.svg" Height="20px" />  
+                            </div>
+                        </div>
+                        <div class="productBottom">
+                            <div class="productQuantity">
+                                <div class="decrementButton">
+                                    <asp:Button ID="btnIncrementCart" runat="server" Text="-" />
+                                </div>
+                                <div class="quantityNumber">
+                                    <asp:TextBox ID="txtQuantityCart" runat="server" Text="1"></asp:TextBox>
+                                </div>
+                                <div class="incrementButton">
+                                    <asp:Button ID="btnDecrementCart" runat="server" Text="+" />
+                                </div>
+                            </div>
+                            <div class="totalPrice">
+                                RM
+                                <asp:Label ID="lblProductTotalPrice" runat="server" Text=""></asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                    </div>
+                </div>
+            </div>
 
         </asp:Panel>
 

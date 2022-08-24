@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -115,6 +118,7 @@
     <Content Include="Media\menuBurgers\meatless1.jpg" />
     <Content Include="Media\menuBurgers\meatless2.jpg" />
     <Content Include="Media\menuBurgers\meatless3.jpg" />
+    <Content Include="Media\Order\trash-can.svg" />
     <Content Include="Media\Promotions\Alien Day.png" />
     <Content Include="Media\Promotions\Big Blast.jpg" />
     <Content Include="Media\Promotions\Buy1Free1.png" />
