@@ -12,7 +12,7 @@
         }
 
         .auto-style4 {
-            width: 465px;
+            width: 626px;
         }
 
         .auto-style5 {
@@ -38,6 +38,9 @@
             background-color: #B97836;
             transition: 250ms;
         }
+        .auto-style6 {
+            width: 630px;
+        }
     </style>
 </head>
 <body>
@@ -51,22 +54,22 @@
             </a>
 
             <div class="auto-style1">
-                <asp:Login ID="Login1" runat="server">
+                <asp:Login ID="Login1" runat="server" Width="81%">
                     <LayoutTemplate>
-                        <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;">
+                        <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;" style="width: 100px">
                             <tr>
                                 <td class="auto-style5">
                                     <table cellpadding="0" class="auto-style4">
                                         <tr>
-                                            <td align="center">&nbsp;</td>
+                                            <td align="center" class="auto-style6">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td align="center">
+                                            <td align="center" class="auto-style6">
                                                 <asp:Label ID="UsernameLabel" runat="server" AssociatedControlID="Username" ClientIDMode="Static">Username</asp:Label>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="center">
+                                            <td align="center" class="auto-style6">
                                                 <asp:TextBox ID="Username" runat="server" placeholder="Username" class="logInput"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="UsernameRequired" runat="server" ControlToValidate="Username"
                                                     ErrorMessage="Username is required." ToolTip="User Name is required."
@@ -74,15 +77,15 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="center">&nbsp;</td>
+                                            <td align="center" class="auto-style6">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td align="center">
+                                            <td align="center" class="auto-style6">
                                                 <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password</asp:Label>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="center">
+                                            <td align="center" class="auto-style6">
                                                 <asp:TextBox ID="Password" runat="server" TextMode="Password" placeholder="Password" class="logInput"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
                                                     ErrorMessage="Password is required." ToolTip="Password is required."
@@ -90,43 +93,43 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="center">&nbsp;</td>
+                                            <td align="center" class="auto-style6">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td align="center">
+                                            <td align="center" class="auto-style6">
                                                 <asp:HyperLink ID="forgetPwLink" runat="server" NavigateUrl="~/sb_forgetPwTest.aspx">Forget Password</asp:HyperLink>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="center">&nbsp;</td>
+                                            <td align="center" class="auto-style6">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td align="center">&nbsp;</td>
+                                            <td align="center" class="auto-style6">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td>
+                                            <td class="auto-style6">
                                                 <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." />
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="center" style="color: Red;">
+                                            <td align="center" style="color: Red;" class="auto-style6">
                                                 <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>&nbsp;</td>
+                                            <td class="auto-style6">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td>
+                                            <td class="auto-style6">
                                                 <asp:Button ID="loginButton" runat="server" class="btn" CommandName="Login" Text="Login"
                                                     ValidationGroup="Login1" PostBackUrl="~/sb_userProfileTest.aspx" />
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>&nbsp;</td>
+                                            <td class="auto-style6">&nbsp;</td>
                                         </tr>
                                         <tr>
-                                            <td class="notMember">
+                                            <td class="auto-style6">
                                                 <asp:HyperLink ID="notAMemLink" runat="server" NavigateUrl="~/sb_registerTest.aspx">Not a member?</asp:HyperLink>
                                             </td>
                                         </tr>

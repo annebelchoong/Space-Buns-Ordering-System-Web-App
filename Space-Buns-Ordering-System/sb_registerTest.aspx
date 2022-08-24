@@ -15,6 +15,8 @@
             width: 544px;
         }
         .btn{
+            display:flex;
+            align: center;
             justify-content:center;
             text-decoration: none;
             cursor: pointer;
