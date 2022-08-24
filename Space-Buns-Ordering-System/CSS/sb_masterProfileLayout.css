@@ -14,7 +14,7 @@
     /* ===== Colors ===== */
     --primary-color: #0E4BF1;
     --panel-color: #FFF;
-    --text-color: #000;
+    --text-color: #FFF;
     --black-light-color: #707070;
     --border-color: #e6e5e5;
     --toggle-color: #DDD;
@@ -82,6 +82,8 @@ nav.close{
     width: 73px;
 }
 nav .logo-name{
+    margin-top: 20px;
+    color: white;
     display: flex;
     justify-content: center;
 }
@@ -223,7 +225,7 @@ nav.close ~ .dashboard{
 }
 .dashboard .top{
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 250px;
     display: flex;
     width: calc(100% - 250px);
