@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="aDash.aspx" />
+    <Content Include="CSS\aDash.css" />
     <Content Include="CSS\sb_adminTest.css" />
     <Content Include="App_Data\sb_account.mdf" />
     <Content Include="App_Data\sb_account_log.ldf">
@@ -177,6 +179,13 @@
     <Content Include="sb_registerTest.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="aDash.aspx.cs">
+      <DependentUpon>aDash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="aDash.aspx.designer.cs">
+      <DependentUpon>aDash.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="sb_AdminTest.Master.cs">
       <DependentUpon>sb_AdminTest.Master</DependentUpon>
@@ -270,6 +279,13 @@
     <Compile Include="sb_userProfileTest.aspx.designer.cs">
       <DependentUpon>sb_userProfileTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="sb_AdminTest.Master" />
@@ -282,6 +298,7 @@
     <None Include="packages.config" />
     <Content Include="sb_master.Master" />
     <Content Include="sb_masterAdmin.Master" />
+    <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
