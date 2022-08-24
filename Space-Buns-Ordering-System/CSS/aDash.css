@@ -5,12 +5,29 @@
     --second-bg-color: #c1efde;
 }
 
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+nav {
+    background-color: #B97836;
+/*    height: 65px;*/
+}
+
+.navbar-collapse ul li{
+    list-style-type: none;
+}
+.navbar-collapse a:hover, .fas fa-user:hover {
+    color: #1A1A1A;
+}
+
 .primary-text {
-    color: var(--main-text-color);
+    color: white;
 }
 
 .second-text {
-    color: var(--second-text-color);
+    color: white;
 }
 
 .primary-bg {
@@ -26,17 +43,26 @@
 }
 
 #wrapper {
-    overflow-x: hidden;
-    background-image: linear-gradient( to right, #baf3d7, #c2f5de, #cbf7e4, #d4f8ea, #ddfaef );
+    /*    overflow-x: hidden;
+    background-image: linear-gradient( to right, #baf3d7, #c2f5de, #cbf7e4, #d4f8ea, #ddfaef );*/
+    background-color: #282829;
 }
 
+
 #sidebar-wrapper {
+    background-color: #252627;
+    fill-opacity: 0.5;
     min-height: 100vh;
     margin-left: -15rem;
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.2);
     -webkit-transition: margin 0.25s ease-out;
     -moz-transition: margin 0.25s ease-out;
     -o-transition: margin 0.25s ease-out;
     transition: margin 0.25s ease-out;
+}
+
+.sidebar-hideBoxShadow {
+    box-shadow: 0px 0px 0px transparent;
 }
 
     #sidebar-wrapper .sidebar-heading {
@@ -65,9 +91,9 @@
     padding: 20px 30px;
 }
 
-    .list-group-item.active {
-        background-color: transparent;
-        color: var(--main-text-color);
+    .list-group-item.active, .list-group-item a:hover {
+        background-color: #B97836;
+        /*color: var(--main-text-color);*/
         font-weight: bold;
         border: none;
     }
