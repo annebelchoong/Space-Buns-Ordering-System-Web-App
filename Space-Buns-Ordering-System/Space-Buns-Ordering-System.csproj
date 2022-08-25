@@ -102,6 +102,7 @@
     <Content Include="CSS\sb_customer.css" />
     <Content Include="CSS\sb_masterProfileLayout.css" />
     <Content Include="CSS\sb_orderConfirmation.css" />
+    <Content Include="Javascript\adminDashboard.js" />
     <Content Include="Media\Ads\foodbank.jpg" />
     <Content Include="Media\Ads\gogreen.jpg" />
     <Content Include="CSS\sb_aboutUs.css" />
