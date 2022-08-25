@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="Admin_Category.aspx" />
     <Content Include="Admin_cat_test.aspx" />
+    <Content Include="Admin_Product.aspx" />
+    <Content Include="Admin_product_test.aspx" />
     <Content Include="App_Data\Category.mdf" />
     <Content Include="App_Data\Category_log.ldf">
       <DependentUpon>Category.mdf</DependentUpon>
@@ -153,6 +155,20 @@
     </Compile>
     <Compile Include="Admin_cat_test.aspx.designer.cs">
       <DependentUpon>Admin_cat_test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Product.aspx.cs">
+      <DependentUpon>Admin_Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Product.aspx.designer.cs">
+      <DependentUpon>Admin_Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_product_test.aspx.cs">
+      <DependentUpon>Admin_product_test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_product_test.aspx.designer.cs">
+      <DependentUpon>Admin_product_test.aspx</DependentUpon>
     </Compile>
     <Compile Include="Menu_cust_test.aspx.cs">
       <DependentUpon>Menu_cust_test.aspx</DependentUpon>
