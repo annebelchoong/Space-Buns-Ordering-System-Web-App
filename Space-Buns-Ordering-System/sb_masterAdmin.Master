@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_masterAdmin.Master.cs" Inherits="Space_Buns_Ordering_System.sb_admin_master" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 
 <!DOCTYPE html>
 
