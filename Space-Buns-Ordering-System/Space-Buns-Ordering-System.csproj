@@ -88,6 +88,7 @@
     <Content Include="Media\Home\intro_video.webm" />
     <Content Include="Media\Home\iswarya_M.jpeg" />
     <Content Include="Media\Home\Recommend.jpg" />
+    <Content Include="Media\Icons\edit.png" />
     <Content Include="Media\Icons\edit.svg" />
     <Content Include="Media\Icons\estate.svg" />
     <Content Include="Media\Icons\favepay.svg" />
@@ -131,6 +132,7 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
+    <Content Include="sb_changePassword.aspx" />
     <Content Include="sb_editProfile.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="sb_userProfile.aspx" />
@@ -151,6 +153,13 @@
     </Compile>
     <Compile Include="sb_adminDashboard.aspx.designer.cs">
       <DependentUpon>sb_adminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_changePassword.aspx.cs">
+      <DependentUpon>sb_changePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_changePassword.aspx.designer.cs">
+      <DependentUpon>sb_changePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_editProfile.aspx.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>

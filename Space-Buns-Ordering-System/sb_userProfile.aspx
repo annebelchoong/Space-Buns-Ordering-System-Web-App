@@ -85,6 +85,8 @@
                     <i class="uil uil-tachometer-fast-alt"></i>
                     <span class="text">User Profile</span>
                     <br />
+                    <asp:Button ID="btnEditProfile" runat="server" class="btn" Text="Edit Profile" PostBackUrl="~/sb_editProfile.aspx" />
+                    <asp:Button ID="btnChangePassword" runat="server" class="btn" Text="Change Password" PostBackUrl="~/sb_changePassword.aspx" />
                     <br />
                     </div>
                     <div>
@@ -205,8 +207,7 @@
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">&nbsp;</td>
-                            <td class="auto-style5">&nbsp;</td>
+                            <td colspan="2">&nbsp;</td>
                         </tr>
                     </table>
                     </div>

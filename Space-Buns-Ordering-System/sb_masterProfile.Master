@@ -20,14 +20,14 @@
             cursor: pointer;
             font-size: 1em;
             transition: transform .2s ease;
-            width: 90px;
+            width: 150px;
             height: 20px;
             background-color: #1A1A1A;
             color: #B97836;
             border: 1px #B97836 solid;
             font-weight: bold;
             border-radius: 20px;
-            margin-left:65px;
+            margin-left:45px;
         }
         btn:hover {
             text-decoration: none;
@@ -72,7 +72,7 @@
                 </div>
                 <br />
                     <div>
-                        <asp:Button ID="btnEditPic" runat="server" class="btn" Text="Edit" />
+                        <asp:Button ID="btnEditPic" runat="server" class="btn" Text="Edit Pic" />
                     </div>
                 <div class="logo-name">
                     <h3>Username</h3>
