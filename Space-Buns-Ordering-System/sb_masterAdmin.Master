@@ -25,21 +25,21 @@
                     <asp:HyperLink runat="server" ImageHeight="60px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/aDash.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
                 </div>
                 <div class="list-group list-group-flush my-3">
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="adminDashboard.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="adminCustomers.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-user me-2"></i>Customers</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="adminBranches.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-store me-2"></i>Store Branches</a>
                     <br />
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="adminCategories.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-list me-2"></i>Categories</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="adminProducts.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-hamburger me-2"></i>Products</a>
                     <br />
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="adminOrders.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas far fa-clipboard me-2"></i>Orders</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="adminSales.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-poll me-2"></i>Sales</a>
                     <%--<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-chart-line me-2"></i>Analytics</a>--%>
@@ -222,7 +222,6 @@
                         </table>
                     </div>
                 </div>--%>
-
             </div>
         </div>
 

@@ -91,8 +91,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminBranches.aspx" />
+    <Content Include="adminCategories.aspx" />
+    <Content Include="adminOrderDetail.aspx" />
     <Content Include="adminOrders.aspx" />
+    <Content Include="adminProducts.aspx" />
+    <Content Include="adminSales.aspx" />
+    <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="CSS\sb_adminOrderDetails.css" />
+    <Content Include="CSS\sb_customer.css" />
     <Content Include="CSS\sb_masterProfileLayout.css" />
     <Content Include="CSS\sb_orderConfirmation.css" />
     <Content Include="Media\Ads\foodbank.jpg" />
@@ -120,9 +127,14 @@
     <Content Include="Media\Home\intro_video.webm" />
     <Content Include="Media\Home\iswarya_M.jpeg" />
     <Content Include="Media\Home\Recommend.jpg" />
+    <Content Include="Media\Icons\delete.png" />
+    <Content Include="Media\Icons\edit.png" />
+    <Content Include="Media\Icons\edit.svg" />
+    <Content Include="Media\Icons\estate.svg" />
     <Content Include="Media\Icons\favepay.svg" />
     <Content Include="Media\Icons\favicon.ico" />
     <Content Include="Media\Icons\GrabPay.svg" />
+    <Content Include="Media\Icons\info.png" />
     <Content Include="Media\Icons\mastercard.svg" />
     <Content Include="Media\Icons\profile_pic.jpg" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
@@ -159,10 +171,13 @@
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
-    <Content Include="sb_adminDashboard.aspx" />
+    <Content Include="adminDashboard.aspx" />
+    <Content Include="sb_changePassword.aspx" />
     <Content Include="sb_checkout.aspx" />
+    <Content Include="adminCustomers.aspx" />
+    <Content Include="sb_editProfile.aspx" />
     <Content Include="sb_index.aspx" />
-    <Content Include="orderConfirmed.aspx" />
+    <Content Include="sb_orderConfirmed.aspx" />
     <Content Include="sb_orderDetail.aspx" />
     <Content Include="sb_orderHistory.aspx" />
     <Content Include="sb_userProfile.aspx" />
@@ -170,12 +185,47 @@
     <Content Include="Ads.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminBranches.aspx.cs">
+      <DependentUpon>adminBranches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminBranches.aspx.designer.cs">
+      <DependentUpon>adminBranches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminCategories.aspx.cs">
+      <DependentUpon>adminCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminCategories.aspx.designer.cs">
+      <DependentUpon>adminCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminOrderDetail.aspx.cs">
+      <DependentUpon>adminOrderDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminOrderDetail.aspx.designer.cs">
+      <DependentUpon>adminOrderDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminOrders.aspx.cs">
       <DependentUpon>adminOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="adminOrders.aspx.designer.cs">
       <DependentUpon>adminOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminProducts.aspx.cs">
+      <DependentUpon>adminProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminProducts.aspx.designer.cs">
+      <DependentUpon>adminProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminSales.aspx.cs">
+      <DependentUpon>adminSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminSales.aspx.designer.cs">
+      <DependentUpon>adminSales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sb_aboutUs.aspx.cs">
@@ -185,12 +235,18 @@
     <Compile Include="sb_aboutUs.aspx.designer.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_adminDashboard.aspx.cs">
-      <DependentUpon>sb_adminDashboard.aspx</DependentUpon>
+    <Compile Include="adminDashboard.aspx.cs">
+      <DependentUpon>adminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_adminDashboard.aspx.designer.cs">
-      <DependentUpon>sb_adminDashboard.aspx</DependentUpon>
+    <Compile Include="adminDashboard.aspx.designer.cs">
+      <DependentUpon>adminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_changePassword.aspx.cs">
+      <DependentUpon>sb_changePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_changePassword.aspx.designer.cs">
+      <DependentUpon>sb_changePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_checkout.aspx.cs">
       <DependentUpon>sb_checkout.aspx</DependentUpon>
@@ -198,6 +254,19 @@
     </Compile>
     <Compile Include="sb_checkout.aspx.designer.cs">
       <DependentUpon>sb_checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminCustomers.aspx.cs">
+      <DependentUpon>adminCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminCustomers.aspx.designer.cs">
+      <DependentUpon>adminCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_editProfile.aspx.cs">
+      <DependentUpon>sb_editProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_editProfile.aspx.designer.cs">
+      <DependentUpon>sb_editProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_masterAdmin.Master.cs">
       <DependentUpon>sb_masterAdmin.Master</DependentUpon>
@@ -220,12 +289,12 @@
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
     </Compile>
-    <Compile Include="orderConfirmed.aspx.cs">
-      <DependentUpon>orderConfirmed.aspx</DependentUpon>
+    <Compile Include="sb_orderConfirmed.aspx.cs">
+      <DependentUpon>sb_orderConfirmed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="orderConfirmed.aspx.designer.cs">
-      <DependentUpon>orderConfirmed.aspx</DependentUpon>
+    <Compile Include="sb_orderConfirmed.aspx.designer.cs">
+      <DependentUpon>sb_orderConfirmed.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_masterProfile.Master.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>

@@ -84,13 +84,13 @@
                     </div>
                 </div>
 
-<%--                <ul class="nav-links">
+                <%--                <ul class="nav-links">
                     <li><a href="sb_userProfile.aspx">
                         <i class="uil uil-estate"></i>--%>
-                        <%--<asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White"></asp:HyperLink>--%>
-                        <%--<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White" />--%>
-                        <%--<asp:HyperLink ID="lnkUserProfile" runat="server" NavigateUrl="~/sb_userProfile.aspx" class="link-name">User Profile</asp:HyperLink>--%>
-<%--                        <span class="link-name">User Profile</span>
+                <%--<asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White"></asp:HyperLink>--%>
+                <%--<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White" />--%>
+                <%--<asp:HyperLink ID="lnkUserProfile" runat="server" NavigateUrl="~/sb_userProfile.aspx" class="link-name">User Profile</asp:HyperLink>--%>
+                <%--                        <span class="link-name">User Profile</span>
                     </a></li>
                     <li><a href="sb_orderHistory.aspx">
                         <i class="uil uil-estate"></i>

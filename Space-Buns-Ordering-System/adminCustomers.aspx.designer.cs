@@ -11,17 +11,17 @@ namespace Space_Buns_Ordering_System
 {
 
 
-    public partial class adminOrders
+    public partial class sb_customer
     {
 
         /// <summary>
-        /// viewOrderDetail1 control.
+        /// viewCustomerDetail1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink viewOrderDetail1;
+        protected global::System.Web.UI.WebControls.HyperLink viewCustomerDetail1;
 
         /// <summary>
         /// ImageButton11 control.
@@ -33,13 +33,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.ImageButton ImageButton11;
 
         /// <summary>
-        /// HyperLink1 control.
+        /// ImageButton12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton12;
 
         /// <summary>
         /// ImageButton7 control.
@@ -60,13 +60,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.ImageButton ImageButton8;
 
         /// <summary>
-        /// HyperLink2 control.
+        /// ImageButton9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton9;
 
         /// <summary>
         /// ImageButton4 control.
@@ -87,13 +87,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.ImageButton ImageButton5;
 
         /// <summary>
-        /// HyperLink3 control.
+        /// ImageButton6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton6;
 
         /// <summary>
         /// ImageButton1 control.
@@ -114,39 +114,39 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
 
         /// <summary>
-        /// HyperLink4 control.
+        /// ImageButton3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink4;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton3;
 
         /// <summary>
-        /// btnCusDetail4 control.
+        /// ImageButton13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnCusDetail4;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton13;
 
         /// <summary>
-        /// btnEditCus4 control.
+        /// ImageButton14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnEditCus4;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton14;
 
         /// <summary>
-        /// HyperLink5 control.
+        /// ImageButton15 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink5;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton15;
     }
 }

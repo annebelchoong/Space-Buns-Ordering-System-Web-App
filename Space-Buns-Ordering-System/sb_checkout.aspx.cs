@@ -22,7 +22,7 @@ namespace Space_Buns_Ordering_System
             var options = new SessionCreateOptions
             {
                 //SuccessUrl = "https://localhost:52001/success?id={CHECKOUT_SESSION_ID}",
-                SuccessUrl = "https://localhost:44358/orderConfirmed.aspx",
+                SuccessUrl = "https://localhost:44358/sb_orderConfirmed.aspx",
                 CancelUrl = "https://localhost:52001/cancel",   // should go back to cart 
                 PaymentMethodTypes = new List<string>
                 {

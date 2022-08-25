@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="orderConfirmed.aspx.cs" Inherits="Space_Buns_Ordering_System.temptest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sb_orderConfirmed.aspx.cs" Inherits="Space_Buns_Ordering_System.temptest" %>
 
 <!DOCTYPE html>
 
