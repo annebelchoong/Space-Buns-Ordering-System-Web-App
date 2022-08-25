@@ -21,6 +21,7 @@
         }
         .auto-style8 {
             margin-top: 13;
+            width: 176px;
         }
         .auto-style9 {
             height: 34px;
@@ -28,6 +29,24 @@
         .auto-style10 {
             margin-top: 13;
             height: 34px;
+            width: 176px;
+        }
+        .auto-style11 {
+            height: 32px;
+            width: 181px;
+        }
+        .auto-style12 {
+            margin-top: 13;
+            width: 181px;
+        }
+        .auto-style13 {
+            margin-top: 13;
+            height: 34px;
+            width: 181px;
+        }
+        .auto-style14 {
+            height: 32px;
+            width: 176px;
         }
     </style>
 </asp:Content>
@@ -42,7 +61,10 @@
             <tr>
                 <td class="auto-style1" rowspan="3" style="vertical-align: top; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Category Name :&nbsp;&nbsp;
                     <asp:TextBox ID="txtCatName0" runat="server"></asp:TextBox>
-                    &nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;<br />
+                    <br />
+                    Items Amount&nbsp;&nbsp; :&nbsp;
+                    <asp:TextBox ID="txtCatName1" runat="server"></asp:TextBox>
                     <br />
                     <br />
                     Set Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;
@@ -70,12 +92,14 @@
                     <table class="auto-style3">
                         <tr>
                             <td class="auto-style6" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps; font-family: 'Segoe UI', Verdana, sans-serif;">Name</td>
-                            <td class="auto-style7" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps; font-family: 'Segoe UI', Verdana, sans-serif;">Availability</td>
+                            <td class="auto-style11" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps; font-family: 'Segoe UI', Verdana, sans-serif;">Availability</td>
+                            <td class="auto-style14" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps; font-family: 'Segoe UI', Verdana, sans-serif;">Number of items</td>
                             <td class="auto-style6" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps; font-family: 'Segoe UI', Verdana, sans-serif;">Action</td>
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Promotion</td>
-                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style12" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">
                                             <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
@@ -84,7 +108,8 @@
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style7">Chicken</td>
-                                        <td class="auto-style7" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style11" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style14" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style7">
                                             <asp:HyperLink ID="HyperLink3" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
                                             &nbsp;&nbsp;&nbsp;
@@ -93,7 +118,8 @@
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Fish</td>
-                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style12" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">
                                             <asp:HyperLink ID="HyperLink4" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
@@ -102,7 +128,8 @@
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Beef</td>
-                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style12" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">
                                             <asp:HyperLink ID="HyperLink5" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
                                             &nbsp;&nbsp;&nbsp;
@@ -111,7 +138,8 @@
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Lamb</td>
-                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style12" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">
                                             <asp:HyperLink ID="HyperLink6" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
                                             &nbsp;&nbsp;&nbsp;
@@ -120,7 +148,8 @@
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Meatless</td>
-                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style12" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">
                                             <asp:HyperLink ID="HyperLink7" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
@@ -129,7 +158,8 @@
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Drinks</td>
-                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Not Available</td>
+                                        <td class="auto-style12" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Not Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">5</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">
                                             &nbsp;<asp:HyperLink ID="HyperLink8" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
@@ -138,7 +168,8 @@
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style9">Snacks</td>
-                                        <td class="auto-style10" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Not Available</td>
+                                        <td class="auto-style13" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Not Available</td>
+                                        <td class="auto-style10" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">4</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style9">
                                             &nbsp;<asp:HyperLink ID="HyperLink9" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;

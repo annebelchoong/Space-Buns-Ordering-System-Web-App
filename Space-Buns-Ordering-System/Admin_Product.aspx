@@ -90,7 +90,7 @@
                     <br />
                     <br />
                     Product Image :<br />
-                    <asp:TextBox ID="txtCatName3" runat="server"></asp:TextBox>
+                    <asp:FileUpload ID="FileUpload1" runat="server" />
                     <br />
                     <br />
                     Product Category :

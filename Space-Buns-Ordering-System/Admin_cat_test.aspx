@@ -9,9 +9,6 @@
         .auto-style3 {
             width: 100%;
         }
-        .auto-style5 {
-            width: 472px;
-        }
         .auto-style6 {
             height: 27px;
         }
@@ -23,7 +20,7 @@
             width: 541px;
         }
         .auto-style9 {
-            width: 149px;
+            width: 396px;
         }
     </style>
 </head>
@@ -37,12 +34,16 @@
                 <td colspan="3">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style1" rowspan="3" style="vertical-align: top; font-weight: bold; font-style: italic;">Category Name :&nbsp;&nbsp;
+                <td class="auto-style9" rowspan="3" style="vertical-align: top; font-weight: bold; font-style: italic;">Category Name&nbsp; :&nbsp;&nbsp;
                     <asp:TextBox ID="txtCatName0" runat="server"></asp:TextBox>
                     &nbsp;&nbsp;&nbsp;
                     <br />
                     <br />
-                    Set Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;
+                    Items Amount&nbsp;&nbsp; :&nbsp;&nbsp;
+                    <asp:TextBox ID="txtCatName1" runat="server" TextMode="Number"></asp:TextBox>
+                    <br />
+                    <br />
+                    Set Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;
                     <asp:DropDownList ID="ddlStatus" runat="server">
                         <asp:ListItem>Available</asp:ListItem>
                         <asp:ListItem>Not Available</asp:ListItem>
@@ -68,11 +69,13 @@
                         <tr>
                             <td class="auto-style6" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps;">Name</td>
                             <td class="auto-style7" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps;">Availability</td>
+                            <td class="auto-style7" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps;">Number Of Items</td>
                             <td class="auto-style6" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps;">Action</td>
                         </tr>
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin;">Promotion</td>
                                         <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">
                                             <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
@@ -82,6 +85,7 @@
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin;" class="auto-style7">Chicken</td>
                                         <td class="auto-style7" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">Available</td>
+                                        <td class="auto-style7" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;" class="auto-style7">
                                             <asp:HyperLink ID="HyperLink3" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
                                             &nbsp;&nbsp;&nbsp;
@@ -91,6 +95,7 @@
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin;">Fish</td>
                                         <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">
                                             <asp:HyperLink ID="HyperLink4" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
@@ -100,6 +105,7 @@
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin;">Beef</td>
                                         <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">
                                             <asp:HyperLink ID="HyperLink5" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
                                             &nbsp;&nbsp;&nbsp;
@@ -109,6 +115,7 @@
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin;">Lamb</td>
                                         <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">
                                             <asp:HyperLink ID="HyperLink6" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
                                             &nbsp;&nbsp;&nbsp;
@@ -118,6 +125,7 @@
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin;">Meatless</td>
                                         <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">3</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">
                                             <asp:HyperLink ID="HyperLink7" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
@@ -127,6 +135,7 @@
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin;">Drinks</td>
                                         <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">Not Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">5</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">
                                             &nbsp;<asp:HyperLink ID="HyperLink8" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
@@ -136,6 +145,7 @@
                         <tr>
                                         <td style="text-align: center; border-right-style: solid; border-right-width: thin; border-left-style: solid; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin;">Snacks</td>
                                         <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin;">Not Available</td>
+                                        <td class="auto-style8" style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin;">4</td>
                                         <td style="text-align: center; border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin;">
                                             &nbsp;<asp:HyperLink ID="HyperLink9" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;
