@@ -11,6 +11,41 @@
             width: 664px;
             text-align: center;
         }
+        .auto-style2 {
+            width: 664px;
+        }
+         .btn{
+            justify-content:center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform .2s ease;
+            width: 90px;
+            height: 40px;
+            background-color: #1A1A1A;
+            color: #B97836;
+            border: 1px #B97836 solid;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+        btn:hover {
+            text-decoration: none;
+            color: white;
+            background-color: #B97836;
+            transition: 250ms;
+        }
+        input:focus {
+            border: 1px solid white;
+        }
+
+        .input{
+            height: 12px;
+            border-radius: 6px;
+            border: 1px #B97836 solid;
+            background-color: #1A1A1A;
+            margin: 10px 0px;
+            padding: 10px;
+        }
     </style>
     </head>
 <body>
@@ -27,7 +62,7 @@
                             <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;" class="auto-style1">
                                 <tr>
                                     <td>
-                                        <table cellpadding="0" >
+                                        <table cellpadding="0" class="auto-style2" >
                                             <tr>
                                                 <td align="center" colspan="2">&nbsp;</td>
                                             </tr>
@@ -44,12 +79,12 @@
                                             </tr>
                                             <tr>
                                                 <td align="center" colspan="2">
-                                                    <asp:TextBox ID="Username" runat="server"></asp:TextBox>
+                                                    <asp:TextBox ID="Username" runat="server" CssClass="input"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="UsernameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="Username is required." ForeColor="Red" ToolTip="Username is required." ValidationGroup="PasswordRecovery1">*</asp:RequiredFieldValidator>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td align="right">&nbsp;</td>
+                                                <td>&nbsp;</td>
                                                 <td>&nbsp;</td>
                                             </tr>
                                             <tr>
@@ -59,7 +94,7 @@
                                             </tr>
                                             <tr>
                                                 <td colspan="2" >
-                                                    <asp:Button ID="submitButton" runat="server" CommandName="Submit" Text="Submit" ValidationGroup="PasswordRecovery1" />
+                                                    <asp:Button ID="submitButton" runat="server" class="btn" CommandName="Submit" Text="Submit" ValidationGroup="PasswordRecovery1" />
                                                 </td>
                                             </tr>
                                         </table>
