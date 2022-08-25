@@ -76,9 +76,11 @@
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
+    <Content Include="CSS\sb_menu.css" />
     <Content Include="CSS\sb_menu_test.css" />
     <Content Include="CSS\sb_order.css" />
     <Content Include="Javascript\sb_index.js" />
+    <Content Include="Javascript\sb_menu.js" />
     <Content Include="Javascript\sb_order.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
@@ -100,6 +102,7 @@
     <Content Include="Media\Icons\favicon.ico" />
     <Content Include="Media\Icons\GrabPay.svg" />
     <Content Include="Media\Icons\mastercard.svg" />
+    <Content Include="Media\Icons\shopping-cart.svg" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
     <Content Include="Media\Icons\SpaceBunsMarker.svg" />
     <Content Include="Media\Icons\touch-n-go-ewallet.svg" />
@@ -135,6 +138,7 @@
     <Content Include="Media\Reviews\Review 4.png" />
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
+    <Content Include="sb_menu.aspx" />
     <Content Include="sb_menu_test.aspx" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
@@ -147,6 +151,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="sb_menu.aspx.cs">
+      <DependentUpon>sb_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_menu.aspx.designer.cs">
+      <DependentUpon>sb_menu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sb_menu_test.aspx.cs">
       <DependentUpon>sb_menu_test.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

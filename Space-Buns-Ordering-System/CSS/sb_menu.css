@@ -1,10 +1,116 @@
-﻿html {
-    background-color: #252627;
-    scroll-behavior: smooth;
-    font-family: 'Segoe UI', Verdana, sans-serif;
+﻿@charset "utf-8";
+
+@font-face {
+    font-family: Amsterdam Variation_2;
+    src: url('Fonts/Amsterdam\ Variation_2.ttf') format(truetype);
 }
 
-.btnAddToCart  {
+/* ##################### Menu Navigation Styles ###################### */
+
+nav.menu-nav {
+    float: none;
+    position: sticky;
+    top: 65px;
+    background-color: rgba(26, 26, 26, 0.8);
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+}
+
+    nav.menu-nav ul li {
+        list-style-type: none;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+.menu-nav ul li a {
+    color: #ffffff;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: bolder
+}
+
+nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
+    text-decoration: none;
+}
+
+.menu-nav a:hover, .menu-nav a:active {
+    color: #B97836;
+    transition: 0.25s;
+}
+
+/* ###################### Menu Item Styles ###################### */
+
+.menu-row {
+    padding-top: 50px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1140px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.menu-category-name {
+    color: #B97836;
+    padding-left: 65px;
+    font-size: 2em;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.menu-item {
+    text-align: center;
+    margin: 10px;
+}
+
+    .menu-item article > * {
+        padding: 5px;
+    }
+
+    .menu-item img {
+        border-style: none;
+        max-width: 250px;
+        max-height: 250px;
+        border-radius: 25px;
+        box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.3);
+        margin-bottom: 10px;
+    }
+
+.menu-item-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #B97836;
+}
+
+.menu-item-desc {
+    font-size: 0.9em;
+    color: white;
+}
+
+.menu-item-desc {
+    max-width: fit-content;
+    opacity: 0.6;
+}
+
+.menu-item-price{
+    color: white;
+}
+
+.menu-content section:nth-child(even) {
+    background-color: #1A1A1A;
+}
+
+/*####################### Add to cart #########################*/
+
+.btnAddToCart {
     width: 120px;
     height: 40px;
     border: 1px solid #B97836;
@@ -12,7 +118,7 @@
     background-color: #1A1A1A;
     color: #B97836;
     font-weight: bold;
-/*    margin-top: 15px;*/
+    /*    margin-top: 15px;*/
     cursor: pointer;
 }
 
@@ -27,13 +133,14 @@
     cursor: pointer;
     font-size: 18px;
 }
+
 .btnAddToCart:hover {
     background-color: #B97836;
     color: #fff;
     transition: 250ms;
 }
 
-btnAddToCartConfirm:hover {
+.btnAddToCartConfirm:hover {
     background-color: #252627;
     color: #B97836;
     transition: 250ms;
@@ -49,7 +156,7 @@ btnAddToCartConfirm:hover {
 .popupPanel {
     padding: 30px;
     position: relative;
-    width: 40%;
+    width: 45%;
     height: 70%;
     background-color: #B97836;
     border-radius: 20px;
@@ -61,7 +168,7 @@ btnAddToCartConfirm:hover {
     right: 31%;
 }
 
-#btnClose {
+.btnClose {
     background-color: transparent;
     border: none;
     font-size: 40px;
@@ -111,7 +218,7 @@ btnAddToCartConfirm:hover {
 }
 
 .accordian {
-    width: 90%;
+    width: 100%;
     padding-left: 30px;
     padding-right: 30px;
     /*    padding-bottom: 30px;*/
@@ -146,22 +253,6 @@ btnAddToCartConfirm:hover {
     padding: 5px 0px 5px 0px;
 }
 
-/*===========scroll bar for panel=============*/
-#pnlCustomization::-webkit-scrollbar {
-    width: 20px;
-}
-
-#pnlCustomization::-webkit-scrollbar-track {
-    background-color: #252627;
-    border-radius: 0px 30px 30px 0px;
-}
-
-#pnlCustomization::-webkit-scrollbar-thumb {
-    background-color: #3c3c3c;
-    border-radius: 20px 20px 20px 20px;
-}
-
-/*==================================================*/
 .bottomContainer {
     display: flex;
     justify-content: space-between;
@@ -171,10 +262,9 @@ btnAddToCartConfirm:hover {
 .quantityContainer {
     display: flex;
     align-items: center;
-
 }
 
-.buttonQuantity{
+.buttonQuantity {
     font-size: 30px;
     background-color: white;
     border: none;
@@ -190,15 +280,29 @@ btnAddToCartConfirm:hover {
     background-color: #252627;
     height: 40px;
     border-radius: 10px;
-    border:none;
+    border: none;
     color: white;
     text-align: center;
 }
 
-#lblTotalPrice{
+.lblTotalPrice {
     font-size: 30px;
-    font-weight:500;
+    font-weight: 500;
     color: white;
+}
+/*######################### scroll bar for panel#######################*/
+.popupPanel::-webkit-scrollbar {
+    width: 20px;
+}
+
+.popupPanel::-webkit-scrollbar-track {
+    background-color: #252627;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.popupPanel::-webkit-scrollbar-thumb {
+    background-color: #3c3c3c;
+    border-radius: 20px 20px 20px 20px;
 }
 
 /*=========Cart slide in panel ============*/
@@ -215,7 +319,7 @@ btnAddToCartConfirm:hover {
     box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
     padding-right: 30px;
     padding-left: 30px;
-    z-index:20;
+    z-index: 20;
     color: white;
     -webkit-transition: all 0.5s ease-in-out;
 }
@@ -237,14 +341,14 @@ btnAddToCartConfirm:hover {
     padding-bottom: 10px;
 }
 
-.cartNavBar div{
+.cartNavBar div {
     text-align: center;
     font-weight: bold;
     font-size: 20px;
     padding-bottom: 40px;
 }
 
-#btnCloseCart {
+.btnCloseCart {
     background-color: transparent;
     border: none;
     font-size: 40px;
@@ -258,21 +362,22 @@ btnAddToCartConfirm:hover {
     right: 5%;
 }
 
-.imgCart{
-    width:80px;
+.imgCart {
+    width: 80px;
     padding: 0px;
 }
 
-.product{
-    display:flex;
+.product {
+    display: flex;
     padding-bottom: 30px;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
 .productColumn {
     display: flex;
     flex-direction: column;
 }
+
 .productTop, .productBottom {
     width: 350px;
     display: flex;
@@ -295,24 +400,24 @@ btnAddToCartConfirm:hover {
     padding-bottom: 20px;
 }
 
-.totalPrice{
+.totalPrice {
     padding-top: 15px;
     font-size: 20px;
     font-weight: 500;
 }
 
-.finalAmount{
-    display:flex;
-    justify-content:space-between;
+.finalAmount {
+    display: flex;
+    justify-content: space-between;
 }
 
-.finalAmount div{
-    font-size: 30px;
-    font-weight: bold;
-    color:#B97836;
-}
+    .finalAmount div {
+        font-size: 30px;
+        font-weight: bold;
+        color: #B97836;
+    }
 
-#btnCheckout {
+.btnCheckout {
     width: 100%;
     height: 50px;
     border: 1px solid #B97836;
@@ -325,8 +430,26 @@ btnAddToCartConfirm:hover {
     margin-top: 30px;
 }
 
-    #btnCheckout:hover {
+    .btnCheckout:hover {
         background-color: #B97836;
         color: #fff;
         transition: 250ms;
     }
+
+.imgbtnCart{
+    right: 40px;
+    top:0;
+    cursor:pointer;
+}
+
+/* ###################### Media Queries ###################### */
+
+@media only screen and (max-width:445px) {
+    nav.menu-nav {
+        font-size: 0.8em;
+    }
+
+    .menu-nav ul li a {
+        padding: 0 8px;
+    }
+}

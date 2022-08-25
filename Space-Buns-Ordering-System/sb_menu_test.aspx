@@ -256,7 +256,7 @@
         </div>
     </form>
     <script>
-        let openPanelButton = document.getElementById("btnCart");
+        let openPanelButton = document.getElementById("imgbtnCart");
         let closePanelButton = document.getElementById("btnCloseCart");
         //let cartPanel = document.querySelector(".cart-panel");
         let cartPanel = document.getElementById("pnlCart");
