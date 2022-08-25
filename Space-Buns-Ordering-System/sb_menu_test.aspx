@@ -11,11 +11,6 @@
     <%--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />--%>
 
     <style>
-        .row {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
 
         .cart-panel {
             position: fixed;
