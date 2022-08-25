@@ -5,12 +5,6 @@
 }
 
 
-html {
-    background-color: #252627;
-    scroll-behavior: smooth;
-    font-family: 'Segoe UI', Verdana, sans-serif;
-}
-
 .options-block {
     background-color: var(--darkgray);
     margin: 30px auto;
@@ -33,7 +27,7 @@ html {
     padding: 10px 20px;
 }
 
-#btnDelivery, #btnPickup {
+.btnDelivery, .btnPickup {
     border: none; 
     color: var(--gold);
     background-color: #000;
@@ -46,7 +40,7 @@ html {
     margin: 25px 50px;
 }
 
-    #btnDelivery:hover, #btnPickup:hover, #btnConfirm:hover, .button:hover {
+    .btnDelivery:hover, .btnPickup:hover, .btnConfirm:hover, .button:hover {
         background-color: var(--gold);
         color: var(--white);
         transition: 250ms;
@@ -54,11 +48,19 @@ html {
         cursor: pointer;
     }
 
-    #map_delivery{
-        width: 700px;
-        height: 500px;
-        border-radius: 30px;
+    .btnDelivery:focus, .btnPickup:focus {
+        background-color: var(--gold);
+        color: var(--white);
+        transition: 250ms;
+        outline: none;
+        cursor: pointer;
     }
+
+        #map_delivery {
+            width: 700px;
+            height: 500px;
+            border-radius: 30px;
+        }
 
     .title{
         font-size: 2em;
@@ -71,6 +73,7 @@ html {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 50px;
 /*    justify-content: center;*/
 }
 
@@ -81,11 +84,6 @@ html {
     text-align: left;
 }
 
-#delivery-map, #pickup-map {
-    border-radius: 20px;
-    height: 500px;
-    color: #000;
-}
 
 .textbox {
     width: 100%;
@@ -104,7 +102,7 @@ html {
     display:flex;
     justify-content: space-around;
 }
-#btnConfirm {
+.btnConfirm {
     width: 160px;
     border: none;
     color: var(--gold);
@@ -118,12 +116,16 @@ html {
 }
 
 .map {
-/*    width: 70%;*/
+    /*    width: 70%;*/
     height: 500px;
     border-radius: 30px;
     position: relative;
-    margin: 0px 300px 0px 300px;
-    
+    margin: 0px 300px 50px 300px;
+    padding-bottom: 50px;
+}
+
+.mapContainer{
+    padding-bottom: 50px;
 }
 
 
@@ -135,9 +137,9 @@ html {
 }
 
 .modalpopup {
-    padding: 20px 0px 24px 10px;
+    padding: 30px;
     position: relative;
-    width: 30%;
+    width: 35%;
     height: 460px;
     background-color: #B97836;
     border-radius: 20px;
@@ -148,7 +150,7 @@ html {
     right: 35%;
 }
 
-#btnClose {
+.btnClose {
     background-color: transparent;
     border: none;
     font-size: 40px;
@@ -156,16 +158,14 @@ html {
     cursor: pointer;
 }
 
-#pnlDateTime{
-    padding: 20px;
-}
+
 
 .selectDateandTimeTitle{
     display: flex;
     justify-content:center;
 }
 
-#lblDeliveryType {
+.lblDeliveryType {
     font-size: 2em;
     color: white;
     font-weight: bold;
@@ -186,7 +186,7 @@ html {
     text-align:left;
 }
 
-#ddlDates, #ddlTime {
+.ddlDates, .ddlTime {
     display: inline-block;
     width: 170px;
     font-size: 1em;
@@ -213,7 +213,7 @@ html {
     justify-content: center;
 }
 
-#btnOrder {
+.btnOrder {
     border: none;
     color: var(--gold);
     border-radius: 30px;
@@ -226,7 +226,7 @@ html {
     background-color: var(--white);
 }
 
-    #btnOrder:hover {
+    .btnOrder:hover {
         background-color: var(--darkgray);
         color: var(--gold);
         transition: 250ms;

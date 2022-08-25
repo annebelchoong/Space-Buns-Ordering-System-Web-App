@@ -77,7 +77,7 @@
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
     <Content Include="CSS\sb_menu_test.css" />
-    <Content Include="CSS\sb_order_test.css" />
+    <Content Include="CSS\sb_order.css" />
     <Content Include="Javascript\sb_index.js" />
     <Content Include="Javascript\sb_order.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
@@ -139,6 +139,7 @@
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
     <Content Include="sb_index.aspx" />
+    <Content Include="sb_order.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +189,13 @@
     </Compile>
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sb_order.aspx.cs">
+      <DependentUpon>sb_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_order.aspx.designer.cs">
+      <DependentUpon>sb_order.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_order_test.aspx.cs">
       <DependentUpon>sb_order_test.aspx</DependentUpon>
