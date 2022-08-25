@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_orderDetail.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_orderDetail" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/sb_adminOrderDetails.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-top: 120px;">
 
         <%--<section class="vh-80" style="background-color: #eee;">--%>
         <section class="vh-50">
@@ -86,7 +87,7 @@
                             <div class="row">
                                 <div class="col-xl-8">
                                     <ul class="list-unstyled">
-                                        <li class="text-muted">To: <span style="color: #000000;"><strong>John Jena</strong></span></li>
+                                        <li class="text-muted">To: <span style="color: #000000;"><strong>Cohn Jena</strong></span></li>
                                         <li class="text-muted">&nbsp &nbsp 1, Jalan Danau Saujana</li>
                                         <li class="text-muted">&nbsp &nbsp Setapak, 53300</li>
                                         <li class="text-muted">&nbsp &nbsp Kuala Lumpur, Malaysia</li>

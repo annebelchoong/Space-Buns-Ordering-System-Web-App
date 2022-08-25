@@ -97,7 +97,7 @@
                                         </tr>
                                         <tr>
                                             <td align="center" class="auto-style6">
-                                                <asp:HyperLink ID="forgetPwLink" runat="server" NavigateUrl="~/sb_forgetPwTest.aspx">Forget Password</asp:HyperLink>
+                                                <asp:HyperLink ID="forgetPwLink" runat="server" NavigateUrl="~/sb_forgetPassword.aspx">Forget Password</asp:HyperLink>
                                             </td>
                                         </tr>
                                         <tr>

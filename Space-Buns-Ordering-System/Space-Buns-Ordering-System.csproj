@@ -184,7 +184,7 @@
     <Content Include="sb_contactUs.aspx" />
     <Content Include="sb_editProfile.aspx" />
     <Content Include="sb_events.aspx" />
-    <Content Include="sb_forgetPwTest.aspx" />
+    <Content Include="sb_forgetPassword.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="sb_login.aspx" />
     <Content Include="sb_orderConfirmed.aspx" />
@@ -293,11 +293,11 @@
     <Compile Include="sb_events.aspx.designer.cs">
       <DependentUpon>sb_events.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_forgetPwTest.aspx.cs">
-      <DependentUpon>sb_forgetPwTest.aspx</DependentUpon>
+    <Compile Include="sb_forgetPassword.aspx.cs">
+      <DependentUpon>sb_forgetPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_forgetPwTest.aspx.designer.cs">
-      <DependentUpon>sb_forgetPwTest.aspx</DependentUpon>
+    <Compile Include="sb_forgetPassword.aspx.designer.cs">
+      <DependentUpon>sb_forgetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_login.aspx.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
