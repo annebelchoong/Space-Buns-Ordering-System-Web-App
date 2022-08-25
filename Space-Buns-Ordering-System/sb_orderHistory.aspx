@@ -1,18 +1,14 @@
-﻿<%--<%@ Page Title="" Language="C#" MasterPageFile="~/sb_masterAdmin.Master" AutoEventWireup="true" CodeBehind="adminOrders.aspx.cs" Inherits="Space_Buns_Ordering_System.adminOrders" %>--%>
-<%@ Page Title="" Language="C#" MasterPageFile="~/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="adminOrderDetails.aspx.cs" Inherits="Space_Buns_Ordering_System.adminOrderDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_orderHistory.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_orderHistory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
 
-
-
         <div>
             Search OrderID: 
         <asp:TextBox ID="txtSearchOrder" runat="server"></asp:TextBox>
         </div>
-
 
         <div class="row my-5">
             <h3 class="fs-4 mb-3">Recent Orders</h3>
