@@ -105,9 +105,12 @@
     <Content Include="CSS\sb_forgetPw.css" />
     <Content Include="CSS\sb_login.css" />
     <Content Include="CSS\sb_masterProfileLayout.css" />
+    <Content Include="CSS\sb_menu.css" />
+    <Content Include="CSS\sb_order.css" />
     <Content Include="CSS\sb_orderConfirmation.css" />
     <Content Include="CSS\sb_register.css" />
     <Content Include="Javascript\adminDashboard.js" />
+    <Content Include="Javascript\sb_order.js" />
     <Content Include="Media\Ads\foodbank.jpg" />
     <Content Include="Media\Ads\gogreen.jpg" />
     <Content Include="CSS\sb_aboutUs.css" />
@@ -187,6 +190,8 @@
     <Content Include="sb_forgetPassword.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="sb_login.aspx" />
+    <Content Include="sb_menu.aspx" />
+    <Content Include="sb_order.aspx" />
     <Content Include="sb_orderConfirmed.aspx" />
     <Content Include="sb_orderDetail.aspx" />
     <Content Include="sb_orderHistory.aspx" />
@@ -325,6 +330,20 @@
     </Compile>
     <Compile Include="sb_master.Master.designer.cs">
       <DependentUpon>sb_master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="sb_menu.aspx.cs">
+      <DependentUpon>sb_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_menu.aspx.designer.cs">
+      <DependentUpon>sb_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_order.aspx.cs">
+      <DependentUpon>sb_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_order.aspx.designer.cs">
+      <DependentUpon>sb_order.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_orderConfirmed.aspx.cs">
       <DependentUpon>sb_orderConfirmed.aspx</DependentUpon>
