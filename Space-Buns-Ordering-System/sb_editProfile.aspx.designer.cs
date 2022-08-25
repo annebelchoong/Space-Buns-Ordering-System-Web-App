@@ -11,7 +11,7 @@ namespace Space_Buns_Ordering_System
 {
 
 
-    public partial class sb_userProfile
+    public partial class sb_editProfile
     {
 
         /// <summary>
@@ -33,22 +33,22 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblLName;
 
         /// <summary>
-        /// lblUFName control.
+        /// txtFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUFName;
+        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
 
         /// <summary>
-        /// lblULName control.
+        /// txtLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblULName;
+        protected global::System.Web.UI.WebControls.TextBox txtLastName;
 
         /// <summary>
         /// lblUsername control.
@@ -60,13 +60,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblUsername;
 
         /// <summary>
-        /// lblUUsername control.
+        /// txtUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUUsername;
+        protected global::System.Web.UI.WebControls.TextBox txtUsername;
 
         /// <summary>
         /// lblEmail control.
@@ -78,13 +78,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblEmail;
 
         /// <summary>
-        /// lblUEmail control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
         /// lblPhoneNo control.
@@ -96,13 +96,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblPhoneNo;
 
         /// <summary>
-        /// lblUPhoneNo control.
+        /// txtPhoneNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUPhoneNo;
+        protected global::System.Web.UI.WebControls.TextBox txtPhoneNo;
 
         /// <summary>
         /// lblAddress control.
@@ -114,13 +114,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblAddress;
 
         /// <summary>
-        /// lblUAddress control.
+        /// txtAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtAddress;
 
         /// <summary>
         /// lblPostCode control.
@@ -141,22 +141,22 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblState;
 
         /// <summary>
-        /// lblUPostCode control.
+        /// txtPostCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUPostCode;
+        protected global::System.Web.UI.WebControls.TextBox txtPostCode;
 
         /// <summary>
-        /// lblUState control.
+        /// txtState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUState;
+        protected global::System.Web.UI.WebControls.TextBox txtState;
 
         /// <summary>
         /// lblDoBirth control.
@@ -168,12 +168,12 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblDoBirth;
 
         /// <summary>
-        /// lblUDoBirth control.
+        /// txtDoB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUDoBirth;
+        protected global::System.Web.UI.WebControls.TextBox txtDoB;
     }
 }

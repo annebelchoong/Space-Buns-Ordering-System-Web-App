@@ -392,6 +392,7 @@ nav.close ~ .dashboard .top{
     nav.close li a .link-name{
         opacity: 1;
         pointer-events: auto;
+        color:white;
     }
     nav ~ .dashboard{
         left: 73px;
