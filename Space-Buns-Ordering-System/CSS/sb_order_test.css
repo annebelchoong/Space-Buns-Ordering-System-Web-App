@@ -1,0 +1,233 @@
+﻿:root {
+    --gold: hsl(30, 55%, 47%);
+    --darkgray: hsl(0, 0%, 10%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+html {
+    background-color: #252627;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+.options-block {
+    background-color: var(--darkgray);
+    margin: 30px auto;
+    width: clamp(20%, 530px, 80%);
+    border-radius: 18px;
+    text-align: center;
+}
+
+.button {
+    all: unset;
+    cursor: pointer;
+    background-color: #000;
+    border: 1px var(--gold) solid;
+    color: var(--gold);
+    font-weight: bold;
+    border-radius: 9px;
+    font-size: 1.3em;
+    border-radius: 30px;
+    margin-top: 6px;
+    padding: 10px 20px;
+}
+
+#btnDelivery, #btnPickup {
+    border: none; 
+    color: var(--gold);
+    background-color: #000;
+    border-radius: 30px;
+    margin-top: 6px;
+    padding: 8px 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 2px var(--gold) solid;
+    margin: 25px 50px;
+}
+
+    #btnDelivery:hover, #btnPickup:hover, #btnConfirm:hover, .button:hover {
+        background-color: var(--gold);
+        color: var(--white);
+        transition: 250ms;
+        outline: none;
+        cursor: pointer;
+    }
+
+    #map_delivery{
+        width: 700px;
+        height: 500px;
+        border-radius: 30px;
+    }
+
+    .title{
+        font-size: 2em;
+        color: white;
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+.deliverySection {
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+/*    justify-content: center;*/
+}
+
+.deliveryRight {
+    display: flex;
+    flex-direction:column;
+    width: 40%;
+    text-align: left;
+}
+
+#delivery-map, #pickup-map {
+    border-radius: 20px;
+    height: 500px;
+    color: #000;
+}
+
+.textbox {
+    width: 100%;
+    background-color: var(--darkgray);
+    color: var(--white);
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    font-size: 0.9em;
+    border: 1px var(--gold) solid;
+    border-radius: 6px;
+    margin: 10px auto 20px;
+    padding: 10px;
+    resize: none;
+}
+
+.confirmButton{
+    display:flex;
+    justify-content: space-around;
+}
+#btnConfirm {
+    width: 160px;
+    border: none;
+    color: var(--gold);
+    background-color: #000;
+    border-radius: 30px;
+    margin-top: 6px;
+    padding: 8px 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 2px var(--gold) solid;
+}
+
+.map {
+/*    width: 70%;*/
+    height: 500px;
+    border-radius: 30px;
+    position: relative;
+    margin: 0px 300px 0px 300px;
+    
+}
+
+
+.modalBackground {
+    background-color: black;
+    filter: opacity(90) !important;
+    opacity: 0.6 !important;
+    z-index: 20;
+}
+
+.modalpopup {
+    padding: 20px 0px 24px 10px;
+    position: relative;
+    width: 30%;
+    height: 460px;
+    background-color: #B97836;
+    border-radius: 20px;
+}
+
+.close-btn {
+    position: fixed;
+    right: 35%;
+}
+
+#btnClose {
+    background-color: transparent;
+    border: none;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+#pnlDateTime{
+    padding: 20px;
+}
+
+.selectDateandTimeTitle{
+    display: flex;
+    justify-content:center;
+}
+
+#lblDeliveryType {
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+}
+
+.datetime{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.titleDatenTime{
+    color:white;
+    font-weight:bold;
+    font-size: 20px;
+}
+.date{
+    text-align:left;
+}
+
+#ddlDates, #ddlTime {
+    display: inline-block;
+    width: 170px;
+    font-size: 1em;
+    margin: 8px 0px;
+    padding: 10px;
+    text-align: center;
+    border: 1px var(--white) solid;
+    border-radius: 6px;
+}
+
+.delay-text {
+    background-color: var(--darkgray);
+    opacity: 0.8;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 25px auto 0;
+    color:white;
+    font-weight:bold;
+    font-size: 1.2em;
+}
+
+.orderBtn {
+    display: flex;
+    justify-content: center;
+}
+
+#btnOrder {
+    border: none;
+    color: var(--gold);
+    border-radius: 30px;
+    padding: 8px 20px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 2px var(--gold) solid;
+    margin: 20px;
+    padding: 10px;
+    background-color: var(--white);
+}
+
+    #btnOrder:hover {
+        background-color: var(--darkgray);
+        color: var(--gold);
+        transition: 250ms;
+    }
