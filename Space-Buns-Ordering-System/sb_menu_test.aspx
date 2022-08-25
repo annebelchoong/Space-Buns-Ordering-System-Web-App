@@ -141,7 +141,9 @@
         <%--        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
             <ContentTemplate>--%>
         <div class="cartButton">
-            <asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />
+            <%--<asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />--%>
+            <asp:HyperLink ID="btnCart" runat="server">HyperLink</asp:HyperLink>
+            <%--<asp:ImageButton ID="imgbtnCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" OnClientClick="return false;" />--%>
         </div>
         <div>
             <asp:Panel ID="pnlCart" runat="server" CssClass="cart-panel">
@@ -256,7 +258,7 @@
         </div>
     </form>
     <script>
-        let openPanelButton = document.getElementById("imgbtnCart");
+        let openPanelButton = document.getElementById("btnCart");
         let closePanelButton = document.getElementById("btnCloseCart");
         //let cartPanel = document.querySelector(".cart-panel");
         let cartPanel = document.getElementById("pnlCart");

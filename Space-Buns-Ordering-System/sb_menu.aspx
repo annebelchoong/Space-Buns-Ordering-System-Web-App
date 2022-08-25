@@ -22,7 +22,9 @@
         </nav>
 
         <div class="cartButton">
-            <asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />
+            <%--<asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />--%>
+            <%--<asp:HyperLink ID="hypCart" runat="server">HyperLink</asp:HyperLink>--%>
+
         </div>
         <main class="menu-content">
             <section id="chicken">
@@ -554,9 +556,9 @@
 
             </asp:Panel>
         </div>
-        
+
     </div>
-        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
-        <%--<ajaxToolkit:CollapsiblePanelExtender ID="CollapsiblePanelExtender1" runat="server" CollapseControlID="btnAddToCartConfirm" ExpandControlID="btnAddToCart" TargetControlID="pnlCustomization" />--%>
+    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
+    <%--<ajaxToolkit:CollapsiblePanelExtender ID="CollapsiblePanelExtender1" runat="server" CollapseControlID="btnAddToCartConfirm" ExpandControlID="btnAddToCart" TargetControlID="pnlCustomization" />--%>
     <%--<script src="Javascript/sb_menu.js"></script>--%>
 </asp:Content>

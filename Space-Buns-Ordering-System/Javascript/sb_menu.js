@@ -1,4 +1,4 @@
-﻿let openPanelButton = document.getElementById("btnCart");
+﻿let openPanelButton = document.getElementById("hypCart");
 let closePanelButton = document.getElementById("btnCloseCart");
 //let cartPanel = document.querySelector(".cart-panel");
 let cartPanel = document.getElementById("pnlCart");
