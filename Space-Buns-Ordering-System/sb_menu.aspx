@@ -454,7 +454,106 @@
     </asp:Panel>
     <div>
 
+        <div>
+            <asp:Panel ID="pnlCart" runat="server" CssClass="cart-panel">
 
+                <div class="cartNavBar">
+                    <div>
+                        <h2>Your cart</h2>
+                        You've added
+                <asp:Label ID="lblNumOfItems" runat="server" Text="2"></asp:Label>
+                        items
+                    </div>
+                    <div class="close-btn-cart">
+                        <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnCloseCart" />
+                    </div>
+                </div>
+                <div class="addressAndTime">
+                </div>
+                <div class="cartProduct">
+                    <div class="products">
+                        <div class="product">
+                            <div>
+                                <asp:Image ID="Image2" runat="server" ImageUrl="~/Media/menuBurgers/chicken1.jpg" CssClass="imgCart" />
+                            </div>
+                            <div class="productColumn">
+                                <div class="productTop">
+                                    <div class="productName">
+                                        Double Trouble
+                                    </div>
+                                    <div class="deleteProduct">
+                                        <asp:ImageButton ID="imgbtnTrash1" runat="server" ImageUrl="~/Media/Order/trash.svg" Height="20px" />
+                                    </div>
+                                </div>
+                                <div class="productBottom">
+                                    <div class="productQuantity">
+                                        <div class="decrementButton">
+                                            <asp:Button ID="btnIncrementCart" runat="server" Text="-" CssClass="buttonQuantity" />
+                                        </div>
+                                        <div class="quantityNumber">
+                                            <asp:TextBox ID="txtQuantityCart" runat="server" Text="1" CssClass="textQuantity"></asp:TextBox>
+                                        </div>
+                                        <div class="incrementButton">
+                                            <asp:Button ID="btnDecrementCart" runat="server" Text="+" CssClass="buttonQuantity" />
+                                        </div>
+                                    </div>
+                                    <div class="totalPrice">
+                                        RM
+                                <asp:Label ID="lblProductTotalPrice" runat="server" Text="17.00"></asp:Label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div>
+                                <asp:Image ID="Image3" runat="server" CssClass="imgCart" ImageUrl="~/Media/menuBurgers/beef3.jpg" />
+                            </div>
+                            <div class="productColumn">
+                                <div class="productTop">
+                                    <div class="productName">
+                                        King Of Cheese
+                                    </div>
+                                    <div class="deleteProduct">
+                                        <asp:ImageButton ID="imgbtnTrash2" runat="server" ImageUrl="~/Media/Order/trash.svg" Height="20px" />
+                                    </div>
+                                </div>
+                                <div class="productBottom">
+                                    <div class="productQuantity">
+                                        <div class="decrementButton">
+                                            <asp:Button ID="Button15" runat="server" Text="-" CssClass="buttonQuantity" />
+                                        </div>
+                                        <div class="quantityNumber">
+                                            <asp:TextBox ID="TextBox1" runat="server" Text="1" CssClass="textQuantity"></asp:TextBox>
+                                        </div>
+                                        <div class="incrementButton">
+                                            <asp:Button ID="Button16" runat="server" Text="+" CssClass="buttonQuantity" />
+                                        </div>
+                                    </div>
+                                    <div class="totalPrice">
+                                        RM
+                                <asp:Label ID="lblTotalPrice2" runat="server" Text="17.00"></asp:Label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="finalAmount">
+                        <div>
+                            Total
+                        </div>
+                        <div>
+                            RM
+                                <asp:Label ID="lblFinalAmount" runat="server" Text="34.00"></asp:Label>
+                        </div>
+                    </div>
+                    <div>
+                        <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="btnCheckout" />
+                    </div>
+                </div>
+
+            </asp:Panel>
+        </div>
         
     </div>
         <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
