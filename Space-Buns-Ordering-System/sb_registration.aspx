@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sb_registerTest.aspx.cs" Inherits="Space_Buns_Ordering_System.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sb_registration.aspx.cs" Inherits="Space_Buns_Ordering_System.WebForm1" %>
 
 <!DOCTYPE html>
 
@@ -157,7 +157,7 @@
                             </tr>
                             <tr>
                                 <td align="center" class="auto-style5">Already a member?
-                                    <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/sb_loginTest.aspx">Login</asp:HyperLink>
+                                    <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/sb_login.aspx">Login</asp:HyperLink>
                                 </td>
                             </tr>
                             <tr>

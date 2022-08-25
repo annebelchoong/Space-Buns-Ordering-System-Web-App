@@ -99,7 +99,9 @@
     <Content Include="adminSales.aspx" />
     <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="CSS\sb_adminOrderDetails.css" />
+    <Content Include="CSS\sb_contactUs.css" />
     <Content Include="CSS\sb_customer.css" />
+    <Content Include="CSS\sb_events.css" />
     <Content Include="CSS\sb_forgetPw.css" />
     <Content Include="CSS\sb_login.css" />
     <Content Include="CSS\sb_masterProfileLayout.css" />
@@ -179,14 +181,16 @@
     <Content Include="sb_changePassword.aspx" />
     <Content Include="sb_checkout.aspx" />
     <Content Include="adminCustomers.aspx" />
+    <Content Include="sb_contactUs.aspx" />
     <Content Include="sb_editProfile.aspx" />
+    <Content Include="sb_events.aspx" />
     <Content Include="sb_forgetPwTest.aspx" />
     <Content Include="sb_index.aspx" />
-    <Content Include="sb_loginTest.aspx" />
+    <Content Include="sb_login.aspx" />
     <Content Include="sb_orderConfirmed.aspx" />
     <Content Include="sb_orderDetail.aspx" />
     <Content Include="sb_orderHistory.aspx" />
-    <Content Include="sb_registerTest.aspx" />
+    <Content Include="sb_registration.aspx" />
     <Content Include="sb_userProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Ads.xml" />
@@ -269,11 +273,25 @@
     <Compile Include="adminCustomers.aspx.designer.cs">
       <DependentUpon>adminCustomers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sb_contactUs.aspx.cs">
+      <DependentUpon>sb_contactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_contactUs.aspx.designer.cs">
+      <DependentUpon>sb_contactUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sb_editProfile.aspx.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_editProfile.aspx.designer.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_events.aspx.cs">
+      <DependentUpon>sb_events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_events.aspx.designer.cs">
+      <DependentUpon>sb_events.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_forgetPwTest.aspx.cs">
       <DependentUpon>sb_forgetPwTest.aspx</DependentUpon>
@@ -281,11 +299,11 @@
     <Compile Include="sb_forgetPwTest.aspx.designer.cs">
       <DependentUpon>sb_forgetPwTest.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_loginTest.aspx.cs">
-      <DependentUpon>sb_loginTest.aspx</DependentUpon>
+    <Compile Include="sb_login.aspx.cs">
+      <DependentUpon>sb_login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_loginTest.aspx.designer.cs">
-      <DependentUpon>sb_loginTest.aspx</DependentUpon>
+    <Compile Include="sb_login.aspx.designer.cs">
+      <DependentUpon>sb_login.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_masterAdmin.Master.cs">
       <DependentUpon>sb_masterAdmin.Master</DependentUpon>
@@ -335,11 +353,11 @@
     <Compile Include="sb_orderHistory.aspx.designer.cs">
       <DependentUpon>sb_orderHistory.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_registerTest.aspx.cs">
-      <DependentUpon>sb_registerTest.aspx</DependentUpon>
+    <Compile Include="sb_registration.aspx.cs">
+      <DependentUpon>sb_registration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_registerTest.aspx.designer.cs">
-      <DependentUpon>sb_registerTest.aspx</DependentUpon>
+    <Compile Include="sb_registration.aspx.designer.cs">
+      <DependentUpon>sb_registration.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_userProfile.aspx.cs">
       <DependentUpon>sb_userProfile.aspx</DependentUpon>

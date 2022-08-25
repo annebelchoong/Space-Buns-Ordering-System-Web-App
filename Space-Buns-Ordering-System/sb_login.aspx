@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sb_loginTest.aspx.cs" Inherits="Space_Buns_Ordering_System.account" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sb_login.aspx.cs" Inherits="Space_Buns_Ordering_System.account" %>
 
 <!DOCTYPE html>
 
@@ -122,7 +122,7 @@
                                         <tr>
                                             <td class="auto-style6">
                                                 <asp:Button ID="loginButton" runat="server" class="btn" CommandName="Login" Text="Login"
-                                                    ValidationGroup="Login1" PostBackUrl="~/sb_userProfileTest.aspx" />
+                                                    ValidationGroup="Login1" PostBackUrl="sb_index.aspx" />
                                             </td>
                                         </tr>
                                         <tr>
@@ -130,7 +130,7 @@
                                         </tr>
                                         <tr>
                                             <td class="auto-style6">
-                                                <asp:HyperLink ID="notAMemLink" runat="server" NavigateUrl="~/sb_registerTest.aspx">Not a member?</asp:HyperLink>
+                                                <asp:HyperLink ID="notAMemLink" runat="server" NavigateUrl="~/sb_registration.aspx">Not a member?</asp:HyperLink>
                                             </td>
                                         </tr>
                                     </table>
