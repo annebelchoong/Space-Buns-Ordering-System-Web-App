@@ -24,9 +24,10 @@
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
-                    <i class="uil uil-tachometer-fast-alt"></i>
+                    <i class="fa fa-user" aria-hidden="true"></i>
                     <span class="text">User Profile</span>
                     <br />
+                    <%--<asp:ImageButton ID="btnEditUP" runat="server" ImageUrl="~/Media/Icons/whiteEdit.png" Width="25"/>--%>
                     <asp:Button ID="btnEditProfile" runat="server" class="btn" Text="Edit Profile" PostBackUrl="~/sb_editProfile.aspx" />
                     <asp:Button ID="btnChangePassword" runat="server" class="btn" Text="Change Password" PostBackUrl="~/sb_changePassword.aspx" />
                     <br />
