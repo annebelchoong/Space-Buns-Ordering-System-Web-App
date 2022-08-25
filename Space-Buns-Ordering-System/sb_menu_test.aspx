@@ -56,10 +56,12 @@
             </div>
             <div class="productBanner">
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/Media/menuBurgers/chicken1.jpg" Width="100px" />
-                <h1>Chicken Burger</h1>
+                <asp:Label ID="lblProductTitle" runat="server" Text="Crispy Chicken Burger"></asp:Label>
+                <%--<h1>Chicken Burger</h1>--%>
             </div>
             <div class="productDesc">
-                <p><b>Crispy chicken fillet </b>is bla bla bla askldjf; klasjd lkj asdf asdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf as dfas df asdf asdf as df as</p>
+                <asp:Label ID="lblProductDescription" runat="server" Text="<b>Crispy chicken fillet </b>is bla bla bla askldjf; klasjd lkj asdf asdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf as dfas df asdf asdf as df as"></asp:Label>
+                <%--<p><b>Crispy chicken fillet </b>is bla bla bla askldjf; klasjd lkj asdf asdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf as dfas df asdf asdf as df as</p>--%>
             </div>
             <div class="setSelection">
                 <asp:RadioButtonList ID="rblSetSelection" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="RblSetSelection_SelectedIndexChanged" AutoPostBack="True">
