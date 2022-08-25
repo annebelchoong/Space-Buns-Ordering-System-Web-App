@@ -28,19 +28,21 @@
                     <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-project-diagram me-2"></i>Customer</a>
-                    <%--<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-chart-line me-2"></i>Analytics</a>
+                        class="fas fa-user me-2"></i>Customers</a>
                     <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-paperclip me-2"></i>Reports</a>
+                        class="fas fa-store me-2"></i>Store Branches</a>
+                    <br />
                     <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-shopping-cart me-2"></i>Store Mng</a>--%>
+                        class="fas fa-list me-2"></i>Categories</a>
                     <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-gift me-2"></i>Products</a>
+                        class="fas fa-hamburger me-2"></i>Products</a>
+                    <br />
                     <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas far fa-clipboard me-2"></i>Orders</a>
                     <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-poll me-2"></i>Sales</a>
+                    <%--<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-chart-line me-2"></i>Analytics</a>--%>
                     <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
                 </div>
@@ -48,7 +50,7 @@
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
-            <div id="page-content-wrapper"> 
+            <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg py-4 px-4">
                     <div class="d-flex align-items-center">
                         <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
@@ -83,6 +85,8 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
+
+
                 <%--<div class="container-fluid px-4">
                 <div class="row g-3 my-2">
                     <div class="col-md-3">
@@ -127,7 +131,9 @@
                     </div>
                 </div>--%>
 
-                <%--<div class="row my-5">
+
+                <%--orders--%>
+                <%--   <div class="row my-5">
                     <h3 class="fs-4 mb-3">Recent Orders</h3>
                     <div class="col">
                         <table class="table bg-white rounded shadow-sm  table-hover">
@@ -216,6 +222,7 @@
                         </table>
                     </div>
                 </div>--%>
+
             </div>
         </div>
 
