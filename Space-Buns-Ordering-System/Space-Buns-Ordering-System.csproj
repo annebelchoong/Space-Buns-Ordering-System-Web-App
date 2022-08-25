@@ -76,6 +76,8 @@
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
+    <Content Include="CSS\sb_menu_test.css" />
+    <Content Include="CSS\sb_order_test.css" />
     <Content Include="Javascript\sb_index.js" />
     <Content Include="Javascript\sb_order.js" />
     <Content Include="Media\Banner\Backgroundimg.jpg" />
@@ -119,6 +121,7 @@
     <Content Include="Media\menuBurgers\meatless2.jpg" />
     <Content Include="Media\menuBurgers\meatless3.jpg" />
     <Content Include="Media\Order\trash-can.svg" />
+    <Content Include="Media\Order\trash.svg" />
     <Content Include="Media\Promotions\Alien Day.png" />
     <Content Include="Media\Promotions\Big Blast.jpg" />
     <Content Include="Media\Promotions\Buy1Free1.png" />
