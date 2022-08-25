@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\sb_customer.css" />
     <Content Include="CSS\sb_index.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
@@ -88,6 +92,7 @@
     <Content Include="Media\Home\intro_video.webm" />
     <Content Include="Media\Home\iswarya_M.jpeg" />
     <Content Include="Media\Home\Recommend.jpg" />
+    <Content Include="Media\Icons\delete.png" />
     <Content Include="Media\Icons\edit.png" />
     <Content Include="Media\Icons\edit.svg" />
     <Content Include="Media\Icons\estate.svg" />
@@ -95,6 +100,7 @@
     <Content Include="Media\Icons\favicon.ico" />
     <Content Include="Media\Icons\file-landscape-alt.svg" />
     <Content Include="Media\Icons\GrabPay.svg" />
+    <Content Include="Media\Icons\info.png" />
     <Content Include="Media\Icons\mastercard.svg" />
     <Content Include="Media\Icons\sign-out-alt.svg" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
@@ -132,7 +138,9 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="sb_adminDashboard.aspx" />
+    <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="sb_changePassword.aspx" />
+    <Content Include="sb_customer.aspx" />
     <Content Include="sb_editProfile.aspx" />
     <Content Include="sb_index.aspx" />
     <Content Include="sb_userProfile.aspx" />
@@ -160,6 +168,13 @@
     </Compile>
     <Compile Include="sb_changePassword.aspx.designer.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_customer.aspx.cs">
+      <DependentUpon>sb_customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_customer.aspx.designer.cs">
+      <DependentUpon>sb_customer.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_editProfile.aspx.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>

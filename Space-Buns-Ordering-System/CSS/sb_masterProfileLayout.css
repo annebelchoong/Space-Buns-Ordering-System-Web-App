@@ -210,6 +210,8 @@ body.dark .switch:before{
     left: 20px;
 }
 
+
+
 .dashboard {
     position: relative;
     left: 250px;
@@ -323,27 +325,7 @@ nav.close ~ .dashboard .top{
     background-color: var(--box1-color);
     transition: var(--tran-05);
 }
-.boxes .box i{
-    font-size: 35px;
-    color: var(--text-color);
-}
-.boxes .box .text{
-    white-space: nowrap;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--text-color);
-}
-.boxes .box .number{
-    font-size: 40px;
-    font-weight: 500;
-    color: var(--text-color);
-}
-.boxes .box.box2{
-    background-color: var(--box2-color);
-}
-.boxes .box.box3{
-    background-color: var(--box3-color);
-}
+
 .dash-content .activity .activity-data{
     display: flex;
     justify-content: space-between;

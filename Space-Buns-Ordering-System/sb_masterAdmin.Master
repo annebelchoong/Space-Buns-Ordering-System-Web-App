@@ -25,9 +25,9 @@
                     <asp:HyperLink runat="server" ImageHeight="60px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/aDash.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
                 </div>
                 <div class="list-group list-group-flush my-3">
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="sb_adminDashboard.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <a href="sb_customer.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-project-diagram me-2"></i>Customer</a>
                     <%--<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-chart-line me-2"></i>Analytics</a>
