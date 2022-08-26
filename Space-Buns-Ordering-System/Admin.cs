@@ -14,11 +14,23 @@ namespace Space_Buns_Ordering_System
     
     public partial class Admin
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Admin()
+        {
+            this.Customers = new HashSet<Customer>();
+            this.Products = new HashSet<Product>();
+        }
+    
         public string adminID { get; set; }
         public string adminName { get; set; }
         public string adminEmail { get; set; }
         public string adminPassword { get; set; }
         public string adminPhoneNo { get; set; }
         public string adminPosition { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Customer> Customers { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

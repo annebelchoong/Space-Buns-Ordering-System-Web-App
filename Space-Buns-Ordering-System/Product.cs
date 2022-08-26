@@ -26,9 +26,11 @@ namespace Space_Buns_Ordering_System
         public Nullable<decimal> quantity { get; set; }
         public Nullable<decimal> unitPrice { get; set; }
         public byte[] picture { get; set; }
+        public string adminID { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual Admin Admin { get; set; }
     }
 }
