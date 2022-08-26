@@ -42,6 +42,16 @@ h2 {
     text-align: unset;
 }
 
+#name, #email, #phoneNumber, #subject {
+    border-radius: 10px;
+    border: 1px #B97836 solid;
+    background-color: #1A1A1A;
+    margin: 10px 0px;
+    padding: 10px;
+}
+.details{
+    color: white;
+}
 .details::after {
     content: "*";
     color: red;
