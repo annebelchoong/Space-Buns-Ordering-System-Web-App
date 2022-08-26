@@ -30,7 +30,7 @@
           
             <div class="navbar-login">
                 <a href="sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart">HyperLink</asp:HyperLink>
+                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
             </div>
 
         </nav>

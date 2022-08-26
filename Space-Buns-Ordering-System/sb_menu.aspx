@@ -23,7 +23,7 @@
         </nav>
 
         <div class="cartButton">
-            <asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />
+            <%--<asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />--%>
         </div>
         <main class="menu-content">
             <section id="chicken">

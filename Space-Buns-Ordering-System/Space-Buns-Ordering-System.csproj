@@ -146,6 +146,7 @@
     <Content Include="Media\Icons\info.png" />
     <Content Include="Media\Icons\mastercard.svg" />
     <Content Include="Media\Icons\profile_pic.jpg" />
+    <Content Include="Media\Icons\shopping-cart.svg" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
     <Content Include="Media\Icons\SpaceBunsMarker.svg" />
     <Content Include="Media\Icons\touch-n-go-ewallet.svg" />
