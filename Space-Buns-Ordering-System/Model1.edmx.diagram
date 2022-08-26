@@ -21,6 +21,8 @@
         <AssociationConnector Association="SpaceBunsDatabaseModel.FK_productID" ManuallyRouted="false" />
         <AssociationConnector Association="SpaceBunsDatabaseModel.FK_paymentID" />
         <AssociationConnector Association="SpaceBunsDatabaseModel.FK_RescustomerID" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_adminID" />
+        <AssociationConnector Association="SpaceBunsDatabaseModel.FK_Product_ToAdmin" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -38,6 +38,7 @@
           <Property Name="city" Type="varchar" MaxLength="15" />
           <Property Name="zipcode" Type="numeric" Precision="5" Scale="0" />
           <Property Name="points" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="adminID" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -89,6 +90,7 @@
           <Property Name="quantity" Type="numeric" Precision="5" Scale="0" />
           <Property Name="unitPrice" Type="numeric" Precision="5" Scale="2" />
           <Property Name="picture" Type="image" />
+          <Property Name="adminID" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -102,6 +104,18 @@
           <Property Name="dateTime" Type="datetime" />
           <Property Name="venue" Type="varchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_adminID">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="adminID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="adminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_categoryID">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -162,6 +176,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Product_ToAdmin">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="adminID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="adminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_productID">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
@@ -196,6 +222,10 @@
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_adminID" Association="Self.FK_adminID">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
           <AssociationSet Name="FK_categoryID" Association="Self.FK_categoryID">
             <End Role="Category" EntitySet="Category" />
             <End Role="Product" EntitySet="Product" />
@@ -215,6 +245,10 @@
           <AssociationSet Name="FK_paymentID" Association="Self.FK_paymentID">
             <End Role="Payment" EntitySet="Payment" />
             <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ToAdmin" Association="Self.FK_Product_ToAdmin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Product" EntitySet="Product" />
           </AssociationSet>
           <AssociationSet Name="FK_productID" Association="Self.FK_productID">
             <End Role="Product" EntitySet="Product" />
@@ -239,6 +273,8 @@
           <Property Name="adminPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="adminPhoneNo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="adminPosition" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customers" Relationship="SpaceBunsDatabaseModel.FK_adminID" FromRole="Admin" ToRole="Customer" />
+          <NavigationProperty Name="Products" Relationship="SpaceBunsDatabaseModel.FK_Product_ToAdmin" FromRole="Admin" ToRole="Product" />
         </EntityType>
         <EntityType Name="Category">
           <Key>
@@ -265,6 +301,8 @@
           <Property Name="points" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_customerID" FromRole="Customer" ToRole="Order" />
           <NavigationProperty Name="Reservations" Relationship="SpaceBunsDatabaseModel.FK_RescustomerID" FromRole="Customer" ToRole="Reservation" />
+          <Property Name="adminID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Admin" Relationship="SpaceBunsDatabaseModel.FK_adminID" FromRole="Customer" ToRole="Admin" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -326,6 +364,8 @@
           <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK_categoryID" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK_productID" FromRole="Product" ToRole="OrderDetails" />
+          <Property Name="adminID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Admin" Relationship="SpaceBunsDatabaseModel.FK_Product_ToAdmin" FromRole="Product" ToRole="Admin" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -438,6 +478,14 @@
             <End Role="Customer" EntitySet="Customers" />
             <End Role="Reservation" EntitySet="Reservations" />
           </AssociationSet>
+          <AssociationSet Name="FK_adminID" Association="SpaceBunsDatabaseModel.FK_adminID">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ToAdmin" Association="SpaceBunsDatabaseModel.FK_Product_ToAdmin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_paymentID">
           <End Type="SpaceBunsDatabaseModel.Payment" Role="Payment" Multiplicity="0..1" />
@@ -460,6 +508,30 @@
             </Principal>
             <Dependent Role="Reservation">
               <PropertyRef Name="customerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_adminID">
+          <End Type="SpaceBunsDatabaseModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="SpaceBunsDatabaseModel.Customer" Role="Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="adminID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="adminID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ToAdmin">
+          <End Type="SpaceBunsDatabaseModel.Admin" Role="Admin" Multiplicity="0..1" />
+          <End Type="SpaceBunsDatabaseModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="adminID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="adminID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -494,6 +566,7 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="SpaceBunsDatabaseModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
                 <ScalarProperty Name="customerId" ColumnName="customerId" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="email" ColumnName="email" />
@@ -552,6 +625,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="SpaceBunsDatabaseModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
                 <ScalarProperty Name="productID" ColumnName="productID" />
                 <ScalarProperty Name="categoryID" ColumnName="categoryID" />
                 <ScalarProperty Name="name" ColumnName="name" />
