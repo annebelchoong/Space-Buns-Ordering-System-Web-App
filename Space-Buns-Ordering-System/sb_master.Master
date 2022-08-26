@@ -15,10 +15,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-            <nav id="navbar" class="navbar-fixedtop">
+        <nav id="navbar" class="navbar-fixedtop">
 
             <div class="navbar-logo">
-                <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>              
+                <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
             </div>
             <div class="navbar-links">
                 <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
@@ -27,10 +27,10 @@
                 <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
                 <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
             </div>
-          
+
             <div class="navbar-login">
                 <a href="sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
+                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
             </div>
 
         </nav>
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div>
-                        <asp:Button ID="btnCheckout" runat="server" Text="Checkout" />
+                        <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" />
                     </div>
                 </div>
 
@@ -147,45 +147,47 @@
         </div>
 
         <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-right">
-                <div class="footer-logo">
-                <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink> 
+            <div class="footer-container">
+                <div class="footer-right">
+                    <div class="footer-logo">
+                        <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink>
+                    </div>
+                </div>
+                <div class="footer-left">
+                    <div class="ourStore">
+                        <h4>Our Store</h4>
+                        <div class="footer-links">
+                            <div class="footer-links-1">
+                                <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
+                            </div>
+                            <div class="footer-links-2">
+                                <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_privacyPolicy.aspx">Privacy Policy</asp:HyperLink>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="followUs">
+                        <h4>Follow Us</h4>
+                        <div class="footer-socialLinks">
+                            <a href="https://www.facebook.com/" target="_blank"><i class='fab fa-facebook-f'></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class='fab fa-instagram'></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class='fab fa-twitter'></i></a>
+                        </div>
+                        <div class="copyright">
+                            <p>&#169; 2021 by Space Buns Sdn Bhd.
+                                <br>
+                                All Right Not Reserved</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-left">
-                <div class="ourStore">
-                    <h4>Our Store</h4>
-                    <div class="footer-links">
-                         <div class="footer-links-1">
-                        <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
-                    </div>
-                    <div class="footer-links-2">
-                         <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_privacyPolicy.aspx">Privacy Policy</asp:HyperLink>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="followUs">
-                    <h4>Follow Us</h4>
-                    <div class="footer-socialLinks">
-                        <a href="https://www.facebook.com/" target="_blank"><i class='fab fa-facebook-f'></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class='fab fa-instagram'></i></a>
-                        <a href="https://twitter.com/" target="_blank"><i class='fab fa-twitter'></i></a>
-                    </div>
-                    <div class="copyright">
-                        <p>&#169; 2021 by Space Buns Sdn Bhd. <br>All Right Not Reserved</p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
-    </footer>
+        </footer>
     </form>
     <script>
         let openPanelButton = document.getElementById("hypCart");
@@ -202,6 +204,32 @@
             cartPanel.classList.remove("open");
             //openPanelButton.classList.remove("hide");
         }
+    </script>
+
+
+    <%--stripe integration--%>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('pk_test_51LWbMdCffsYKlOgZJQu5OlKPoEe978IKUuzKJjwcW0ZDwb46LaVT09D3svdGTvaWoavzzCTqo9fM7DztaOL8dSGu00MhmVJabg');
+
+<%--        var form = document.getElementById("checkout_form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
+        });--%>
+
+
+        var clickToCheckout = document.getElementById("btnCheckout")
+        clickToCheckout.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
+        });
     </script>
 </body>
 </html>
