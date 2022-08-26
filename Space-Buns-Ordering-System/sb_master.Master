@@ -56,7 +56,7 @@
                         items
                     </div>
                     <div class="close-btn-cart">
-                        <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" />
+                        <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnCloseCart" />
                     </div>
                 </div>
                 <div class="addressAndTime">
@@ -73,7 +73,7 @@
                                         Double Trouble
                                     </div>
                                     <div class="deleteProduct">
-                                        <asp:ImageButton ID="imgbtnTrash1" runat="server" ImageUrl="~/Media/Order/trash.svg" Height="20px" />
+                                        <asp:ImageButton ID="imgbtnTrash1" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
                                     </div>
                                 </div>
                                 <div class="productBottom">
@@ -106,7 +106,7 @@
                                         King Of Cheese
                                     </div>
                                     <div class="deleteProduct">
-                                        <asp:ImageButton ID="imgbtnTrash2" runat="server" ImageUrl="~/Media/Order/trash.svg" Height="20px" />
+                                        <asp:ImageButton ID="imgbtnTrash2" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
                                     </div>
                                 </div>
                                 <div class="productBottom">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                     <div>
-                        <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" />
+                        <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
                     </div>
                 </div>
 
