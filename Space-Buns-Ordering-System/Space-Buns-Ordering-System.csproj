@@ -150,6 +150,7 @@
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
     <Content Include="Media\Icons\SpaceBunsMarker.svg" />
     <Content Include="Media\Icons\touch-n-go-ewallet.svg" />
+    <Content Include="Media\Icons\trash.svg" />
     <Content Include="Media\Icons\visa.svg" />
     <Content Include="Media\LoginandSignup\logbackg2.jpg" />
     <Content Include="Media\menuBurgers\beef1.jpg" />
