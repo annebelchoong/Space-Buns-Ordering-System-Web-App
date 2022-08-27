@@ -390,6 +390,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />
+    <Content Include="Javascript\medium-zoom.min.js" />
     <None Include="packages.config" />
     <Content Include="sb_master.Master" />
     <Content Include="sb_masterAdmin.Master" />
