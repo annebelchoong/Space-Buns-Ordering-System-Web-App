@@ -22,15 +22,20 @@
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <div class="sidebar-heading text-center primary-text ">
-                    <asp:HyperLink runat="server" ImageHeight="60px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/aDash.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
+                    <asp:HyperLink runat="server" ImageHeight="60px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/adminDashboard.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
                 </div>
                 <div class="list-group list-group-flush my-3">
                     <a href="adminDashboard.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="adminCustomers.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-user me-2"></i>Customers</a>
+                    <br />
                     <a href="adminBranches.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-store me-2"></i>Store Branches</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-address-book me-2"></i>Events & Contacts</a>
+<%--                    <a href="adminEvents.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-calendar me-2"></i>Contacts</a>--%>
                     <br />
                     <a href="adminCategories.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-list me-2"></i>Categories</a>
@@ -41,8 +46,8 @@
                         class="fas far fa-clipboard me-2"></i>Orders</a>
                     <a href="adminSales.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-poll me-2"></i>Sales</a>
-                    <%--<a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-chart-line me-2"></i>Analytics</a>--%>
+                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-chart-line me-2"></i>Site Analytics</a>
                     <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
                 </div>
