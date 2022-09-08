@@ -196,6 +196,7 @@
     <Content Include="sb_menu.aspx" />
     <Content Include="sb_order.aspx" />
     <Content Include="sb_orderConfirmed.aspx" />
+    <Content Include="sb_orderConfirmedddd.aspx" />
     <Content Include="sb_orderDetail.aspx" />
     <Content Include="sb_orderHistory.aspx" />
     <Content Include="sb_registration.aspx" />
@@ -314,6 +315,13 @@
     <Compile Include="sb_forgetPassword.aspx.designer.cs">
       <DependentUpon>sb_forgetPassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sb_general.Master.cs">
+      <DependentUpon>sb_general.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_general.Master.designer.cs">
+      <DependentUpon>sb_general.Master</DependentUpon>
+    </Compile>
     <Compile Include="sb_login.aspx.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
     </Compile>
@@ -362,6 +370,13 @@
     <Compile Include="sb_orderConfirmed.aspx.designer.cs">
       <DependentUpon>sb_orderConfirmed.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sb_orderConfirmedddd.aspx.cs">
+      <DependentUpon>sb_orderConfirmedddd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_orderConfirmedddd.aspx.designer.cs">
+      <DependentUpon>sb_orderConfirmedddd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sb_masterProfile.Master.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>
     </Compile>
@@ -403,6 +418,7 @@
     <Content Include="sb_master.Master" />
     <Content Include="sb_masterAdmin.Master" />
     <Content Include="sb_masterProfile.Master" />
+    <Content Include="sb_general.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

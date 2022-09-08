@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.master.cs" Inherits="Space_Buns_Ordering_System.sb_master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.Master.cs" Inherits="Space_Buns_Ordering_System.sb_master" %>
 
 <!DOCTYPE html>
 
@@ -16,6 +16,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <nav id="navbar" class="navbar-fixedtop">
 
             <div class="navbar-logo">
