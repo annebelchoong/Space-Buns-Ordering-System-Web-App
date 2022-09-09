@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Event Management | SpaceBuns" Language="C#" MasterPageFile="~/sb_masterAdmin.Master" AutoEventWireup="true" CodeBehind="adminEvents.aspx.cs" Inherits="Space_Buns_Ordering_System.adminEvents" %>
+﻿<%@ Page Title="Event Management | SpaceBuns" Language="C#" MasterPageFile="~/Admin/sb_masterAdmin.Master" AutoEventWireup="true" CodeBehind="adminEvents.aspx.cs" Inherits="Space_Buns_Ordering_System.adminEvents" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <%--    <script>

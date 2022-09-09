@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_masterAdmin.Master" AutoEventWireup="true" CodeBehind="adminCustomers.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_customer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/sb_masterAdmin.Master" AutoEventWireup="true" CodeBehind="adminCustomers.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_customer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/sb_adminDashboard.css" rel="stylesheet" />
