@@ -40,6 +40,10 @@
                 background-color: #B97836;
                 transition: 250ms;
             }
+
+        .removeUnderline{
+            text-decoration:none;
+        }
     </style>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -110,8 +114,11 @@
                         class="fas fa-user me-2"></i>User Profile</a>
                     <a href="sb_orderHistory.aspx" class="list-group-item list-group-item-action bg-transparent text-white fw-bold"><i
                         class="fas fa-clipboard me-2"></i>My Orders</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>Logout</a>
+                    <div class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                        class="fas fa-power-off me-2"></i>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="list-group-item-action bg-transparent text-danger fw-bold removeUnderline" LogoutPageUrl="~/sb_index.aspx" />
+
+                    </div>
                 </div>
 
             </div>
