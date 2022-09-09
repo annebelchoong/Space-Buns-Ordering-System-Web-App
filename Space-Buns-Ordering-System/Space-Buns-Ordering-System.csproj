@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="CSS\sb_customer.css" />
     <Content Include="CSS\sb_index.css" />
+    <Content Include="CSS\sb_login.css" />
     <Content Include="CSS\sb_masterAdminLayout.css" />
     <Content Include="CSS\sb_masterLayout.css" />
     <Content Include="CSS\sb_masterProfileLayout.css" />
