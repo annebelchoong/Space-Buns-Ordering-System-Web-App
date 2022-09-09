@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_aboutUs.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_aboutUs" %>
+﻿<%@ Page Title="About Us | SpaceBun" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_aboutUs.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_aboutUs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/sb_aboutUs.css" rel="stylesheet" />

@@ -45,7 +45,7 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\OneDrive\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -271,6 +271,7 @@
     </Compile>
     <Compile Include="sb_changePassword.aspx.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_changePassword.aspx.designer.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
@@ -298,6 +299,7 @@
     </Compile>
     <Compile Include="sb_editProfile.aspx.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_editProfile.aspx.designer.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>
@@ -311,6 +313,7 @@
     </Compile>
     <Compile Include="sb_forgetPassword.aspx.cs">
       <DependentUpon>sb_forgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_forgetPassword.aspx.designer.cs">
       <DependentUpon>sb_forgetPassword.aspx</DependentUpon>
@@ -324,6 +327,7 @@
     </Compile>
     <Compile Include="sb_login.aspx.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_login.aspx.designer.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
@@ -379,6 +383,7 @@
     </Compile>
     <Compile Include="sb_masterProfile.Master.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_masterProfile.Master.designer.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>
@@ -399,6 +404,7 @@
     </Compile>
     <Compile Include="sb_registration.aspx.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_registration.aspx.designer.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>

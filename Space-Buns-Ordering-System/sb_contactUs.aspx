@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_contactUs.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_contactUs" %>
+﻿<%@ Page Title="Contact Us | SpaceBuns" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_contactUs.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_contactUs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
         <link rel="stylesheet" href="CSS/sb_contactUs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
