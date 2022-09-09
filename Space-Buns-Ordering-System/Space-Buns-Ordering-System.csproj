@@ -184,11 +184,11 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
-    <Content Include="sb_changePassword.aspx" />
+    <Content Include="UserProfile\sb_changePassword.aspx" />
     <Content Include="sb_checkout.aspx" />
     <Content Include="Admin\adminCustomers.aspx" />
     <Content Include="sb_contactUs.aspx" />
-    <Content Include="sb_editProfile.aspx" />
+    <Content Include="UserProfile\sb_editProfile.aspx" />
     <Content Include="sb_events.aspx" />
     <Content Include="sb_forgetPassword.aspx" />
     <Content Include="sb_index.aspx" />
@@ -196,10 +196,10 @@
     <Content Include="sb_menu.aspx" />
     <Content Include="sb_order.aspx" />
     <Content Include="sb_orderConfirmed.aspx" />
-    <Content Include="sb_orderDetail.aspx" />
-    <Content Include="sb_orderHistory.aspx" />
+    <Content Include="UserProfile\sb_orderDetail.aspx" />
+    <Content Include="UserProfile\sb_orderHistory.aspx" />
     <Content Include="sb_registration.aspx" />
-    <Content Include="sb_userProfile.aspx" />
+    <Content Include="UserProfile\sb_userProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Ads.xml" />
   </ItemGroup>
@@ -268,11 +268,11 @@
     <Compile Include="Admin\adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_changePassword.aspx.cs">
+    <Compile Include="UserProfile\sb_changePassword.aspx.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_changePassword.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_changePassword.aspx.designer.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_checkout.aspx.cs">
@@ -296,11 +296,11 @@
     <Compile Include="sb_contactUs.aspx.designer.cs">
       <DependentUpon>sb_contactUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_editProfile.aspx.cs">
+    <Compile Include="UserProfile\sb_editProfile.aspx.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_editProfile.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_editProfile.aspx.designer.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_events.aspx.cs">
@@ -380,18 +380,18 @@
     <Compile Include="sb_masterProfile.Master.designer.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>
     </Compile>
-    <Compile Include="sb_orderDetail.aspx.cs">
+    <Compile Include="UserProfile\sb_orderDetail.aspx.cs">
       <DependentUpon>sb_orderDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_orderDetail.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_orderDetail.aspx.designer.cs">
       <DependentUpon>sb_orderDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_orderHistory.aspx.cs">
+    <Compile Include="UserProfile\sb_orderHistory.aspx.cs">
       <DependentUpon>sb_orderHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_orderHistory.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_orderHistory.aspx.designer.cs">
       <DependentUpon>sb_orderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_registration.aspx.cs">
@@ -401,11 +401,11 @@
     <Compile Include="sb_registration.aspx.designer.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_userProfile.aspx.cs">
+    <Compile Include="UserProfile\sb_userProfile.aspx.cs">
       <DependentUpon>sb_userProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_userProfile.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_userProfile.aspx.designer.cs">
       <DependentUpon>sb_userProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

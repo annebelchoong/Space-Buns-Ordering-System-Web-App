@@ -46,7 +46,7 @@
                             <td>RM120.00</td>
                             <td class="btnControl">
                                 <%--<asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/Media/Icons/info.png" Width="25px" />--%>
-                                <asp:HyperLink ID="viewOrderDetail1" runat="server" ImageUrl="~/Media/Icons/info.png" ImageWidth="25px" NavigateUrl="~/sb_orderDetail.aspx"></asp:HyperLink>
+                                <asp:HyperLink ID="viewOrderDetail1" runat="server" ImageUrl="~/Media/Icons/info.png" ImageWidth="25px" NavigateUrl="sb_orderDetail.aspx"></asp:HyperLink>
                             </td>
                             <td class="btnControl">
                                 <asp:HyperLink ID="HyperLink1" class="fas fa-times" Style="color: red;" runat="server"></asp:HyperLink>

@@ -32,8 +32,8 @@
                 <i class="fas fa-user bg-transparent"></i>
                 <span class="text" style="color:#FFFFFF">User Profile </span>
                 <br />
-                <asp:Button ID="btnEditProfile" runat="server" class="userProfileButtons" Text="Edit Profile" PostBackUrl="~/sb_editProfile.aspx" />
-                <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/sb_changePassword.aspx" />
+                <asp:Button ID="btnEditProfile" runat="server" class="userProfileButtons" Text="Edit Profile" PostBackUrl="~/UserProfile/sb_editProfile.aspx" />
+                <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/UserProfile/sb_changePassword.aspx" />
                 <br />
             </div>
             <div>

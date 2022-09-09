@@ -53,11 +53,11 @@
                 <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
             </div>
             <div class="navbar-links">
-                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
-                <asp:HyperLink ID="hlNavEvents" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
-                <asp:HyperLink ID="hlNavAboutUs" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
-                <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
-                <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
+                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_menu.aspx">Menu</asp:HyperLink>
+                <asp:HyperLink ID="hlNavEvents" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_events.aspx">Events</asp:HyperLink>
+                <asp:HyperLink ID="hlNavAboutUs" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_aboutUs.aspx">About Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_order.aspx">Order Now</asp:HyperLink>
             </div>
 
             <div class="navbar-login">
@@ -72,7 +72,7 @@
                 <div>
                     <div class="logo-name">
                         <div class="logo-image">
-                            <img src="Media/Icons/profile_pic.jpg" />
+                            <img src="/Media/Icons/profile_pic.jpg" />
                         </div>
                     </div>
                     <br />

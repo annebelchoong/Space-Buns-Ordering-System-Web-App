@@ -179,7 +179,7 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:Button ID="btnSaveChange" runat="server" class="btn1" Text="Save Changes" PostBackUrl="~/sb_userProfile.aspx" />
+                                <asp:Button ID="btnSaveChange" runat="server" class="btn1" Text="Save Changes" PostBackUrl="~/UserProfile/sb_userProfile.aspx" />
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>

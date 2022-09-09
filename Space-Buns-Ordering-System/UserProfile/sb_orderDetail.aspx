@@ -80,7 +80,7 @@
                             <div class="col-md-12">
                                 <div class="text-center">
                                     <%--<i class="far fa-building fa-4x ms-0" style="color: #8f8061;"></i>--%>
-                                    <img width="120" src="Media/Icons/SpaceBunsLogo.png" />
+                                    <img width="120" src="/Media/Icons/SpaceBunsLogo.png" />
                                     <p class="pt-2">Space Buns - Setapak Branch</p>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
                                     <div class="bg-image ripple rounded-5 mb-4 overflow-hidden d-block"
                                         data-ripple-color="light">
                                         <%--<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(4).webp"--%>
-                                        <img style="border-radius: 15px;" src="Media/menuBurgers/chicken1.jpg"
+                                        <img style="border-radius: 15px;" src="/Media/menuBurgers/chicken1.jpg"
                                             class="w-80" height="80" alt="order item 1" />
                                         <a href="#!">
                                             <div class="hover-overlay">
@@ -147,7 +147,7 @@
                                     <div class="bg-image ripple rounded-5 mb-4 overflow-hidden d-block"
                                         data-ripple-color="light">
                                         <%--<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(4).webp"--%>
-                                        <img style="border-radius: 15px;" src="Media/menuBurgers/fish1.jpg"
+                                        <img style="border-radius: 15px;" src="/Media/menuBurgers/fish1.jpg"
                                             class="w-80" height="80" alt="order item 1" />
                                         <a href="#!">
                                             <div class="hover-overlay">
@@ -179,7 +179,7 @@
                                     <div class="bg-image ripple rounded-5 mb-4 overflow-hidden d-block"
                                         data-ripple-color="light">
                                         <%--<img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(4).webp"--%>
-                                        <img style="border-radius: 15px;" src="Media/menuBurgers/beef3.jpg"
+                                        <img style="border-radius: 15px;" src="/Media/menuBurgers/beef3.jpg"
                                             class="w-80" height="80" alt="order item 1" />
                                         <a href="#!">
                                             <div class="hover-overlay">

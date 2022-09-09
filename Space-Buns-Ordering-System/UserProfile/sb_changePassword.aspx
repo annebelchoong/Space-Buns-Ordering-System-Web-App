@@ -88,7 +88,7 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:Button ID="btnSavePassword" runat="server" class="btn1" Text="Save Password" PostBackUrl="~/sb_userProfile.aspx" />
+                                <asp:Button ID="btnSavePassword" runat="server" class="btn1" Text="Save Password" PostBackUrl="~/UserProfile/sb_userProfile.aspx" />
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
