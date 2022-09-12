@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_editProfile.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_editProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_editProfile.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_editProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -179,7 +179,7 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:Button ID="btnSaveChange" runat="server" class="btn1" Text="Save Changes" PostBackUrl="~/sb_userProfile.aspx" />
+                                <asp:Button ID="btnSaveChange" runat="server" class="btn1" Text="Save Changes" PostBackUrl="~/UserProfile/sb_userProfile.aspx" />
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>

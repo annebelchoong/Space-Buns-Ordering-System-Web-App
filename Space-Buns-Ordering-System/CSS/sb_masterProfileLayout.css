@@ -13,7 +13,7 @@
 
 :root {
     /* ===== Colors ===== */
-    --primary-color: #0E4BF1;
+    --primary-color: #252627;
     --panel-color: #FFF;
     --text-color: #FFF;
     --black-light-color: #707070;
@@ -27,6 +27,10 @@
     --tran-05: all 0.5s ease;
     --tran-03: all 0.3s ease;
     --tran-03: all 0.2s ease;
+}
+
+html {
+    background-color: #252627;
 }
 
 body {
@@ -61,24 +65,24 @@ body {
     transition: all 0.3s ease;
 }
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: #0b3cc1;
+/*    ::-webkit-scrollbar-thumb:hover {
+        background: #252627;
     }
 
 body.dark::-webkit-scrollbar-thumb:hover,
 body.dark .activity-data::-webkit-scrollbar-thumb:hover {
-    background: #3A3B3C;
-}
+    background: #252627;
+}*/
 
 nav {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 250px;
     padding: 10px 14px;
-    background-color: #1A1A1A;
-    border-right: 1px solid var(--border-color);
+    background-color: #252627;
+/*    border-right: 1px solid var(--border-color);*/
     transition: var(--tran-05);
 }
 
@@ -239,7 +243,7 @@ body.dark .switch:before {
 .dashboard {
     position: relative;
     left: 250px;
-    background-color: #1A1A1A;
+    background-color: #252627;
     min-height: 100vh;
     width: calc(100% - 250px);
     padding: 10px 14px;

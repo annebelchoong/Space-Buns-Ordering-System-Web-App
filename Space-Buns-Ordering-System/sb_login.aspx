@@ -54,7 +54,7 @@
             <asp:HyperLink ID="lnkSpaceBunsLogo" runat="server" ImageHeight="80px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx"></asp:HyperLink>
 
             <div class="auto-style1">
-                <asp:Login ID="Login1" runat="server" Width="81%">
+                <asp:Login ID="Login1" runat="server" Width="81%" DestinationPageUrl="~/sb_index.aspx">
                     <LayoutTemplate>
                         <table cellpadding="1" cellspacing="0" style="border-collapse: collapse;" style="width: 100px">
                             <tr>
@@ -122,7 +122,7 @@
                                         <tr>
                                             <td class="auto-style6">
                                                 <asp:Button ID="loginButton" runat="server" class="btn" CommandName="Login" Text="Login"
-                                                    ValidationGroup="Login1" PostBackUrl="sb_index.aspx" />
+                                                    ValidationGroup="Login1" />
                                             </td>
                                         </tr>
                                         <tr>

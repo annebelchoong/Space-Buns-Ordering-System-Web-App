@@ -45,7 +45,7 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\OneDrive\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
@@ -91,13 +91,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adminBranches.aspx" />
-    <Content Include="adminCategories.aspx" />
-    <Content Include="adminEvents.aspx" />
-    <Content Include="adminOrderDetail.aspx" />
-    <Content Include="adminOrders.aspx" />
-    <Content Include="adminProducts.aspx" />
-    <Content Include="adminSales.aspx" />
+    <Content Include="Admin\adminBranches.aspx" />
+    <Content Include="Admin\adminCategories.aspx" />
+    <Content Include="Admin\adminEvents.aspx" />
+    <Content Include="Admin\adminOrderDetail.aspx" />
+    <Content Include="Admin\adminOrders.aspx" />
+    <Content Include="Admin\adminProducts.aspx" />
+    <Content Include="Admin\adminSales.aspx" />
     <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="CSS\sb_adminOrderDetails.css" />
     <Content Include="CSS\sb_contactUs.css" />
@@ -183,12 +183,12 @@
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
-    <Content Include="adminDashboard.aspx" />
-    <Content Include="sb_changePassword.aspx" />
+    <Content Include="Admin\adminDashboard.aspx" />
+    <Content Include="UserProfile\sb_changePassword.aspx" />
     <Content Include="sb_checkout.aspx" />
-    <Content Include="adminCustomers.aspx" />
+    <Content Include="Admin\adminCustomers.aspx" />
     <Content Include="sb_contactUs.aspx" />
-    <Content Include="sb_editProfile.aspx" />
+    <Content Include="UserProfile\sb_editProfile.aspx" />
     <Content Include="sb_events.aspx" />
     <Content Include="sb_forgetPassword.aspx" />
     <Content Include="sb_index.aspx" />
@@ -196,61 +196,61 @@
     <Content Include="sb_menu.aspx" />
     <Content Include="sb_order.aspx" />
     <Content Include="sb_orderConfirmed.aspx" />
-    <Content Include="sb_orderDetail.aspx" />
-    <Content Include="sb_orderHistory.aspx" />
+    <Content Include="UserProfile\sb_orderDetail.aspx" />
+    <Content Include="UserProfile\sb_orderHistory.aspx" />
     <Content Include="sb_registration.aspx" />
-    <Content Include="sb_userProfile.aspx" />
+    <Content Include="UserProfile\sb_userProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Ads.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminBranches.aspx.cs">
+    <Compile Include="Admin\adminBranches.aspx.cs">
       <DependentUpon>adminBranches.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminBranches.aspx.designer.cs">
+    <Compile Include="Admin\adminBranches.aspx.designer.cs">
       <DependentUpon>adminBranches.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminCategories.aspx.cs">
+    <Compile Include="Admin\adminCategories.aspx.cs">
       <DependentUpon>adminCategories.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminCategories.aspx.designer.cs">
+    <Compile Include="Admin\adminCategories.aspx.designer.cs">
       <DependentUpon>adminCategories.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminEvents.aspx.cs">
+    <Compile Include="Admin\adminEvents.aspx.cs">
       <DependentUpon>adminEvents.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminEvents.aspx.designer.cs">
+    <Compile Include="Admin\adminEvents.aspx.designer.cs">
       <DependentUpon>adminEvents.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminOrderDetail.aspx.cs">
+    <Compile Include="Admin\adminOrderDetail.aspx.cs">
       <DependentUpon>adminOrderDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminOrderDetail.aspx.designer.cs">
+    <Compile Include="Admin\adminOrderDetail.aspx.designer.cs">
       <DependentUpon>adminOrderDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminOrders.aspx.cs">
+    <Compile Include="Admin\adminOrders.aspx.cs">
       <DependentUpon>adminOrders.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminOrders.aspx.designer.cs">
+    <Compile Include="Admin\adminOrders.aspx.designer.cs">
       <DependentUpon>adminOrders.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminProducts.aspx.cs">
+    <Compile Include="Admin\adminProducts.aspx.cs">
       <DependentUpon>adminProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminProducts.aspx.designer.cs">
+    <Compile Include="Admin\adminProducts.aspx.designer.cs">
       <DependentUpon>adminProducts.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminSales.aspx.cs">
+    <Compile Include="Admin\adminSales.aspx.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminSales.aspx.designer.cs">
+    <Compile Include="Admin\adminSales.aspx.designer.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -261,17 +261,18 @@
     <Compile Include="sb_aboutUs.aspx.designer.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminDashboard.aspx.cs">
+    <Compile Include="Admin\adminDashboard.aspx.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminDashboard.aspx.designer.cs">
+    <Compile Include="Admin\adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_changePassword.aspx.cs">
+    <Compile Include="UserProfile\sb_changePassword.aspx.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_changePassword.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_changePassword.aspx.designer.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_checkout.aspx.cs">
@@ -281,11 +282,11 @@
     <Compile Include="sb_checkout.aspx.designer.cs">
       <DependentUpon>sb_checkout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="adminCustomers.aspx.cs">
+    <Compile Include="Admin\adminCustomers.aspx.cs">
       <DependentUpon>adminCustomers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminCustomers.aspx.designer.cs">
+    <Compile Include="Admin\adminCustomers.aspx.designer.cs">
       <DependentUpon>adminCustomers.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_contactUs.aspx.cs">
@@ -295,10 +296,11 @@
     <Compile Include="sb_contactUs.aspx.designer.cs">
       <DependentUpon>sb_contactUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_editProfile.aspx.cs">
+    <Compile Include="UserProfile\sb_editProfile.aspx.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_editProfile.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_editProfile.aspx.designer.cs">
       <DependentUpon>sb_editProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_events.aspx.cs">
@@ -310,21 +312,30 @@
     </Compile>
     <Compile Include="sb_forgetPassword.aspx.cs">
       <DependentUpon>sb_forgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_forgetPassword.aspx.designer.cs">
       <DependentUpon>sb_forgetPassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sb_general.Master.cs">
+      <DependentUpon>sb_general.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_general.Master.designer.cs">
+      <DependentUpon>sb_general.Master</DependentUpon>
+    </Compile>
     <Compile Include="sb_login.aspx.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_login.aspx.designer.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_masterAdmin.Master.cs">
+    <Compile Include="Admin\sb_masterAdmin.Master.cs">
       <DependentUpon>sb_masterAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_masterAdmin.Master.designer.cs">
+    <Compile Include="Admin\sb_masterAdmin.Master.designer.cs">
       <DependentUpon>sb_masterAdmin.Master</DependentUpon>
     </Compile>
     <Compile Include="sb_index.aspx.cs">
@@ -362,37 +373,39 @@
     <Compile Include="sb_orderConfirmed.aspx.designer.cs">
       <DependentUpon>sb_orderConfirmed.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_masterProfile.Master.cs">
+    <Compile Include="UserProfile\sb_masterProfile.Master.cs">
+      <DependentUpon>sb_masterProfile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile\sb_masterProfile.Master.designer.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>
     </Compile>
-    <Compile Include="sb_masterProfile.Master.designer.cs">
-      <DependentUpon>sb_masterProfile.Master</DependentUpon>
-    </Compile>
-    <Compile Include="sb_orderDetail.aspx.cs">
+    <Compile Include="UserProfile\sb_orderDetail.aspx.cs">
       <DependentUpon>sb_orderDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_orderDetail.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_orderDetail.aspx.designer.cs">
       <DependentUpon>sb_orderDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_orderHistory.aspx.cs">
+    <Compile Include="UserProfile\sb_orderHistory.aspx.cs">
       <DependentUpon>sb_orderHistory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_orderHistory.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_orderHistory.aspx.designer.cs">
       <DependentUpon>sb_orderHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_registration.aspx.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_registration.aspx.designer.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_userProfile.aspx.cs">
+    <Compile Include="UserProfile\sb_userProfile.aspx.cs">
       <DependentUpon>sb_userProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_userProfile.aspx.designer.cs">
+    <Compile Include="UserProfile\sb_userProfile.aspx.designer.cs">
       <DependentUpon>sb_userProfile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -401,8 +414,9 @@
     <Content Include="Javascript\medium-zoom.min.js" />
     <None Include="packages.config" />
     <Content Include="sb_master.Master" />
-    <Content Include="sb_masterAdmin.Master" />
-    <Content Include="sb_masterProfile.Master" />
+    <Content Include="Admin\sb_masterAdmin.Master" />
+    <Content Include="UserProfile\sb_masterProfile.Master" />
+    <Content Include="sb_general.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -410,9 +424,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WebForms\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
