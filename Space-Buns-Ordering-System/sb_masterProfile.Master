@@ -57,7 +57,7 @@
                 <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
             </div>
             <div class="navbar-links">
-                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_menu.aspx">Menu</asp:HyperLink>
+                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="./sb_menu.aspx">Menu</asp:HyperLink>
                 <asp:HyperLink ID="hlNavEvents" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_events.aspx">Events</asp:HyperLink>
                 <asp:HyperLink ID="hlNavAboutUs" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_aboutUs.aspx">About Us</asp:HyperLink>
                 <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/UserProfile/sb_contactUs.aspx">Contact Us</asp:HyperLink>
@@ -65,7 +65,9 @@
             </div>
 
             <div class="navbar-login">
-                <a href="sb_login.aspx"><i class="far fa-user-circle"></i></a>
+                <%--<a href="../sb_login.aspx"><i class="far fa-user-circle"></i></a>--%>
+                <a href="sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
+                <%--<asp:LoginStatus ID="LoginStatus2" runat="server" />--%>
             </div>
 
         </nav>
