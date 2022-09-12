@@ -1,0 +1,286 @@
+﻿@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #242628;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    color: #ffffff;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* ###################### Checkout Navigation Style ###################### */
+
+.checkout-bar {
+    background-color: #B97836;
+    height: 65px;
+}
+
+nav.checkout-bar li {
+    max-width: 1200px;
+}
+
+nav.checkout-bar h1 {
+    display: inline;
+    font-size: 2em;
+    vertical-align: middle;
+    font-family: Verdana, sans-serif;
+}
+
+#nav-logo {
+    display: inline;
+    margin: 8px 10px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.thankyou-text {
+    /*    display: inline-block;*/
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 3em;
+    margin: 80px auto 30px;
+}
+
+.orderReady-text {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.orderID {
+    font-size: 2em;
+    text-align: center;
+}
+
+/*    .orderID p {*/
+#lblOrderID {
+    display: inline;
+    color: #B97836;
+}
+
+/* ###################### Layout ###################### */
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto 2.5em;
+}
+
+.box {
+    text-align: center;
+    background-color: #1A1A1A;
+    border: 2px #B97836 solid;
+    border-radius: 10px;
+}
+
+.order-info-container {
+    height: fit-content;
+    width: 80%;
+    max-width: max-content;
+    margin: 40px auto;
+}
+
+.order-info-box {
+    column-count: 3;
+    column-gap: 40px;
+    column-rule: 2px solid #8b8888;
+    padding: 1.8em;
+}
+
+/*.order-info-container p {*/
+.order-info-text {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #8b8888;
+    padding: 12px;
+    vertical-align: middle;
+}
+
+.order-summary {
+    text-align: center;
+    width: 390px;
+    padding: 1em;
+    margin: 40px auto;
+}
+
+.table-container table {
+    margin: 10px auto;
+}
+
+.table-container th {
+    color: #8b8888;
+    font-size: 00.8em;
+    padding: 0px 20px 10px;
+}
+
+.order-summary table td img {
+    width: 35px;
+    float: left;
+    padding: 10px 0px;
+    border-radius: 25%;
+}
+
+.order-summary table td h6 {
+    font-size: 0.8em;
+    float: left;
+    padding-left: 15px;
+}
+
+.price-total {
+    font-size: 1.5em;
+}
+
+.payment-amount {
+    background-color: #242628;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+    .payment-amount p {
+        display: block;
+        text-align: left;
+        padding: 5px;
+    }
+
+.payment-data {
+    float: right;
+}
+
+.total-container {
+    display: flex;
+    padding: 10px 0;
+    border-top: 1px solid white;
+}
+
+.total-left {
+    width: 70%;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.total-right {
+    width: 70%;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+/*.total, .data-num, .total-total {*/
+.total, #lblDataNum, .total-total {
+    padding: 10px;
+}
+
+/*.data-total, .total-total {*/
+#lblDataTotal, .total-total {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+
+.buttonsContainer {
+    display: flex;
+}
+
+/*.home-button h4 {*/
+.buttons {
+    color: #B97836;
+    background-color: #1A1A1A;
+    border-radius: 25px;
+    border: 1px #B97836 solid;
+    width: fit-content;
+    padding: 12px 14px;
+    margin: 10px auto;
+}
+
+    /*.home-button h4:hover {*/
+    .buttons:hover {
+        background-color: #B97836;
+        color: #ffffff;
+        transition: 250ms;
+    }
+
+
+#AdRotator1 {
+    align-items: center;
+}
+
+/* ##################### Scrollbar #################### */
+
+body::-webkit-scrollbar {
+    width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #252627;
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #3c3c3c;
+    border-radius: 20px;
+}
+
+/* ##################### Footer ##################### */
+
+footer {
+    height: 30px;
+    background-color: #1A1A1A;
+    margin-top: auto;
+}
+
+.copyright-small {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* ################## Media Query ##################### */
+
+@media only screen and (max-width:767px) {
+    .order-info-box {
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width:651px) {
+    nav.checkout-bar h1 {
+        font-size: 1.5em;
+    }
+
+    .thankyou-text {
+        font-size: 2em;
+    }
+
+    .order-info-box {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        padding: 1.3em auto;
+    }
+
+    .order-info p, .order-info h3 {
+        padding: 0.6em;
+    }
+
+    .order-info-container {
+        width: fit-content;
+        height: fit-content;
+    }
+}

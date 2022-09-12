@@ -10,7 +10,7 @@
 
 namespace Space_Buns_Ordering_System
 {
-    public partial class sb_adminDashboard
+    public partial class sb_contactUs
     {
     }
 }
