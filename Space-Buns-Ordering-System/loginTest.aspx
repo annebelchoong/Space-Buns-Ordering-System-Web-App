@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="css/sb_login.css" rel="stylesheet" />
+    <link href="CSS/sb_login.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
             text-align: center;

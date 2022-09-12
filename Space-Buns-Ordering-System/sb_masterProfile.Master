@@ -73,6 +73,7 @@
                 <br />
                     <div>
                         <asp:Button ID="btnEditPic" runat="server" class="btn" Text="Edit Pic" />
+                        
                     </div>
                 <div class="logo-name">
                     <h3>Username</h3>
@@ -81,9 +82,7 @@
             <ul class="nav-links">               
                 <li><a href="sb_userProfile.aspx">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <%--<asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White"></asp:HyperLink>--%>
-                    <%--<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White" />--%>
-                    <%--<asp:HyperLink ID="lnkUserProfile" runat="server" NavigateUrl="~/sb_userProfile.aspx" class="link-name">User Profile</asp:HyperLink>--%>
+                    <%--<asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White"></asp:HyperLink>--%>                    <%--<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White" />--%>                    <%--<asp:HyperLink ID="lnkUserProfile" runat="server" NavigateUrl="~/sb_userProfile.aspx" class="link-name">User Profile</asp:HyperLink>--%>
                     <span class="link-name">User Profile</span>
                 </a></li>
                 <li><a href="#">
