@@ -1,4 +1,6 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.master.cs" Inherits="Space_Buns_Ordering_System.sb_master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.Master.cs" Inherits="Space_Buns_Ordering_System.sb_master" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +9,7 @@
     <title></title>
     <link rel="shortcut icon" href="Media/Icons/favicon.ico">
     <link href="CSS/sb_masterLayout.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -15,10 +18,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-            <nav id="navbar" class="navbar-fixedtop">
+        <nav id="navbar" class="navbar-fixedtop">
 
             <div class="navbar-logo">
-                <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>              
+                <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
             </div>
             <div class="navbar-links">
                 <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
@@ -27,9 +30,11 @@
                 <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
                 <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
             </div>
-          
+
             <div class="navbar-login">
-                <a href="sb_login.html"><i class="far fa-user-circle"></i></a>
+                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
+                <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />    <%--for test--%>
             </div>
 
         </nav>
@@ -44,46 +49,193 @@
             </asp:ContentPlaceHolder>
         </div>
 
-        <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-right">
-                <div class="footer-logo">
-                <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink> 
+        <div>
+            <asp:Panel ID="pnlCart" runat="server" CssClass="cart-panel">
+
+                <div class="cartNavBar">
+                    <div>
+                        <h2>Your cart</h2>
+                        You've added
+                <asp:Label ID="lblNumOfItems" runat="server" Text="2"></asp:Label>
+                        items
+                    </div>
+                    <div class="close-btn-cart">
+                        <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnCloseCart" />
+                    </div>
                 </div>
-            </div>
-            <div class="footer-left">
-                <div class="ourStore">
-                    <h4>Our Store</h4>
-                    <div class="footer-links">
-                         <div class="footer-links-1">
-                        <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
+                <div class="addressAndTime">
+                </div>
+                <div class="cartProduct">
+                    <div class="products">
+                        <div class="product">
+                            <div>
+                                <asp:Image ID="Image2" runat="server" ImageUrl="~/Media/menuBurgers/chicken1.jpg" CssClass="imgCart" />
+                            </div>
+                            <div class="productColumn">
+                                <div class="productTop">
+                                    <div class="productName">
+                                        Double Trouble
+                                    </div>
+                                    <div class="deleteProduct">
+                                        <asp:ImageButton ID="imgbtnTrash1" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
+                                    </div>
+                                </div>
+                                <div class="productBottom">
+                                    <div class="productQuantity">
+                                        <div class="decrementButton">
+                                            <asp:Button ID="btnIncrementCart" runat="server" Text="-" CssClass="buttonQuantity" />
+                                        </div>
+                                        <div class="quantityNumber">
+                                            <asp:TextBox ID="txtQuantityCart" runat="server" Text="1" CssClass="textQuantity"></asp:TextBox>
+                                        </div>
+                                        <div class="incrementButton">
+                                            <asp:Button ID="btnDecrementCart" runat="server" Text="+" CssClass="buttonQuantity" />
+                                        </div>
+                                    </div>
+                                    <div class="totalPrice">
+                                        RM
+                                <asp:Label ID="lblProductTotalPrice" runat="server" Text="17.00"></asp:Label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="product">
+                            <div>
+                                <asp:Image ID="Image3" runat="server" CssClass="imgCart" ImageUrl="~/Media/menuBurgers/beef3.jpg" />
+                            </div>
+                            <div class="productColumn">
+                                <div class="productTop">
+                                    <div class="productName">
+                                        King Of Cheese
+                                    </div>
+                                    <div class="deleteProduct">
+                                        <asp:ImageButton ID="imgbtnTrash2" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
+                                    </div>
+                                </div>
+                                <div class="productBottom">
+                                    <div class="productQuantity">
+                                        <div class="decrementButton">
+                                            <asp:Button ID="Button1" runat="server" Text="-" CssClass="buttonQuantity" />
+                                        </div>
+                                        <div class="quantityNumber">
+                                            <asp:TextBox ID="TextBox1" runat="server" Text="1" CssClass="textQuantity"></asp:TextBox>
+                                        </div>
+                                        <div class="incrementButton">
+                                            <asp:Button ID="Button2" runat="server" Text="+" CssClass="buttonQuantity" />
+                                        </div>
+                                    </div>
+                                    <div class="totalPrice">
+                                        RM
+                                <asp:Label ID="lblTotalPrice2" runat="server" Text="17.00"></asp:Label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="footer-links-2">
-                         <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
-                        <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_privacyPolicy.aspx">Privacy Policy</asp:HyperLink>
+                    <div class="finalAmount">
+                        <div>
+                            Total
+                        </div>
+                        <div>
+                            RM
+                                <asp:Label ID="lblFinalAmount" runat="server" Text="34.00"></asp:Label>
+                        </div>
                     </div>
+                    <div>
+                        <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
                     </div>
                 </div>
 
-                <div class="followUs">
-                    <h4>Follow Us</h4>
-                    <div class="footer-socialLinks">
-                        <a href="https://www.facebook.com/" target="_blank"><i class='fab fa-facebook-f'></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class='fab fa-instagram'></i></a>
-                        <a href="https://twitter.com/" target="_blank"><i class='fab fa-twitter'></i></a>
-                    </div>
-                    <div class="copyright">
-                        <p>&#169; 2021 by Space Buns Sdn Bhd. <br>All Right Not Reserved</p>
-                    </div>
-                </div>
-            </div>
+            </asp:Panel>
         </div>
 
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-right">
+                    <div class="footer-logo">
+                        <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink>
+                    </div>
+                </div>
+                <div class="footer-left">
+                    <div class="ourStore">
+                        <h4>Our Store</h4>
+                        <div class="footer-links">
+                            <div class="footer-links-1">
+                                <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
+                            </div>
+                            <div class="footer-links-2">
+                                <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_privacyPolicy.aspx">Privacy Policy</asp:HyperLink>
+                            </div>
+                        </div>
+                    </div>
 
-    </footer>
+                    <div class="followUs">
+                        <h4>Follow Us</h4>
+                        <div class="footer-socialLinks">
+                            <a href="https://www.facebook.com/" target="_blank"><i class='fab fa-facebook-f'></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class='fab fa-instagram'></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class='fab fa-twitter'></i></a>
+                        </div>
+                        <div class="copyright">
+                            <p>
+                                &#169; 2021 by Space Buns Sdn Bhd.
+                                <br>
+                                All Right Not Reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </footer>
     </form>
+    <script>
+        let openPanelButton = document.getElementById("hypCart");
+        let closePanelButton = document.getElementById("btnCloseCart");
+        //let cartPanel = document.querySelector(".cart-panel");
+        let cartPanel = document.getElementById("pnlCart");
+
+        openPanelButton.onclick = () => {
+            cartPanel.classList.add("open");
+            //openPanelButton.classList.add("hide")
+        }
+
+        closePanelButton.onclick = () => {
+            cartPanel.classList.remove("open");
+            //openPanelButton.classList.remove("hide");
+        }
+    </script>
+
+
+    <%--stripe integration--%>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('pk_test_51LWbMdCffsYKlOgZJQu5OlKPoEe978IKUuzKJjwcW0ZDwb46LaVT09D3svdGTvaWoavzzCTqo9fM7DztaOL8dSGu00MhmVJabg');
+
+<%--        var form = document.getElementById("checkout_form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
+        });--%>
+
+
+        var clickToCheckout = document.getElementById("btnCheckout")
+        clickToCheckout.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
+        });
+    </script>
 </body>
 </html>

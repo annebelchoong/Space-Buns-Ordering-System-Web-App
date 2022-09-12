@@ -1,8 +1,8 @@
 ﻿<%@ Page Title="Home | Space Buns" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_index.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_index" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="CSS/sb_index.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="CSS/sb_index.css" rel="stylesheet" />
      <section>
 
         <main>
@@ -10,6 +10,7 @@
             <button onclick="ReturnTopFunction()" id="goTopBtn" title="Return to the top" type="button">&#8673</button>
             <%--<asp:Button ID="goTopBtn" runat="server" Text="&#8673" />--%>
             <%--<input id="goTopBtn" type="button" value="&#8673" onclick="ReturnTopFunction()" />--%>
+
             <!-- Intro Video Starts -->
             <div class="introVideo">
                 <video width=70% margin=0 controls loop style="border: 1.5px solid #B97836;">
