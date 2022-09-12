@@ -78,15 +78,6 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblDataTotal;
 
         /// <summary>
-        /// btnHome control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btnHome;
-
-        /// <summary>
         /// btnViewOrder control.
         /// </summary>
         /// <remarks>
@@ -94,6 +85,15 @@ namespace Space_Buns_Ordering_System
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink btnViewOrder;
+
+        /// <summary>
+        /// btnHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink btnHome;
 
         /// <summary>
         /// AdRotator1 control.

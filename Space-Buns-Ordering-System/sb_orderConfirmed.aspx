@@ -108,12 +108,13 @@
                 </div>
 
                 <div class="buttonsContainer">
-                    <asp:HyperLink ID="btnHome" runat="server" NavigateUrl="~/sb_index.aspx" CssClass="buttons">Back to Home</asp:HyperLink>
+                    <asp:HyperLink ID="btnViewOrder" runat="server" NavigateUrl="/UserProfile/sb_orderHistory.aspx" CssClass="buttons">View Order</asp:HyperLink>
                 </div>
 
                 <div class="buttonsContainer">
-                    <asp:HyperLink ID="btnViewOrder" runat="server" NavigateUrl="~/sb_orderHistory.aspx" CssClass="buttons">View Order</asp:HyperLink>
+                    <asp:HyperLink ID="btnHome" runat="server" NavigateUrl="~/sb_index.aspx" CssClass="buttons">Back to Home</asp:HyperLink>
                 </div>
+
             </div>
 
         </section>
