@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.Master.cs" Inherits="Space_Buns_Ordering_System.sb_master" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -16,7 +18,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <nav id="navbar" class="navbar-fixedtop">
 
             <div class="navbar-logo">
@@ -31,8 +33,9 @@
             </div>
 
             <div class="navbar-login">
-                <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
+                <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />    <%--for test--%>
             </div>
 
         </nav>

@@ -11,8 +11,6 @@
             <%--<asp:Button ID="goTopBtn" runat="server" Text="&#8673" />--%>
             <%--<input id="goTopBtn" type="button" value="&#8673" onclick="ReturnTopFunction()" />--%>
 
-            <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutPageUrl="~/sb_index.aspx" />
-
             <!-- Intro Video Starts -->
             <div class="introVideo">
                 <video width=70% margin=0 controls loop style="border: 1.5px solid #B97836;">
