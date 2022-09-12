@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Space_Buns_Ordering_System
 {
-    public partial class sb_order1 : System.Web.UI.Page
+    public partial class sb_order : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -1,5 +1,4 @@
-﻿<%@ Page Title="Order | Space Buns" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_order.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_order1" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_order.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_order" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -113,7 +112,7 @@
                 </p>
             </div>
             <div class="orderBtn">
-                <asp:Button ID="btnOrder" runat="server" Text="Order Now" CssClass="btnOrder" />
+                <asp:Button ID="btnOrder" runat="server" Text="Order Now" CssClass="btnOrder" PostBackUrl="~/sb_menu.aspx" />
 
             </div>
         </asp:Panel>
@@ -128,4 +127,3 @@
 
     <script src="Javascript/sb_order.js"></script>
 </asp:Content>
-

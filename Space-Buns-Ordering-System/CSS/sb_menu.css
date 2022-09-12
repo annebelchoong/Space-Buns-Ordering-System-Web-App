@@ -100,7 +100,7 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     opacity: 0.6;
 }
 
-.menu-item-price{
+.menu-item-price {
     color: white;
 }
 
@@ -156,7 +156,7 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
 .popupPanel {
     padding: 30px;
     position: relative;
-    width: 45%;
+    width: 60%;
     height: 70%;
     background-color: #B97836;
     border-radius: 20px;
@@ -165,7 +165,7 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
 
 .close-btn {
     position: fixed;
-    right: 31%;
+    right: 23%;
 }
 
 .btnClose {
@@ -436,10 +436,10 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
         transition: 250ms;
     }
 
-.imgbtnCart{
+.imgbtnCart {
     right: 40px;
-    top:0;
-    cursor:pointer;
+    top: 0;
+    cursor: pointer;
 }
 
 /* ###################### Media Queries ###################### */

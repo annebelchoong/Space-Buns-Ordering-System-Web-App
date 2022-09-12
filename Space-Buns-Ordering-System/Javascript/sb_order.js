@@ -72,77 +72,77 @@ function getPickUpMap() {
 google.maps.event.addDomListener(window, 'load', getPickUpMap);
 window.initialize = initialize;
 
-    function showPopUp() {
-        var modalPopupBehaviourCtrl = $find('ModalPopupExtender1');
-        modalPopupBehaviourCtrl.show();
-    }
+function showPopUp() {
+    var modalPopupBehaviourCtrl = $find('ModalPopupExtender1');
+    modalPopupBehaviourCtrl.show();
+}
 
 var mapcoded;
-        var deliveryMap;
-        function getDeliveryMap() {
-            mapcodep = new google.maps.Geocoder();
-            var deliveryMapChoice = {
-                zoom: 10,
-                center: { lat: 3.090762, lng: 101.611560 },
-                deliveryMapId: google.maps.MapTypeId.ROADMAP
-            }
-            deliveryMap = new google.maps.Map(document.getElementById('map_delivery'), deliveryMapChoice);
+var deliveryMap;
+function getDeliveryMap() {
+    mapcodep = new google.maps.Geocoder();
+    var deliveryMapChoice = {
+        zoom: 10,
+        center: { lat: 3.090762, lng: 101.611560 },
+        deliveryMapId: google.maps.MapTypeId.ROADMAP
+    }
+    deliveryMap = new google.maps.Map(document.getElementById('map_delivery'), deliveryMapChoice);
 
-            const deliveryMap = new google.maps.Map(document.getElementById("delivery-map"), {
-                center: { lat: 3.041249, lng: 101.634908 },
-                zoom: 10,
-                disableDefaultUI: true,
-                // gestureHandling: "none",
-            });
-            const card = document.getElementById("pac-card");
-            const input = document.getElementById("txtDelvieryAddress");
+    const deliveryMap = new google.maps.Map(document.getElementById("delivery-map"), {
+        center: { lat: 3.041249, lng: 101.634908 },
+        zoom: 10,
+        disableDefaultUI: true,
+        // gestureHandling: "none",
+    });
+    const card = document.getElementById("pac-card");
+    const input = document.getElementById("txtDelvieryAddress");
 
-            const options = {
-                componentRestrictions: { country: "my" },
-                fields: ["geometry", "name", "formatted_address"],
-                origin: deliveryMap.getCenter(),
-                strictBounds: false,
-                types: ["geocode", "establishment"], //search type restrictions 
-            };
-            deliveryMap.controls[google.maps.ControlPosition.TOP_CENTER].push(card);
-            const autocomplete = new google.maps.places.Autocomplete(input, options);
+    const options = {
+        componentRestrictions: { country: "my" },
+        fields: ["geometry", "name", "formatted_address"],
+        origin: deliveryMap.getCenter(),
+        strictBounds: false,
+        types: ["geocode", "establishment"], //search type restrictions 
+    };
+    deliveryMap.controls[google.maps.ControlPosition.TOP_CENTER].push(card);
+    const autocomplete = new google.maps.places.Autocomplete(input, options);
 
-            autocomplete.bindTo("bounds", deliveryMap);
-            const infowindow = new google.maps.InfoWindow();
-            const infowindowContent = document.getElementById("infowindow-content");
-            infowindow.setContent(infowindowContent);
-            const marker = new google.maps.Marker({ map: deliveryMap, anchorPoint: new google.maps.Point(0, -29), });
+    autocomplete.bindTo("bounds", deliveryMap);
+    const infowindow = new google.maps.InfoWindow();
+    const infowindowContent = document.getElementById("infowindow-content");
+    infowindow.setContent(infowindowContent);
+    const marker = new google.maps.Marker({ map: deliveryMap, anchorPoint: new google.maps.Point(0, -29), });
 
-            autocomplete.addListener("place_changed", () => {
-                infowindow.close();
-                marker.setVisible(false);
-                const place = autocomplete.getPlace();
-                if (place.geometry.viewport) {
-                    deliveryMap.fitBounds(place.geometry.viewport);
-                } else {
-                    deliveryMap.setCenter(place.geometry.location);
-                    deliveryMap.setZoom(17);
-                }
-
-                marker.setPosition(place.geometry.location);
-                marker.setVisible(true);
-                infowindowContent.children["place-name"].textContent = place.name;
-                infowindowContent.children["place-address"].textContent = place.formatted_address;
-                infowindow.open(deliveryMap, marker);
-            });
+    autocomplete.addListener("place_changed", () => {
+        infowindow.close();
+        marker.setVisible(false);
+        const place = autocomplete.getPlace();
+        if (place.geometry.viewport) {
+            deliveryMap.fitBounds(place.geometry.viewport);
+        } else {
+            deliveryMap.setCenter(place.geometry.location);
+            deliveryMap.setZoom(17);
         }
-        //function getmap() {
-        //    var completeaddress = document.getElementById('txtDeliveryAddress').value;
-        //    mapcode.geocode({ 'address': completeaddress }, function (results, status) {
-        //        if (status == google.maps.GeocoderStatus.OK) {
-        //            deliveryMap.setCenter(results[0].geometry.location);
-        //            var hint = new google.maps.Marker({
-        //                deliveryMap: deliveryMap,
-        //                position: results[0].geometry.location
-        //            });
-        //        } else {
-        //            alert('Location Not Tracked. ' + status);
-        //        }
-        //    });
-        //}
-        google.maps.event.addDomListener(window, 'load', getDeliveryMap);
+
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+        infowindowContent.children["place-name"].textContent = place.name;
+        infowindowContent.children["place-address"].textContent = place.formatted_address;
+        infowindow.open(deliveryMap, marker);
+    });
+}
+//function getmap() {
+//    var completeaddress = document.getElementById('txtDeliveryAddress').value;
+//    mapcode.geocode({ 'address': completeaddress }, function (results, status) {
+//        if (status == google.maps.GeocoderStatus.OK) {
+//            deliveryMap.setCenter(results[0].geometry.location);
+//            var hint = new google.maps.Marker({
+//                deliveryMap: deliveryMap,
+//                position: results[0].geometry.location
+//            });
+//        } else {
+//            alert('Location Not Tracked. ' + status);
+//        }
+//    });
+//}
+google.maps.event.addDomListener(window, 'load', getDeliveryMap);

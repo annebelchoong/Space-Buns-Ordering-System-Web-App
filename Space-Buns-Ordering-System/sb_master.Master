@@ -1,4 +1,6 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.master.cs" Inherits="Space_Buns_Ordering_System.sb_master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.Master.cs" Inherits="Space_Buns_Ordering_System.sb_master" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +9,7 @@
     <title></title>
     <link rel="shortcut icon" href="Media/Icons/favicon.ico">
     <link href="CSS/sb_masterLayout.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -29,9 +32,9 @@
             </div>
 
             <div class="navbar-login">
-                <a href="sb_login.html"><i class="far fa-user-circle"></i></a>
-                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart">HyperLink</asp:HyperLink>
-
+                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
+                <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />    <%--for test--%>
             </div>
 
         </nav>
@@ -46,7 +49,6 @@
             </asp:ContentPlaceHolder>
         </div>
 
-        <
         <div>
             <asp:Panel ID="pnlCart" runat="server" CssClass="cart-panel">
 
@@ -58,7 +60,7 @@
                         items
                     </div>
                     <div class="close-btn-cart">
-                        <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" />
+                        <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnCloseCart" />
                     </div>
                 </div>
                 <div class="addressAndTime">
@@ -75,7 +77,7 @@
                                         Double Trouble
                                     </div>
                                     <div class="deleteProduct">
-                                        <asp:ImageButton ID="imgbtnTrash1" runat="server" ImageUrl="~/Media/Order/trash.svg" Height="20px" />
+                                        <asp:ImageButton ID="imgbtnTrash1" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
                                     </div>
                                 </div>
                                 <div class="productBottom">
@@ -108,7 +110,7 @@
                                         King Of Cheese
                                     </div>
                                     <div class="deleteProduct">
-                                        <asp:ImageButton ID="imgbtnTrash2" runat="server" ImageUrl="~/Media/Order/trash.svg" Height="20px" />
+                                        <asp:ImageButton ID="imgbtnTrash2" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
                                     </div>
                                 </div>
                                 <div class="productBottom">
@@ -141,13 +143,12 @@
                         </div>
                     </div>
                     <div>
-                        <asp:Button ID="btnCheckout" runat="server" Text="Checkout" />
+                        <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
                     </div>
                 </div>
 
             </asp:Panel>
         </div>
-
 
         <footer class="footer">
             <div class="footer-container">
@@ -209,6 +210,32 @@
             cartPanel.classList.remove("open");
             //openPanelButton.classList.remove("hide");
         }
+    </script>
+
+
+    <%--stripe integration--%>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('pk_test_51LWbMdCffsYKlOgZJQu5OlKPoEe978IKUuzKJjwcW0ZDwb46LaVT09D3svdGTvaWoavzzCTqo9fM7DztaOL8dSGu00MhmVJabg');
+
+<%--        var form = document.getElementById("checkout_form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
+        });--%>
+
+
+        var clickToCheckout = document.getElementById("btnCheckout")
+        clickToCheckout.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
+        });
     </script>
 </body>
 </html>

@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_masterProfile.master.cs" Inherits="Space_Buns_Ordering_System.sb_masterProfile" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="shortcut icon" href="Media/Icons/favicon.ico">
+    <link href="~/CSS/sb_masterLayout.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!---------------------------------------------------->
+    <link href="~/CSS/sb_masterProfileLayout.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .userProfileButtons {
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform .2s ease;
+            /*            width: 150px;
+            height: 20px;*/
+            background-color: #1A1A1A;
+            color: #B97836;
+            border: 1px #B97836 solid;
+            font-weight: bold;
+            border-radius: 20px;
+            margin-left: 48px;
+            padding: 7px 12px;
+        }
+
+            .userProfileButtons:hover {
+                text-decoration: none;
+                color: white;
+                background-color: #B97836;
+                transition: 250ms;
+            }
+
+        .removeUnderline{
+            text-decoration:none;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav id="navbar" class="navbar-fixedtop">
+
+            <div class="navbar-logo">
+                <asp:HyperLink runat="server" ImageHeight="45px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="hlLogo">Space Buns Logo</asp:HyperLink>
+            </div>
+            <div class="navbar-links">
+                <asp:HyperLink ID="hlNavMenu" runat="server" CssClass="navbar-links" NavigateUrl="../sb_menu.aspx">Menu</asp:HyperLink>
+                <asp:HyperLink ID="hlNavEvents" runat="server" CssClass="navbar-links" NavigateUrl="../sb_events.aspx">Events</asp:HyperLink>
+                <asp:HyperLink ID="hlNavAboutUs" runat="server" CssClass="navbar-links" NavigateUrl="../sb_aboutUs.aspx">About Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavContactUs" runat="server" CssClass="navbar-links" NavigateUrl="../sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="../sb_order.aspx">Order Now</asp:HyperLink>
+            </div>
+
+            <div class="navbar-login">
+                <%--<a href="../sb_login.aspx"><i class="far fa-user-circle"></i></a>--%>
+                <a href="sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
+                <asp:LoginStatus ID="LoginStatus2" runat="server" />
+            </div>
+
+        </nav>
+
+        <!--Profile start-->
+        <nav>
+            <div class="menu-items">
+                <div>
+                    <div class="logo-name">
+                        <div class="logo-image">
+                            <img src="/Media/Icons/profile_pic.jpg" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="container">
+                        <asp:Button ID="btnEditPic" runat="server" class="userProfileButtons" Text="Edit Pic" />
+                    </div>
+                    <div class="logo-name">
+                        <h3><strong>Corn Jena</strong></h3>
+                    </div>
+                </div>
+
+                <%--                <ul class="nav-links">
+                    <li><a href="sb_userProfile.aspx">
+                        <i class="uil uil-estate"></i>--%>
+                <%--<asp:HyperLink ID="HyperLink2" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White"></asp:HyperLink>--%>
+                <%--<asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/Media/Icons/estate.svg" ForeColor="White" />--%>
+                <%--<asp:HyperLink ID="lnkUserProfile" runat="server" NavigateUrl="~/sb_userProfile.aspx" class="link-name">User Profile</asp:HyperLink>--%>
+                <%--                        <span class="link-name">User Profile</span>
+                    </a></li>
+                    <li><a href="sb_orderHistory.aspx">
+                        <i class="uil uil-estate"></i>
+                        <span class="link-name">Order History</span>
+                    </a></li>
+                </ul>--%>
+
+                <%--            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+            </ul>--%>
+
+                <div style="margin-bottom: 550px">
+                    <a href="sb_userProfile.aspx" class="list-group-item list-group-item-action bg-transparent text-white fw-bold"><i
+                        class="fas fa-user me-2"></i>User Profile</a>
+                    <a href="sb_orderHistory.aspx" class="list-group-item list-group-item-action bg-transparent text-white fw-bold"><i
+                        class="fas fa-clipboard me-2"></i>My Orders</a>
+                    <div class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                        class="fas fa-power-off me-2"></i>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="list-group-item-action bg-transparent text-danger fw-bold removeUnderline" LogoutPageUrl="~/sb_index.aspx" />
+
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <section class="dashboard">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </section>
+        <!--profile end-->
+
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-right">
+                    <div class="footer-logo">
+                        <asp:HyperLink runat="server" ImageHeight="105px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx" ID="HyperLink1">Space Buns Logo</asp:HyperLink>
+                    </div>
+                </div>
+                <div class="footer-left">
+                    <div class="ourStore">
+                        <h4>Our Store</h4>
+                        <div class="footer-links">
+                            <div class="footer-links-1">
+                                <asp:HyperLink ID="hlFooterMenu" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_menu.aspx">Menu</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterEvents" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_events.aspx">Events</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterAboutUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_aboutUs.aspx">About Us</asp:HyperLink>
+                            </div>
+                            <div class="footer-links-2">
+                                <asp:HyperLink ID="hlFooterContactUs" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_contactUs.aspx">Contact Us</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterOrder" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
+                                <asp:HyperLink ID="hlFooterPrivacyPolicy" runat="server" CssClass="footer-links-items" NavigateUrl="~/sb_privacyPolicy.aspx">Privacy Policy</asp:HyperLink>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="followUs">
+                        <h4>Follow Us</h4>
+                        <div class="footer-socialLinks">
+                            <a href="https://www.facebook.com/" target="_blank"><i class='fab fa-facebook-f'></i></a>
+                            <a href="https://www.instagram.com/" target="_blank"><i class='fab fa-instagram'></i></a>
+                            <a href="https://twitter.com/" target="_blank"><i class='fab fa-twitter'></i></a>
+                        </div>
+                        <div class="copyright">
+                            <p>
+                                &#169; 2021 by Space Buns Sdn Bhd.
+                                <br>
+                                All Right Not Reserved
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </form>
+</body>
+</html>

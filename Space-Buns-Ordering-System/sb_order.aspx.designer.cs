@@ -11,7 +11,7 @@ namespace Space_Buns_Ordering_System
 {
 
 
-    public partial class sb_order1
+    public partial class sb_order
     {
 
         /// <summary>
