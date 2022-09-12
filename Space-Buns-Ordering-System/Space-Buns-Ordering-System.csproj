@@ -373,11 +373,11 @@
     <Compile Include="sb_orderConfirmed.aspx.designer.cs">
       <DependentUpon>sb_orderConfirmed.aspx</DependentUpon>
     </Compile>
-    <Compile Include="sb_masterProfile.Master.cs">
+    <Compile Include="UserProfile\sb_masterProfile.Master.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="sb_masterProfile.Master.designer.cs">
+    <Compile Include="UserProfile\sb_masterProfile.Master.designer.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>
     </Compile>
     <Compile Include="UserProfile\sb_orderDetail.aspx.cs">
@@ -415,7 +415,7 @@
     <None Include="packages.config" />
     <Content Include="sb_master.Master" />
     <Content Include="Admin\sb_masterAdmin.Master" />
-    <Content Include="sb_masterProfile.Master" />
+    <Content Include="UserProfile\sb_masterProfile.Master" />
     <Content Include="sb_general.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

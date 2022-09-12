@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_orderHistory.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_orderHistory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_orderHistory.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_orderHistory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
