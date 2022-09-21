@@ -330,3 +330,42 @@ btnAddToCartConfirm:hover {
         color: #fff;
         transition: 250ms;
     }
+
+.menuProduct{
+    display: flex;
+    justify-content: space-evenly;
+    text-align:center;
+    flex-direction:column;
+    width:90%;
+    margin:0 auto;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.lblProduct {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #B97836;
+}
+
+.lblDesc {
+    font-size: 0.9em;
+    color: white;
+    opacity: 0.6;
+}
+
+.lblPrice {
+    color: white;
+}
+
+
+.lblCategory {
+    color: #B97836;
+    padding-left: 65px;
+    font-size: 2em;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%;
+}

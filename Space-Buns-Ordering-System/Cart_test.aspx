@@ -4,12 +4,20 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script runat="server">
+
+    protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="CSS/sb_menu_test.css" rel="stylesheet" />
     <title>DataList Edit Example</title>
-    <%--<style type="text/css">
+    <style type="text/css">
         .imgCart {
             width: 80px;
             padding: 0px;
@@ -53,7 +61,7 @@
             font-size: 20px;
             font-weight: 500;
         }
-    </style>--%>
+    </style>
     <%--<script runat="server">
 
       // The Cart and CartView objects temporarily store the data source
@@ -344,42 +352,176 @@
 
          </EditItemTemplate>
 
-      </asp:DataList>--%>
+      </asp:DataList>--%><%-- <div>
+            <asp:Panel ID="pnlCart" runat="server" CssClass="cart-panel">
 
-        <asp:DataList ID="DataList1" runat="server">
+                <div class="cartNavBar">
+                    <div>
+                        <h2>Your cart</h2>
+                        You've added
+                <asp:Label ID="lblNumOfItems" runat="server" Text="2"></asp:Label>
+                        items
+                    </div>
+                    <div class="close-btn-cart">
+                        <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" />
+                    </div>
+                </div>
+                <div class="addressAndTime">
+                </div>--%>
+
+         <nav class="menu-nav">
+            <ul>
+                <li>
+                    <a href="#Chicken">Chicken</a>
+                    <a href="#Fish">Fish</a>
+                    <a href="#beef">Beef</a>
+                    <a href="#lamb">Lamb</a>
+                    <a href="#meatless">Meatless</a>
+                </li>
+            </ul>
+        </nav>
+
+        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
-                <div class="cart-left">
-                    <asp:Image ID="imgProduct" runat="server" Width="100px" />
-                    <div class="productColumn">
-                        <div class="productTop">
-                            <div class="productName">
-                                <asp:Label ID="lblProductName" runat="server" Text="" CssClass="productName"></asp:Label>
-                            </div>
-                            <div class="deleteProduct">
-                                <asp:ImageButton ID="imgbtnTrash" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
-                            </div>
-                        </div>
-                        <div class="productBottom">
-                            <div class="productQuantity">
-                                <div class="decrementButton">
-                                    <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="buttonQuantity" />
+                <div class="cartProduct">
+                    <div class="products">
+                        <div class="product">
+                            <div>
+                                <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" />
+                                <div class="productColumn">
+                                    <div class="productTop">
+                                        <div class="productName">
+                                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' />
+                                        </div>
+                                        <div class="deleteProduct">
+                                            <asp:ImageButton ID="imgbtnTrash" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
+                                        </div>
+                                    </div>
+                                    <div class="productBottom">
+                                        <div class="productQuantity">
+                                            <div class="decrementButton">
+                                                <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="buttonQuantity" />
+                                            </div>
+                                            <div class="quantityNumber">
+                                                <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("quantity") %>' CssClass="textQuantity" />
+                                            </div>
+                                            <div class="incrementButton">
+                                                <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="buttonQuantity" />
+                                            </div>
+                                        </div>
+                                        <div class="totalPrice">
+                                            RM
+                                            <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("unitPrice") %>' />
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="quantityNumber">
-                                    <asp:TextBox ID="txtQuantity" runat="server" Text="1" CssClass="textQuantity"></asp:TextBox>
-                                </div>
-                                <div class="incrementButton">
-                                    <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="buttonQuantity" />
-                                </div>
-                            </div>
-                            <div class="totalPrice">
-                                RM
-                                <asp:Label ID="lblTotalPrice" runat="server" Text=""></asp:Label>
                             </div>
                         </div>
                     </div>
                 </div>
             </ItemTemplate>
+
+        </asp:Repeater>
+        <%--                <div class="finalAmount">
+                    <div>
+                        Total
+                    </div>
+                    <div>
+                        RM
+                                <asp:Label ID="lblFinalAmount" runat="server" Text="34.00"></asp:Label>
+                    </div>
+                </div>
+                <div>
+                    <asp:Button ID="btnCheckout" runat="server" Text="Checkout" />
+                </div>
+
+        </asp:Panel>
+        </div>--%>
+
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
+            <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
+            <HeaderTemplate>
+                <div id="Chicken">
+                <asp:Label ID="lblChicken" runat="server" Text='Chicken' CssClass="lblCategory"></asp:Label>
+
+                </div>
+            </HeaderTemplate>
+            <ItemTemplate>
+
+                <div>
+                    <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px"/>
+                    <div class="menuProduct">
+                        <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
+                        <br />
+                        <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice") %>' CssClass="lblPrice"></asp:Label>
+                    </div>
+
+                </div>
+            </ItemTemplate>
+
         </asp:DataList>
+
+        <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource3" RepeatColumns="3" RepeatDirection="Horizontal" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
+            <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
+            <HeaderTemplate>
+                <div id="Fish">
+                <asp:Label ID="lblFish" runat="server" Text='Fish' CssClass="lblCategory"></asp:Label>
+                </div>
+            </HeaderTemplate>
+            <ItemTemplate>
+
+                <div>
+                    <asp:Image ID="imgProductF" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" />
+                    <div class="menuProduct">
+                        <asp:Label ID="lblProductF" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
+                        <br />
+                        <asp:Label ID="lblDescriptionF" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblUnitPriceF" runat="server" Text='<%# Eval("unitPrice") %>' CssClass="lblPrice"></asp:Label>
+                    </div>
+
+                </div>
+            </ItemTemplate>
+
+        </asp:DataList>
+
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="Fish" Name="categoryName" />
+                    </SelectParameters>
+        </asp:SqlDataSource>
+
+                <%--<div class="menuProductRepeater">
+        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2">
+            <ItemTemplate>
+
+                    <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" CssClass="lblCategory" />
+                    <div class="menuProduct">
+                        <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
+                        <br />
+                        <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
+                        <br />
+                        <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice") %>' CssClass="lblPrice"></asp:Label>
+                    </div>
+
+            </ItemTemplate>
+        </asp:Repeater>
+                </div>--%>
+
+
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Product.name, Product.unitPrice, Product.description, Product.picture, Category.categoryName FROM Product INNER JOIN Category ON Product.categoryID = Category.categoryID WHERE (Category.categoryName LIKE @categoryName)">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="chicken" Name="categoryName" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Product.name, OrderDetails.unitPrice, OrderDetails.quantity, Product.picture FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID INNER JOIN Product ON OrderDetails.productID = Product.productID WHERE ([Order].customerID = @customerID)">
+            <SelectParameters>
+                <asp:Parameter Name="customerID" DefaultValue="1" />
+            </SelectParameters>
+        </asp:SqlDataSource>
 
     </form>
 
