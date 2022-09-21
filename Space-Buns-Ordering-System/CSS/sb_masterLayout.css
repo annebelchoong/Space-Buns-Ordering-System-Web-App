@@ -7,7 +7,6 @@
 }
 
 body {
-
 }
 
 * {
@@ -54,7 +53,7 @@ html {
         transition: 250ms;
     }
 
-#hlNavOrder{
+#hlNavOrder {
     background-color: #ffffff;
     color: #B97836;
     border-radius: 20px;
@@ -88,6 +87,9 @@ label.navbar-mobileNav {
         transition: 250ms;
     }
 
+.btnCart{
+   cursor:pointer;
+}
 /* ###################################### Banner ##################################### */
 
 .banner {
@@ -185,11 +187,10 @@ footer.footer {
 }
 
 .footer-links {
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
     font-size: 0.9em;
     column-gap: 80px;
-
 }
 
 .footer-links-1, .footer-links-2 {
@@ -246,7 +247,6 @@ footer.footer {
     .footer-socialLinks a:hover, .footer-socialLinks a:active {
         color: #1A1A1A;
         background-color: rgba(255, 255, 255, 0.7);
-        
     }
 
 .copyright {
@@ -264,210 +264,9 @@ footer.footer {
 
 
 /*=========Cart slide in panel ============*/
-.cart-panel {
-    position: fixed;
-    height: 100vh;
-    width: 500px;
-    right: -560px;
-    top: 0;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
-    backdrop-filter: blur(5px);
-    background: #1A1A1A;
-    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
-    padding-right: 30px;
-    padding-left: 30px;
-    z-index: 20;
-    color: white;
-    -webkit-transition: all 0.5s ease-in-out;
-}
-
-.open {
-    right: 0 !important;
-}
-
-/*.hide {
-    visibility: hidden !important;
-}*/
 
 
-.cartNavBar h2 {
-    font-size: 30px;
-    margin-bottom: 0px;
-    text-align: center;
-    color: #B97836;
-    padding-bottom: 10px;
-}
 
-.cartNavBar div {
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    padding-bottom: 40px;
-}
-
-.btnCloseCart {
-    background-color: transparent;
-    border: none;
-    font-size: 40px;
-    color: #B97836;
-    cursor: pointer;
-}
-
-.close-btn-cart {
-    position: fixed;
-    top: 20px;
-    right: 5%;
-}
-
-.imgCart {
-    width: 80px;
-    padding: 0px;
-}
-
-.product {
-    display: flex;
-    padding-bottom: 30px;
-    justify-content: space-around;
-}
-
-.productColumn {
-    display: flex;
-    flex-direction: column;
-}
-
-.productTop, .productBottom {
-    width: 350px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: baseline;
-}
-
-
-.productQuantity {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-direction: row;
-}
-
-.productName {
-    font-size: 18px;
-    font-weight: bold;
-    padding-bottom: 20px;
-}
-
-.totalPrice {
-    padding-top: 15px;
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.finalAmount {
-    display: flex;
-    justify-content: space-between;
-}
-
-    .finalAmount div {
-        font-size: 30px;
-        font-weight: bold;
-        color: #B97836;
-    }
-
-.btnCheckout {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #B97836;
-    border-radius: 20px;
-    background-color: #FFFFFF;
-    color: #B97836;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 18px;
-    margin-top: 30px;
-}
-
-    .btnCheckout:hover {
-        background-color: #B97836;
-        color: #fff;
-        transition: 250ms;
-    }
-
-.imgbtnCart {
-    right: 40px;
-    top: 0;
-    cursor: pointer;
-}
-
-.buttonQuantity {
-    font-size: 30px;
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    color: #1A1A1A;
-    cursor: pointer;
-    width: 40px;
-    height: 42px;
-}
-
-@media only screen and (max-width:1200px) {
-    /* ################### Banner ######################## */
-    .bannerCaption h1 {
-        font-size: 120px;
-    }
-
-    .bannerCaption-index h1 {
-        font-size: 120px;
-    }
-    /* ################### Footer ######################## */
-    .footer-right {
-        display: flex;
-        width: 100%;
-        margin: 10px;
-        justify-content: space-around;
-    }
-
-    .footer-left {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-    }
-}
-
-@media only screen and (max-width:940px) {
-    /* ################### Navbar ######################## */
-    .navbar-links a {
-        font-size: 0.75em;
-        transition: 0.3s ease-in-out;
-    }
-    /* ################### Footer ######################## */
-    .footer-left {
-        width: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    .footer-links {
-        column-gap: 30px;
-    }
-
-    .footer-links-1,.footer-links-2{
-        padding: 0px;
-        text-align: left;
-    }
-
-    .followUs {
-        margin-top: 40px;
-    }
-
-    .footer h4, .footer-socialLinks {
-        text-align: center;
-    }
-}
-
-
-/*=========Cart slide in panel ============*/
 .cart-panel {
     position: fixed;
     height: 100vh;
@@ -579,6 +378,27 @@ footer.footer {
         color: #B97836;
     }
 
+.btnQuantity {
+    font-size: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: #1A1A1A;
+    cursor: pointer;
+    width: 40px;
+    height: 42px;
+}
+
+.txtQuantity {
+    width: 40px;
+    background-color: #252627;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
 .btnCheckout {
     width: 100%;
     height: 50px;
@@ -603,6 +423,63 @@ footer.footer {
     top: 0;
     cursor: pointer;
 }
+
+@media only screen and (max-width:1200px) {
+    /* ################### Banner ######################## */
+    .bannerCaption h1 {
+        font-size: 120px;
+    }
+
+    .bannerCaption-index h1 {
+        font-size: 120px;
+    }
+    /* ################### Footer ######################## */
+    .footer-right {
+        display: flex;
+        width: 100%;
+        margin: 10px;
+        justify-content: space-around;
+    }
+
+    .footer-left {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width:940px) {
+    /* ################### Navbar ######################## */
+    .navbar-links a {
+        font-size: 0.75em;
+        transition: 0.3s ease-in-out;
+    }
+    /* ################### Footer ######################## */
+    .footer-left {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-links {
+        column-gap: 30px;
+    }
+
+    .footer-links-1, .footer-links-2 {
+        padding: 0px;
+        text-align: left;
+    }
+
+    .followUs {
+        margin-top: 40px;
+    }
+
+    .footer h4, .footer-socialLinks {
+        text-align: center;
+    }
+}
+
+
 
 
 @media only screen and (max-width:768px) {
@@ -665,5 +542,3 @@ footer.footer {
         transform: translateX(0%);
     }
 }
-
-

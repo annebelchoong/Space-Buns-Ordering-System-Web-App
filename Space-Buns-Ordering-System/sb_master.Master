@@ -34,7 +34,8 @@
             <div class="navbar-login">
                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
                 <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                <asp:LoginStatus ID="LoginStatus1" runat="server" />    <%--for test--%>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                <%--for test--%>
             </div>
 
         </nav>
@@ -49,7 +50,7 @@
             </asp:ContentPlaceHolder>
         </div>
 
-        <div>
+        <%--<div>
             <asp:Panel ID="pnlCart" runat="server" CssClass="cart-panel">
 
                 <div class="cartNavBar">
@@ -148,6 +149,79 @@
                 </div>
 
             </asp:Panel>
+        </div>--%>
+
+        <div>
+            <asp:Panel ID="pnlCart" runat="server" CssClass="cart-panel">
+
+                <div class="cartNavBar">
+                    <div>
+                        <h2>Your cart</h2>
+                        You've added
+                <asp:Label ID="lblNumOfItems" runat="server" Text="2"></asp:Label>
+                        items
+                    </div>
+                    <div class="close-btn-cart">
+                        <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnCloseCart" />
+                    </div>
+                </div>
+                <div class="addressAndTime">
+                </div>
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                    <ItemTemplate>
+                        <div class="cartProduct">
+                            <div class="products">
+                                <div class="product">
+                                    <div>
+                                        <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" CssClass="imgCart"/>
+                                        <div class="productColumn">
+                                            <div class="productTop">
+                                                <div class="productName">
+                                                    <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' />
+                                                </div>
+                                                <div class="deleteProduct">
+                                                    <asp:ImageButton ID="imgbtnTrash" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
+                                                </div>
+                                            </div>
+                                            <div class="productBottom">
+                                                <div class="productQuantity">
+                                                    <div class="decrementButton">
+                                                        <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="btnQuantity" />
+                                                    </div>
+                                                    <div class="quantityNumber">
+                                                        <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("quantity") %>' CssClass="txtQuantity" />
+                                                    </div>
+                                                    <div class="incrementButton">
+                                                        <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="btnQuantity" />
+                                                    </div>
+                                                </div>
+                                                <div class="totalPrice">
+                                                    RM
+                                            <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("unitPrice") %>' />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+
+                </asp:Repeater>
+                <div class="finalAmount">
+                    <div>
+                        Total
+                    </div>
+                    <div>
+                        RM
+                                <asp:Label ID="lblFinalAmount" runat="server" Text="34.00"></asp:Label>
+                    </div>
+                </div>
+                <div>
+                    <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="btnCheckout"/>
+                </div>
+
+            </asp:Panel>
         </div>
 
         <footer class="footer">
@@ -194,6 +268,14 @@
 
 
         </footer>
+
+
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Product.name, OrderDetails.unitPrice, OrderDetails.quantity, Product.picture FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID INNER JOIN Product ON OrderDetails.productID = Product.productID WHERE ([Order].customerID = @customerID)">
+            <SelectParameters>
+                <asp:Parameter Name="customerID" DefaultValue="1" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </form>
     <script>
         let openPanelButton = document.getElementById("hypCart");
