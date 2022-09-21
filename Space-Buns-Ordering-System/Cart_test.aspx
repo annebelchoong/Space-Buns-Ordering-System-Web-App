@@ -346,7 +346,7 @@
 
       </asp:DataList>--%>
 
-        <asp:DataList ID="DataList1" runat="servere
+        <asp:DataList ID="DataList1" runat="server"/>
             <ItemTemplate>
                 <div class="cart-left">
                     <asp:Image ID="imgProduct" runat="server" Width="100px" />
