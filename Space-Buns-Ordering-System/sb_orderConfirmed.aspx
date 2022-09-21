@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="Order Confirmed | SpaceBuns" Language="C#" MasterPageFile="~/sb_general.Master" AutoEventWireup="true" CodeBehind="sb_orderConfirmed.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_orderConfirm" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/sb_orderConfirmation.css" rel="stylesheet" />
 </asp:Content>
@@ -115,10 +117,161 @@
                     <asp:HyperLink ID="btnHome" runat="server" NavigateUrl="~/sb_index.aspx" CssClass="buttons">Back to Home</asp:HyperLink>
                 </div>
 
+
+
+                <asp:Repeater ID="RepeatInformation" runat="server">
+                    <HeaderTemplate>
+                        <table class="tblcolor">
+                            <tr>
+                                <b>
+                                    <td>Roll No  
+                                    </td>
+                                    <td>Student Name  
+                                    </td>
+                                    <td>Total Fees  
+                                    </td>
+                                </b>
+                            </tr>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tr class="tblrowcolor">
+                            <td>
+                                <%#DataBinder.Eval(Container,"DataItem.RollNo")%>  
+                            </td>
+                            <td>
+                                <%#DataBinder.Eval(Container,"DataItem.Name")%>  
+                            </td>
+                            <td>
+                                <%#DataBinder.Eval(Container,"DataItem.Fees")%>  
+                            </td>
+                        </tr>
+                    </ItemTemplate>
+                    <SeparatorTemplate>
+                        <tr>
+                            <td>
+                                <hr />
+                            </td>
+                            <td>
+                                <hr />
+                            </td>
+                            <td>
+                                <hr />
+                            </td>
+                        </tr>
+                    </SeparatorTemplate>
+                    <AlternatingItemTemplate>
+                        <tr>
+                            <td>
+                                <%#DataBinder.Eval(Container,"DataItem.RollNo")%>  
+                            </td>
+                            <td>
+                                <%#DataBinder.Eval(Container,"DataItem.Name")%>  
+                            </td>
+                            <td>
+                                <%#DataBinder.Eval(Container,"DataItem.Fees")%>  
+                            </td>
+                        </tr>
+                    </AlternatingItemTemplate>
+                    <SeparatorTemplate>
+                        <tr>
+                            <td>
+                                <hr />
+                            </td>
+                            <td>
+                                <hr />
+                            </td>
+                            <td>
+                                <hr />
+                            </td>
+                        </tr>
+                    </SeparatorTemplate>
+                    <FooterTemplate>
+                        <tr>
+                            <td>School Records displayed  
+                            </td>
+                        </tr>
+                        </table>  
+                    </FooterTemplate>
+                </asp:Repeater>
+
             </div>
 
         </section>
     </div>
-    <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Ads.xml" />
+    <%--<asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Ads.xml" />--%>
+
+
+    <td>
+        <%#DataBinder.Eval(Container,"DataItem.RollNo")%>  
+    </td>
+    <td>
+        <%#DataBinder.Eval(Container,"DataItem.Name")%>  
+    </td>
+    <td>
+        <%#DataBinder.Eval(Container,"DataItem.Fees")%>  
+    </td>
+    </tr>  
+            </ItemTemplate>  
+            <separatortemplate>
+                <tr>
+                    <td>
+                        <hr />
+                    </td>
+                    <td>
+                        <hr />
+                    </td>
+                    <td>
+                        <hr />
+                    </td>
+                </tr>
+            </separatortemplate>
+    <alternatingitemtemplate>
+        <tr>
+            <td>
+                <%#DataBinder.Eval(Container,"DataItem.RollNo")%>  
+            </td>
+            <td>
+                <%#DataBinder.Eval(Container,"DataItem.Name")%>  
+            </td>
+            <td>
+                <%#DataBinder.Eval(Container,"DataItem.Fees")%>  
+            </td>
+        </tr>
+    </alternatingitemtemplate>
+    <separatortemplate>
+        <tr>
+            <td>
+                <hr />
+            </td>
+            <td>
+                <hr />
+            </td>
+            <td>
+                <hr />
+            </td>
+        </tr>
+    </separatortemplate>
+    <footertemplate>
+        <tr>
+            <td>School Records displayed  
+            </td>
+        </tr>
+        </table>  
+    </footertemplate>
+    </asp:Repeater>  
+
+    <div id="ads" style="display: flex; justify-content: center;">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:Timer ID="TopBannerTimer" Interval="1000" runat="server" />
+        <asp:UpdatePanel ID="BannerUpdatePanel" runat="server">
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="TopBannerTimer" EventName="Tick" />
+            </Triggers>
+            <ContentTemplate>
+                <asp:AdRotator runat="server" ID="AdRotator1" AdvertisementFile="App_Data/advertisements.xml" Width="850px" Height="500px" ToolTip="Click for more info" />
+                <%--<asp:AdRotator runat="server" ID="AdRotator1" AdvertisementFile="~/Ads.xml" Width="850px" Height="500px" ToolTip="Click for more info"/>--%>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
 
 </asp:Content>

@@ -74,6 +74,15 @@ nav.checkout-bar h1 {
     color: #B97836;
 }
 
+#ads {
+    /*width: 80%;*/
+    display: flex !important; 
+    justify-content: space-between !important;
+    align-items:center !important;
+}
+
+
+
 /* ###################### Layout ###################### */
 
 .container {
