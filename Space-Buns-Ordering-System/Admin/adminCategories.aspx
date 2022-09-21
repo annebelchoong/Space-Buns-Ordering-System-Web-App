@@ -8,7 +8,7 @@
 
         .auto-style2 {
             margin-bottom: 0px;
-        }
+        } 
 
         .auto-style3 {
             width: 696px;
