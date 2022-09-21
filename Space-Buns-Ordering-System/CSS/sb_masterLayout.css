@@ -399,6 +399,18 @@ footer.footer {
     top: 0;
     cursor: pointer;
 }
+
+.buttonQuantity {
+    font-size: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: #1A1A1A;
+    cursor: pointer;
+    width: 40px;
+    height: 42px;
+}
+
 @media only screen and (max-width:1200px) {
     /* ################### Banner ######################## */
     .bannerCaption h1 {
@@ -540,7 +552,7 @@ footer.footer {
 .productQuantity {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     flex-direction: row;
 }
 
