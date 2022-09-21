@@ -17,7 +17,8 @@
                         aria-hidden="true"></i>
                     <div class="card_inner">
                         <p class="text-primary-p">Total Sales</p>
-                        <span class="font-bold text-title">378</span>
+                        <span class="font-bold text-title">
+                            <asp:Label ID="lblTotalSales" runat="server" ToolTip="Total Orders"></asp:Label></span>
                     </div>
                 </div>
 
@@ -25,7 +26,8 @@
                     <i class="fa fa-clipboard fa-2x text-red" aria-hidden="true"></i>
                     <div class="card_inner">
                         <p class="text-primary-p">Total Orders</p>
-                        <span class="font-bold text-title">523</span>
+                        <span class="font-bold text-title">
+                            <asp:Label ID="lblTotalOrders" runat="server" ToolTip="Total Orders"></asp:Label></span>
                     </div>
                 </div>
 
@@ -34,8 +36,9 @@
                         class="fa fa-table fa-2x text-yellow"
                         aria-hidden="true"></i>
                     <div class="card_inner">
-                        <p class="text-primary-p">Events</p>
-                        <span class="font-bold text-title">34</span>
+                        <p class="text-primary-p">Upcoming Events</p>
+                        <span class="font-bold text-title">
+                            <asp:Label ID="lblTotalEvents" runat="server" ToolTip="Total Orders"></asp:Label></span>
                     </div>
                 </div>
 
@@ -44,8 +47,42 @@
                         class="fa fa-hamburger fa-2x text-black"
                         aria-hidden="true"></i>
                     <div class="card_inner">
-                        <p class="text-primary-p">Products</p>
-                        <span class="font-bold text-title">25</span>
+                        <p class="text-primary-p">Total Products</p>
+                        <span class="font-bold text-title">
+                            <asp:Label ID="lblTotalProducts" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <i
+                        class="fa fa-store fa-2x text-black"
+                        aria-hidden="true"></i>
+                    <div class="card_inner">
+                        <p class="text-primary-p">Total Branches</p>
+                        <span class="font-bold text-title">
+                            <asp:Label ID="lblTotalBranches" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <i
+                        class="fa fa-users fa-2x text-gray"
+                        aria-hidden="true"></i>
+                    <div class="card_inner">
+                        <p class="text-primary-p">Total Customers</p>
+                        <span class="font-bold text-title">
+                            <asp:Label ID="lblTotalCustomers" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <i
+                        class="fa fa-globe fa-2x text-green"
+                        aria-hidden="true"></i>
+                    <div class="card_inner">
+                        <p class="text-primary-p">Online Now</p>
+                        <span class="font-bold text-title">
+                            <asp:Label ID="lblTotalOnline" runat="server" ToolTip="Total Orders"></asp:Label></span>
                     </div>
                 </div>
             </div>
@@ -296,7 +333,11 @@
                 <!--/ Copy this code to have a working example -->
 
             </div>
+        </div>
     </main>
 
+    <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1"></asp:GridView>
+
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 
 </asp:Content>
