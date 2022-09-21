@@ -197,4 +197,73 @@
         </table>
     </div>
 
+    <div>
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="CategoryId" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:BoundField DataField="CategoryId" HeaderText="Category Id" ReadOnly="True" SortExpression="CategoryId" />
+                <asp:BoundField DataField="CategoryName" HeaderText="Category Name" SortExpression="CategoryName" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="deleteButton" runat="server" CommandName="Delete" Text="Delete"
+                            OnClientClick="return confirm('Are you sure you want to delete this user?');" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:CommandField ButtonType="Button" ShowEditButton="True" ShowSelectButton="True" />
+            </Columns>
+        </asp:GridView>
+        <br />
+        <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="productID" DataSourceID="SqlDataSource2" Height="50px" Width="363px">
+            <Fields>
+                <asp:BoundField DataField="productID" HeaderText="productID" SortExpression="productID" InsertVisible="False" ReadOnly="True" />
+                <asp:BoundField DataField="categoryID" HeaderText="categoryID" SortExpression="categoryID" />
+                <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
+                <asp:BoundField DataField="unitPrice" HeaderText="unitPrice" SortExpression="unitPrice" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+            </Fields>
+        </asp:DetailsView>
+        <br />
+        <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;
+            <br />
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Product] WHERE [ProductId] = @ProductId" InsertCommand="INSERT INTO Product(name, unitPrice, quantity, categoryID) VALUES (@Name, @UnitPrice, @Quantity, @CategoryID)" SelectCommand="SELECT * FROM [Product] WHERE ([CategoryID] = @CategoryID)" UpdateCommand="UPDATE Product SET name = @Name, unitPrice = @UnitPrice, quantity = @Quantity, categoryID = @CategoryID WHERE (productID = @ProductId)">
+            <DeleteParameters>
+                <asp:Parameter Name="ProductId" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <%-- <asp:Parameter Name="ProductId" Type="String" />--%>
+                <asp:Parameter Name="Name" />
+                <asp:Parameter Name="UnitPrice" />
+                <asp:Parameter Name="Quantity" Type="Int32" />
+                <asp:Parameter Name="CategoryID" Type="String" />
+            </InsertParameters>
+            <SelectParameters>
+                <asp:ControlParameter ControlID="GridView1" Name="CategoryID" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="Name" />
+                <asp:Parameter Name="UnitPrice" />
+                <asp:Parameter Name="Quantity" Type="Int32" />
+                <asp:Parameter Name="CategoryID" Type="String" />
+                <asp:Parameter Name="ProductId" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Category] WHERE [CategoryId] = @CategoryId" InsertCommand="INSERT INTO [Category] ([CategoryId], [CategoryName]) VALUES (@CategoryId, @CategoryName)" SelectCommand="SELECT * FROM [Category]" UpdateCommand="UPDATE [Category] SET [CategoryName] = @CategoryName WHERE [CategoryId] = @CategoryId">
+            <DeleteParameters>
+                <asp:Parameter Name="CategoryId" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="CategoryId" Type="String" />
+                <asp:Parameter Name="CategoryName" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="CategoryName" Type="String" />
+                <asp:Parameter Name="CategoryId" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <br />
+    </div>
+
 </asp:Content>
