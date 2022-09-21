@@ -20,6 +20,8 @@ namespace Space_Buns_Ordering_System
 
             var options = new SessionCreateOptions
             {
+                CustomerEmail = "customer@example.com",
+                //BillingAddressCollection = "",
                 //SuccessUrl = "https://localhost:52001/success?id={CHECKOUT_SESSION_ID}",
                 SuccessUrl = "https://localhost:44358/sb_orderConfirmed.aspx",
                 CancelUrl = "https://localhost:52001/cancel",   // should go back to cart 
@@ -33,6 +35,7 @@ namespace Space_Buns_Ordering_System
                     //"wechat_pay",
                 },
                 ShippingAddressCollection = new SessionShippingAddressCollectionOptions(),
+
                 LineItems = new List<SessionLineItemOptions>
                 {
                     new SessionLineItemOptions
@@ -118,6 +121,7 @@ namespace Space_Buns_Ordering_System
                     },
 
                 },
+
                 Mode = "payment",
 
                 AllowPromotionCodes = true,

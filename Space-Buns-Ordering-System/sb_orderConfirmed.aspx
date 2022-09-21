@@ -7,9 +7,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <h1 class="thankyou-text">Thank You for Ordering!</h1>
-        <%--                <strong>                    <asp:Label ID="lblThankyou" runat="server" Text="Thank You for Ordering!" CssClass="thankyou-text"></asp:Label>                </strong>--%>
+        <%--                <strong>
+                    <asp:Label ID="lblThankyou" runat="server" Text="Thank You for Ordering!" CssClass="thankyou-text"></asp:Label>
+                </strong>--%>
         <asp:Label ID="lblOrderReadyTime" runat="server" Text="Order will be ready in 25mins" CssClass="orderReady-text"></asp:Label>
-        <h2 class="orderID">Order ID:                <%--<p>O1001</p>--%>
+        <h2 class="orderID">Order ID:
+                <%--<p>O1001</p>--%>
             <asp:Label ID="lblOrderID" runat="server" Text="O1001" CssClass="orderid-text"></asp:Label>
         </h2>
         <section>
@@ -82,10 +85,12 @@
                     </div>
                     <div class="total-container">
                         <div class=" total-left">
-                            <span class="total">No. of Items:</span>                            <span class="total-total">Total: </span>
+                            <span class="total">No. of Items:</span>
+                            <span class="total-total">Total: </span>
                         </div>
                         <div class="total-right">
-                            <%--<span class="data-num">7</span>--%>                            <%--<span class="data-total">RM 106.00</span>--%>
+                            <%--<span class="data-num">7</span>--%>
+                            <%--<span class="data-total">RM 106.00</span>--%>
                             <asp:Label ID="lblDataNum" runat="server" Text="7"></asp:Label>
                             <asp:Label ID="lblDataTotal" runat="server" Text="RM 106.00"></asp:Label>
                         </div>
@@ -97,112 +102,11 @@
                 <div class="buttonsContainer">
                     <asp:HyperLink ID="btnHome" runat="server" NavigateUrl="~/sb_index.aspx" CssClass="buttons">Back to Home</asp:HyperLink>
                 </div>
-                <asp:Repeater ID="RepeatInformation" runat="server">
-                    <HeaderTemplate>
-                        <table class="tblcolor">
-                            <tr>
-                                <b>
-                                    <td>Roll No                                      </td>
-                                    <td>Student Name                                      </td>
-                                    <td>Total Fees                                      </td>
-                                </b>
-                            </tr>
-                    </HeaderTemplate>
-                    <ItemTemplate>
-                        <tr class="tblrowcolor">
-                            <td><%#DataBinder.Eval(Container,"DataItem.RollNo")%>                              </td>
-                            <td><%#DataBinder.Eval(Container,"DataItem.Name")%>                              </td>
-                            <td><%#DataBinder.Eval(Container,"DataItem.Fees")%>                              </td>
-                        </tr>
-                    </ItemTemplate>
-                    <SeparatorTemplate>
-                        <tr>
-                            <td>
-                                <hr />
-                            </td>
-                            <td>
-                                <hr />
-                            </td>
-                            <td>
-                                <hr />
-                            </td>
-                        </tr>
-                    </SeparatorTemplate>
-                    <AlternatingItemTemplate>
-                        <tr>
-                            <td><%#DataBinder.Eval(Container,"DataItem.RollNo")%>                              </td>
-                            <td><%#DataBinder.Eval(Container,"DataItem.Name")%>                              </td>
-                            <td><%#DataBinder.Eval(Container,"DataItem.Fees")%>                              </td>
-                        </tr>
-                    </AlternatingItemTemplate>
-                    <SeparatorTemplate>
-                        <tr>
-                            <td>
-                                <hr />
-                            </td>
-                            <td>
-                                <hr />
-                            </td>
-                            <td>
-                                <hr />
-                            </td>
-                        </tr>
-                    </SeparatorTemplate>
-                    <FooterTemplate>
-                        <tr>
-                            <td>School Records displayed                              </td>
-                        </tr>
-                        </table>                     
-                    </FooterTemplate>
-                </asp:Repeater>
+
             </div>
         </section>
     </div>
-    <%--<asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Ads.xml" />--%>
-    <td><%#DataBinder.Eval(Container,"DataItem.RollNo")%>      </td>
-    <td><%#DataBinder.Eval(Container,"DataItem.Name")%>      </td>
-    <td><%#DataBinder.Eval(Container,"DataItem.Fees")%>      </td>
-    </tr>              </ItemTemplate>             
-    <separatortemplate>
-        <tr>
-            <td>
-                <hr />
-            </td>
-            <td>
-                <hr />
-            </td>
-            <td>
-                <hr />
-            </td>
-        </tr>
-    </separatortemplate>
-    <alternatingitemtemplate>
-        <tr>
-            <td><%#DataBinder.Eval(Container,"DataItem.RollNo")%>              </td>
-            <td><%#DataBinder.Eval(Container,"DataItem.Name")%>              </td>
-            <td><%#DataBinder.Eval(Container,"DataItem.Fees")%>              </td>
-        </tr>
-    </alternatingitemtemplate>
-    <separatortemplate>
-        <tr>
-            <td>
-                <hr />
-            </td>
-            <td>
-                <hr />
-            </td>
-            <td>
-                <hr />
-            </td>
-        </tr>
-    </separatortemplate>
-    <footertemplate>
-        <tr>
-            <td>School Records displayed              </td>
-        </tr>
-        </table>     
-    </footertemplate>
-    </asp:Repeater>     
+
     <div id="ads" style="display: flex; justify-content: center;">
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
         <asp:Timer ID="TopBannerTimer" Interval="1000" runat="server" />

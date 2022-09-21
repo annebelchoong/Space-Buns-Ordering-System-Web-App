@@ -11,13 +11,28 @@
 		<NavigateUrl></NavigateUrl>
 	</Ad>
 	<Ad>
-		<ImageUrl>/Media/Events/event2.jpg</ImageUrl>
-		<AlternateText>E1</AlternateText>
-		<NavigateUrl>/Media/Ads/foodbank.jpg</NavigateUrl>
-	</Ad>
-	<Ad>
 		<ImageUrl>/Media/Promotions/Alien Day.png</ImageUrl>
 		<AlternateText>Alien Day</AlternateText>
 		<NavigateUrl>/Media/Ads/Alien Day.png</NavigateUrl>
 	</Ad>
+	<!--<Ad>
+		<ImageUrl>/Media/Promotions/Big Blast.jpg</ImageUrl>
+		<AlternateText>Big Blast Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/Big Blast.jpg</NavigateUrl>
+	</Ad>-->
+	<Ad>
+		<ImageUrl>/Media/Promotions/Buy1Free1.png</ImageUrl>
+		<AlternateText>Buy1Free1 Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/Buy1Free1.png</NavigateUrl>
+	</Ad>
+	<!--<Ad>
+		<ImageUrl>/Media/Promotions/Fiery Fiesta.jpg</ImageUrl>
+		<AlternateText>Fiery Fiesta Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/Fiery Fiesta.jpg</NavigateUrl>
+	</Ad>
+	<Ad>
+		<ImageUrl>/Media/Promotions/Meat Mania.jpg</ImageUrl>
+		<AlternateText>Meat Mania Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/Meat Mania.jpg</NavigateUrl>
+	</Ad>-->
 </Advertisements>
