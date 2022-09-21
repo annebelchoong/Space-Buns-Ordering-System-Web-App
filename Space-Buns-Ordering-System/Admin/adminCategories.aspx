@@ -61,6 +61,13 @@
             height: 32px;
             width: 176px;
         }
+        .auto-style15 {
+            width: 166px;
+            height: 277px;
+        }
+        .auto-style16 {
+            height: 277px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -70,7 +77,7 @@
 
         <table class="auto-style2" style="margin-left: 2%; margin-top: 1%; margin-right: 2%;">
             <tr>
-                <%--<td colspan="3" style="font-weight: bold; font-size: xx-large; text-decoration: underline overline; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style6">CATEGORY</td>--%>
+                <%-- <asp:Parameter Name="ProductId" Type="String" />--%>
             </tr>
             <tr>
                 <td colspan="3">&nbsp;</td>
@@ -80,32 +87,44 @@
                     <asp:TextBox ID="txtCatName0" runat="server"></asp:TextBox>
                     &nbsp;&nbsp;&nbsp;<br />
                     <br />
-                    Items Amount&nbsp;&nbsp; :&nbsp;
-                    <asp:TextBox ID="txtCatName1" runat="server"></asp:TextBox>
-                    <br />
-                    <br />
-                    Set Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;
+                    <%--        <asp:GridView ID="GridView2" runat="server" DataSourceID="SqlDataSource3" AutoGenerateColumns="False" DataKeyNames="categoryID">
+            <Columns>
+                <asp:BoundField DataField="categoryID" HeaderText="categoryID" InsertVisible="False" ReadOnly="True" SortExpression="categoryID" />
+                <asp:BoundField DataField="categoryName" HeaderText="categoryName" SortExpression="categoryName" />
+                <asp:CheckBoxField DataField="isAvailable" HeaderText="isAvailable" SortExpression="isAvailable" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Category] WHERE ([categoryName] LIKE '%' + @categoryName + '%')">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="txtSearchCategory" Name="categoryName" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>--%>Set Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;
                     <asp:DropDownList ID="ddlStatus" runat="server">
-                        <asp:ListItem>Available</asp:ListItem>
-                        <asp:ListItem>Not Available</asp:ListItem>
+                        <asp:ListItem Value="True">True</asp:ListItem>
+                        <asp:ListItem Value="False">False</asp:ListItem>
                     </asp:DropDownList>
                     <br />
                     <br />
-                    <asp:Button ID="btnAdd" runat="server" Text="Add" />
+                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnClear" runat="server" Text="Clear" />
+                    <br />
+                    <br />
+                    <asp:Label ID="lblDisplay" runat="server"></asp:Label>
                 </td>
                 <td class="auto-style4" rowspan="2">&nbsp;</td>
                 <td style="text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Category List</td>
             </tr>
             <tr>
                 <td style="text-align: right; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Search :&nbsp;
-                    <asp:TextBox ID="TextBox1" runat="server" ForeColor="#999999" Height="24px" placeholder="CategoryID"></asp:TextBox>
+                    <asp:TextBox ID="txtSearchCategory" runat="server" ForeColor="#999999" Height="24px" placeholder="CategoryID" ></asp:TextBox>
+                    <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" />
                 </td>
             </tr>
             <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td>
+                <td class="auto-style15"></td>
+                <td class="auto-style16">
                     <table class="auto-style3">
                         <tr>
                             <td class="auto-style6" style="text-align: center; border-style: solid; border-width: thin; font-weight: bold; font-variant: small-caps; font-family: 'Segoe UI', Verdana, sans-serif;">Name</td>
@@ -198,61 +217,88 @@
     </div>
 
     <div>
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="CategoryId" DataSourceID="SqlDataSource1">
-                <Columns>
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowSelectButton="True" />
-                    <asp:BoundField DataField="CategoryId" HeaderText="Category Id" ReadOnly="True" SortExpression="CategoryId" />
-                    <asp:BoundField DataField="CategoryName" HeaderText="Category Name" SortExpression="CategoryName" />
-                </Columns>
-            </asp:GridView>
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="CategoryId" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:BoundField DataField="CategoryId" HeaderText="Category Id" ReadOnly="True" SortExpression="CategoryId" />
+                <asp:BoundField DataField="CategoryName" HeaderText="Category Name" SortExpression="CategoryName" />
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="deleteButton" runat="server" CommandName="Delete" Text="Delete"
+                            OnClientClick="return confirm('Are you sure you want to delete this user?');" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:CommandField />
+                <asp:CommandField ButtonType="Button" ShowEditButton="True" />
+                <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
+            </Columns>
+        </asp:GridView>
+        <br />
+        <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="productID" DataSourceID="SqlDataSource2" Height="50px" Width="125px">
+            <Fields>
+                <asp:BoundField DataField="productID" HeaderText="productID" SortExpression="productID" InsertVisible="False" ReadOnly="True" />
+                <asp:BoundField DataField="categoryID" HeaderText="categoryID" SortExpression="categoryID" />
+                <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
+                <asp:BoundField DataField="unitPrice" HeaderText="unitPrice" SortExpression="unitPrice" />
+                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+            </Fields>
+        </asp:DetailsView>
+        <br />
+        <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;
             <br />
-            <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="productID" DataSourceID="SqlDataSource2" Height="50px" Width="125px">
-                <Fields>
-                    <asp:BoundField DataField="productID" HeaderText="productID" SortExpression="productID" InsertVisible="False" ReadOnly="True" />
-                    <asp:BoundField DataField="categoryID" HeaderText="categoryID" SortExpression="categoryID" />
-                    <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                    <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
-                    <asp:BoundField DataField="unitPrice" HeaderText="unitPrice" SortExpression="unitPrice" />
-                    <asp:BoundField DataField="adminID" HeaderText="adminID" SortExpression="adminID" />
-                </Fields>
-            </asp:DetailsView>
-            <br />
-            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Product] WHERE [ProductId] = @ProductId" InsertCommand="INSERT INTO [Product] ([Name], [UnitPrice], [Quantity], [CategoryID]) VALUES (@ProductName, @Price, @Quantity, @CategoryID)" SelectCommand="SELECT * FROM [Product] WHERE ([CategoryID] = @CategoryID)" UpdateCommand="UPDATE Product SET name = @ProductName, unitPrice = @Price, quantity = @Quantity, categoryID = @CategoryID WHERE (productID = @ProductId)">
-                <DeleteParameters>
-                    <asp:Parameter Name="ProductId" Type="String" />
-                </DeleteParameters>
-                <InsertParameters>
-                   <%-- <asp:Parameter Name="ProductId" Type="String" />--%>
-                    <asp:Parameter Name="ProductName" Type="String" />
-                    <asp:Parameter Name="Price" Type="Double" />
-                    <asp:Parameter Name="Quantity" Type="Int32" />
-                    <asp:Parameter Name="CategoryID" Type="String" />
-                </InsertParameters>
-                <SelectParameters>
-                    <asp:ControlParameter ControlID="GridView1" Name="CategoryID" PropertyName="SelectedValue" Type="String" />
-                </SelectParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="ProductName" Type="String" />
-                    <asp:Parameter Name="Price" Type="Double" />
-                    <asp:Parameter Name="Quantity" Type="Int32" />
-                    <asp:Parameter Name="CategoryID" Type="String" />
-                    <asp:Parameter Name="ProductId" Type="String" />
-                </UpdateParameters>
-            </asp:SqlDataSource>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Category] WHERE [CategoryId] = @CategoryId" InsertCommand="INSERT INTO [Category] ([CategoryId], [CategoryName]) VALUES (@CategoryId, @CategoryName)" SelectCommand="SELECT * FROM [Category]" UpdateCommand="UPDATE [Category] SET [CategoryName] = @CategoryName WHERE [CategoryId] = @CategoryId">
-                <DeleteParameters>
-                    <asp:Parameter Name="CategoryId" Type="String" />
-                </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="CategoryId" Type="String" />
-                    <asp:Parameter Name="CategoryName" Type="String" />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="CategoryName" Type="String" />
-                    <asp:Parameter Name="CategoryId" Type="String" />
-                </UpdateParameters>
-            </asp:SqlDataSource>
-            <br />
-            <br />
-            GridView, DetailView, FormView, Repeater, DropdownList == Databound Controls</div>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Product] WHERE [ProductId] = @ProductId" InsertCommand="INSERT INTO Product(name, unitPrice, quantity, categoryID) VALUES (@Name, @UnitPrice, @Quantity, @CategoryID)" SelectCommand="SELECT * FROM [Product] WHERE ([CategoryID] = @CategoryID)" UpdateCommand="UPDATE Product SET name = @Name, unitPrice = @UnitPrice, quantity = @Quantity, categoryID = @CategoryID WHERE (productID = @ProductId)">
+            <DeleteParameters>
+                <asp:Parameter Name="ProductId" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <%-- <asp:Parameter Name="ProductId" Type="String" />--%>
+                <asp:Parameter Name="Name" />
+                <asp:Parameter Name="UnitPrice" />
+                <asp:Parameter Name="Quantity" Type="Int32" />
+                <asp:Parameter Name="CategoryID" Type="String" />
+            </InsertParameters>
+            <SelectParameters>
+                <asp:ControlParameter ControlID="GridView1" Name="CategoryID" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="Name" />
+                <asp:Parameter Name="UnitPrice" />
+                <asp:Parameter Name="Quantity" Type="Int32" />
+                <asp:Parameter Name="CategoryID" Type="String" />
+                <asp:Parameter Name="ProductId" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Category] WHERE [CategoryId] = @CategoryId" InsertCommand="INSERT INTO [Category] ([CategoryId], [CategoryName]) VALUES (@CategoryId, @CategoryName)" SelectCommand="SELECT * FROM [Category]" UpdateCommand="UPDATE [Category] SET [CategoryName] = @CategoryName WHERE [CategoryId] = @CategoryId">
+            <DeleteParameters>
+                <asp:Parameter Name="CategoryId" Type="String" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="CategoryId" Type="String" />
+                <asp:Parameter Name="CategoryName" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="CategoryName" Type="String" />
+                <asp:Parameter Name="CategoryId" Type="String" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <br />
+        <br />
+        GridView, DetailView, FormView, Repeater, DropdownList == Databound Controls
+<%--        <asp:GridView ID="GridView2" runat="server" DataSourceID="SqlDataSource3" AutoGenerateColumns="False" DataKeyNames="categoryID">
+            <Columns>
+                <asp:BoundField DataField="categoryID" HeaderText="categoryID" InsertVisible="False" ReadOnly="True" SortExpression="categoryID" />
+                <asp:BoundField DataField="categoryName" HeaderText="categoryName" SortExpression="categoryName" />
+                <asp:CheckBoxField DataField="isAvailable" HeaderText="isAvailable" SortExpression="isAvailable" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Category] WHERE ([categoryName] LIKE '%' + @categoryName + '%')">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="txtSearchCategory" Name="categoryName" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>--%>
+    </div>
 </asp:Content>
