@@ -8,12 +8,12 @@
 	<Ad>
 		<ImageUrl>/Media/Ads/gogreen.jpg</ImageUrl>
 		<AlternateText>Go Green Ad</AlternateText>
-		<NavigateUrl></NavigateUrl>
+		<NavigateUrl>/Media/Ads/gogreen.jpg</NavigateUrl>
 	</Ad>
 	<Ad>
 		<ImageUrl>/Media/Promotions/Alien Day.png</ImageUrl>
 		<AlternateText>Alien Day</AlternateText>
-		<NavigateUrl>/Media/Ads/Alien Day.png</NavigateUrl>
+		<NavigateUrl>/Media/Promotions/Alien Day.png</NavigateUrl>
 	</Ad>
 	<!--<Ad>
 		<ImageUrl>/Media/Promotions/Big Blast.jpg</ImageUrl>
@@ -23,7 +23,7 @@
 	<Ad>
 		<ImageUrl>/Media/Promotions/Buy1Free1.png</ImageUrl>
 		<AlternateText>Buy1Free1 Ad</AlternateText>
-		<NavigateUrl>/Media/Ads/Buy1Free1.png</NavigateUrl>
+		<NavigateUrl>/Media/Promotions/Buy1Free1.png</NavigateUrl>
 	</Ad>
 	<!--<Ad>
 		<ImageUrl>/Media/Promotions/Fiery Fiesta.jpg</ImageUrl>

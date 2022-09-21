@@ -107,17 +107,17 @@
         </section>
     </div>
 
-    <div id="ads" style="display: flex; justify-content: center;">
+    <div id="ads" style="display: flex; justify-content: center; margin-bottom: 30px;">
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
-        <asp:Timer ID="TopBannerTimer" Interval="1000" runat="server" />
+        <asp:Timer ID="TopBannerTimer" Interval="5000" runat="server" />
         <asp:UpdatePanel ID="BannerUpdatePanel" runat="server">
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="TopBannerTimer" EventName="Tick" />
             </Triggers>
             <ContentTemplate>
                 <asp:AdRotator runat="server" ID="AdRotator1" AdvertisementFile="App_Data/advertisements.xml" Width="850px" Height="500px" ToolTip="Click for more info" />
-                <%--<asp:AdRotator runat="server" ID="AdRotator1" AdvertisementFile="~/Ads.xml" Width="850px" Height="500px" ToolTip="Click for more info"/>--%>
             </ContentTemplate>
         </asp:UpdatePanel>
     </div>
+
 </asp:Content>

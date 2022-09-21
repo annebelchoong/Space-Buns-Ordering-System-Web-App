@@ -126,6 +126,8 @@
     <Content Include="Media\Banner\Burgerbanner1.jpg" />
     <Content Include="Media\Banner\Burgerbanner2.png" />
     <Content Include="Media\Banner\cafebanner.png" />
+    <Content Include="Media\Error\burger_behind_bars.jpg" />
+    <Content Include="Media\Error\no_burger.png" />
     <Content Include="Media\Events\event1.jpg" />
     <Content Include="Media\Events\event2.jpg" />
     <Content Include="Media\Events\event3.jpg" />
@@ -185,6 +187,7 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
+    <Content Include="sb_orderCancelled.aspx" />
     <Content Include="temp.aspx" />
     <Content Include="UserProfile\sb_changePassword.aspx" />
     <Content Include="sb_checkout.aspx" />
@@ -269,6 +272,13 @@
     </Compile>
     <Compile Include="Admin\adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_orderCancelled.aspx.cs">
+      <DependentUpon>sb_orderCancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_orderCancelled.aspx.designer.cs">
+      <DependentUpon>sb_orderCancelled.aspx</DependentUpon>
     </Compile>
     <Compile Include="temp.aspx.cs">
       <DependentUpon>temp.aspx</DependentUpon>
