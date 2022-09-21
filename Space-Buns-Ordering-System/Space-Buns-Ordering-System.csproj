@@ -98,6 +98,7 @@
     <Content Include="Admin\adminOrders.aspx" />
     <Content Include="Admin\adminProducts.aspx" />
     <Content Include="Admin\adminSales.aspx" />
+    <Content Include="CartTestTest.aspx" />
     <Content Include="Cart_test.aspx" />
     <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="CSS\sb_adminOrderDetails.css" />
@@ -253,6 +254,13 @@
     </Compile>
     <Compile Include="Admin\adminSales.aspx.designer.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartTestTest.aspx.cs">
+      <DependentUpon>CartTestTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartTestTest.aspx.designer.cs">
+      <DependentUpon>CartTestTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Cart_test.aspx.cs">
       <DependentUpon>Cart_test.aspx</DependentUpon>
