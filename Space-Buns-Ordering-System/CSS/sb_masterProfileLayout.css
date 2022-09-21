@@ -411,6 +411,22 @@ nav.close ~ .dashboard .top {
         border: none;
     }
 
+.modalBackground {
+    background-color: black;
+    filter: opacity(90) !important;
+    opacity: 0.6 !important;
+    z-index: 20;
+}
+
+.modalpopup {
+    padding: 30px;
+    position: relative;
+    width: 35%;
+    height: 460px;
+    background-color: #B97836;
+    border-radius: 20px;
+}
+
 @media (max-width: 1000px) {
     nav {
         width: 73px;

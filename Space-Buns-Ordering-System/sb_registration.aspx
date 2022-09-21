@@ -56,7 +56,7 @@
              <asp:HyperLink ID="lnkSpaceBunLogo" runat="server" ImageHeight="80px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx"></asp:HyperLink>
 
         <div class="auto-style2" >
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" Width="557px" align="center" CreateUserButtonText="Sign Up" ContinueDestinationPageUrl="~/sb_login.aspx">
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" Width="557px" align="center" CreateUserButtonText="Sign Up" ContinueDestinationPageUrl="~/UserProfile/sb_editProfile.aspx">
             <CreateUserButtonStyle BackColor="Black" CssClass="btn" />
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server">

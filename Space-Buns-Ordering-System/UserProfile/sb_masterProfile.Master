@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_masterProfile.master.cs" Inherits="Space_Buns_Ordering_System.sb_masterProfile" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -78,15 +80,16 @@
                 <div>
                     <div class="logo-name">
                         <div class="logo-image">
-                            <img src="/Media/Icons/profile_pic.jpg" />
+                            <img src="../Media/Profile/profile_pic.jpg" />
                         </div>
                     </div>
                     <br />
                     <div class="container">
                         <asp:Button ID="btnEditPic" runat="server" class="userProfileButtons" Text="Edit Pic" />
+                        <asp:Label ID="lblEditImg" runat="server"></asp:Label>
                     </div>
                     <div class="logo-name">
-                        <h3><strong>Corn Jena</strong></h3>
+                        <h3><strong><asp:LoginName ID="LoginName1" runat="server" /></strong></h3>
                     </div>
                 </div>
 
@@ -125,6 +128,17 @@
 
             </div>
         </nav>
+
+        <asp:Panel ID="Panel1" runat="server" CssClass="modalpopup">
+            
+            <h2>Upload Image</h2>
+            <asp:FileUpload ID="ImgUpload" runat="server" />
+            <asp:Button ID="btnUpload" runat="server" Text="Update Image" OnClick="btnUpload_Click" />
+            <asp:Button ID="btnClose" runat="server" Text="Close" />
+        </asp:Panel>
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btnEditPic" CancelControlID="btnClose" BackgroundCssClass="modalBackground"></ajaxToolkit:ModalPopupExtender>
 
         <section class="dashboard">
             <div>

@@ -97,6 +97,7 @@
     <Content Include="Admin\adminOrderDetail.aspx" />
     <Content Include="Admin\adminOrders.aspx" />
     <Content Include="Admin\adminProducts.aspx" />
+    <Content Include="Admin\adminRoles.aspx" />
     <Content Include="Admin\adminSales.aspx" />
     <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="CSS\sb_adminOrderDetails.css" />
@@ -169,6 +170,7 @@
     <Content Include="Media\menuBurgers\meatless1.jpg" />
     <Content Include="Media\menuBurgers\meatless2.jpg" />
     <Content Include="Media\menuBurgers\meatless3.jpg" />
+    <Content Include="Media\Profile\profile_pic.jpg" />
     <Content Include="Media\Promotions\Alien Day.png" />
     <Content Include="Media\Promotions\Big Blast.jpg" />
     <Content Include="Media\Promotions\Buy1Free1.png" />
@@ -245,6 +247,13 @@
     </Compile>
     <Compile Include="Admin\adminProducts.aspx.designer.cs">
       <DependentUpon>adminProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\adminRoles.aspx.cs">
+      <DependentUpon>adminRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminRoles.aspx.designer.cs">
+      <DependentUpon>adminRoles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\adminSales.aspx.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>

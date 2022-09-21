@@ -1,26 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_userProfile.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_userProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style2 {
-            width: 217px;
-        }
-
-        .auto-style3 {
-            width: 217px;
-            height: 25px;
-        }
-
-        .auto-style4 {
-            height: 25px;
-            width: 757px;
-        }
-
-        .auto-style5 {
-            width: 757px;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
@@ -37,7 +18,9 @@
                 <br />
             </div>
             <div>
-                <table style="width: 100%;">
+                <asp:Label ID="lblUserProfile" runat="server"></asp:Label>
+                <br />
+                <%--<table style="width: 100%;">
                     <tr>
                         <td class="auto-style2">
                             <asp:Label ID="lblFName" runat="server" ForeColor="#515051" Text="First Name"></asp:Label>
@@ -156,7 +139,8 @@
                     <tr>
                         <td colspan="2">&nbsp;</td>
                     </tr>
-                </table>
+                </table>--%>
+            </div>
             </div>
         </div>
     </div>

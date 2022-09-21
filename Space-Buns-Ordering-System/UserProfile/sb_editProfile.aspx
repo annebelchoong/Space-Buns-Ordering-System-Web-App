@@ -34,7 +34,7 @@
         }
 
         .input {
-            height: 30px;
+            height: 50px;
             width: 300px;
             border-radius: 6px;
             border: 1px #B97836 solid;
@@ -82,7 +82,8 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:TextBox ID="txtUsername" runat="server" class="input" placeholder="Username"></asp:TextBox>
+                                <asp:LoginName ID="LoginName1" runat="server" ForeColor="white"/>
+                                <%--<asp:TextBox ID="txtUsername" runat="server" class="input" placeholder="Username"></asp:TextBox>--%>
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
@@ -150,7 +151,21 @@
                                 <asp:TextBox ID="txtPostCode" runat="server" class="input" placeholder="Post Code"></asp:TextBox>
                             </td>
                             <td class="auto-style5">
-                                <asp:TextBox ID="txtState" runat="server" class="input" placeholder="State"></asp:TextBox>
+                                <asp:DropDownList ID="ddlState" runat="server" class="input" ForeColor="White">
+                                    <asp:ListItem>Johor</asp:ListItem>
+                                    <asp:ListItem>Kedah</asp:ListItem>
+                                    <asp:ListItem>Kelantan</asp:ListItem>
+                                    <asp:ListItem>Malacca</asp:ListItem>
+                                    <asp:ListItem>Negeri Sembilan</asp:ListItem>
+                                    <asp:ListItem>Pahang</asp:ListItem>
+                                    <asp:ListItem>Penang</asp:ListItem>
+                                    <asp:ListItem>Perak</asp:ListItem>
+                                    <asp:ListItem>Perlis</asp:ListItem>
+                                    <asp:ListItem>Sabah</asp:ListItem>
+                                    <asp:ListItem>Sarawak</asp:ListItem>
+                                    <asp:ListItem>Selangor</asp:ListItem>
+                                    <asp:ListItem>Terengganu</asp:ListItem>
+                                </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
@@ -165,7 +180,8 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:TextBox ID="txtDoB" runat="server" class="input" placeholder="dd/mm/yyyy"></asp:TextBox>
+                                <asp:Calendar ID="calDoB" runat="server" OnSelectionChanged="calDoB_SelectionChanged" foreColor ="#999999"></asp:Calendar>
+                                <asp:TextBox ID="txtDoB" runat="server" class="input"></asp:TextBox>
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
@@ -179,12 +195,16 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:Button ID="btnSaveChange" runat="server" class="btn1" Text="Save Changes" PostBackUrl="~/UserProfile/sb_userProfile.aspx" />
+                                <asp:Button ID="btnSaveChange" runat="server" class="btn1" Text="Save Changes" PostBackUrl="~/UserProfile/sb_userProfile.aspx" OnClick="btnSaveChange_Click" />
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">&nbsp;</td>
+                            <td class="auto-style2">
+                                <asp:Label ID="lblEditProfile" runat="server"></asp:Label>
+                                <br />
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
+                            </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
                     </table>

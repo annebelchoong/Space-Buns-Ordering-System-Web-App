@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Space_Buns_Ordering_System
 {
@@ -11,7 +14,20 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString);
+            con.Open();
+            string query = "Select firstName, lastName from Customer";
+            SqlCommand cmd = new SqlCommand(query, con);
 
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                lblUserProfile.Text = dr.GetValue(0).ToString();
+            }
+            
         }
+
+       
     }
 }

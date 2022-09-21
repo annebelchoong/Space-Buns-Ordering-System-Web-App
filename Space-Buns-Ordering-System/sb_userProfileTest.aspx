@@ -10,6 +10,12 @@
     <link href="CSS/sb_userProfile.css" rel="stylesheet" />
     <script src="Javascript/sb_userProfile.js"></script>
     <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css"/>
+    <style type="text/css">
+        .auto-style1 {
+            left: 0px;
+            top: 0px;
+        }
+    </style>
     </head>
 <body>
 <%--    <%
@@ -73,7 +79,7 @@
                                             <div class="col-sm-3 col-md-2 col-5">
                                                 <label style="font-weight:bold;">Full Name</label>
                                             </div>
-                                            <div class="col-md-8 col-6">
+                                            <div class="auto-style1">
                                                 Jamshaid Kamran
                                             </div>
                                         </div>
