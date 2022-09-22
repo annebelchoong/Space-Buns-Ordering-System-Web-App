@@ -15,13 +15,13 @@ namespace Space_Buns_Ordering_System
     {
 
         /// <summary>
-        /// btnEditProfile control.
+        /// btnUpdateProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditProfile;
+        protected global::System.Web.UI.WebControls.Button btnUpdateProfile;
 
         /// <summary>
         /// btnChangePassword control.
