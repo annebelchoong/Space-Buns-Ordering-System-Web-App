@@ -56,7 +56,7 @@ namespace Space_Buns_Ordering_System
 
             SqlCommand cmdSearch = new SqlCommand(strSearch, con);
             double totalSales = Convert.ToDouble(cmdSearch.ExecuteScalar());
-            lblTotalSales.Text =  String.Format("{0:C}", totalSales*100000);
+            lblTotalSales.Text = String.Format("{0:C}", totalSales * 100000);
 
             con.Close();
         }

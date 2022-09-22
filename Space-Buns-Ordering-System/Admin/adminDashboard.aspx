@@ -3,6 +3,11 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../CSS/sb_adminDashboard.css" rel="stylesheet" />
+    <style>
+        a {
+            color: inherit;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -11,80 +16,94 @@
 
             <!-- MAIN CARDS STARTS HERE -->
             <div class="main__cards">
-                <div class="card">
-                    <i
-                        class="fa fa-poll fa-2x text-lightblue"
-                        aria-hidden="true"></i>
-                    <div class="card_inner">
-                        <p class="text-primary-p">Total Sales</p>
-                        <span class="font-bold text-title">
-                            <asp:Label ID="lblTotalSales" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                <a href="adminSales.aspx">
+                    <div class="card">
+                        <i
+                            class="fa fa-poll fa-2x text-lightblue"
+                            aria-hidden="true"></i>
+                        <div class="card_inner">
+                            <p class="text-primary-p">Total Sales</p>
+                            <span class="font-bold text-title">
+                                <asp:Label ID="lblTotalSales" runat="server" ToolTip="Total Sales"></asp:Label></span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <i class="fa fa-clipboard fa-2x text-red" aria-hidden="true"></i>
-                    <div class="card_inner">
-                        <p class="text-primary-p">Total Orders</p>
-                        <span class="font-bold text-title">
-                            <asp:Label ID="lblTotalOrders" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                <a href="adminOrders.aspx">
+                    <div class="card">
+                        <i class="fa fa-clipboard fa-2x text-red" aria-hidden="true"></i>
+                        <div class="card_inner">
+                            <p class="text-primary-p">Total Orders</p>
+                            <span class="font-bold text-title">
+                                <asp:Label ID="lblTotalOrders" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <i
-                        class="fa fa-table fa-2x text-yellow"
-                        aria-hidden="true"></i>
-                    <div class="card_inner">
-                        <p class="text-primary-p">Upcoming Events</p>
-                        <span class="font-bold text-title">
-                            <asp:Label ID="lblTotalEvents" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                <a href="adminEvents.aspx">
+                    <div class="card">
+                        <i
+                            class="fa fa-table fa-2x text-yellow"
+                            aria-hidden="true"></i>
+                        <div class="card_inner">
+                            <p class="text-primary-p">Upcoming Events</p>
+                            <span class="font-bold text-title">
+                                <asp:Label ID="lblTotalEvents" runat="server" ToolTip="Total Events"></asp:Label></span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <i
-                        class="fa fa-hamburger fa-2x text-black"
-                        aria-hidden="true"></i>
-                    <div class="card_inner">
-                        <p class="text-primary-p">Total Products</p>
-                        <span class="font-bold text-title">
-                            <asp:Label ID="lblTotalProducts" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                <a href="adminProducts.aspx">
+                    <div class="card">
+                        <i
+                            class="fa fa-hamburger fa-2x text-black"
+                            aria-hidden="true"></i>
+                        <div class="card_inner">
+                            <p class="text-primary-p">Total Products</p>
+                            <span class="font-bold text-title">
+                                <asp:Label ID="lblTotalProducts" runat="server" ToolTip="Total Products"></asp:Label></span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <i
-                        class="fa fa-store fa-2x text-black"
-                        aria-hidden="true"></i>
-                    <div class="card_inner">
-                        <p class="text-primary-p">Total Branches</p>
-                        <span class="font-bold text-title">
-                            <asp:Label ID="lblTotalBranches" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                <a href="adminBranches.aspx">
+                    <div class="card">
+                        <i
+                            class="fa fa-store fa-2x text-black"
+                            aria-hidden="true"></i>
+                        <div class="card_inner">
+                            <p class="text-primary-p">Total Branches</p>
+                            <span class="font-bold text-title">
+                                <asp:Label ID="lblTotalBranches" runat="server" ToolTip="Total Branches"></asp:Label></span>
+                        </div>
                     </div>
-                </div>
+                </a>
+                <a href="adminCustomers.aspx">
+                    <div class="card">
+                        <i
+                            class="fa fa-users fa-2x text-gray"
+                            aria-hidden="true"></i>
+                        <div class="card_inner">
+                            <p class="text-primary-p">Total Customers</p>
+                            <span class="font-bold text-title">
+                                <asp:Label ID="lblTotalCustomers" runat="server" ToolTip="Total Customers"></asp:Label></span>
+                        </div>
+                    </div>
+                </a>
 
-                <div class="card">
-                    <i
-                        class="fa fa-users fa-2x text-gray"
-                        aria-hidden="true"></i>
-                    <div class="card_inner">
-                        <p class="text-primary-p">Total Customers</p>
-                        <span class="font-bold text-title">
-                            <asp:Label ID="lblTotalCustomers" runat="server" ToolTip="Total Orders"></asp:Label></span>
+                <a href="??.aspx">
+                    <div class="card">
+                        <i
+                            class="fa fa-globe fa-2x text-green"
+                            aria-hidden="true"></i>
+                        <div class="card_inner">
+                            <p class="text-primary-p">Online Now</p>
+                            <span class="font-bold text-title">
+                                <asp:Label ID="lblTotalOnline" runat="server" ToolTip="Total Online"></asp:Label></span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="card">
-                    <i
-                        class="fa fa-globe fa-2x text-green"
-                        aria-hidden="true"></i>
-                    <div class="card_inner">
-                        <p class="text-primary-p">Online Now</p>
-                        <span class="font-bold text-title">
-                            <asp:Label ID="lblTotalOnline" runat="server" ToolTip="Total Orders"></asp:Label></span>
-                    </div>
-                </div>
             </div>
             <!-- MAIN CARDS ENDS HERE -->
 
