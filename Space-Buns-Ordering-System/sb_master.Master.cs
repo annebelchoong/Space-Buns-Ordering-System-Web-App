@@ -93,39 +93,37 @@ namespace Space_Buns_Ordering_System
             CartLineItems.Add(GetCartLineItem(new CartItem("cool burger", 17, 1, "extra cheese", "https://spacebuns.web.app/Media/menuBurgers/chicken3.jpg")));
             CartLineItems.Add(GetCartLineItem(new CartItem("nice burger", 18, 5, "extra cheese and patties", "https://spacebuns.web.app/Media/menuBurgers/beef1.jpg")));
             CartLineItems.Add(GetCartLineItem(new CartItem("expensive burger", 20, 2, "extra cheese and 2 patties", "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg")));
-            CartLineItems.Add(GetCartLineItem(new CartItem()));
+            //CartLineItems.Add(GetCartLineItem(new CartItem()));
 
             //for (int i = 0; i < cartItems; i++)
             //{
-            //CartLineItems.Add(new SessionLineItemOptions
-            //{
-            //    PriceData = new SessionLineItemPriceDataOptions
+            //    CartLineItems.Add(new SessionLineItemOptions
             //    {
-            //        Currency = "myr",
-            //        UnitAmount = 1700,
-            //        ProductData = new SessionLineItemPriceDataProductDataOptions
+            //        PriceData = new SessionLineItemPriceDataOptions
             //        {
-            //            Name = "Double Trouble",
-            //            Description = "Crispy chicken thigh, " +
-            //        "shredded pickles with spicy creamy mayo, " +
-            //        "with hot fragrant bun.",
-            //            //Amount = 1700,
-            //            Images = new List<string>() {
+            //            Currency = "myr",
+            //            UnitAmount = 1700,
+            //            ProductData = new SessionLineItemPriceDataProductDataOptions
+            //            {
+            //                Name = "Double Trouble",
+            //                Description = "Crispy chicken thigh, " +
+            //            "shredded pickles with spicy creamy mayo, " +
+            //            "with hot fragrant bun.",
+            //                //Amount = 1700,
+            //                Images = new List<string>() {
             //                    "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg"
             //                },
-            //            //Price = "price_H5ggYwtDq4fbrJ",
+            //                //Price = "price_H5ggYwtDq4fbrJ",
+            //            },
+
+
             //        },
+            //        Quantity = cartItems,
+            //    });
 
-
-            //    },
-            //    Quantity = cartItems,
-            //});
-
-            //CartLineItems.Add(GetCartLineItem(cartItems));
-            //CartLineItems.Add(GetCartLineItem(cartItems));
+            //    CartLineItems.Add(GetCartLineItem(cartItems));
+            //    CartLineItems.Add(GetCartLineItem(cartItems));
             //}
-
-
 
             var options = new SessionCreateOptions
             {
@@ -211,7 +209,7 @@ namespace Space_Buns_Ordering_System
                     //"wechat_pay",
                 },
 
-                LineItems = CartLineItems,
+                //LineItems = CartLineItems,
 
                 LineItems = new List<SessionLineItemOptions>
                 {
