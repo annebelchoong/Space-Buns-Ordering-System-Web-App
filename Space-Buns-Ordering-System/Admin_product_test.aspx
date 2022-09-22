@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_product_test.aspx.cs" Inherits="Space_Buns_Ordering_System.Admin_product" %>
+﻿
 
 <!DOCTYPE html>
 
@@ -398,6 +398,54 @@
                 </td>
             </tr>
             </table>
+        <table style="width: 100%;">
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Name" DataSourceID="ProductSqlDataSource">
+                        <Columns>
+                            <asp:BoundField DataField="Name" HeaderText="Name" ReadOnly="True" SortExpression="Name" />
+                            <asp:BoundField DataField="Price (RM)" HeaderText="Price (RM)" SortExpression="Price (RM)" />
+                            <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+                            <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
+                            <asp:BoundField DataField="Availability" HeaderText="Availability" SortExpression="Availability" />
+                        </Columns>
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="ProductSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ProductConnectionString %>" DeleteCommand="DELETE FROM [Product] WHERE [Name] = @Name" InsertCommand="INSERT INTO [Product] ([Name], [Image], [Price (RM)], [Quantity], [Category], [Availability]) VALUES (@Name, @Image, @column1, @Quantity, @Category, @Availability)" SelectCommand="SELECT * FROM [Product]" UpdateCommand="UPDATE [Product] SET [Image] = @Image, [Price (RM)] = @column1, [Quantity] = @Quantity, [Category] = @Category, [Availability] = @Availability WHERE [Name] = @Name">
+                        <DeleteParameters>
+                            <asp:Parameter Name="Name" Type="String" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="Name" Type="String" />
+                            <asp:Parameter Name="Image" Type="Object" />
+                            <asp:Parameter Name="column1" Type="Decimal" />
+                            <asp:Parameter Name="Quantity" Type="Int32" />
+                            <asp:Parameter Name="Category" Type="String" />
+                            <asp:Parameter Name="Availability" Type="String" />
+                        </InsertParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="Image" Type="Object" />
+                            <asp:Parameter Name="column1" Type="Decimal" />
+                            <asp:Parameter Name="Quantity" Type="Int32" />
+                            <asp:Parameter Name="Category" Type="String" />
+                            <asp:Parameter Name="Availability" Type="String" />
+                            <asp:Parameter Name="Name" Type="String" />
+                        </UpdateParameters>
+                    </asp:SqlDataSource>
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
     </form>
 </body>
 </html>

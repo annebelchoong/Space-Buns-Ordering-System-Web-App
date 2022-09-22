@@ -98,6 +98,14 @@
     <Content Include="Admin\adminOrders.aspx" />
     <Content Include="Admin\adminProducts.aspx" />
     <Content Include="Admin\adminSales.aspx" />
+    <Content Include="App_Data\Category.mdf" />
+    <Content Include="App_Data\Category_log.ldf">
+      <DependentUpon>Category.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Products.mdf" />
+    <Content Include="App_Data\Products_log.ldf">
+      <DependentUpon>Products.mdf</DependentUpon>
+    </Content>
     <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="CSS\sb_adminOrderDetails.css" />
     <Content Include="CSS\sb_contactUs.css" />
