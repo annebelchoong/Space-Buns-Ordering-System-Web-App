@@ -48,7 +48,7 @@
                     </asp:DropDownList>
                     <br />
                     <br />
-                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click"/>
+                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" PostBackUrl="~/Admin/adminCategories.aspx"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnClear" runat="server" Text="Clear"/>
                 </td>
@@ -56,11 +56,7 @@
                 <td style="text-align: center; font-weight: bold; font-style: italic;">Category List</td>
             </tr>
             <tr>
-                <td style="font-weight: bold; font-style: italic;" class="text-end">Search :&nbsp;
-                    <asp:TextBox ID="txtCatSearch" runat="server" ForeColor="#999999" Height="24px" OnTextChanged="txtCatSearch_TextChanged1"></asp:TextBox>
-                &nbsp;&nbsp;
-                    <asp:Button ID="btnRefresh" runat="server" Height="30px" OnClick="btnRefresh_Click" Text="Refresh" Width="76px" />
-                </td>
+                <td style="font-weight: bold; font-style: italic;" class="text-end">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style4">&nbsp;</td>
@@ -96,49 +92,6 @@
                             <asp:Parameter Name="availability" Type="String" />
                             <asp:Parameter Name="noItems" Type="Int32" />
                         </InsertParameters>
-                        <UpdateParameters>
-                            <asp:Parameter Name="categoryName" Type="String" />
-                            <asp:Parameter Name="availability" Type="String" />
-                            <asp:Parameter Name="noItems" Type="Int32" />
-                            <asp:Parameter Name="original_categoryID" Type="Int32" />
-                            <asp:Parameter Name="original_categoryName" Type="String" />
-                            <asp:Parameter Name="original_availability" Type="String" />
-                            <asp:Parameter Name="original_noItems" Type="Int32" />
-                        </UpdateParameters>
-                    </asp:SqlDataSource>
-                    <asp:GridView ID="Panel2" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="categoryID" DataSourceID="SqlDataSource2" ForeColor="Black">
-                        <Columns>
-                            <asp:BoundField DataField="categoryID" HeaderText="categoryID" InsertVisible="False" ReadOnly="True" SortExpression="categoryID" Visible="False" />
-                            <asp:BoundField DataField="categoryName" HeaderText="CATEGORY NAME" SortExpression="categoryName" />
-                            <asp:BoundField DataField="availability" HeaderText="AVAILABILITY" SortExpression="availability" />
-                            <asp:BoundField DataField="noItems" HeaderText="ITEMS QUANTITY" SortExpression="noItems" />
-                            <asp:CommandField HeaderText="ACTION" ShowDeleteButton="True" ShowEditButton="True" />
-                        </Columns>
-                        <FooterStyle BackColor="#CCCCCC" />
-                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
-                        <RowStyle BackColor="White" />
-                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
-                        <SortedAscendingHeaderStyle BackColor="#808080" />
-                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                        <SortedDescendingHeaderStyle BackColor="#383838" />
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Category] WHERE [categoryID] = @original_categoryID AND [categoryName] = @original_categoryName AND [availability] = @original_availability AND [noItems] = @original_noItems" InsertCommand="INSERT INTO [Category] ([categoryName], [availability], [noItems]) VALUES (@categoryName, @availability, @noItems)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Category] WHERE ([categoryName] = @categoryName)" UpdateCommand="UPDATE [Category] SET [categoryName] = @categoryName, [availability] = @availability, [noItems] = @noItems WHERE [categoryID] = @original_categoryID AND [categoryName] = @original_categoryName AND [availability] = @original_availability AND [noItems] = @original_noItems">
-                        <DeleteParameters>
-                            <asp:Parameter Name="original_categoryID" Type="Int32" />
-                            <asp:Parameter Name="original_categoryName" Type="String" />
-                            <asp:Parameter Name="original_availability" Type="String" />
-                            <asp:Parameter Name="original_noItems" Type="Int32" />
-                        </DeleteParameters>
-                        <InsertParameters>
-                            <asp:Parameter Name="categoryName" Type="String" />
-                            <asp:Parameter Name="availability" Type="String" />
-                            <asp:Parameter Name="noItems" Type="Int32" />
-                        </InsertParameters>
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="txtCatSearch" Name="categoryName" PropertyName="Text" Type="String" />
-                        </SelectParameters>
                         <UpdateParameters>
                             <asp:Parameter Name="categoryName" Type="String" />
                             <asp:Parameter Name="availability" Type="String" />

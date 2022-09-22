@@ -15,25 +15,33 @@ namespace Space_Buns_Ordering_System
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            Panel1.Visible = true;
-            Panel2.Visible = true;
+         
 
         }
 
+        
+
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into Category values('" + txtCatName.Text +"','" + ddlStatus.SelectedValue + "','" + txtCatItemAmount.Text + "')";
-            DataBind();
-            cmd.ExecuteNonQuery();
+            if (txtCatName.Text.Contains("") && txtCatItemAmount.Text.Contains(""))
+            {
+                
+            }
+            else
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "insert into Category values('" + txtCatName.Text + "','" + ddlStatus.SelectedValue + "','" + txtCatItemAmount.Text + "')";
+                Panel1.DataBind();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+
             txtCatName.Text = "";
             txtCatItemAmount.Text = "";
             ddlStatus.SelectedValue = "Available";
-            con.Close();
 
-            
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
@@ -43,17 +51,6 @@ namespace Space_Buns_Ordering_System
             ddlStatus.SelectedValue = "Available";
         }
 
-        protected void txtCatSearch_TextChanged1(object sender, EventArgs e)
-        {
-            Panel1.Visible = false;
-            Panel2.Visible = true;
-        }
-
-        protected void btnRefresh_Click(object sender, EventArgs e)
-        {
-            Panel1.Visible = true;
-            Panel2.Visible = false;
-        }
-
+        
     }
 }
