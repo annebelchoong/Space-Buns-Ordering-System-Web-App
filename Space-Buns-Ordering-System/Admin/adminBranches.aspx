@@ -280,7 +280,28 @@
         </div>
 
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
-
+            <HeaderTemplate>
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <tr>
+                    <td><%# Eval("branchId") %></td>
+                    <td><%# Eval("branchLocation") %></td>
+                    <td><%# Eval("branchAddress") %></td>
+                </tr>
+            </ItemTemplate>
+            <FooterTemplate>
+                </tbody>
+                </table>
+            </FooterTemplate>
         </asp:Repeater>
 
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [branchId], [branchLocation], [branchAddress] FROM [Branch]"></asp:SqlDataSource>

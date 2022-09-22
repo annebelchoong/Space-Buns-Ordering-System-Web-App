@@ -27,13 +27,13 @@ namespace Space_Buns_Ordering_System
             //open connection
             con.Open();
 
-            updateTotalOrders(con);
-            updateTotalSales(con);
-            updateTotalEvents(con);
-            updateTotalProducts(con);
-            updateTotalBranches(con);
-            updateTotalCustomers(con);
-            updateTotalOnline(con);
+            UpdateTotalSales(con);
+            UpdateTotalOrders(con);
+            UpdateTotalEvents(con);
+            UpdateTotalProducts(con);
+            UpdateTotalBranches(con);
+            UpdateTotalCustomers(con);
+            UpdateTotalOnline(con);
 
             con.Close();
         }
@@ -43,16 +43,7 @@ namespace Space_Buns_Ordering_System
             Session.Abandon();
         }
 
-        private void updateTotalOrders(SqlConnection con)
-        {
-            string strSearch = "SELECT COUNT(*) AS TotalOrders FROM[Order]";
-
-            SqlCommand cmdSearch = new SqlCommand(strSearch, con);
-            int totalOrders = (int)cmdSearch.ExecuteScalar();
-            lblTotalOrders.Text = totalOrders.ToString();
-        }
-
-        private void updateTotalSales(SqlConnection con)
+        private void UpdateTotalSales(SqlConnection con)
         {
             string strSearch = "SELECT SUM(paymentAmount) AS TotalSales FROM[Payment]";
 
@@ -61,7 +52,16 @@ namespace Space_Buns_Ordering_System
             lblTotalSales.Text = String.Format("{0:C}", totalSales * 2000);
         }
 
-        private void updateTotalEvents(SqlConnection con)
+        private void UpdateTotalOrders(SqlConnection con)
+        {
+            string strSearch = "SELECT COUNT(*) AS TotalOrders FROM[Order]";
+
+            SqlCommand cmdSearch = new SqlCommand(strSearch, con);
+            int totalOrders = (int)cmdSearch.ExecuteScalar();
+            lblTotalOrders.Text = totalOrders.ToString();
+        }
+
+        private void UpdateTotalEvents(SqlConnection con)
         {
             string strSearch = "SELECT COUNT(*) AS TotalEvents FROM[Event]";
 
@@ -70,7 +70,7 @@ namespace Space_Buns_Ordering_System
             lblTotalEvents.Text = totalEvents.ToString();
         }
 
-        private void updateTotalProducts(SqlConnection con)
+        private void UpdateTotalProducts(SqlConnection con)
         {
             string strSearch = "SELECT COUNT(*) AS TotalProducts FROM[Product]";
 
@@ -79,7 +79,7 @@ namespace Space_Buns_Ordering_System
             lblTotalProducts.Text = totalProducts.ToString();
         }
 
-        private void updateTotalBranches(SqlConnection con)
+        private void UpdateTotalBranches(SqlConnection con)
         {
             string strSearch = "SELECT COUNT(*) AS TotalBranches FROM[Branch]";
 
@@ -88,7 +88,7 @@ namespace Space_Buns_Ordering_System
             lblTotalBranches.Text = totalBranches.ToString();
         }
 
-        private void updateTotalCustomers(SqlConnection con)
+        private void UpdateTotalCustomers(SqlConnection con)
         {
             string strSearch = "SELECT COUNT(*) AS TotalCustomers FROM[Customer]";
 
@@ -97,7 +97,7 @@ namespace Space_Buns_Ordering_System
             lblTotalCustomers.Text = totalCustomers.ToString();
         }
 
-        private void updateTotalOnline(SqlConnection con)
+        private void UpdateTotalOnline(SqlConnection con)
         {
             string strSearch = "SELECT COUNT(*) AS TotalOnline FROM[Order]";
 
