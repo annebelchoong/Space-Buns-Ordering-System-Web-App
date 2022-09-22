@@ -19,7 +19,7 @@
         </ul>
     </nav>
 
-    <div class="menu-container">
+   <%-- <div class="menu-container">
 
         <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2" onitemcreated="Repeater1_ItemCreated" onitemcommand="Repeater1_ItemCommand">
             <HeaderTemplate>
@@ -33,12 +33,9 @@
                 <%# (Container.ItemIndex) % 3 == 0 ? "<tr>" : string.Empty%>
                 <td>
                     <div class="menuProduct">
-                        <%--<asp:ImageButton ID="ibImage" runat="server" />--%>
+                        <asp:ImageButton ID="ibImage" runat="server" />
                         <%# DataBinder.Eval(Container.DataItem, "picture") %>
                         <br />
-                        <asp:Label ID="lblProduct" runat="server" Text=' <%# Eval("name") %>'></asp:Label>
-                           
-
                         <div class="lblDesc">
                             <%# DataBinder.Eval(Container.DataItem, "description") %>
                         </div>
@@ -60,12 +57,12 @@
                 </table>
             </FooterTemplate>
 
-        </asp:Repeater>
+        </asp:Repeater>--%>
+<asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
 
 
 
-
-        <asp:Label ID="lblTestingg" runat="server" Text=""></asp:Label>
+        <asp:Label ID="lblTestingg" runat="server" Text="test"></asp:Label>
         <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand">
             <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
             <HeaderTemplate>
@@ -76,32 +73,7 @@
             </HeaderTemplate>
             <ItemTemplate>
 
-                <table>
-                    <tr>
-                        <td>
-                            <div>
-                                <asp:Image ID="Image2" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" />
-                                <div class="menuProduct">
-                                    <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
-                                    <br />
-                                    <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
-                                    <br />
-                                    <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
-                                    <br />
-                                    <asp:Label ID="lblProductId" runat="server" Text='<%# Eval("productID") %>' CssClass="lblPrice"></asp:Label>
-                                    <div class="addToCart">
-                                        <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
-                                    </div>
-                                </div>
-
-                            </div>
-                            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
-
-                        </td>
-                    </tr>
-                </table>
-                <%--<div>
-                    <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" />
+                <div>
                     <div class="menuProduct">
                         <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
                         <br />
@@ -109,12 +81,14 @@
                         <br />
                         <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
                         <div class="addToCart">
-                            <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
+                            <%--<a href="WebForm2.aspx?productID=<%# Eval("productId") %>">--%> 
+                                <%--<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='WebForm2.aspx?product=<%# Eval("name") %>'>Add To Cart</asp:HyperLink>--%>
+                            <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" CommandArgument='<%# Eval("name") %>'  />
                         </div>
                     </div>
 
-                </div>--%>
-                <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
+                </div>
+                <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="test" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
             </ItemTemplate>
 
         </asp:DataList>
@@ -143,7 +117,7 @@
                     </div>
 
                 </div>
-                <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
+                <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
 
 
             </ItemTemplate>

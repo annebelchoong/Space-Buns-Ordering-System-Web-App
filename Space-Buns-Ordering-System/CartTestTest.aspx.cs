@@ -14,6 +14,7 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
 
         protected void RblSetSelection_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,12 +41,39 @@ namespace Space_Buns_Ordering_System
         {
             if (e.CommandName == "Select")
             {
-                string strId = DataList1.DataKeys[e.Item.ItemIndex].ToString();
+               Response.Write("id=" + e.CommandArgument.ToString());
             }
+
+            Label p = e.Item.FindControl("lblProduct") as Label;
+            string name = p.Text;
+            Response.Redirect("WebForm2.aspx?name=" + name);
         }
 
         protected void btnAddtoCart_Click(object sender, EventArgs e)
         {
+            List<Label> product = new List<Label>();
+            for (int i = 0; i < DataList1.Items.Count; i++)
+            {
+                product.Add((DataList1.Items[i].FindControl("lblProduct") as Label));
+                Response.Redirect("WebForm2.aspx?product=" + product[i].Text);
+            }
+            
+
+                
+
+
+
+                //CartItem cartItem = new CartItem(name.ToString(), Convert.ToDouble(price.ToString()));
+
+                //HttpCookie cookieCart = new HttpCookie("cart");
+                //cookieCart["name"] = name.Text;
+                //cookieCart["price"] = price.Text;
+
+                //Response.Cookies.Add(cookieCart);
+
+                //Response.Redirect("WebForm2.aspx?product=" + name.Text +"&price="+ price.Text);
+
+
             //SqlConnection con;
             //string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             //con = new SqlConnection(strCon);

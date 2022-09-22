@@ -14,77 +14,27 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            //if (PreviousPage.IsCrossPagePostBack)
+            //{
+            //    Label dateSelected = PreviousPage.FindControl("lblProduct") as Label;
+
+            //    lbltest= dateSelected;
+            //}
+
+
+            string v = Request.QueryString["product"];
+            string g = Request.QueryString["name"];
+            if(v == null)
             {
-                DataTable dt = new DataTable();
-                dt.Columns.AddRange(new DataColumn[3] { new DataColumn("Id"), new DataColumn("Name"), new DataColumn("Country") });
-                dt.Rows.Add(1, "Thomas Hardy", "Ireland");
-                dt.Rows.Add(2, "Mudassar Khan", "India");
-                dt.Rows.Add(3, "Ana Trujillo", "France");
-                dt.Rows.Add(4, "Antonio Moreno", "Brazil");
-                dlstProducts.DataSource = dt;
-                dlstProducts.DataBind();
+                lbltest.Text = "fail";
             }
+            else
+            {
+                lbltest.Text = "tesinnnnnnnnng" + v + g;
+            }
+            
         }
 
-        public static List<Customer> GetNameUserName(string name)
-        {
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT ContactName,CompanyName FROM Customers WHERE ContactName = '" + name + "'"))
-                {
-                    cmd.Connection = con;
-                    List<Customer> customers = new List<Customer>();
-                    con.Open();
-                    SqlDataReader sdr = cmd.ExecuteReader();
-                    while (sdr.Read())
-                    {
-                        customers.Add(new Customer { ContactName = sdr["ContactName"].ToString(), CompanyName = sdr["CompanyName"].ToString() });
-                    }
-                    con.Close();
-                    return customers;
-                }
-            }
-        }
-
-        public static List<Customer> GetOtherDetails(string name)
-        {
-            string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand("SELECT City,PostalCode,Country,Phone,Fax FROM Customers WHERE ContactName = '" + name + "'"))
-                {
-                    cmd.Connection = con;
-                    List<Customer> customers = new List<Customer>();
-                    con.Open();
-                    SqlDataReader sdr = cmd.ExecuteReader();
-                    while (sdr.Read())
-                    {
-                        customers.Add(new Customer
-                        {
-                            City = sdr["City"].ToString(),
-                            PostalCode = sdr["PostalCode"].ToString(),
-                            Country = sdr["Country"].ToString(),
-                            Phone = sdr["Phone"].ToString(),
-                            Fax = sdr["Fax"].ToString(),
-                        });
-                    }
-                    con.Close();
-                    return customers;
-                }
-            }
-        }
-
-        public class Customer
-        {
-            public string ContactName { get; set; }
-            public string CompanyName { get; set; }
-            public string City { get; set; }
-            public string Country { get; set; }
-            public string PostalCode { get; set; }
-            public string Phone { get; set; }
-            public string Fax { get; set; }
-        }
+       
     }
 }

@@ -186,6 +186,7 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
+    <Content Include="Testtest.aspx" />
     <Content Include="UserProfile\sb_changePassword.aspx" />
     <Content Include="sb_checkout.aspx" />
     <Content Include="Admin\adminCustomers.aspx" />
@@ -256,7 +257,7 @@
     <Compile Include="Admin\adminSales.aspx.designer.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CartItems.cs" />
+    <Compile Include="Cart\CartItem.cs" />
     <Compile Include="CartTestTest.aspx.cs">
       <DependentUpon>CartTestTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -285,6 +286,13 @@
     </Compile>
     <Compile Include="Admin\adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Testtest.aspx.cs">
+      <DependentUpon>Testtest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Testtest.aspx.designer.cs">
+      <DependentUpon>Testtest.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile\sb_changePassword.aspx.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
