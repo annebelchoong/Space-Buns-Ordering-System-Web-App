@@ -61,17 +61,17 @@
                             <td class="auto-style2">
                                 <asp:Label ID="lblFName" runat="server" ForeColor="#999999" Text="First Name"></asp:Label>
                             </td>
-                            <td class="auto-style5">
+<%--                            <td class="auto-style5">
                                 <asp:Label ID="lblLName" runat="server" ForeColor="#999999" Text="Last Name"></asp:Label>
-                            </td>
+                            </td>--%>
                         </tr>
                         <tr>
                             <td class="auto-style2">
                                 <asp:TextBox ID="txtFirstName" runat="server" class="input" placeholder="First Name"></asp:TextBox>
                             </td>
-                            <td class="auto-style5">
+<%--                            <td class="auto-style5">
                                 <asp:TextBox ID="txtLastName" runat="server" class="input" placeholder="Last Name"></asp:TextBox>
-                            </td>
+                            </td>--%>
                         </tr>
                         <tr>
                             <td class="auto-style2">&nbsp;</td>
@@ -87,6 +87,7 @@
                             <td class="auto-style2">
                                 <asp:LoginName ID="LoginName1" runat="server" ForeColor="white"/>
                                 <%--<asp:TextBox ID="txtUsername" runat="server" class="input" placeholder="Username"></asp:TextBox>--%>
+                                <%--<asp:Label ID="lblUsername1" runat="server" Text="Label"></asp:Label>--%>
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
@@ -104,9 +105,7 @@
                             <td class="auto-style2">
                                 <asp:TextBox ID="txtEmail" runat="server" class="input" placeholder="example@gmail.com"></asp:TextBox>
                             </td>
-                            <td class="auto-style5">
-                                <asp:TextBox ID="txtCustomerId" runat="server" class="input" placeholder="example@gmail.com"></asp:TextBox>
-                            </td>
+         
                         </tr>
                         <tr>
                             <td class="auto-style2">&nbsp;</td>
@@ -202,7 +201,8 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">
-                                <asp:Button ID="btnSaveChange" runat="server" class="btn1" Text="Save Changes" PostBackUrl="~/UserProfile/sb_userProfile.aspx" OnClick="btnSaveChange_Click" />
+                                <%--<asp:Button ID="Button1" runat="server" class="btn1" Text="Save Changes" PostBackUrl="~/UserProfile/sb_userProfile.aspx" OnClick="btnSaveChange_Click" />--%>
+                                <asp:Button ID="btnSaveChange" runat="server" class="btn1" Text="Save Changes" OnClick="btnSaveChange_Click" />
                             </td>
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
@@ -215,14 +215,14 @@
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
                     </table>
-                        <asp:Panel ID="Panel1" runat="server" CssClass="modalpopup">
+                        <%--<asp:Panel ID="Panel1" runat="server" CssClass="modalpopup">
                             <p class="footer-socialLinks">Your profile information save successfully!</p>
                             <br />
-                            <asp:Button ID="btnClose" runat="server" Text="Close" class="btn1" />
-                        </asp:Panel>
+                            <asp:Button ID="btnClose" runat="server" Text="Close" class="btn1" PostBackUrl="~/UserProfile/sb_userProfile.aspx"  />
+                        </asp:Panel>--%>
 
                         <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
-                        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btnSaveChange" CancelControlID="btnClose" BackgroundCssClass="modalBackground"></ajaxToolkit:ModalPopupExtender>
+                        <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btnSaveChange" CancelControlID="btnClose" BackgroundCssClass="modalBackground"></ajaxToolkit:ModalPopupExtender>--%>
                     </div>
                 </div>
             </div>
