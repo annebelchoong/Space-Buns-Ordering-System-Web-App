@@ -15,6 +15,24 @@ namespace Space_Buns_Ordering_System
     {
 
         /// <summary>
+        /// usercontro1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Space_Buns_Ordering_System.loggedInDateTime usercontro1;
+
+        /// <summary>
+        /// lblDateTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDateTime;
+
+        /// <summary>
         /// lblTotalSales control.
         /// </summary>
         /// <remarks>

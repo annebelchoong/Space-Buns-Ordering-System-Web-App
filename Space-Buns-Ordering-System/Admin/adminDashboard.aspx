@@ -1,11 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/sb_masterAdmin.Master" AutoEventWireup="true" CodeBehind="adminDashboard.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_adminDashboard" %>
 
+<%@ Register TagPrefix="Prefix1" TagName="TagName1" Src="../loggedInDateTime.ascx" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="../CSS/sb_adminDashboard.css" rel="stylesheet" />
     <style>
-        a {
+        a, a:hover, a:focus, a:active {
+            text-decoration: none;
             color: inherit;
+        }
+
+        .card:hover {
+            background-color: #B97836;
+            color: #ffffff;
+            transition: 250ms;
         }
     </style>
 </asp:Content>
@@ -13,6 +21,10 @@
 
     <main>
         <div class="main__container">
+
+            <Prefix1:TagName1 ID="usercontro1" runat="server"></Prefix1:TagName1>
+            <asp:Label ID="lblDateTime" runat="server"></asp:Label>
+
 
             <!-- MAIN CARDS STARTS HERE -->
             <div class="main__cards">
@@ -78,6 +90,7 @@
                         </div>
                     </div>
                 </a>
+
                 <a href="adminCustomers.aspx">
                     <div class="card">
                         <i

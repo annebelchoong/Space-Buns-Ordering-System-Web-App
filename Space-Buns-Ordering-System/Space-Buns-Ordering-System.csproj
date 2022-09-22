@@ -111,8 +111,10 @@
     <Content Include="CSS\sb_order.css" />
     <Content Include="CSS\sb_orderConfirmation.css" />
     <Content Include="CSS\sb_register.css" />
+    <Content Include="Global.asax" />
     <Content Include="Javascript\adminDashboard.js" />
     <Content Include="Javascript\sb_order.js" />
+    <Content Include="loggedInDateTime.ascx" />
     <Content Include="Media\Ads\foodbank.jpg" />
     <Content Include="Media\Ads\gogreen.jpg" />
     <Content Include="CSS\sb_aboutUs.css" />
@@ -257,6 +259,15 @@
     </Compile>
     <Compile Include="Admin\adminSales.aspx.designer.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="loggedInDateTime.ascx.cs">
+      <DependentUpon>loggedInDateTime.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="loggedInDateTime.ascx.designer.cs">
+      <DependentUpon>loggedInDateTime.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sb_aboutUs.aspx.cs">

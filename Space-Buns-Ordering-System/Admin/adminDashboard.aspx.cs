@@ -13,6 +13,8 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblDateTime.Text = DateTime.Now.ToString();
+
             updateTotalOrders();
             updateTotalSales();
             updateTotalEvents();
