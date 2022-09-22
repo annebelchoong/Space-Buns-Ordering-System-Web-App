@@ -4,6 +4,11 @@
     <link href="CSS/sb_adminDashboard.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="Javascript/adminDashboard.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 439px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="CSS/sb_adminDashboard.css" rel="stylesheet" />
@@ -12,6 +17,60 @@
 
         <div class="row my-5">
             <h3 class="fs-4 mb-3"><strong>Customer List</strong></h3>
+            <h3 class="fs-4 mb-3">
+                <table style="width:100%;">
+                    <tr>
+                        <td class="auto-style1">Search:
+                            <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                        </td>
+                        <td>
+                            <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="Search" />
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="customerId" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                                <Columns>
+                                    <asp:BoundField DataField="customerId" HeaderText="customerId" InsertVisible="False" ReadOnly="True" SortExpression="customerId" />
+                                    <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                                    <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                                    <asp:CommandField ShowSelectButton="True" />
+                                </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT customerId, name, email FROM Customer"></asp:SqlDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <asp:DataList ID="DataList1" runat="server" DataKeyField="customerId" DataSourceID="SqlDataSource2" >
+                                <ItemTemplate>
+                                    customerId:
+                                    <asp:Label ID="customerIdLabel" runat="server" Text='<%# Eval("customerId") %>' />
+                                    <br />
+                                    name:
+                                    <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                                    <br />
+                                    email:
+                                    <asp:Label ID="emailLabel" runat="server" Text='<%# Eval("email") %>' />
+                                    <br />
+<br />
+                                </ItemTemplate>
+                            </asp:DataList>
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([name] = @name)">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="GridView1" Name="name" PropertyName="SelectedValue" Type="String" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                    </tr>
+                </table>
+            </h3>
             <div class="col">
                 <table class="table bg-white rounded shadow-sm  table-hover">
                     <thead>
