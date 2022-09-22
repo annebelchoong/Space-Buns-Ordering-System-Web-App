@@ -1,26 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_userProfile.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_userProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    </asp:Content>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
 
-    <div class="dash-content" style="/*background-color: #f5f5f5; margin: 80px 0px 0px -20px; border-radius: 20px;*/">
-    <div class="dash-content">
-        <div class="overview">
-            <div class="title">
-                <i class="fas fa-user bg-transparent"></i>
-                <span class="text" style="color:#FFFFFF">User Profile </span>
-                <br />
-                <asp:Button ID="btnEditProfile" runat="server" class="userProfileButtons" Text="Edit Profile" PostBackUrl="~/UserProfile/sb_editProfile.aspx" />
-                <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/UserProfile/sb_changePassword.aspx" />
-                <br />
-            </div>
-            <div>
-                <asp:Label ID="lblUserProfile" runat="server"></asp:Label>
-                <br />
-                <%--<table style="width: 100%;">
+    <div class="dash-content" style="/*background-color: #f5f5f5; margin: 80px 0px 0px -20px; border-radius: 20px; */">
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <i class="fas fa-user bg-transparent"></i>
+                    <span class="text" style="color: #FFFFFF">User Profile </span>
+                    <br />
+                    <asp:Button ID="btnEditProfile" runat="server" class="userProfileButtons" Text="Edit Profile" PostBackUrl="~/UserProfile/sb_editProfile.aspx" />
+                    <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/UserProfile/sb_changePassword.aspx" />
+                    <br />
+                </div>
+                <asp:Label ID="username" runat="server" Text="Username" ForeColor="white"></asp:Label>
+                <asp:LoginName ID="LoginName1" runat="server" ForeColor="white" />
+                <div>
+                    <asp:Label ID="lblName" runat="server" ForeColor="white"></asp:Label><br />
+                    <asp:Label ID="lblEmail" runat="server" ForeColor="white"></asp:Label><br />
+                    <asp:Label ID="lblPhone" runat="server" ForeColor="white"></asp:Label><br />
+                    <asp:Label ID="lblStreet" runat="server" ForeColor="white"></asp:Label><br />
+                    <asp:Label ID="lblZipcode" runat="server" ForeColor="white"></asp:Label>
+                    <%--<asp:Label ID="lblUserProfile" runat="server" ForeColor="white"></asp:Label>--%>
+                    <br />
+                    <%--<table style="width: 100%;">
                     <tr>
                         <td class="auto-style2">
                             <asp:Label ID="lblFName" runat="server" ForeColor="#515051" Text="First Name"></asp:Label>
@@ -140,7 +147,7 @@
                         <td colspan="2">&nbsp;</td>
                     </tr>
                 </table>--%>
-            </div>
+                </div>
             </div>
         </div>
     </div>
