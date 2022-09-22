@@ -28,8 +28,6 @@
             <asp:Label ID="lblCount" runat="server"></asp:Label>
             <asp:Button ID="btnLogout" runat="server" OnClick="btnLogout_Click" Text="Logout" Font-Names="Verdana" Font-Size="13pt" />&nbsp;
 
-
-
             <!-- MAIN CARDS STARTS HERE -->
             <div class="main__cards">
                 <a href="adminSales.aspx">
