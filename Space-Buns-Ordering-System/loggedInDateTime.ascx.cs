@@ -12,6 +12,9 @@ namespace Space_Buns_Ordering_System
         protected void Page_Load(object sender, EventArgs e)
         {
             lblDateTime.Text = DateTime.Now.ToString();
+            lblDisplayDate.Text = "You log on to our site on " + Session["Time"].ToString();
+            lblCount.Text = "There are " + Application["intVisitors"].ToString() + " user(s) online.";
+
         }
     }
 }

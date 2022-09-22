@@ -24,6 +24,10 @@
 
             <Prefix1:TagName1 ID="usercontro1" runat="server"></Prefix1:TagName1>
             <asp:Label ID="lblDateTime" runat="server"></asp:Label>
+            <asp:Label ID="lblDisplayDate" runat="server"></asp:Label>
+            <asp:Label ID="lblCount" runat="server"></asp:Label>
+            <asp:Button ID="btnLogout" runat="server" OnClick="btnLogout_Click" Text="Logout" Font-Names="Verdana" Font-Size="13pt" />&nbsp;
+
 
 
             <!-- MAIN CARDS STARTS HERE -->
