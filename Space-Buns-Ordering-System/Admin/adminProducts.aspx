@@ -65,13 +65,6 @@
                     </asp:DropDownList>
                     <br />
                     <br />
-                    Set Status :
-                    <asp:DropDownList ID="ddlStatus" runat="server">
-                        <asp:ListItem>Available</asp:ListItem>
-                        <asp:ListItem>Not Available</asp:ListItem>
-                    </asp:DropDownList>
-                    <br />
-                    <br />
                     <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
@@ -80,26 +73,28 @@
                 <td style="text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style5">Product List</td>
             </tr>
             <tr>
-                <td style="text-align: right; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style6">Search :&nbsp;
-                    <asp:TextBox runat="server" ForeColor="#999999" Height="24px" placeholder="ProductID"></asp:TextBox>
-                </td>
+                <td style="text-align: right; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style6">&nbsp;</td>
             </tr>
             <tr>
                 <td style="text-align: center; font-weight: normal; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif; font-size: small;" class="auto-style5">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="productID,Expr1" DataSourceID="SqlDataSource1" ForeColor="Black">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="productID,Expr1" DataSourceID="SqlDataSource1" ForeColor="Black" AllowPaging="True">
                         <Columns>
                             <asp:BoundField DataField="productID" HeaderText="productID" InsertVisible="False" ReadOnly="True" SortExpression="productID" />
+                            <asp:BoundField DataField="categoryID" HeaderText="categoryID" SortExpression="categoryID" InsertVisible="False" ReadOnly="True" Visible="False" />
+                            <asp:BoundField DataField="categoryName" HeaderText="categoryName" SortExpression="categoryName" InsertVisible="False" ReadOnly="True" Visible="False" />
                             <asp:BoundField DataField="Expr2" HeaderText="CATEGORY NAME" SortExpression="Expr2" />
                             <asp:BoundField DataField="name" HeaderText="NAME" SortExpression="name" />
                             <asp:ImageField DataImageUrlField="picture" HeaderText="PICTURE">
                                 <ControlStyle Height="65px" Width="65px" />
-                                <ItemStyle Height="65px" Width="65px" />
                             </asp:ImageField>
-                            <asp:BoundField DataField="quantity" HeaderText="QUANTITY" SortExpression="quantity" />
-                            <asp:BoundField DataField="unitPrice" HeaderText="PRICE(RM)" SortExpression="unitPrice" />
-                            <asp:BoundField DataField="description" HeaderText="DESCRIPTION" SortExpression="description" >
+                            <asp:BoundField DataField="quantity" HeaderText="QUANTITY" SortExpression="quantity" >
+                            </asp:BoundField>
+                            <asp:BoundField DataField="unitPrice" HeaderText="PRICE (RM)" SortExpression="unitPrice" />
+                            <asp:BoundField DataField="description" HeaderText="DESCRIPTION" SortExpression="description">
                             <ItemStyle HorizontalAlign="Justify" />
                             </asp:BoundField>
+                            <asp:BoundField DataField="adminID" HeaderText="adminID" InsertVisible="False" ReadOnly="True" SortExpression="adminID" Visible="False" />
+                            <asp:BoundField DataField="Expr1" HeaderText="Expr1" InsertVisible="False" ReadOnly="True" SortExpression="Expr1" Visible="False" />
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" />
                         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
