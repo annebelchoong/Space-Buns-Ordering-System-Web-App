@@ -142,6 +142,7 @@
     <Content Include="Media\Home\intro_video.webm" />
     <Content Include="Media\Home\iswarya_M.jpeg" />
     <Content Include="Media\Home\Recommend.jpg" />
+    <Content Include="Media\Icons\cancel.png" />
     <Content Include="Media\Icons\delete.png" />
     <Content Include="Media\Icons\edit.png" />
     <Content Include="Media\Icons\edit.svg" />
@@ -155,6 +156,7 @@
     <Content Include="Media\Icons\shopping-cart.svg" />
     <Content Include="Media\Icons\SpaceBunsLogo.png" />
     <Content Include="Media\Icons\SpaceBunsMarker.svg" />
+    <Content Include="Media\Icons\tick.png" />
     <Content Include="Media\Icons\touch-n-go-ewallet.svg" />
     <Content Include="Media\Icons\trash.svg" />
     <Content Include="Media\Icons\visa.svg" />
