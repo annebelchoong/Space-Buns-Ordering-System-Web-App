@@ -15,6 +15,15 @@ namespace Space_Buns_Ordering_System
     {
 
         /// <summary>
+        /// Repeater2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater Repeater2;
+
+        /// <summary>
         /// lblTestingg control.
         /// </summary>
         /// <remarks>
@@ -105,13 +114,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblProductDescription;
 
         /// <summary>
-        /// Repeater1 control.
+        /// lblTest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+        protected global::System.Web.UI.WebControls.Label lblTest;
 
         /// <summary>
         /// rblSetSelection control.

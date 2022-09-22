@@ -204,6 +204,7 @@
     <Content Include="UserProfile\sb_userProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Ads.xml" />
+    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\adminBranches.aspx.cs">
@@ -255,6 +256,7 @@
     <Compile Include="Admin\adminSales.aspx.designer.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CartItems.cs" />
     <Compile Include="CartTestTest.aspx.cs">
       <DependentUpon>CartTestTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -423,6 +425,13 @@
     </Compile>
     <Compile Include="UserProfile\sb_userProfile.aspx.designer.cs">
       <DependentUpon>sb_userProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

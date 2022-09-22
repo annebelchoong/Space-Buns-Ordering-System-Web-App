@@ -21,9 +21,52 @@
 
     <div class="menu-container">
 
+        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2" onitemcreated="Repeater1_ItemCreated" onitemcommand="Repeater1_ItemCommand">
+            <HeaderTemplate>
+                <div id="Chicken">
+                    <asp:Label ID="lblChicken" runat="server" Text='Chicken' CssClass="lblCategory"></asp:Label>
+
+                </div>
+                <table>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <%# (Container.ItemIndex) % 3 == 0 ? "<tr>" : string.Empty%>
+                <td>
+                    <div class="menuProduct">
+                        <%--<asp:ImageButton ID="ibImage" runat="server" />--%>
+                        <%# DataBinder.Eval(Container.DataItem, "picture") %>
+                        <br />
+                        <asp:Label ID="lblProduct" runat="server" Text=' <%# Eval("name") %>'></asp:Label>
+                           
+
+                        <div class="lblDesc">
+                            <%# DataBinder.Eval(Container.DataItem, "description") %>
+                        </div>
+                        <div class="lblPrice">
+                        <%# DataBinder.Eval(Container.DataItem, "unitPrice") %>
+                        </div>
+                        
+                        <div class="addToCart">
+                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
+                        </div>
+                    </div>
+                </td>
+                <%# (Container.ItemIndex) % 3 == 3 ? "</tr>" : string.Empty%>
+
+                <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
+
+            </ItemTemplate>
+            <FooterTemplate>
+                </table>
+            </FooterTemplate>
+
+        </asp:Repeater>
+
+
+
 
         <asp:Label ID="lblTestingg" runat="server" Text=""></asp:Label>
-        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" onitemcommand="DataList_ItemCommand">
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand">
             <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
             <HeaderTemplate>
                 <div id="Chicken">
@@ -32,28 +75,28 @@
                 </div>
             </HeaderTemplate>
             <ItemTemplate>
-                    
+
                 <table>
                     <tr>
                         <td>
-                             <div>
-                    <asp:Image ID="Image2" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" />
-                    <div class="menuProduct">
-                        <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
-                        <br />
-                        <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
-                        <br />
-                        <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
-                        <br />
-                        <asp:Label ID="lblProductId" runat="server" Text='<%# Eval("productID") %>' CssClass="lblPrice"></asp:Label>
-                        <div class="addToCart">
-                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
-                        </div>
-                    </div>
+                            <div>
+                                <asp:Image ID="Image2" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" />
+                                <div class="menuProduct">
+                                    <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
+                                    <br />
+                                    <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblProductId" runat="server" Text='<%# Eval("productID") %>' CssClass="lblPrice"></asp:Label>
+                                    <div class="addToCart">
+                                        <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
+                                    </div>
+                                </div>
 
-                </div>
-    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
-           
+                            </div>
+                            <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
+
                         </td>
                     </tr>
                 </table>
@@ -71,8 +114,7 @@
                     </div>
 
                 </div>--%>
-    <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
-           
+                <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
             </ItemTemplate>
 
         </asp:DataList>
@@ -101,11 +143,11 @@
                     </div>
 
                 </div>
-    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
-           
+                <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
+
 
             </ItemTemplate>
-           
+
         </asp:DataList>
 
         <asp:DataList ID="DataList3" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID">
@@ -133,18 +175,20 @@
                     </div>
 
                 </div>
-    <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
-           
-
+                <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
             </ItemTemplate>
         </asp:DataList>
     </div>
 
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-     <%-- POP up modal --%>
+    <%-- POP up modal --%>
     <asp:Panel ID="pnlCustomization" runat="server" CssClass="popupPanel" ScrollBars="Auto">
         <div class="close-btn">
-            <asp:Button ID="btnClose" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnClose" />
+            <asp:Button ID="btnClose" runat="server" Text="&times;" UseSubmitBehavior="True" CssClass="btnClose" />
+        </div>
+        <div class="content">
+            <%--<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource4"></asp:Repeater>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT name, description, picture, unitPrice FROM Product"></asp:SqlDataSource>--%>
         </div>
         <div class="description">
             <div class="descriptionLeft">
@@ -162,24 +206,7 @@
                     <%--<p><b>Crispy chicken fillet </b>is bla bla bla askldjf; klasjd lkj asdf asdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf as dfas df asdf asdf as df as</p>--%>
                 </div>
                 <div>
-                    <asp:Repeater ID="Repeater1" runat="server">
-                         <ItemTemplate>
-
-
-                <div>
-                    <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" />
-                    <div class="menuProduct">
-                        <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
-                        <br />
-                        <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
-                        <br />
-                        <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
-                        <div class="addToCart">
-                            <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
-                        </div>
-                    </div>
-                    </ItemTemplate>
-                    </asp:Repeater>
+                    <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
                 </div>
             </div>
         </div>
