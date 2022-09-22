@@ -276,10 +276,15 @@
                         </tr>
                     </tbody>
                 </table>
-
-
             </div>
         </div>
+
+        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+
+        </asp:Repeater>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [branchId], [branchLocation], [branchAddress] FROM [Branch]"></asp:SqlDataSource>
+
     </div>
 
 </asp:Content>

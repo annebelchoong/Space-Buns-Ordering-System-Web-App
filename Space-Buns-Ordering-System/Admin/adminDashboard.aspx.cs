@@ -11,19 +11,31 @@ namespace Space_Buns_Ordering_System
 {
     public partial class sb_adminDashboard : System.Web.UI.Page
     {
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
             lblDateTime.Text = DateTime.Now.ToString();
             lblDisplayDate.Text = "You log on to our site on " + Session["Time"].ToString();
             lblCount.Text = "There are " + Application["intVisitors"].ToString() + " user(s) online.";
 
-            updateTotalOrders();
-            updateTotalSales();
-            updateTotalEvents();
-            updateTotalProducts();
-            updateTotalBranches();
-            updateTotalCustomers();
-            updateTotalOnline();
+            //Create connection
+            SqlConnection con;
+            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            con = new SqlConnection(strCon);
+            //open connection
+            con.Open();
+
+            updateTotalOrders(con);
+            updateTotalSales(con);
+            updateTotalEvents(con);
+            updateTotalProducts(con);
+            updateTotalBranches(con);
+            updateTotalCustomers(con);
+            updateTotalOnline(con);
+
+            con.Close();
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -31,132 +43,67 @@ namespace Space_Buns_Ordering_System
             Session.Abandon();
         }
 
-
-
-        private void updateTotalOrders()
+        private void updateTotalOrders(SqlConnection con)
         {
-            //Create connection
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(strCon);
-            //open connection
-            con.Open();
-
             string strSearch = "SELECT COUNT(*) AS TotalOrders FROM[Order]";
 
             SqlCommand cmdSearch = new SqlCommand(strSearch, con);
             int totalOrders = (int)cmdSearch.ExecuteScalar();
             lblTotalOrders.Text = totalOrders.ToString();
-
-            con.Close();
         }
 
-        private void updateTotalSales()
+        private void updateTotalSales(SqlConnection con)
         {
-            //Create connection
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(strCon);
-            //open connection
-            con.Open();
-
             string strSearch = "SELECT SUM(paymentAmount) AS TotalSales FROM[Payment]";
 
             SqlCommand cmdSearch = new SqlCommand(strSearch, con);
             double totalSales = Convert.ToDouble(cmdSearch.ExecuteScalar());
-            lblTotalSales.Text = String.Format("{0:C}", totalSales * 100000);
-
-            con.Close();
+            lblTotalSales.Text = String.Format("{0:C}", totalSales * 2000);
         }
 
-        private void updateTotalEvents()
+        private void updateTotalEvents(SqlConnection con)
         {
-            //Create connection
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(strCon);
-            //open connection
-            con.Open();
-
             string strSearch = "SELECT COUNT(*) AS TotalEvents FROM[Event]";
 
             SqlCommand cmdSearch = new SqlCommand(strSearch, con);
             int totalEvents = (int)cmdSearch.ExecuteScalar();
             lblTotalEvents.Text = totalEvents.ToString();
-
-            con.Close();
         }
 
-        private void updateTotalProducts()
+        private void updateTotalProducts(SqlConnection con)
         {
-            //Create connection
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(strCon);
-            //open connection
-            con.Open();
-
             string strSearch = "SELECT COUNT(*) AS TotalProducts FROM[Product]";
 
             SqlCommand cmdSearch = new SqlCommand(strSearch, con);
             int totalProducts = (int)cmdSearch.ExecuteScalar();
             lblTotalProducts.Text = totalProducts.ToString();
-
-            con.Close();
         }
 
-        private void updateTotalBranches()
+        private void updateTotalBranches(SqlConnection con)
         {
-            //Create connection
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(strCon);
-            //open connection
-            con.Open();
-
             string strSearch = "SELECT COUNT(*) AS TotalBranches FROM[Branch]";
 
             SqlCommand cmdSearch = new SqlCommand(strSearch, con);
             int totalBranches = (int)cmdSearch.ExecuteScalar();
             lblTotalBranches.Text = totalBranches.ToString();
-
-            con.Close();
         }
 
-        private void updateTotalCustomers()
+        private void updateTotalCustomers(SqlConnection con)
         {
-            //Create connection
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(strCon);
-            //open connection
-            con.Open();
-
             string strSearch = "SELECT COUNT(*) AS TotalCustomers FROM[Customer]";
 
             SqlCommand cmdSearch = new SqlCommand(strSearch, con);
             int totalCustomers = (int)cmdSearch.ExecuteScalar();
             lblTotalCustomers.Text = totalCustomers.ToString();
-
-            con.Close();
         }
 
-        private void updateTotalOnline()
+        private void updateTotalOnline(SqlConnection con)
         {
-            //Create connection
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(strCon);
-            //open connection
-            con.Open();
-
             string strSearch = "SELECT COUNT(*) AS TotalOnline FROM[Order]";
 
             SqlCommand cmdSearch = new SqlCommand(strSearch, con);
             int totalOnline = (int)cmdSearch.ExecuteScalar();
             lblTotalOnline.Text = totalOnline.ToString();
-
-            con.Close();
         }
 
     }
