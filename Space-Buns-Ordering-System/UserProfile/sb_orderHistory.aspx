@@ -5,6 +5,13 @@
         .auto-style1 {
             width: 190px;
         }
+        .auto-style2 {
+            height: 30px;
+        }
+        .auto-style3 {
+            width: 190px;
+            height: 30px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -14,21 +21,31 @@
         <div class="row my-5">
             <h3 class="fs-4 mb-3" style="color: white;"><strong>My Order</strong> </h3>
             <p class="fs-4 mb-3" style="color: white; text-align: center;">
-                <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="gvOrder_SelectedIndexChanged" Width="100%">
+                <div class="footer-socialLinks">
+                <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" Width="100%" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                     <Columns>
-                        <asp:BoundField DataField="orderID" HeaderText="orderID" ReadOnly="True" SortExpression="orderID" InsertVisible="False" />
-                        <asp:BoundField DataField="customerID" HeaderText="customerID" SortExpression="customerID" />
+                        <asp:BoundField DataField="orderID" HeaderText="orderID" InsertVisible="False" ReadOnly="True" SortExpression="orderID" />
                         <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
                         <asp:BoundField DataField="orderStatus" HeaderText="orderStatus" SortExpression="orderStatus" />
+                        <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
+                        <asp:BoundField DataField="paymentAmount" HeaderText="paymentAmount" SortExpression="paymentAmount" />
                         <asp:BoundField DataField="orderType" HeaderText="orderType" SortExpression="orderType" />
-                        <asp:BoundField DataField="note" HeaderText="note" SortExpression="note" />
-                        <asp:BoundField DataField="branchID" HeaderText="branchID" SortExpression="branchID" />
-                        <asp:CommandField ShowSelectButton="True" />
+                        <asp:CommandField SelectImageUrl="~/Media/Icons/info.png" ShowSelectButton="True" />
                     </Columns>
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                    <RowStyle BackColor="White" />
+                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
+                </div>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, [Order].dateTime, [Order].orderStatus, OrderDetails.quantity, Payment.paymentAmount, [Order].orderType FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID INNER JOIN Product ON OrderDetails.productID = Product.productID INNER JOIN Payment ON [Order].orderID = Payment.orderID"></asp:SqlDataSource>
             </p>
-            <p class="fs-4 mb-3" style="color: white; text-align: center;">
+            <%--<%--<%--<p class="fs-4 mb-3" style="color: white; text-align: center;">
                 &nbsp;</p>
             <p class="fs-4 mb-3" style="color: white; text-align: center;">
                 &nbsp;</p>
@@ -65,22 +82,22 @@
                             <td>RM120.00</td>
                             <td class="btnControl">
                                 <%--<asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/Media/Icons/info.png" Width="25px" />--%>
-                                <asp:HyperLink ID="viewOrderDetail1" runat="server" ImageUrl="~/Media/Icons/info.png" ImageWidth="25px" NavigateUrl="sb_orderDetail.aspx"></asp:HyperLink>
+                                <%--<asp:HyperLink ID="viewOrderDetail1" runat="server" ImageUrl="~/Media/Icons/info.png" ImageWidth="25px" NavigateUrl="sb_orderDetail.aspx"></asp:HyperLink>
                             </td>
                             <td class="btnControl">
                                 <asp:HyperLink ID="HyperLink1" class="fas fa-times" Style="color: red;" runat="server"></asp:HyperLink>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>O0002</td>
-                            <td class="auto-style1">24/08/2022 11:37:49</td>
-                            <td>Double Trouble, Salmon Fillet, King of Cheese, Mushy Shrooms</td>
-                            <td>RM75.00</td>
-                            <td class="btnControl">
+                            <th scope="row" class="auto-style2">2</th>
+                            <td class="auto-style2">O0002</td>
+                            <td class="auto-style3">24/08/2022 11:37:49</td>
+                            <td class="auto-style2">Double Trouble, Salmon Fillet, King of Cheese, Mushy Shrooms</td>
+                            <td class="auto-style2">RM75.00</td>
+                            <td class="auto-style2">
                                 <asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/Media/Icons/info.png" Width="25px" />
                             </td>
-                            <td class="btnControl">
+                            <td class="auto-style2">
                                 <asp:HyperLink ID="HyperLink2" class="fas fa-times" Style="color: red;" runat="server"></asp:HyperLink>
                             </td>
                         </tr>
@@ -122,7 +139,7 @@
                             <td class="btnControl">
                                 <asp:HyperLink ID="HyperLink5" class="fas fa-times" Style="color: red;" runat="server"></asp:HyperLink>
                             </td>
-                        </tr>
+                        </tr>--%>
 
 
                         <%--                            <tr>

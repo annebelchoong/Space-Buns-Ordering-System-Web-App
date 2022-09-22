@@ -75,7 +75,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-user me-2 primary-text"></i>John Doe
+                                    <i class="fas fa-user me-2 primary-text"></i>John Doe<asp:LoginName ID="LoginName1" runat="server" />
                                 </a>
                                 <ul class="dropdown-menu primary-text" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="adminUserProfile.aspx">Profile</a></li>

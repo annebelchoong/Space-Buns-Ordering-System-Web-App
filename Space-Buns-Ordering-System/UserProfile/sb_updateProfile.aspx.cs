@@ -31,7 +31,7 @@ namespace Space_Buns_Ordering_System.UserProfile
             con = new SqlConnection(sss);
             con.Open();
 
-            string query = "INSERT INTO Customer(email, phone, street, zipcode, name, password, username) VALUES(@email, @phone, @street, @zipcode, @name, @password, @username)";
+            string query = "UPDATE Customer SET email = @email, phone = @phone, street = @street, zipcode = @zipcode, name = @name, password = @password, username = @username WHERE username = user";
 
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -46,19 +46,12 @@ namespace Space_Buns_Ordering_System.UserProfile
             cmd.Parameters.AddWithValue("@dateofbirth", calDoB.SelectedDate.ToString());
 
 
-            int insert = cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
             con.Close();
-
-            if (insert > 0)
-            {
-                string script = "alert('Profile saved!');";
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
-                Response.Redirect("sb_userProfile.aspx");
-            }
-            else
-            {
-                lblResults.Text = "fail to insert";
-            }
+            Response.Write("alert('Profile saved!')");
+            Response.Redirect("sb_userProfile.aspx");
+           
         }
     }
 }

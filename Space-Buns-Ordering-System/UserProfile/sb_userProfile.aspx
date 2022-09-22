@@ -13,7 +13,7 @@
                     <i class="fas fa-user bg-transparent"></i>
                     <span class="text" style="color: #FFFFFF">User Profile </span>
                     <br />
-                    <asp:Button ID="btnUpdateProfile" runat="server" class="userProfileButtons" Text="Update Profile" PostBackUrl="~/UserProfile/sb_updateProfile.aspx" OnClick="btnEditProfile_Click" />
+                    <asp:Button ID="btnUpdateProfile" runat="server" class="userProfileButtons" Text="Update Profile" PostBackUrl="~/UserProfile/sb_updateProfile.aspx"  />
                     <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/UserProfile/sb_changePassword.aspx" />
                     <br />
                 </div>
