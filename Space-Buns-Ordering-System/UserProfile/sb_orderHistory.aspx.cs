@@ -13,5 +13,12 @@ namespace Space_Buns_Ordering_System
         {
 
         }
+
+        protected void gvOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -14,9 +14,9 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
-            string query = "Select firstName, lastName from Customer";
+            string query = "Select firstName, lastName from dbo.Customer";
             SqlCommand cmd = new SqlCommand(query, con);
 
             SqlDataReader dr = cmd.ExecuteReader();

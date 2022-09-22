@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_editProfile.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_editProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <style type="text/css">
@@ -101,7 +104,9 @@
                             <td class="auto-style2">
                                 <asp:TextBox ID="txtEmail" runat="server" class="input" placeholder="example@gmail.com"></asp:TextBox>
                             </td>
-                            <td class="auto-style5">&nbsp;</td>
+                            <td class="auto-style5">
+                                <asp:TextBox ID="txtCustomerId" runat="server" class="input" placeholder="example@gmail.com"></asp:TextBox>
+                            </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">&nbsp;</td>
@@ -170,7 +175,9 @@
                         </tr>
                         <tr>
                             <td class="auto-style2">&nbsp;</td>
-                            <td class="auto-style5">&nbsp;</td>
+                            <td class="auto-style5">
+                                <asp:Label ID="lblResults" runat="server"></asp:Label>
+                            </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">
@@ -208,6 +215,14 @@
                             <td class="auto-style5">&nbsp;</td>
                         </tr>
                     </table>
+                        <asp:Panel ID="Panel1" runat="server" CssClass="modalpopup">
+                            <p class="footer-socialLinks">Your profile information save successfully!</p>
+                            <br />
+                            <asp:Button ID="btnClose" runat="server" Text="Close" class="btn1" />
+                        </asp:Panel>
+
+                        <%--<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>--%>
+                        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btnSaveChange" CancelControlID="btnClose" BackgroundCssClass="modalBackground"></ajaxToolkit:ModalPopupExtender>
                     </div>
                 </div>
             </div>

@@ -13,6 +13,33 @@
 
         <div class="row my-5">
             <h3 class="fs-4 mb-3" style="color: white;"><strong>My Orders</strong></h3>
+            <p class="fs-4 mb-3" style="color: white;">&nbsp;</p>
+            <p class="fs-4 mb-3" style="color: white;">Search:
+                <asp:DropDownList ID="ddlSearch" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="orderID" DataValueField="orderID">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Order] WHERE ([customerID] = @customerID)" OnSelecting="SqlDataSource1_Selecting">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="ddlSearch" Name="customerID" PropertyName="SelectedValue" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
+            </p>
+            <p class="fs-4 mb-3" style="color: white;">&nbsp;</p>
+            <p class="fs-4 mb-3" style="color: white;">
+                <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="gvOrder_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="orderID" HeaderText="orderID" ReadOnly="True" SortExpression="orderID" />
+                        <asp:BoundField DataField="customerID" HeaderText="customerID" SortExpression="customerID" />
+                        <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
+                        <asp:BoundField DataField="orderStatus" HeaderText="orderStatus" SortExpression="orderStatus" />
+                        <asp:BoundField DataField="orderType" HeaderText="orderType" SortExpression="orderType" />
+                        <asp:BoundField DataField="note" HeaderText="note" SortExpression="note" />
+                        <asp:CommandField ShowSelectButton="True" />
+                    </Columns>
+                </asp:GridView>
+                <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource2">
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server"></asp:SqlDataSource>
+            </p>
             <div class="col">
                 <table class="table bg-white rounded shadow-sm  table-hover">
                     <thead>

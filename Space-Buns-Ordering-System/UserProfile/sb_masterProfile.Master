@@ -131,10 +131,11 @@
 
         <asp:Panel ID="Panel1" runat="server" CssClass="modalpopup">
             
-            <h2>Upload Image</h2>
-            <asp:FileUpload ID="ImgUpload" runat="server" />
-            <asp:Button ID="btnUpload" runat="server" Text="Update Image" OnClick="btnUpload_Click" />
-            <asp:Button ID="btnClose" runat="server" Text="Close" />
+            <h2 class="footer-socialLinks">Upload Image</h2>
+            <asp:FileUpload ID="ImgUpload" runat="server" justify-content="center"/>
+            <br />
+            <asp:Button ID="btnUpload" runat="server" Text="Update Image" OnClick="btnUpload_Click" class="userProfileButtons"/>
+            <asp:Button ID="btnClose" runat="server" Text="Close" class="userProfileButtons"/>
         </asp:Panel>
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>

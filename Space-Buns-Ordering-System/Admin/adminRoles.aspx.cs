@@ -13,5 +13,30 @@ namespace Space_Buns_Ordering_System.Admin
         {
 
         }
+
+        protected void btnGetUsers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCreateRole_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnGetRoles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnGetUsersinRole_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAssign_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
