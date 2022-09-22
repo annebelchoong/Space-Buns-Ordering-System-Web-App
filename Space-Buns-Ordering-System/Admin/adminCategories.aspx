@@ -32,7 +32,7 @@
                 <td colspan="3">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style9" rowspan="3" style="vertical-align: top; font-weight: bold; font-style: italic;">Category Name&nbsp; :&nbsp;&nbsp;
+                <td class="auto-style9" rowspan="5" style="vertical-align: top; font-weight: bold; font-style: italic;">Category Name&nbsp; :&nbsp;&nbsp;
                     <asp:TextBox ID="txtCatName" runat="server"></asp:TextBox>
                     &nbsp;&nbsp;&nbsp;
                     <br />
@@ -48,26 +48,30 @@
                     </asp:DropDownList>
                     <br />
                     <br />
-                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
+                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
+                    <asp:Button ID="btnClear" runat="server" Text="Clear"/>
                 </td>
                 <td class="auto-style4" rowspan="2">&nbsp;</td>
                 <td style="text-align: center; font-weight: bold; font-style: italic;">Category List</td>
             </tr>
             <tr>
-                <td style="text-align: right; font-weight: bold; font-style: italic;">Search :&nbsp;
-                    <asp:TextBox ID="TextBox1" runat="server" ForeColor="#999999" Height="24px"></asp:TextBox>
+                <td style="font-weight: bold; font-style: italic;" class="text-end">Search :&nbsp;
+                    <asp:TextBox ID="txtCatSearch" runat="server" ForeColor="#999999" Height="24px" AutoPostBack="True" OnTextChanged="txtCatSearch_TextChanged1"></asp:TextBox>
+                &nbsp;&nbsp;
+                    <asp:Button ID="btnRefresh" runat="server" Height="30px" OnClick="btnRefresh_Click" Text="Refresh" Width="76px" />
                 </td>
             </tr>
             <tr>
                 <td class="auto-style4">&nbsp;</td>
                 <td>
-                    <asp:GridView ID="GridView1" runat="server" DataSourceID="CategorySqlDataSource" AutoGenerateColumns="False" DataKeyNames="NAME" Height="170px" Width="818px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                    </asp:SqlDataSource>
+                    <asp:GridView ID="Panel1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="categoryID" DataSourceID="SqlDataSource1" ForeColor="Black">
                         <Columns>
-                            <asp:BoundField DataField="NAME" HeaderText="NAME" ReadOnly="True" SortExpression="NAME" />
-                            <asp:BoundField DataField="AVAILABILITY" HeaderText="AVAILABILITY" SortExpression="AVAILABILITY" />
-                            <asp:BoundField DataField="NUMBER OF ITEMS" HeaderText="NUMBER OF ITEMS" SortExpression="NUMBER OF ITEMS" />
+                            <asp:BoundField DataField="categoryID" HeaderText="categoryID" InsertVisible="False" ReadOnly="True" SortExpression="categoryID" Visible="False" />
+                            <asp:BoundField DataField="categoryName" HeaderText="CATEGORY NAME" SortExpression="categoryName" />
+                            <asp:BoundField DataField="availability" HeaderText="AVAILABILITY" SortExpression="availability" />
+                            <asp:BoundField DataField="noItems" HeaderText="ITEMS QUANTITY" SortExpression="noItems" />
                             <asp:CommandField HeaderText="ACTION" ShowDeleteButton="True" ShowEditButton="True" />
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" />
@@ -80,25 +84,74 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="CategorySqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CategoryConnectionString %>" SelectCommand="SELECT * FROM [Category]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [Category] WHERE [NAME] = @original_NAME AND [AVAILABILITY] = @original_AVAILABILITY AND [NUMBER OF ITEMS] = @original_NUMBER_OF_ITEMS" InsertCommand="INSERT INTO [Category] ([NAME], [AVAILABILITY], [NUMBER OF ITEMS]) VALUES (@NAME, @AVAILABILITY, @NUMBER_OF_ITEMS)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [Category] SET [AVAILABILITY] = @AVAILABILITY, [NUMBER OF ITEMS] = @NUMBER_OF_ITEMS WHERE [NAME] = @original_NAME AND [AVAILABILITY] = @original_AVAILABILITY AND [NUMBER OF ITEMS] = @original_NUMBER_OF_ITEMS">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Category] WHERE [categoryID] = @original_categoryID AND [categoryName] = @original_categoryName AND [availability] = @original_availability AND [noItems] = @original_noItems" InsertCommand="INSERT INTO [Category] ([categoryName], [availability], [noItems]) VALUES (@categoryName, @availability, @noItems)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Category]" UpdateCommand="UPDATE [Category] SET [categoryName] = @categoryName, [availability] = @availability, [noItems] = @noItems WHERE [categoryID] = @original_categoryID AND [categoryName] = @original_categoryName AND [availability] = @original_availability AND [noItems] = @original_noItems">
                         <DeleteParameters>
-                            <asp:Parameter Name="original_NAME" Type="String" />
-                            <asp:Parameter Name="original_AVAILABILITY" Type="String" />
-                            <asp:Parameter Name="original_NUMBER_OF_ITEMS" Type="Int32" />
+                            <asp:Parameter Name="original_categoryID" Type="Int32" />
+                            <asp:Parameter Name="original_categoryName" Type="String" />
+                            <asp:Parameter Name="original_availability" Type="String" />
+                            <asp:Parameter Name="original_noItems" Type="Int32" />
                         </DeleteParameters>
                         <InsertParameters>
-                            <asp:Parameter Name="NAME" Type="String" />
-                            <asp:Parameter Name="AVAILABILITY" Type="String" />
-                            <asp:Parameter Name="NUMBER_OF_ITEMS" Type="Int32" />
+                            <asp:Parameter Name="categoryName" Type="String" />
+                            <asp:Parameter Name="availability" Type="String" />
+                            <asp:Parameter Name="noItems" Type="Int32" />
                         </InsertParameters>
                         <UpdateParameters>
-                            <asp:Parameter Name="AVAILABILITY" Type="String" />
-                            <asp:Parameter Name="NUMBER_OF_ITEMS" Type="Int32" />
-                            <asp:Parameter Name="original_NAME" Type="String" />
-                            <asp:Parameter Name="original_AVAILABILITY" Type="String" />
-                            <asp:Parameter Name="original_NUMBER_OF_ITEMS" Type="Int32" />
+                            <asp:Parameter Name="categoryName" Type="String" />
+                            <asp:Parameter Name="availability" Type="String" />
+                            <asp:Parameter Name="noItems" Type="Int32" />
+                            <asp:Parameter Name="original_categoryID" Type="Int32" />
+                            <asp:Parameter Name="original_categoryName" Type="String" />
+                            <asp:Parameter Name="original_availability" Type="String" />
+                            <asp:Parameter Name="original_noItems" Type="Int32" />
                         </UpdateParameters>
                     </asp:SqlDataSource>
+                    <asp:GridView ID="Panel2" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="categoryID" DataSourceID="SqlDataSource2" ForeColor="Black">
+                        <Columns>
+                            <asp:BoundField DataField="categoryID" HeaderText="categoryID" InsertVisible="False" ReadOnly="True" SortExpression="categoryID" Visible="False" />
+                            <asp:BoundField DataField="categoryName" HeaderText="CATEGORY NAME" SortExpression="categoryName" />
+                            <asp:BoundField DataField="availability" HeaderText="AVAILABILITY" SortExpression="availability" />
+                            <asp:BoundField DataField="noItems" HeaderText="ITEMS QUANTITY" SortExpression="noItems" />
+                            <asp:CommandField HeaderText="ACTION" ShowDeleteButton="True" ShowEditButton="True" />
+                        </Columns>
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" />
+                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#383838" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Category] WHERE ([categoryName] = @categoryName)">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="txtCatSearch" Name="categoryName" PropertyName="Text" Type="String" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style4">&nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">&nbsp;</td>
+                <td>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </td>
             </tr>
             </table>
