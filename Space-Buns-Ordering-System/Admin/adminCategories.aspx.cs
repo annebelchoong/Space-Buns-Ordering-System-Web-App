@@ -38,10 +38,6 @@ namespace Space_Buns_Ordering_System
                 con.Close();
             }
 
-            txtCatName.Text = "";
-            txtCatItemAmount.Text = "";
-            ddlStatus.SelectedValue = "Available";
-
         }
 
         protected void btnClear_Click(object sender, EventArgs e)
