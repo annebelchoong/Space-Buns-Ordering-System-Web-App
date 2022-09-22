@@ -57,7 +57,7 @@
             </tr>
             <tr>
                 <td style="font-weight: bold; font-style: italic;" class="text-end">Search :&nbsp;
-                    <asp:TextBox ID="txtCatSearch" runat="server" ForeColor="#999999" Height="24px" AutoPostBack="True" OnTextChanged="txtCatSearch_TextChanged1"></asp:TextBox>
+                    <asp:TextBox ID="txtCatSearch" runat="server" ForeColor="#999999" Height="24px" OnTextChanged="txtCatSearch_TextChanged1"></asp:TextBox>
                 &nbsp;&nbsp;
                     <asp:Button ID="btnRefresh" runat="server" Height="30px" OnClick="btnRefresh_Click" Text="Refresh" Width="76px" />
                 </td>
@@ -124,10 +124,30 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Category] WHERE ([categoryName] = @categoryName)">
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [Category] WHERE [categoryID] = @original_categoryID AND [categoryName] = @original_categoryName AND [availability] = @original_availability AND [noItems] = @original_noItems" InsertCommand="INSERT INTO [Category] ([categoryName], [availability], [noItems]) VALUES (@categoryName, @availability, @noItems)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Category] WHERE ([categoryName] = @categoryName)" UpdateCommand="UPDATE [Category] SET [categoryName] = @categoryName, [availability] = @availability, [noItems] = @noItems WHERE [categoryID] = @original_categoryID AND [categoryName] = @original_categoryName AND [availability] = @original_availability AND [noItems] = @original_noItems">
+                        <DeleteParameters>
+                            <asp:Parameter Name="original_categoryID" Type="Int32" />
+                            <asp:Parameter Name="original_categoryName" Type="String" />
+                            <asp:Parameter Name="original_availability" Type="String" />
+                            <asp:Parameter Name="original_noItems" Type="Int32" />
+                        </DeleteParameters>
+                        <InsertParameters>
+                            <asp:Parameter Name="categoryName" Type="String" />
+                            <asp:Parameter Name="availability" Type="String" />
+                            <asp:Parameter Name="noItems" Type="Int32" />
+                        </InsertParameters>
                         <SelectParameters>
                             <asp:ControlParameter ControlID="txtCatSearch" Name="categoryName" PropertyName="Text" Type="String" />
                         </SelectParameters>
+                        <UpdateParameters>
+                            <asp:Parameter Name="categoryName" Type="String" />
+                            <asp:Parameter Name="availability" Type="String" />
+                            <asp:Parameter Name="noItems" Type="Int32" />
+                            <asp:Parameter Name="original_categoryID" Type="Int32" />
+                            <asp:Parameter Name="original_categoryName" Type="String" />
+                            <asp:Parameter Name="original_availability" Type="String" />
+                            <asp:Parameter Name="original_noItems" Type="Int32" />
+                        </UpdateParameters>
                     </asp:SqlDataSource>
                     <br />
                 </td>

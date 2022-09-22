@@ -18,33 +18,23 @@ namespace Space_Buns_Ordering_System
             Panel1.Visible = true;
             Panel2.Visible = true;
 
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
-            con.Open();
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
+            con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "insert into Category values('" + txtCatName.Text +"','" + ddlStatus.SelectedValue + "','" + txtCatItemAmount.Text + "')";
+            DataBind();
             cmd.ExecuteNonQuery();
-
             txtCatName.Text = "";
             txtCatItemAmount.Text = "";
             ddlStatus.SelectedValue = "Available";
+            con.Close();
+
+            
         }
-
-        //protected void btnAdd_Click(object sender, EventArgs e)
-        //{
-        //     
-        //    SqlCommand cmd = new SqlCommand("insert into Category values('" + txtCatName.Text + "','" +txtCatItemAmount.Text+ "','"+ddlStatus.SelectedValue+"')", con);
-        //    cmd.ExecuteNonQuery();
-        //    con.Close();
-
-        //}
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
@@ -65,6 +55,5 @@ namespace Space_Buns_Ordering_System
             Panel2.Visible = false;
         }
 
-        
     }
 }
