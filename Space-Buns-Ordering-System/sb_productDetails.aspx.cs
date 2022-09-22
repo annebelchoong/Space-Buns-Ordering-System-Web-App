@@ -7,16 +7,15 @@ using System.Web.UI.WebControls;
 
 namespace Space_Buns_Ordering_System
 {
-    public partial class Testtest : System.Web.UI.Page
+    public partial class sb_productDetails : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            if(e.CommandName  =="Add")
+            if (e.CommandName == "Add")
             {
                 Response.Redirect("sb_cart.aspx?name=" + e.CommandArgument.ToString());
             }

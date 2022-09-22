@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sb_productDetails.aspx" />
     <Content Include="Admin\adminBranches.aspx" />
     <Content Include="Admin\adminCategories.aspx" />
     <Content Include="Admin\adminEvents.aspx" />
@@ -186,6 +187,7 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
+    <Content Include="sb_cart.aspx" />
     <Content Include="Testtest.aspx" />
     <Content Include="UserProfile\sb_changePassword.aspx" />
     <Content Include="sb_checkout.aspx" />
@@ -208,6 +210,13 @@
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="sb_productDetails.aspx.cs">
+      <DependentUpon>sb_productDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_productDetails.aspx.designer.cs">
+      <DependentUpon>sb_productDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\adminBranches.aspx.cs">
       <DependentUpon>adminBranches.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -286,6 +295,13 @@
     </Compile>
     <Compile Include="Admin\adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_cart.aspx.cs">
+      <DependentUpon>sb_cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_cart.aspx.designer.cs">
+      <DependentUpon>sb_cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Testtest.aspx.cs">
       <DependentUpon>Testtest.aspx</DependentUpon>

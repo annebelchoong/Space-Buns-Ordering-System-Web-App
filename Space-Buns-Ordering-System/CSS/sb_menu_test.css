@@ -374,3 +374,21 @@ btnAddToCartConfirm:hover {
     display:flex;
     justify-content:center;
 }
+
+.menuProductDetails{
+    display:flex;
+    width:80%;
+    justify-content:space-around;
+    flex-direction:row;
+}
+
+.menuRight{
+    display:flex;
+    flex-direction:column;
+}
+
+.container{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}

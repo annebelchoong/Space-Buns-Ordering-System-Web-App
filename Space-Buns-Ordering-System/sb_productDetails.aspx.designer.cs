@@ -11,17 +11,8 @@ namespace Space_Buns_Ordering_System
 {
 
 
-    public partial class Testtest
+    public partial class ab_productDetails
     {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// DataList1 control.

@@ -19,50 +19,8 @@
         </ul>
     </nav>
 
-   <%-- <div class="menu-container">
+    <div class="menu-container">
 
-        <asp:Repeater ID="Repeater2" runat="server" DataSourceID="SqlDataSource2" onitemcreated="Repeater1_ItemCreated" onitemcommand="Repeater1_ItemCommand">
-            <HeaderTemplate>
-                <div id="Chicken">
-                    <asp:Label ID="lblChicken" runat="server" Text='Chicken' CssClass="lblCategory"></asp:Label>
-
-                </div>
-                <table>
-            </HeaderTemplate>
-            <ItemTemplate>
-                <%# (Container.ItemIndex) % 3 == 0 ? "<tr>" : string.Empty%>
-                <td>
-                    <div class="menuProduct">
-                        <asp:ImageButton ID="ibImage" runat="server" />
-                        <%# DataBinder.Eval(Container.DataItem, "picture") %>
-                        <br />
-                        <div class="lblDesc">
-                            <%# DataBinder.Eval(Container.DataItem, "description") %>
-                        </div>
-                        <div class="lblPrice">
-                        <%# DataBinder.Eval(Container.DataItem, "unitPrice") %>
-                        </div>
-                        
-                        <div class="addToCart">
-                            <asp:Button ID="btnAddToCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
-                        </div>
-                    </div>
-                </td>
-                <%# (Container.ItemIndex) % 3 == 3 ? "</tr>" : string.Empty%>
-
-                <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender2" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
-
-            </ItemTemplate>
-            <FooterTemplate>
-                </table>
-            </FooterTemplate>
-
-        </asp:Repeater>--%>
-<asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
-
-
-
-        <asp:Label ID="lblTestingg" runat="server" Text="test"></asp:Label>
         <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand">
             <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
             <HeaderTemplate>
@@ -74,6 +32,7 @@
             <ItemTemplate>
 
                 <div>
+                    <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" />
                     <div class="menuProduct">
                         <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
                         <br />
@@ -81,19 +40,17 @@
                         <br />
                         <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
                         <div class="addToCart">
-                            <%--<a href="WebForm2.aspx?productID=<%# Eval("productId") %>">--%> 
-                                <%--<asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='WebForm2.aspx?product=<%# Eval("name") %>'>Add To Cart</asp:HyperLink>--%>
-                            <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" CommandArgument='<%# Eval("name") %>'  />
+
+                            <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
                         </div>
                     </div>
 
                 </div>
-                <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="test" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
             </ItemTemplate>
 
         </asp:DataList>
 
-        <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID">
+        <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand">
             <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
             <HeaderTemplate>
                 <div id="Fish">
@@ -112,14 +69,11 @@
                         <br />
                         <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
                         <div class="addToCart">
-                            <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
+                            <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
                         </div>
                     </div>
 
                 </div>
-                <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
-
-
             </ItemTemplate>
 
         </asp:DataList>
@@ -144,145 +98,15 @@
                         <br />
                         <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
                         <div class="addToCart">
-                            <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_Click" CommandName="Select" />
+                            <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
                         </div>
                     </div>
 
                 </div>
-                <%--<ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>--%>
             </ItemTemplate>
         </asp:DataList>
     </div>
-
-    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-    <%-- POP up modal --%>
-    <asp:Panel ID="pnlCustomization" runat="server" CssClass="popupPanel" ScrollBars="Auto">
-        <div class="close-btn">
-            <asp:Button ID="btnClose" runat="server" Text="&times;" UseSubmitBehavior="True" CssClass="btnClose" />
-        </div>
-        <div class="content">
-            <%--<asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource4"></asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT name, description, picture, unitPrice FROM Product"></asp:SqlDataSource>--%>
-        </div>
-        <div class="description">
-            <div class="descriptionLeft">
-                <div class="productBanner">
-                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Media/menuBurgers/chicken1.jpg" CssClass="imgBanner" />
-                </div>
-            </div>
-            <div class="descriptionRight">
-                <div class="productTitle">
-                    <asp:Label ID="lblProductTitle" runat="server" Text=""></asp:Label>
-                    <%--<h1>Chicken Burger</h1>--%>
-                </div>
-                <div class="productDesc">
-                    <asp:Label ID="lblProductDescription" runat="server" Text=""></asp:Label>
-                    <%--<p><b>Crispy chicken fillet </b>is bla bla bla askldjf; klasjd lkj asdf asdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf as dfas df asdf asdf as df as</p>--%>
-                </div>
-                <div>
-                    <asp:Label ID="lblTest" runat="server" Text="Label"></asp:Label>
-                </div>
-            </div>
-        </div>
-
-        <div class="setSelection">
-            <asp:RadioButtonList ID="rblSetSelection" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="RblSetSelection_SelectedIndexChanged" AutoPostBack="True" CellSpacing="-1">
-                <asp:ListItem Class="rblItems">&nbsp;Set Meal</asp:ListItem>
-                <asp:ListItem Class="rblItems">&nbsp;A Lar Carte</asp:ListItem>
-            </asp:RadioButtonList>
-        </div>
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-            <ContentTemplate>
-                <div>
-                    <ajaxToolkit:Accordion ID="Accordion1" runat="server" FadeTransitions="False" TransitionDuration="250" RequireOpenedPane="False" Height="528px" SelectedIndex="-1" CssClass="accordian" ContentCssClass="accordianContent" HeaderCssClass="accordianHeader" HeaderSelectedCssClass="accordianHeaderSelected">
-                        <Panes>
-                            <ajaxToolkit:AccordionPane ID="Pane1" runat="server">
-                                <Header>
-                                    Add-on Patties
-                                </Header>
-                                <Content>
-                                    <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatLayout="Flow">
-                                        <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 1 more patty</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 2 more chicken patties</asp:ListItem>
-                                    </asp:RadioButtonList>
-                                </Content>
-
-                            </ajaxToolkit:AccordionPane>
-                            <ajaxToolkit:AccordionPane ID="Pane2" runat="server">
-                                <Header>
-                                    Choices of sides
-                                </Header>
-                                <Content>
-                                    <asp:RadioButtonList ID="RadioButtonList2" runat="server" RepeatLayout="Flow">
-                                        <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Fries</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Wedges</asp:ListItem>
-                                    </asp:RadioButtonList>
-                                </Content>
-
-                            </ajaxToolkit:AccordionPane>
-                            <ajaxToolkit:AccordionPane ID="Pane3" runat="server">
-                                <Header>
-                                    Choices of beverages
-                                </Header>
-                                <Content>
-                                    <asp:RadioButtonList ID="RadioButtonList4" runat="server" RepeatLayout="Flow">
-                                        <asp:ListItem Class="rblCustomize">&nbsp;Coke</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;Pepsi</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;100 Plus</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;Sprite</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;Fanta Orange</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;Heaven n Earth Ice Lemon Tea</asp:ListItem>
-                                    </asp:RadioButtonList>
-                                </Content>
-
-                            </ajaxToolkit:AccordionPane>
-                            <ajaxToolkit:AccordionPane ID="Pane4" runat="server">
-                                <Header>
-                                    Add-on Sauce
-                                </Header>
-                                <Content>
-                                    <asp:RadioButtonList ID="RadioButtonList5" runat="server" RepeatLayout="Flow">
-                                        <asp:ListItem Class="rblCustomize">&nbsp;BBQ Sauce</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;Cheese sauce</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;Spicy Mayo</asp:ListItem>
-                                        <asp:ListItem Class="rblCustomize">&nbsp;Mustard</asp:ListItem>
-                                    </asp:RadioButtonList>
-                                </Content>
-
-                            </ajaxToolkit:AccordionPane>
-                        </Panes>
-                    </ajaxToolkit:Accordion>
-                </div>
-                <div class="bottomContainer">
-                    <div class="quantityContainer">
-                        <div class="decrementButton">
-                            <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="buttonQuantity" />
-                        </div>
-                        <div class="quantityNumber">
-                            <asp:TextBox ID="txtQuantity" runat="server" Text="1" CssClass="textQuantity"></asp:TextBox>
-                        </div>
-                        <div class="incrementButton">
-                            <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="buttonQuantity" />
-                        </div>
-                    </div>
-                    <div>
-                        <asp:Label ID="lblTotalPrice" runat="server" CssClass="lblTotalPrice">RM 17.00</asp:Label>
-                    </div>
-                    <asp:Button ID="btnAddToCartConfirm" runat="server" Text="Add To Cart" CssClass="btnAddToCartConfirm" />
-
-                </div>
-            </ContentTemplate>
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="rblSetSelection" EventName="SelectedIndexChanged" />
-            </Triggers>
-        </asp:UpdatePanel>
-
-    </asp:Panel>
-
-
-
-
-
+    
 
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
         <SelectParameters>

@@ -1,15 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Testtest.aspx.cs" Inherits="Space_Buns_Ordering_System.Testtest" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <link href="CSS/sb_menu_test.css" rel="stylesheet" />
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div class="container">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_productDetails.aspx.cs" Inherits="Space_Buns_Ordering_System.ab_productDetails" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <div class="container">
             <asp:DataList ID="DataList1" runat="server" DataKeyField="productID" DataSourceID="SqlDataSource1" OnItemCommand="DataList1_ItemCommand">
                 <ItemTemplate>
                     <div class="menuProductDetails">
@@ -47,6 +40,4 @@
                 <asp:QueryStringParameter Name="name" QueryStringField="name" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-    </form>
-</body>
-</html>
+</asp:Content>
