@@ -137,7 +137,7 @@ namespace Space_Buns_Ordering_System
 
                 //ShippingAddressCollection = new SessionShippingAddressCollectionOptions
                 //{
-                //  AllowedCountries = new List<string>
+                //    AllowedCountries = new List<string>
                 //{
                 //  "US",
                 //  "CA",
@@ -155,19 +155,19 @@ namespace Space_Buns_Ordering_System
                 //        Amount = 0,
                 //        Currency = "myr",
                 //      },
-                //      DisplayName = "Free Shipping",
+                //      DisplayName = "Free Delivery",
                 //      // Delivers between 5-7 business days
                 //      DeliveryEstimate = new SessionShippingOptionShippingRateDataDeliveryEstimateOptions
                 //      {
                 //        Minimum = new SessionShippingOptionShippingRateDataDeliveryEstimateMinimumOptions
                 //        {
-                //          Unit = "business_day",
-                //          Value = 5,
+                //          Unit = "minutes",
+                //          Value = 2,
                 //        },
                 //        Maximum = new SessionShippingOptionShippingRateDataDeliveryEstimateMaximumOptions
                 //        {
-                //          Unit = "business_day",
-                //          Value = 7,
+                //          Unit = "minutes",
+                //          Value = 3,
                 //        },
                 //      },
                 //    }
@@ -182,19 +182,19 @@ namespace Space_Buns_Ordering_System
                 //        Amount = 1500,
                 //        Currency = "myr",
                 //      },
-                //      DisplayName = "Next day air",
+                //      DisplayName = "Instant Delivery",
                 //      // Delivers in exactly 1 business day
                 //      DeliveryEstimate = new SessionShippingOptionShippingRateDataDeliveryEstimateOptions
                 //      {
                 //        Minimum = new SessionShippingOptionShippingRateDataDeliveryEstimateMinimumOptions
                 //        {
-                //          Unit = "business_day",
+                //          Unit = "hour",
                 //          Value = 1,
                 //        },
                 //        Maximum = new SessionShippingOptionShippingRateDataDeliveryEstimateMaximumOptions
                 //        {
-                //          Unit = "business_day",
-                //          Value = 1,
+                //          Unit = "hour",
+                //          Value = 2,
                 //        },
                 //      },
                 //    }
@@ -210,101 +210,98 @@ namespace Space_Buns_Ordering_System
                     //"paypal",
                     //"wechat_pay",
                 },
-                //ShippingAddressCollection = new SessionShippingAddressCollectionOptions(),
-
-
 
                 LineItems = CartLineItems,
 
-                //LineItems = new List<SessionLineItemOptions>
-                //{
+                LineItems = new List<SessionLineItemOptions>
+                {
 
-                //new SessionLineItemOptions
-                //{
-                //    PriceData = new SessionLineItemPriceDataOptions
-                //    {
-                //        Currency = "myr",
-                //        UnitAmount = 1700,
-                //        ProductData = new SessionLineItemPriceDataProductDataOptions
-                //        {
-                //            Name = "Double Trouble",
-                //            Description = "Crispy chicken thigh, " +
-                //        "shredded pickles with spicy creamy mayo, " +
-                //        "with hot fragrant bun.",
-                //            //Amount = 1700,
-                //            Images = new List<string>() {
-                //                "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg"
-                //            },
-                //            //Price = "price_H5ggYwtDq4fbrJ",
-                //        },
+                new SessionLineItemOptions
+                {
+                    PriceData = new SessionLineItemPriceDataOptions
+                    {
+                        Currency = "myr",
+                        UnitAmount = 1700,
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                            Name = "Double Trouble",
+                            Description = "Crispy chicken thigh, " +
+                        "shredded pickles with spicy creamy mayo, " +
+                        "with hot fragrant bun.",
+                            //Amount = 1700,
+                            Images = new List<string>() {
+                                "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg"
+                            },
+                            //Price = "price_H5ggYwtDq4fbrJ",
+                        },
 
 
-                //    },
-                //    Quantity = cartItems,
-                //},
+                    },
+                    Quantity = 2,
+                },
 
-                //    new SessionLineItemOptions
-                //    {
-                //        PriceData = new SessionLineItemPriceDataOptions
-                //        {
-                //            Currency = "myr",
-                //            UnitAmount = 1600,
-                //            ProductData = new SessionLineItemPriceDataProductDataOptions
-                //            {
-                //                Name = "Salmon Fillet",
-                //                Description = "Salmon patty, " +
-                //        "served with slices of tomatoes, lettuce, onions and mayo.",
-                //                //Amount = 1600,
-                //                Images = new List<string>() {
-                //            "https://spacebuns.web.app/Media/menuBurgers/fish1.jpg"
-                //        },
-                //            },
+                    new SessionLineItemOptions
+                    {
+                        PriceData = new SessionLineItemPriceDataOptions
+                        {
+                            Currency = "myr",
+                            UnitAmount = 1600,
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = "Salmon Fillet",
+                                Description = "Salmon patty, " +
+                        "served with slices of tomatoes, lettuce, onions and mayo.",
+                                //Amount = 1600,
+                                Images = new List<string>() {
+                            "https://spacebuns.web.app/Media/menuBurgers/fish1.jpg"
+                        },
+                            },
 
-                //        },
-                //        Quantity = 1,
-                //    },
+                        },
+                        Quantity = 1,
+                    },
 
-                //    new SessionLineItemOptions
-                //    {
-                //        PriceData = new SessionLineItemPriceDataOptions
-                //        {
-                //            Currency = "myr",
-                //            UnitAmount = 1700,
-                //            ProductData = new SessionLineItemPriceDataProductDataOptions
-                //            {
-                //                Name = "King of Cheese",
-                //                Description = "A triple grilled Beef Patty covered with lots of mozarella cheese.",
-                //                //Amount = 1700,
-                //                Images = new List<string>() {
-                //            "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg"
-                //        },
-                //            },
+                    new SessionLineItemOptions
+                    {
+                        PriceData = new SessionLineItemPriceDataOptions
+                        {
+                            Currency = "myr",
+                            UnitAmount = 1700,
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = "King of Cheese",
+                                Description = "A triple grilled Beef Patty covered with lots of mozarella cheese.",
+                                //Amount = 1700,
+                                Images = new List<string>() {
+                            "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg"
+                        },
+                            },
 
-                //        },
-                //        Quantity = 1,
-                //    },
+                        },
+                        Quantity = 1,
+                    },
 
-                //    new SessionLineItemOptions
-                //    {
-                //        PriceData = new SessionLineItemPriceDataOptions
-                //        {
-                //            Currency = "myr",
-                //            UnitAmount = 250,
-                //            ProductData = new SessionLineItemPriceDataProductDataOptions
-                //            {
-                //                Name = "Cupcake",
-                //                Description = "This is a cupcake",
-                //                //Amount = 250,
-                //                Images = new List<string>() {
-                //                "https://media.istockphoto.com/photos/pink-and-white-frosted-cupcake-isolated-on-white-picture-id167120918?k=20&m=167120918&s=612x612&w=0&h=SL7pPaRbqwf-7ewyqIF_aTvhMY-qKSbShkW5BetZtsI="
-                //        },
-                //            },
+                    //new SessionLineItemOptions
+                    //{
+                    //    PriceData = new SessionLineItemPriceDataOptions
+                    //    {
+                    //        Currency = "myr",
+                    //        UnitAmount = 250,
+                    //        ProductData = new SessionLineItemPriceDataProductDataOptions
+                    //        {
+                    //            Name = "Cupcake",
+                    //            Description = "This is a cupcake",
+                    //            //Amount = 250,
+                    //            Images = new List<string>() {
+                    //            "https://media.istockphoto.com/photos/pink-and-white-frosted-cupcake-isolated-on-white-picture-id167120918?k=20&m=167120918&s=612x612&w=0&h=SL7pPaRbqwf-7ewyqIF_aTvhMY-qKSbShkW5BetZtsI="
+                    //    },
+                    //        },
 
-                //        },
-                //        Quantity = 2,
-                //    },
+                    //    },
+                    //    Quantity = 2,
+                    //},
 
-                //},
+                },
 
                 Mode = "payment",
 
