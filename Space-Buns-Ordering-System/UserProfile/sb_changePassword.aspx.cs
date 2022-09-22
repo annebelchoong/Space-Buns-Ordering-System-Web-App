@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 namespace Space_Buns_Ordering_System
 {
@@ -31,7 +32,7 @@ namespace Space_Buns_Ordering_System
 
             SqlCommand cmd = new SqlCommand(query, con);
            
-            cmd.Parameters.AddWithValue("@password", "asdfasdf");
+            cmd.Parameters.AddWithValue("@password", txtRetypePassword.Text);
 
             cmd.ExecuteNonQuery();
             cmd.Dispose();

@@ -29,7 +29,7 @@
             height: 20px;*/
             background-color: #1A1A1A;
             color: #B97836;
-            border: 1px #B97836 solid;
+            border: 1px black solid;
             font-weight: bold;
             border-radius: 20px;
             margin-left: 48px;
@@ -132,10 +132,12 @@
         <asp:Panel ID="Panel1" runat="server" CssClass="modalpopup">
             
             <h2 class="footer-socialLinks">Upload Image</h2>
-            <asp:FileUpload ID="ImgUpload" runat="server" justify-content="center"/>
+            <asp:FileUpload ID="imgUpload" runat="server" justify-content="center" class="userProfileButtons"/>
+            <br />
             <br />
             <asp:Button ID="btnUpload" runat="server" Text="Update Image" OnClick="btnUpload_Click" class="userProfileButtons"/>
             <asp:Button ID="btnClose" runat="server" Text="Close" class="userProfileButtons"/>
+            <asp:Label ID="lblMessage" runat="server"></asp:Label>
         </asp:Panel>
 
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>

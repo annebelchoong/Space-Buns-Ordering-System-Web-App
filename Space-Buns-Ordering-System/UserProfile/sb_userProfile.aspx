@@ -17,14 +17,20 @@
                     <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/UserProfile/sb_changePassword.aspx" />
                     <br />
                 </div>
-                <asp:Label ID="username" runat="server" Text="Username" ForeColor="white"></asp:Label>
+                <asp:Label ID="username" runat="server" Text="Username: " ForeColor="White"></asp:Label>
                 <asp:LoginName ID="LoginName1" runat="server" ForeColor="white" />
                 <div>
-                    <asp:Label ID="lblName" runat="server" ForeColor="white"></asp:Label><br />
-                    <asp:Label ID="lblEmail" runat="server" ForeColor="white"></asp:Label><br />
-                    <asp:Label ID="lblPhone" runat="server" ForeColor="white"></asp:Label><br />
-                    <asp:Label ID="lblStreet" runat="server" ForeColor="white"></asp:Label><br />
-                    <asp:Label ID="lblZipcode" runat="server" ForeColor="white"></asp:Label>
+                    <span class="text-white">Name: </span>
+                    <asp:Label ID="lblName" runat="server" ForeColor="white" CssClass="text-white"></asp:Label><br class="text-white" />
+                    <span class="text-white">Email: </span>
+                    <asp:Label ID="lblEmail" runat="server" ForeColor="white" CssClass="text-white"></asp:Label><br class="text-white" />
+                    <span class="text-white">Phone No: </span>
+                    <asp:Label ID="lblPhone" runat="server" ForeColor="white" CssClass="text-white"></asp:Label><br class="text-white" />
+                    <span class="text-white">Street: </span>
+                    <asp:Label ID="lblStreet" runat="server" ForeColor="white" CssClass="text-white"></asp:Label><br class="text-white" />
+                    <span class="text-white">Postcode: </span>
+                    <asp:Label ID="lblZipcode" runat="server" ForeColor="white" CssClass="text-white"></asp:Label>
+                    <span class="text-white">
                     <%--<asp:Label ID="lblUserProfile" runat="server" ForeColor="white"></asp:Label>--%>
                     <br />
                     <%--<table style="width: 100%;">
@@ -147,6 +153,7 @@
                         <td colspan="2">&nbsp;</td>
                     </tr>
                 </table>--%>
+                    </span>
                 </div>
             </div>
         </div>

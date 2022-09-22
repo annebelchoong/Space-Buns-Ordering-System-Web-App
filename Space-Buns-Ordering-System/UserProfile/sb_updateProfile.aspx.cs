@@ -31,7 +31,7 @@ namespace Space_Buns_Ordering_System.UserProfile
             con = new SqlConnection(sss);
             con.Open();
 
-            string query = "UPDATE Customer SET email = @email, phone = @phone, street = @street, zipcode = @zipcode, name = @name, password = @password, username = @username WHERE username = user";
+            string query = "UPDATE Customer SET email = @email, phone = @phone, street = @street, zipcode = @zipcode, name = @name, password = @password, username = @username WHERE username = @username";
 
 
             SqlCommand cmd = new SqlCommand(query, con);

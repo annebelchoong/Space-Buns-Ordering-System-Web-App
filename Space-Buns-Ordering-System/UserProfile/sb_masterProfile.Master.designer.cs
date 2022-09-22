@@ -141,13 +141,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
-        /// ImgUpload control.
+        /// imgUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload ImgUpload;
+        protected global::System.Web.UI.WebControls.FileUpload imgUpload;
 
         /// <summary>
         /// btnUpload control.
@@ -166,6 +166,15 @@ namespace Space_Buns_Ordering_System
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnClose;
+
+        /// <summary>
+        /// lblMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessage;
 
         /// <summary>
         /// ScriptManager1 control.
