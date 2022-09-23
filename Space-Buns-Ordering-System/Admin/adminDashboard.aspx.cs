@@ -99,11 +99,12 @@ namespace Space_Buns_Ordering_System
 
         private void UpdateTotalOnline(SqlConnection con)
         {
-            string strSearch = "SELECT COUNT(*) AS TotalOnline FROM[Order]";
+            //string strSearch = "SELECT COUNT(*) AS TotalOnline FROM[Order]";
 
-            SqlCommand cmdSearch = new SqlCommand(strSearch, con);
-            int totalOnline = (int)cmdSearch.ExecuteScalar();
-            lblTotalOnline.Text = totalOnline.ToString();
+            //SqlCommand cmdSearch = new SqlCommand(strSearch, con);
+            //int totalOnline = (int)cmdSearch.ExecuteScalar();
+            //lblTotalOnline.Text = totalOnline.ToString();
+            lblTotalOnline.Text = Application["intVisitors"].ToString();
         }
 
     }

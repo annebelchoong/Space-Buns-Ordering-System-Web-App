@@ -22,7 +22,7 @@
     <main>
         <div class="main__container">
 
-            <Prefix1:TagName1 ID="usercontro1" runat="server"></Prefix1:TagName1>
+            <%--<Prefix1:TagName1 ID="usercontro1" runat="server"></Prefix1:TagName1>--%>
             <asp:Label ID="lblDateTime" runat="server"></asp:Label>
             <asp:Label ID="lblDisplayDate" runat="server"></asp:Label>
             <asp:Label ID="lblCount" runat="server"></asp:Label>
