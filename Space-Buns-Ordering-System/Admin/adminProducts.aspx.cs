@@ -37,7 +37,7 @@ namespace Space_Buns_Ordering_System
             txtProdPrice.Text = "";
             txtProdQuantity.Text = "";
             FileUpload1.Attributes.Clear();
-            ddlProdStatus.SelectedValue = "Chicken";
+            ddlProdStatus.Items.Clear();
         }
     }
 }

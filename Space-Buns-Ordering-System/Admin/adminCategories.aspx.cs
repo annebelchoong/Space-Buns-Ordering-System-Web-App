@@ -28,7 +28,7 @@ namespace Space_Buns_Ordering_System
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "insert into Category values('" + txtCatName.Text + "','" + ddlStatus.SelectedValue + "','" + txtCatItemAmount.Text + "')";
-                Panel1.DataBind();
+                DataBind();
                 cmd.ExecuteNonQuery();
                 con.Close();
             

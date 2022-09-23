@@ -67,7 +67,7 @@
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [categoryName], [categoryID] FROM [Category]"></asp:SqlDataSource>
                     <br />
                     <br />
-                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
+                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" style="width: 55px" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
                 </td>
@@ -104,8 +104,13 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT Product.productID, Product.categoryID, Product.name, Product.picture, Product.quantity, Product.unitPrice, Product.description, Category.categoryName FROM Product INNER JOIN Category ON Product.categoryID = Category.categoryID" DeleteCommand="DELETE FROM Product WHERE (productID = @productID)">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT Product.productID, Product.categoryID, Product.name, Product.picture, Product.quantity, Product.unitPrice, Product.description, Category.categoryName FROM Product INNER JOIN Category ON Product.categoryID = Category.categoryID" DeleteCommand="DELETE FROM Product WHERE (name = @name) AND (picture = @picture) AND (quantity = @quantity) AND (unitPrice = @unitPrice) AND (description = @description) AND (categoryID = @productID)">
                         <DeleteParameters>
+                            <asp:Parameter Name="name" />
+                            <asp:Parameter Name="picture" />
+                            <asp:Parameter Name="quantity" />
+                            <asp:Parameter Name="unitPrice" />
+                            <asp:Parameter Name="description" />
                             <asp:Parameter Name="productID" />
                         </DeleteParameters>
                     </asp:SqlDataSource>

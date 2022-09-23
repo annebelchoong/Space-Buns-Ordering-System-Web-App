@@ -30,7 +30,7 @@
 
         <div class="menu-container">
 
-            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
+            <asp:DataList ID="DataList7" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
                 <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
                 <HeaderTemplate>
                     <div id="Chicken">
@@ -65,76 +65,175 @@
 
             </asp:DataList>
 
-            <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource3" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand">
+            <asp:DataList ID="DataList6" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
                 <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
                 <HeaderTemplate>
                     <div id="Fish">
-                        <asp:Label ID="lblChicken" runat="server" Text='Fish' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
+                        <asp:Label ID="lblFish" runat="server" Text='Fish' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
 
                     </div>
                 </HeaderTemplate>
-                <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Center" />
+                <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
                 <ItemTemplate>
 
                     <div>
                         <div class="menuProduct">
-                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px"  style="border-radius:20px" />
-                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" ForeColor="185,120,54" Font-Size="20px" Font-Bold="True"/>
-                            <br />
-                            <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc" ForeColor="156,156,156"></asp:Label>
-                            <br />
-                            <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice" ForeColor="White"></asp:Label>
-                            <div class="addToCart">
-                                <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
+                            <div>
+
+                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" style="border-radius:20px" ImageAlign="Middle"/>
                             </div>
-                        </div>
-
-                    </div>
-                </ItemTemplate>
-
-            </asp:DataList>
-
-            <asp:DataList ID="DataList3" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" >
-                <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
-                <HeaderTemplate>
-                    <div id="Beef">
-                        <asp:Label ID="lblChicken" runat="server" Text='Beef' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
-
-                    </div>
-                </HeaderTemplate>
-                <ItemTemplate>
-
-
-                    <div>
-                        <div class="menuProduct">
-                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px"  style="border-radius20px"/>
+                            <div>
                             <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" ForeColor="185,120,54" Font-Size="20px" Font-Bold="True"/>
-                            <br />
+                                <br />
                             <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc" ForeColor="156,156,156"></asp:Label>
-                            <br />
+                                <br />
                             <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice" ForeColor="255,255,255"></asp:Label>
                             <div class="addToCart">
                                 <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
                             </div>
+
+                            </div>
                         </div>
 
                     </div>
                 </ItemTemplate>
+
             </asp:DataList>
+
+            <asp:DataList ID="DataList5" runat="server" DataSourceID="SqlDataSource3" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0" OnSelectedIndexChanged="DataList5_SelectedIndexChanged">
+                <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
+                <HeaderTemplate>
+                    <div id="Beef">
+                        <asp:Label ID="lblBeef" runat="server" Text='Beef' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
+
+                    </div>
+                </HeaderTemplate>
+                <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                <ItemTemplate>
+
+                    <div>
+                        <div class="menuProduct">
+                            <div>
+
+                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" style="border-radius:20px" ImageAlign="Middle"/>
+                            </div>
+                            <div>
+                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" ForeColor="185,120,54" Font-Size="20px" Font-Bold="True"/>
+                                <br />
+                            <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc" ForeColor="156,156,156"></asp:Label>
+                                <br />
+                            <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice" ForeColor="255,255,255"></asp:Label>
+                            <div class="addToCart">
+                                <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
+                            </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </ItemTemplate>
+
+            </asp:DataList>
+
+            <br />
+
+            <asp:DataList ID="DataList8" runat="server" DataSourceID="SqlDataSource4" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0" OnSelectedIndexChanged="DataList5_SelectedIndexChanged">
+                <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
+                <HeaderTemplate>
+                    <div id="Lamb">
+                        <asp:Label ID="lblLamb" runat="server" Text='Lamb' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
+
+                    </div>
+                </HeaderTemplate>
+                <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                <ItemTemplate>
+
+                    <div>
+                        <div class="menuProduct">
+                            <div>
+
+                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" style="border-radius:20px" ImageAlign="Middle"/>
+                            </div>
+                            <div>
+                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" ForeColor="185,120,54" Font-Size="20px" Font-Bold="True"/>
+                                <br />
+                            <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc" ForeColor="156,156,156"></asp:Label>
+                                <br />
+                            <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice" ForeColor="255,255,255"></asp:Label>
+                            <div class="addToCart">
+                                <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
+                            </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </ItemTemplate>
+
+            </asp:DataList>
+
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="Lamb" Name="categoryName" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+
+            <asp:DataList ID="DataList9" runat="server" DataSourceID="SqlDataSource5" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0" OnSelectedIndexChanged="DataList5_SelectedIndexChanged">
+                <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
+                <HeaderTemplate>
+                    <div id="Meatless">
+                        <asp:Label ID="lblMeatless" runat="server" Text='Meatless' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
+
+                    </div>
+                </HeaderTemplate>
+                <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
+                <ItemTemplate>
+
+                    <div>
+                        <div class="menuProduct">
+                            <div>
+
+                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" style="border-radius:20px" ImageAlign="Middle"/>
+                            </div>
+                            <div>
+                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" ForeColor="185,120,54" Font-Size="20px" Font-Bold="True"/>
+                                <br />
+                            <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc" ForeColor="156,156,156"></asp:Label>
+                                <br />
+                            <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice" ForeColor="255,255,255"></asp:Label>
+                            <div class="addToCart">
+                                <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
+                            </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </ItemTemplate>
+
+            </asp:DataList>
+
+            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="Meatless" Name="categoryName" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <br />
+
         </div>
     </div>
 
 
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
         <SelectParameters>
-            <asp:Parameter DefaultValue="fish" Name="categoryName" />
+            <asp:Parameter DefaultValue="Beef" Name="categoryName" />
         </SelectParameters>
     </asp:SqlDataSource>
 
 
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Product.name, Product.unitPrice, Product.description, Product.picture, Category.categoryName, Product.productID FROM Product INNER JOIN Category ON Product.categoryID = Category.categoryID WHERE (Category.categoryName LIKE @categoryName)">
         <SelectParameters>
-            <asp:Parameter DefaultValue="chicken" Name="categoryName" />
+            <asp:Parameter DefaultValue="fish" Name="categoryName" />
         </SelectParameters>
     </asp:SqlDataSource>
 
