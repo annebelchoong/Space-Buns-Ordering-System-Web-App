@@ -10,20 +10,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" AllowSorting="True" CellPadding="10" Width="90%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             <Columns>
-                <asp:BoundField DataField="orderID" HeaderText="orderID" InsertVisible="False" ReadOnly="True" SortExpression="orderID" />
-                <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
-                <asp:BoundField DataField="customerId" HeaderText="customerId" InsertVisible="False" ReadOnly="True" SortExpression="customerId" />
-                <asp:BoundField DataField="paymentAmount" HeaderText="paymentAmount" SortExpression="paymentAmount" />
+                <asp:BoundField DataField="orderID" HeaderText="OrderID" InsertVisible="False" ReadOnly="True" SortExpression="orderID" />
+                <asp:BoundField DataField="dateTime" HeaderText="DateTime" SortExpression="dateTime" />
+                <asp:BoundField DataField="customerId" HeaderText="CustomerId" InsertVisible="False" ReadOnly="True" SortExpression="customerId" />
+                <asp:BoundField DataField="paymentAmount" HeaderText="PaymentAmount" SortExpression="paymentAmount" />
+                <asp:CommandField ShowSelectButton="True" />
             </Columns>
+            <HeaderStyle BackColor="Black" ForeColor="White" />
         </asp:GridView>
 
 
 
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, [Order].dateTime, Customer.customerId, Payment.paymentAmount FROM [Order] INNER JOIN Customer ON [Order].customerID = Customer.customerId INNER JOIN Payment ON [Order].orderID = Payment.orderID"></asp:SqlDataSource>
 
-
+        <asp:DetailsView ID="DetailsView1" runat="server" Height="50px" Width="125px" AllowPaging="True" AutoGenerateRows="False" DataSourceID="SqlDataSource2">
+        </asp:DetailsView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [OrderDetails] WHERE [OrderDetail]"></asp:SqlDataSource>
 <%--
         <div class="row my-5">
             <h3 class="fs-4 mb-3">Recent Orders</h3>
