@@ -81,4 +81,30 @@
             <asp:QueryStringParameter Name="name" QueryStringField="name" />
         </SelectParameters>
     </asp:SqlDataSource>
+
+    
+    <%--stripe integration--%>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('pk_test_51LWbMdCffsYKlOgZJQu5OlKPoEe978IKUuzKJjwcW0ZDwb46LaVT09D3svdGTvaWoavzzCTqo9fM7DztaOL8dSGu00MhmVJabg');
+
+<%--        var form = document.getElementById("checkout_form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
+        });--%>
+
+
+        var clickToCheckout = document.getElementById("btnCheckout")
+        clickToCheckout.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            stripe.redirectToCheckout({
+                sessionId: "<%= sessionId %>"
+            });
+        });
+    </script>
 </asp:Content>
