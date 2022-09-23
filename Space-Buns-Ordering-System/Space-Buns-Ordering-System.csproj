@@ -107,6 +107,7 @@
     </Content>
     <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="CSS\sb_adminOrderDetails.css" />
+    <Content Include="CSS\sb_cart.css" />
     <Content Include="CSS\sb_contactUs.css" />
     <Content Include="CSS\sb_customer.css" />
     <Content Include="CSS\sb_events.css" />
@@ -196,7 +197,9 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
+    <Content Include="sb_cart.aspx" />
     <Content Include="sb_orderCancelled.aspx" />
+    <Content Include="sb_productDetails.aspx" />
     <Content Include="UserProfile\sb_changePassword.aspx" />
     <Content Include="Admin\adminCustomers.aspx" />
     <Content Include="sb_contactUs.aspx" />
@@ -298,12 +301,26 @@
     <Compile Include="Admin\adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="sb_cart.aspx.cs">
+      <DependentUpon>sb_cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_cart.aspx.designer.cs">
+      <DependentUpon>sb_cart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sb_orderCancelled.aspx.cs">
       <DependentUpon>sb_orderCancelled.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="sb_orderCancelled.aspx.designer.cs">
       <DependentUpon>sb_orderCancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sb_productDetails.aspx.cs">
+      <DependentUpon>sb_productDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sb_productDetails.aspx.designer.cs">
+      <DependentUpon>sb_productDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile\sb_changePassword.aspx.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
