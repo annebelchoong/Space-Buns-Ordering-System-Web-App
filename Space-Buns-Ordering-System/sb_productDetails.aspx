@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_productDetails.aspx.cs" Inherits="Space_Buns_Ordering_System.ab_productDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSS/sb_menu.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container">
@@ -7,7 +8,7 @@
                 <ItemTemplate>
                     <div class="menuProductDetails">
                         <div class="menuLeft">
-                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" />
+                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="300px" style="border-radius: 30px"/>
                         </div>
                         <div class="menuRight">
                             <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
@@ -26,9 +27,16 @@
                                     <div class="incrementButton">
                                         <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="btnQuantity" />
                                     </div>
-                                    <div class="addToCart">
+                                    <div class="buttons">
+                                        <div class="addToCart">
                                         <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' />
                                     </div>
+
+                                    <div class="back">
+                                        <asp:Button ID="btnBack" runat="server" Text="Back" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' PostBackUrl="~/sb_menu.aspx" />
+                                    </div>
+                                    </div>
+                                    
                                 </div>
 
                             </div>

@@ -342,6 +342,10 @@ btnAddToCartConfirm:hover {
     padding-bottom: 40px;
 }
 
+.imgProduct{
+    width:200px;
+}
+
 .lblProduct {
     font-size: 1.4em;
     font-weight: bold;
@@ -356,6 +360,7 @@ btnAddToCartConfirm:hover {
 
 .lblPrice {
     color: white;
+    padding-bottom: 10px;
 }
 
 

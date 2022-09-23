@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\sb_cart.css" />
     <Content Include="sb_productDetails.aspx" />
     <Content Include="Admin\adminBranches.aspx" />
     <Content Include="Admin\adminCategories.aspx" />

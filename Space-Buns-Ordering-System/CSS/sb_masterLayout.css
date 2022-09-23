@@ -23,6 +23,12 @@ html {
 
 /* #################################### Nav Bar ################################### */
 
+.loginStyle {
+    font-size: 10px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
 .navbar-fixedtop {
     display: flex;
     justify-content: space-around;
@@ -399,18 +405,7 @@ footer.footer {
     text-align: center;
 }
 
-.btnCheckout {
-    width: 100%;
-    height: 50px;
-    border: 1px solid #B97836;
-    border-radius: 20px;
-    background-color: #FFFFFF;
-    color: #B97836;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 18px;
-    margin-top: 30px;
-}
+
 
     .btnCheckout:hover {
         background-color: #B97836;

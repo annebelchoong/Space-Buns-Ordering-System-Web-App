@@ -8,16 +8,21 @@ namespace Space_Buns_Ordering_System.Cart
 {
     public class CartItem
     {
-        public string ItemId { get; set; }
+        public string name;
+        public int unitPrice;
+        public int quantity;
+        public string imagePath;
 
-        public string CartId { get; set; }
+        public CartItem()
+        { 
+        }
 
-        public int Quantity { get; set; }
-
-        public System.DateTime DateCreated { get; set; }
-
-        public int ProductId { get; set; }
-
-
+        public CartItem(string name, int unitPrice, int quantity, string imagePath)
+        {
+            this.name = name;
+            this.unitPrice = unitPrice;
+            this.quantity = quantity;
+            this.imagePath = imagePath;
+        }
     }
 }

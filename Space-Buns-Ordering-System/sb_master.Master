@@ -34,7 +34,7 @@
             <div class="navbar-login">
                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
                 <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="loginStyle" />
                 <%--for test--%>
             </div>
 
@@ -151,7 +151,7 @@
             </asp:Panel>
         </div>--%>
 
-        <div>
+        <%--<div>
             <asp:Panel ID="pnlCart" runat="server" CssClass="cart-panel">
 
                 <div class="cartNavBar">
@@ -222,7 +222,7 @@
                 </div>
 
             </asp:Panel>
-        </div>
+        </div>--%>
 
         <footer class="footer">
             <div class="footer-container">
@@ -277,7 +277,7 @@
             </SelectParameters>
         </asp:SqlDataSource>
     </form>
-    <script>
+    <<%--script>
         let openPanelButton = document.getElementById("hypCart");
         let closePanelButton = document.getElementById("btnCloseCart");
         //let cartPanel = document.querySelector(".cart-panel");
@@ -292,7 +292,7 @@
             cartPanel.classList.remove("open");
             //openPanelButton.classList.remove("hide");
         }
-    </script>
+    </script>--%>
 
 
     <%--stripe integration--%>

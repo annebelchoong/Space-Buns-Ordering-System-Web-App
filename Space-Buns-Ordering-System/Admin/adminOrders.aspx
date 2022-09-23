@@ -10,7 +10,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+            <Columns>
+                <asp:BoundField DataField="orderID" HeaderText="orderID" InsertVisible="False" ReadOnly="True" SortExpression="orderID" />
+                <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
+                <asp:BoundField DataField="customerId" HeaderText="customerId" InsertVisible="False" ReadOnly="True" SortExpression="customerId" />
+                <asp:BoundField DataField="paymentAmount" HeaderText="paymentAmount" SortExpression="paymentAmount" />
+            </Columns>
+        </asp:GridView>
 
+
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, [Order].dateTime, Customer.customerId, Payment.paymentAmount FROM [Order] INNER JOIN Customer ON [Order].customerID = Customer.customerId INNER JOIN Payment ON [Order].orderID = Payment.orderID"></asp:SqlDataSource>
+
+
+<%--
         <div class="row my-5">
             <h3 class="fs-4 mb-3">Recent Orders</h3>
             <div class="col">
@@ -47,7 +61,7 @@
                             <td>RM120.00</td>
                             <td class="btnControl">
                                 <%--<asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/Media/Icons/info.png" Width="25px" />--%>
-                                <asp:HyperLink ID="viewOrderDetail1" runat="server" ImageUrl="~/Media/Icons/info.png" ImageWidth="25px" NavigateUrl="adminOrderDetail.aspx"></asp:HyperLink>
+                                <%--<asp:HyperLink ID="viewOrderDetail1" runat="server" ImageUrl="~/Media/Icons/info.png" ImageWidth="25px" NavigateUrl="adminOrderDetail.aspx"></asp:HyperLink>
                             </td>
                             <td class="btnControl">
                                 <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/Media/Icons/edit.png" Width="25px" />
@@ -119,7 +133,7 @@
                             <td class="btnControl">
                                 <asp:HyperLink ID="HyperLink5" class="fas fa-times" Style="color: red;" runat="server"></asp:HyperLink>
                             </td>
-                        </tr>
+                        </tr>--%>
 
 
                         <%--                            <tr>
