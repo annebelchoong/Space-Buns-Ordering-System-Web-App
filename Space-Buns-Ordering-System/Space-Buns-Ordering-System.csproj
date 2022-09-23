@@ -120,7 +120,6 @@
     <Content Include="Global.asax" />
     <Content Include="Javascript\adminDashboard.js" />
     <Content Include="Javascript\sb_order.js" />
-    <Content Include="loggedInDateTime.ascx" />
     <Content Include="Media\Ads\foodbank.jpg" />
     <Content Include="Media\Ads\gogreen.jpg" />
     <Content Include="CSS\sb_aboutUs.css" />
@@ -198,9 +197,7 @@
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
     <Content Include="sb_orderCancelled.aspx" />
-    <Content Include="temp.aspx" />
     <Content Include="UserProfile\sb_changePassword.aspx" />
-    <Content Include="sb_checkout.aspx" />
     <Content Include="Admin\adminCustomers.aspx" />
     <Content Include="sb_contactUs.aspx" />
     <Content Include="UserProfile\sb_editProfile.aspx" />
@@ -217,7 +214,6 @@
     <Content Include="UserProfile\sb_updateProfile.aspx" />
     <Content Include="UserProfile\sb_userProfile.aspx" />
     <Content Include="Web.config" />
-    <Content Include="Ads.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\adminBranches.aspx.cs">
@@ -287,12 +283,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="loggedInDateTime.ascx.cs">
-      <DependentUpon>loggedInDateTime.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="loggedInDateTime.ascx.designer.cs">
-      <DependentUpon>loggedInDateTime.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sb_aboutUs.aspx.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>
@@ -315,26 +305,12 @@
     <Compile Include="sb_orderCancelled.aspx.designer.cs">
       <DependentUpon>sb_orderCancelled.aspx</DependentUpon>
     </Compile>
-    <Compile Include="temp.aspx.cs">
-      <DependentUpon>temp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="temp.aspx.designer.cs">
-      <DependentUpon>temp.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UserProfile\sb_changePassword.aspx.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UserProfile\sb_changePassword.aspx.designer.cs">
       <DependentUpon>sb_changePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="sb_checkout.aspx.cs">
-      <DependentUpon>sb_checkout.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_checkout.aspx.designer.cs">
-      <DependentUpon>sb_checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\adminCustomers.aspx.cs">
       <DependentUpon>adminCustomers.aspx</DependentUpon>
