@@ -20,9 +20,15 @@ namespace Space_Buns_Ordering_System
 
         }
 
-        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DataList_ItemCommand(object source, DataListCommandEventArgs e)
         {
+            if (e.CommandName == "Select")
+            {
+                Response.Redirect("sb_productDetails.aspx?name=" + e.CommandArgument.ToString());
+            }
 
         }
+
+       
     }
 }

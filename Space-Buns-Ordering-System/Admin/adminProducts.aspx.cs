@@ -23,7 +23,7 @@ namespace Space_Buns_Ordering_System
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into Product values('" + ddlProdStatus.SelectedValue + "','" + txtProdName.Text + "','" + FileUpload1.FileName + "','" + txtProdQuantity.Text + "','" + txtProdPrice.Text + "','" + txtProdDesc.Text + "')";
+            cmd.CommandText = "insert into Product values('" + ddlProdStatus.SelectedValue + "','" + txtProdName.Text + "','" + "~/Media/menuBurgers/" + FileUpload1.FileName + "','" + txtProdQuantity.Text + "','" + txtProdPrice.Text + "','" + txtProdDesc.Text + "')";
             DataBind();
             cmd.ExecuteNonQuery();
             con.Close();

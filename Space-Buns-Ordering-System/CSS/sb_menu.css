@@ -39,6 +39,9 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     transition: 0.25s;
 }
 
+.contentArea {
+    c
+}
 /* ###################### Menu Item Styles ###################### */
 
 .menu-row {
@@ -51,8 +54,10 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
 
 .menu-container {
     display: flex;
-    justify-content: space-around;
+    width: 70%;
+    justify-content: center;
     flex-flow: row wrap;
+    margin: 0 20%;
 }
 
 .menu-category-name {
@@ -442,6 +447,93 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     cursor: pointer;
 }
 
+.menuProduct {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.lblProduct {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #B97836;
+}
+
+.lblDesc {
+    font-size: 0.9em;
+    color: white;
+    opacity: 0.6;
+}
+
+.lblPrice {
+    color: white;
+    padding-bottom: 20px;
+}
+
+.imgProduct {
+    display: flex;
+    justify-content: center;
+    margin: 0 10%;
+    border-radius: 20px;
+}
+
+.lblCategory {
+    color: #B97836;
+    padding-left: 65px;
+    font-size: 2em;
+    font-weight: 800;
+    font-style: italic;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.addToCart {
+    display: flex;
+    justify-content: center;
+}
+
+.menuProductDetails {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.menuRight {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.container {
+    margin: 0 20%;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    height: 2000px;
+}
+
+.txtQuantity {
+    width: 40px;
+    background-color: #252627;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    text-align: center;
+}
 /* ###################### Media Queries ###################### */
 
 @media only screen and (max-width:445px) {

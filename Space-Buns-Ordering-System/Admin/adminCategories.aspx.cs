@@ -23,12 +23,7 @@ namespace Space_Buns_Ordering_System
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            if (txtCatName.Text.Contains("") && txtCatItemAmount.Text.Contains(""))
-            {
-                
-            }
-            else
-            {
+            
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -36,17 +31,15 @@ namespace Space_Buns_Ordering_System
                 Panel1.DataBind();
                 cmd.ExecuteNonQuery();
                 con.Close();
-            }
+            
 
         }
 
-        protected void btnClear_Click(object sender, EventArgs e)
+        protected void btnClear_Click1(object sender, EventArgs e)
         {
             txtCatName.Text = "";
             txtCatItemAmount.Text = "";
             ddlStatus.SelectedValue = "Available";
         }
-
-        
     }
 }

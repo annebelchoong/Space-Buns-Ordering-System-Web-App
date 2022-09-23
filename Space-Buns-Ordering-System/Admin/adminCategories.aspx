@@ -50,7 +50,7 @@
                     <br />
                     <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" PostBackUrl="~/Admin/adminCategories.aspx"/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnClear" runat="server" Text="Clear"/>
+                    <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click1"/>
                 </td>
                 <td class="auto-style4" rowspan="2">&nbsp;</td>
                 <td style="text-align: center; font-weight: bold; font-style: italic;">Category List</td>

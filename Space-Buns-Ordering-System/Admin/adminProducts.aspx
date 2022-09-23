@@ -53,16 +53,18 @@
                     <br />
                     <br />
                     Product Category :
-                    <asp:DropDownList ID="ddlProdStatus" runat="server">
-                        <asp:ListItem>Chicken</asp:ListItem>
-                        <asp:ListItem>Fish</asp:ListItem>
-                        <asp:ListItem>Beef</asp:ListItem>
-                        <asp:ListItem>Lamb</asp:ListItem>
-                        <asp:ListItem>Meatless</asp:ListItem>
-                        <asp:ListItem>Promotion</asp:ListItem>
-                        <asp:ListItem>Drinks</asp:ListItem>
-                        <asp:ListItem>Snacks</asp:ListItem>
+                    <asp:DropDownList ID="ddlProdStatus" runat="server" DataSourceID="SqlDataSource2" DataTextField="categoryID" DataValueField="categoryID">
+                        <asp:ListItem Value="2">Chicken</asp:ListItem>
+                        <asp:ListItem Value="3">Fish</asp:ListItem>
+                        <asp:ListItem Value="4">Beef</asp:ListItem>
+                        <asp:ListItem Value="5">Lamb</asp:ListItem>
+                        <asp:ListItem Value="6">Meatless</asp:ListItem>
+                        <asp:ListItem Value="1">Promotion</asp:ListItem>
+                        <asp:ListItem Value="7">Drinks</asp:ListItem>
+                        <asp:ListItem Value="8">Snacks</asp:ListItem>
+                        <asp:ListItem Value="9">Chips</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [categoryName], [categoryID] FROM [Category]"></asp:SqlDataSource>
                     <br />
                     <br />
                     <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" />
@@ -77,24 +79,20 @@
             </tr>
             <tr>
                 <td style="text-align: center; font-weight: normal; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif; font-size: small;" class="auto-style5">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="productID,Expr1" DataSourceID="SqlDataSource1" ForeColor="Black" AllowPaging="True">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="productID" DataSourceID="SqlDataSource1" ForeColor="Black" AllowPaging="True">
                         <Columns>
-                            <asp:BoundField DataField="productID" HeaderText="productID" InsertVisible="False" ReadOnly="True" SortExpression="productID" />
-                            <asp:BoundField DataField="categoryID" HeaderText="categoryID" SortExpression="categoryID" InsertVisible="False" ReadOnly="True" Visible="False" />
-                            <asp:BoundField DataField="categoryName" HeaderText="categoryName" SortExpression="categoryName" InsertVisible="False" ReadOnly="True" Visible="False" />
-                            <asp:BoundField DataField="Expr2" HeaderText="CATEGORY NAME" SortExpression="Expr2" />
+                            <asp:CommandField ShowDeleteButton="True" />
+                            <asp:BoundField DataField="productID" HeaderText="productID" InsertVisible="False" ReadOnly="True" SortExpression="productID" Visible="False" />
+                            <asp:BoundField DataField="categoryID" HeaderText="categoryID" SortExpression="categoryID" />
                             <asp:BoundField DataField="name" HeaderText="NAME" SortExpression="name" />
                             <asp:ImageField DataImageUrlField="picture" HeaderText="PICTURE">
                                 <ControlStyle Height="65px" Width="65px" />
                             </asp:ImageField>
                             <asp:BoundField DataField="quantity" HeaderText="QUANTITY" SortExpression="quantity" >
                             </asp:BoundField>
-                            <asp:BoundField DataField="unitPrice" HeaderText="PRICE (RM)" SortExpression="unitPrice" />
-                            <asp:BoundField DataField="description" HeaderText="DESCRIPTION" SortExpression="description">
-                            <ItemStyle HorizontalAlign="Justify" />
-                            </asp:BoundField>
-                            <asp:BoundField DataField="adminID" HeaderText="adminID" InsertVisible="False" ReadOnly="True" SortExpression="adminID" Visible="False" />
-                            <asp:BoundField DataField="Expr1" HeaderText="Expr1" InsertVisible="False" ReadOnly="True" SortExpression="Expr1" Visible="False" />
+                            <asp:BoundField DataField="unitPrice" HeaderText="PRICE(RM)" SortExpression="unitPrice" />
+                            <asp:BoundField DataField="description" HeaderText="DESCRIPTION" SortExpression="description" />
+                            <asp:BoundField DataField="categoryName" HeaderText="CATEGORY NAME" SortExpression="categoryName" />
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" />
                         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -106,7 +104,11 @@
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT Product.productID, Product.categoryID, Product.categoryName, Product.name, Product.picture, Product.quantity, Product.unitPrice, Product.description, Product.adminID, Category.categoryID AS Expr1, Category.categoryName AS Expr2 FROM Product INNER JOIN Category ON Product.categoryID = Category.categoryID"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT Product.productID, Product.categoryID, Product.name, Product.picture, Product.quantity, Product.unitPrice, Product.description, Category.categoryName FROM Product INNER JOIN Category ON Product.categoryID = Category.categoryID" DeleteCommand="DELETE FROM Product WHERE (productID = @productID)">
+                        <DeleteParameters>
+                            <asp:Parameter Name="productID" />
+                        </DeleteParameters>
+                    </asp:SqlDataSource>
                     <br />
                     <br />
                 </td>
