@@ -54,6 +54,7 @@ namespace Space_Buns_Ordering_System
             if (branchLocationInput.Text.Length == 0 || branchAddressInput.Text.Length == 0)
             {
                 lblError.Visible = true;
+                lblDisplayMsg.Text = "";
                 lblError.Text = "Fields cannot be empty!";
             }
             else
