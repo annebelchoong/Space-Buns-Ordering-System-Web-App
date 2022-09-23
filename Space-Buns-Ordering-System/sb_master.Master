@@ -153,20 +153,19 @@
 
                     <div>
                         <%
-                    bool isLoggedIn = HttpContext.Current.User.Identity.IsAuthenticated;  
+                            bool isLoggedIn = HttpContext.Current.User.Identity.IsAuthenticated;
                             if (!isLoggedIn)
                             {
                         %>
-                        <asp:Button ID="yes" type="submit" runat="server" Text="LOGIN" CssClass="btnCheckout" />
+                        <asp:Button ID="yes" type="submit" runat="server" Text="Login" CssClass="btnCheckout" PostBackUrl="~/sb_login.aspx" />
                         <%
-
-                             }
-                             else
-                             {
+                            }
+                            else
+                            {
                         %>
                         <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
                         <%
-                             }
+                            }
                         %>
                     </div>
 

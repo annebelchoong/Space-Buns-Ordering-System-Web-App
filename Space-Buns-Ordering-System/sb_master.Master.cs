@@ -39,7 +39,6 @@ namespace Space_Buns_Ordering_System
             con.Close();
             return cartItems;
             //lblTotalOrders.Text = totalOrders.ToString();
-
         }
 
         private SessionLineItemOptions GetCartLineItem(CartItem cartItem)
@@ -127,7 +126,7 @@ namespace Space_Buns_Ordering_System
 
             var options = new SessionCreateOptions
             {
-                CustomerEmail = "customer@example.com",
+                CustomerEmail = "jason@gmail.com",
                 BillingAddressCollection = "required",
                 //SuccessUrl = "https://localhost:52001/success?id={CHECKOUT_SESSION_ID}",
                 SuccessUrl = "https://localhost:44358/sb_orderConfirmed.aspx",
@@ -235,29 +234,29 @@ namespace Space_Buns_Ordering_System
 
 
                     },
-                    Quantity = 2,
+                    Quantity = 1,
                 },
 
-                    new SessionLineItemOptions
-                    {
-                        PriceData = new SessionLineItemPriceDataOptions
-                        {
-                            Currency = "myr",
-                            UnitAmount = 1600,
-                            ProductData = new SessionLineItemPriceDataProductDataOptions
-                            {
-                                Name = "Salmon Fillet",
-                                Description = "Salmon patty, " +
-                        "served with slices of tomatoes, lettuce, onions and mayo.",
-                                //Amount = 1600,
-                                Images = new List<string>() {
-                            "https://spacebuns.web.app/Media/menuBurgers/fish1.jpg"
-                        },
-                            },
+                    //new SessionLineItemOptions
+                    //{
+                    //    PriceData = new SessionLineItemPriceDataOptions
+                    //    {
+                    //        Currency = "myr",
+                    //        UnitAmount = 1600,
+                    //        ProductData = new SessionLineItemPriceDataProductDataOptions
+                    //        {
+                    //            Name = "Salmon Fillet",
+                    //            Description = "Salmon patty, " +
+                    //    "served with slices of tomatoes, lettuce, onions and mayo.",
+                    //            //Amount = 1600,
+                    //            Images = new List<string>() {
+                    //        "https://spacebuns.web.app/Media/menuBurgers/fish1.jpg"
+                    //    },
+                    //        },
 
-                        },
-                        Quantity = 1,
-                    },
+                    //    },
+                    //    Quantity = 1,
+                    //},
 
                     new SessionLineItemOptions
                     {

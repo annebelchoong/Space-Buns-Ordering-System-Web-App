@@ -109,7 +109,7 @@
 
     <div id="ads" style="display: flex; justify-content: center; margin-bottom: 30px;">
         <asp:ScriptManager ID="ScriptManager1" runat="server" />
-        <asp:Timer ID="TopBannerTimer" Interval="5000" runat="server" />
+        <asp:Timer ID="TopBannerTimer" Interval="1000" runat="server" />
         <asp:UpdatePanel ID="BannerUpdatePanel" runat="server">
             <Triggers>
                 <asp:AsyncPostBackTrigger ControlID="TopBannerTimer" EventName="Tick" />
