@@ -4,8 +4,8 @@
     <link href="CSS/sb_cart.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    
-    
+
+
     <div class="cartcontainer">
         <div class="cartNavBar">
             <div>
@@ -45,7 +45,7 @@
                                                 <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("quantity") %>' CssClass="txtQuantity" />
                                             </div>
                                             <div class="incrementButton">
-                                                <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="btnQuantity" onClick="btnIncrement_onClick"/>
+                                                <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="btnQuantity" OnClick="btnIncrement_onClick" />
                                             </div>
                                         </div>
                                         <div class="totalPrice">
@@ -82,29 +82,5 @@
         </SelectParameters>
     </asp:SqlDataSource>
 
-    
-    <%--stripe integration--%>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script>
-        var stripe = Stripe('pk_test_51LWbMdCffsYKlOgZJQu5OlKPoEe978IKUuzKJjwcW0ZDwb46LaVT09D3svdGTvaWoavzzCTqo9fM7DztaOL8dSGu00MhmVJabg');
 
-<%--        var form = document.getElementById("checkout_form");
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            stripe.redirectToCheckout({
-                sessionId: "<%= sessionId %>"
-            });
-        });--%>
-
-
-        var clickToCheckout = document.getElementById("btnCheckout")
-        clickToCheckout.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            stripe.redirectToCheckout({
-                sessionId: "<%= sessionId %>"
-            });
-        });
-    </script>
 </asp:Content>

@@ -12,7 +12,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="content-area">
 
-        <nav class="menu-nav">
+<%--        <nav class="menu-nav">
             <ul>
                 <li>
                     <a href="#Chicken">Chicken</a>
@@ -22,7 +22,7 @@
                     <a href="#Meatless">Meatless</a>
                 </li>
             </ul>
-        </nav>
+        </nav>--%>
 
         <div class="cartButton">
             <%--<asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />--%>
@@ -32,12 +32,12 @@
 
             <asp:DataList ID="DataList7" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
                 <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
-                <HeaderTemplate>
+                <%--<HeaderTemplate>
                     <div id="Chicken">
                         <asp:Label ID="lblChicken" runat="server" Text='Chicken' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
 
                     </div>
-                </HeaderTemplate>
+                </HeaderTemplate>--%>
                 <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
                 <ItemTemplate>
 
@@ -65,7 +65,7 @@
 
             </asp:DataList>
 
-            <asp:DataList ID="DataList6" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
+            <%--<asp:DataList ID="DataList6" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
                 <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
                 <HeaderTemplate>
                     <div id="Fish">
@@ -213,7 +213,7 @@
 
             </asp:DataList>
 
-            <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
+           <%-- <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="Meatless" Name="categoryName" />
                 </SelectParameters>
@@ -235,12 +235,15 @@
         <SelectParameters>
             <asp:Parameter DefaultValue="fish" Name="categoryName" />
         </SelectParameters>
-    </asp:SqlDataSource>
+    </asp:SqlDataSource>--%>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
+<%--    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
         <SelectParameters>
             <asp:Parameter Name="categoryName" DefaultValue="Chicken" />
         </SelectParameters>
+    </asp:SqlDataSource>--%>
+
+   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID ">
     </asp:SqlDataSource>
     <script src="Javascript/medium-zoom.min.js"></script>
     <script>
