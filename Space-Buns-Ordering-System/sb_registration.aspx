@@ -141,7 +141,7 @@
                                 <td align="center" class="signupRow">
                                     <asp:TextBox ID="PhoneNo" runat="server" placeholder="0123456789" pattern="^(01)[0-9][0-9]*[0-9]{7,8}$" required></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="PhoneNoRequired" runat="server" ControlToValidate="PhoneNo" 
-                                        ErrorMessage="Phone Number is required." ToolT ip="Phone Number is required." 
+                                        ErrorMessage="Phone Number is required." ToolTip="Phone Number is required." 
                                         ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>

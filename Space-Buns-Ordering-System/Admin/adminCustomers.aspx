@@ -181,9 +181,6 @@ WHERE (name = @name)
                                     zipcode:
                                     <asp:Label ID="zipcodeLabel" runat="server" Text='<%# Eval("zipcode") %>' />
                                     <br />
-                                    points:
-                                    <asp:Label ID="pointsLabel" runat="server" Text='<%# Eval("points") %>' />
-                                    <br />
                                     profilePic:
                                     <asp:Label ID="profilePicLabel" runat="server" Text='<%# Eval("profilePic") %>' />
                                     <br />
