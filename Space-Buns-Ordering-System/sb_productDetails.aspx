@@ -38,9 +38,9 @@
                                         <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' PostBackUrl="~/sb_menu.aspx" />
                                     </div>
 
-                                    <div class="back">
+                                   <%-- <div class="back">
                                         <asp:Button ID="btnBack" runat="server" Text="Back" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' PostBackUrl="~/sb_menu.aspx" />
-                                    </div>
+                                    </div>--%>
                                     </div>
                                     
                                 </div>
