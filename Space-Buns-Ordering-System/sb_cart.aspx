@@ -1,9 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_general.Master" AutoEventWireup="true" CodeBehind="sb_cart.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="CSS/sb_cart.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+    
+    
+    <div class="cartcontainer">
         <div class="cartNavBar">
             <div>
                 <h2>Your cart</h2>
@@ -22,7 +25,7 @@
                 <div class="cartProduct">
                     <div class="products">
                         <div class="product">
-                            <div>
+                            <div class="details">
                                 <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" CssClass="imgCart" />
                                 <div class="productColumn">
                                     <div class="productTop">
@@ -64,10 +67,10 @@
             </div>
             <div>
                 RM
-                                <asp:Label ID="lblFinalAmount" runat="server" Text="34.00"></asp:Label>
+                                <asp:Label ID="lblFinalAmount" runat="server" Text="34.00" ForeColor="#B97836"></asp:Label>
             </div>
         </div>
-        <div>
+        <div class="Checkout">
             <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="btnCheckout" />
         </div>
 

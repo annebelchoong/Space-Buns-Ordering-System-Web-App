@@ -12,7 +12,6 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CartItem cartitem = new CartItem();
 
             //List<CartItem> cart = new List<CartItem>();
             //Label name = Repeater1.FindControl("lblProduct") as Label;
@@ -25,6 +24,8 @@ namespace Space_Buns_Ordering_System
 
 
 
+
         }
+
     }
 }

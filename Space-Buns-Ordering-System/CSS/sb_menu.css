@@ -39,9 +39,6 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     transition: 0.25s;
 }
 
-.contentArea{
-   c
-}
 /* ###################### Menu Item Styles ###################### */
 
 .menu-row {
@@ -54,7 +51,6 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
 
 .menu-container {
     display: flex;
-    width: 70%;
     justify-content: center;
     flex-flow: row wrap;
     margin: 0 20%;
@@ -125,6 +121,8 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     font-weight: bold;
     /*    margin-top: 15px;*/
     cursor: pointer;
+    padding: 0px 20px;
+    margin: 0px 10px;
 }
 
 .btnAddToCartConfirm {
@@ -518,9 +516,9 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
 .container {
     margin: 0 20%;
     display: flex;
-    justify-content: center;
     width: 70%;
-   height: 2000px;
+    justify-content: center;
+   height: 500px;
 
 }
 
@@ -532,6 +530,18 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     border: none;
     color: white;
     text-align: center;
+}
+
+.productQuantity{
+    display: flex;
+    align-items:center;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 25px;
+    color: #B97836;
+    padding-bottom: 30px;
 }
 /* ###################### Media Queries ###################### */
 

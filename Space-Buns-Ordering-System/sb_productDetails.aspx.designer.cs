@@ -11,7 +11,7 @@ namespace Space_Buns_Ordering_System
 {
 
 
-    public partial class ab_productDetails
+    public partial class sb_productDetails
     {
 
         /// <summary>

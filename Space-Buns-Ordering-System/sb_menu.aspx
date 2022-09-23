@@ -44,15 +44,18 @@
                         <div class="menuProduct">
                             <div>
 
-                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" style="border-radius:20px"/>
+                                <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" Style="border-radius: 20px" />
                             </div>
                             <div>
-                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
-                            <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
-                            <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
-                            <div class="addToCart">
-                                <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
-                            </div>
+                                <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
+                                <br></br>
+                                <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
+                                <br></br>
+                                <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
+                                <br></br>
+                                <div class="addToCart">
+                                    <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
+                                </div>
 
                             </div>
                         </div>
@@ -74,12 +77,15 @@
 
                     <div>
                         <div class="menuProduct">
-                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px"  style="border-radius:20px" />
-                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
-                            <br />
-                            <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
-                            <br />
-                            <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
+                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" Style="border-radius: 20px" />
+                            <div>
+                                <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
+                                <br></br>
+                                <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
+                                <br></br>
+                                <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
+                            <br></br>
+                            </div>
                             <div class="addToCart">
                                 <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
                             </div>
@@ -90,7 +96,7 @@
 
             </asp:DataList>
 
-            <asp:DataList ID="DataList3" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID">
+            <asp:DataList ID="DataList3" runat="server" DataSourceID="SqlDataSource4" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID">
                 <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
                 <HeaderTemplate>
                     <div id="Beef">
@@ -103,12 +109,15 @@
 
                     <div>
                         <div class="menuProduct">
-                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px"  style="border-radius20px"/>
-                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
-                            <br />
-                            <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
-                            <br />
-                            <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
+                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" Style="border-radius20px" />
+                            <div>
+                                <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' CssClass="lblProduct" />
+                                <br /><br>
+                                <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
+                                <br></br>
+                                <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
+                            <br></br>
+                            </div>
                             <div class="addToCart">
                                 <asp:Button ID="btnAddtoCart" runat="server" Text="View Details" CssClass="btnAddToCart" CommandName="Select" CommandArgument='<%# Eval("name") %>' />
                             </div>
@@ -117,6 +126,7 @@
                     </div>
                 </ItemTemplate>
             </asp:DataList>
+            <asp:SqlDataSource ID="SqlDataSource4" runat="server"></asp:SqlDataSource>
         </div>
     </div>
 
