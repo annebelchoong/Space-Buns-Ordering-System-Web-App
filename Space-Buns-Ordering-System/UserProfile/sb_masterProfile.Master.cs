@@ -14,11 +14,7 @@ namespace Space_Buns_Ordering_System
     
     public partial class sb_masterProfile : System.Web.UI.MasterPage
     {
-        SqlConnection con;
-        SqlDataAdapter da;
-        DataSet ds;
-        SqlCommand cmd;
-        string connStr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+        
         //public Label lblUsername
         //{
         //    get
@@ -67,58 +63,78 @@ namespace Space_Buns_Ordering_System
             }
             else
             {
-                Image2.ImageUrl = "profile_pic.jpg";
+                Image2.ImageUrl = "../Media/Profile/profile_pic.jpg";
             }
-            //int intImageSize;
 
-            //String strImageType;
-            //Stream ImageStream;
-            //FileStream fs = File.OpenRead(Request.PhysicalApplicationPath + "/Media/Profile/profile_pic.jpg");
-            //Byte[] ImageContent;
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //SqlConnection conn;
+            //SqlDataAdapter da;
+            //DataSet ds;
+            //SqlCommand cmd;
+            //string conStr = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+
+            //using (SqlConnection conn = new SqlConnection(conStr))
+            //{
+            //    string sql = "INSERT INTO Customer(profilePic) VALUES(@profilePic)";
+            //    using (SqlCommand cmd = new SqlCommand(sql, conn))
+            //    {
+            //        cmd.Parameters.AddWithValue("@proficPic", Path.GetFileName(imgUpload.FileName));
+            //        conn.Open();
+            //        cmd.ExecuteNonQuery();
+            //        conn.Close();
+            //    }
+            //}
+
+            //int intimagesize;
+
+            //string strimagetype;
+            //Stream imagestream;
+            //FileStream fs = File.OpenRead(Request.PhysicalApplicationPath + "/media/profile/profile_pic.jpg");
+            //byte[] imagecontent;
 
             //if (imgUpload.PostedFile.ContentLength > 0)
             //{
-            //    intImageSize = imgUpload.PostedFile.ContentLength;
-            //    strImageType = imgUpload.PostedFile.ContentType;
-            //    ImageStream = imgUpload.PostedFile.InputStream;
+            //    intimagesize = imgUpload.PostedFile.ContentLength;
+            //    strimagetype = imgUpload.PostedFile.ContentType;
+            //    imagestream = imgUpload.PostedFile.InputStream;
 
-            //    ImageContent = new Byte[intImageSize];
-            //    int intStatus;
-            //    intStatus = ImageStream.Read(ImageContent, 0, intImageSize);
+            //    imagecontent = new byte[intimagesize];
+            //    int intstatus;
+            //    intstatus = imagestream.Read(imagecontent, 0, intimagesize);
             //}
             //else
             //{
-            //    strImageType = "image/x-png";
-            //    ImageContent = new Byte[fs.Length];
-            //    fs.Read(ImageContent, 0, ImageContent.Length);
+            //    strimagetype = "image/x-png";
+            //    imagecontent = new byte[fs.Length];
+            //    fs.Read(imagecontent, 0, imagecontent.Length);
             //}
 
-            //SqlConnection objConn = new SqlConnection(ConfigurationManager.AppSettings["conn"]);
-            //SqlCommand objCmd;
-            //string strCmd;
+            //SqlConnection objconn = new SqlConnection(ConfigurationManager.AppSettings["conn"]);
+            //SqlCommand objcmd;
+            //string strcmd;
 
-            //strCmd = "INSERT INTO Customer (profilePic) VALUES (@profilePic)";
+            //strcmd = "insert into customer (profilePic) values (@profilePic)";
 
-            //objCmd = new SqlCommand(strCmd, objConn);
+            //objcmd = new SqlCommand(strcmd, objconn);
 
-            //SqlParameter prmPersonImage = new SqlParameter("@profilePic", SqlDbType.Image);
+            //SqlParameter prmpersonimage = new SqlParameter("@profilePic", SqlDbType.Image);
 
-            //prmPersonImage.Value = ImageContent;
+            //prmpersonimage.Value = imagecontent;
 
-            //objCmd.Parameters.Add(prmPersonImage);
+            //objcmd.Parameters.Add(prmpersonimage);
 
             //lblMessage.Visible = true;
 
             //try
             //{
-            //    objConn.Open();
-            //    objCmd.ExecuteNonQuery();
-            //    objConn.Close();
-            //    lblMessage.Text = "ImageAdded!";
+            //    objconn.Open();
+            //    objcmd.ExecuteNonQuery();
+            //    objconn.Close();
+            //    //lblmessage.text = "imageadded!";
             //}
             //catch
             //{
-            //    lblMessage.Text = "Error occured the image has not been added to the database!";
+            //    //lblmessage.text = "error occured the image has not been added to the database!";
             //}
 
 
@@ -184,5 +200,5 @@ namespace Space_Buns_Ordering_System
             //    lblEditImg.Text = "Failed to update User Image!";
             //}
         }
-        }
+    }
     }
