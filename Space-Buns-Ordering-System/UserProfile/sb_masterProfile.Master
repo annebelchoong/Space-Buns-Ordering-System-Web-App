@@ -80,7 +80,8 @@
                 <div>
                     <div class="logo-name">
                         <div class="logo-image">
-                            <img src="../Media/Profile/profile_pic.jpg" />
+                            <%--<img src="../Media/Profile/profile_pic.jpg" />--%>
+                            <asp:Image ID="Image2" runat="server" />
                         </div>
                     </div>
                     <br />
@@ -133,6 +134,10 @@
             
             <h2 class="footer-socialLinks">Upload Image</h2>
             <asp:FileUpload ID="imgUpload" runat="server" justify-content="center" class="userProfileButtons"/>
+            <br />
+            <br />
+            <asp:Image ID="Image1" runat="server" Height = "200" Width = "200" />
+            <br />
             <br />
             <br />
             <asp:Button ID="btnUpload" runat="server" Text="Update Image" OnClick="btnUpload_Click" class="userProfileButtons"/>

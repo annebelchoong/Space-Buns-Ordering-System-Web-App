@@ -27,7 +27,7 @@ namespace Space_Buns_Ordering_System
             con = new SqlConnection(sss);
             con.Open();
 
-            string query = "UPDATE Customer SET  password = @password WHERE username = @username";
+            string query = "UPDATE Customer SET password = @password WHERE username = @username";
 
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -35,9 +35,9 @@ namespace Space_Buns_Ordering_System
             cmd.Parameters.AddWithValue("@password", txtRetypePassword.Text);
 
             cmd.ExecuteNonQuery();
-            cmd.Dispose();
+            //cmd.Dispose();
             con.Close();
-            Response.Write("alert('Profile saved!')");
+            Response.Write("alert('Password saved!')");
             Response.Redirect("sb_userProfile.aspx");
 
         }

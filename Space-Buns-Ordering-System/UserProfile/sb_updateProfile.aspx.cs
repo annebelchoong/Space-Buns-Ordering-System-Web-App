@@ -46,12 +46,24 @@ namespace Space_Buns_Ordering_System.UserProfile
             cmd.Parameters.AddWithValue("@dateofbirth", calDoB.SelectedDate.ToString());
 
 
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
+            int insert = cmd.ExecuteNonQuery();
+            //cmd.Dispose();
             con.Close();
-            Response.Write("alert('Profile saved!')");
-            Response.Redirect("sb_userProfile.aspx");
-           
+            //Response.Write("alert('Profile saved!')");
+            //Response.Redirect("sb_userProfile.aspx");
+
+            if (insert > 0)
+            {
+                //lblResults.Text = "Insert successfully";
+                string script = "alert('Profile saved!');";
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
+                Response.Redirect("sb_userProfile.aspx");
+            }
+            else
+            {
+                lblResults.Text = "fail to insert";
+            }
+
         }
     }
 }

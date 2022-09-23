@@ -1,19 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_orderHistory.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_orderHistory" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 190px;
-        }
-        .auto-style2 {
-            height: 30px;
-        }
-        .auto-style3 {
-            width: 190px;
-            height: 30px;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container-fluid" style="margin-top: 80px;">
@@ -22,7 +10,7 @@
             <h3 class="fs-4 mb-3" style="color: white;"><strong>My Order</strong> </h3>
             <p class="fs-4 mb-3" style="color: white; text-align: center;">
                 <div class="footer-socialLinks">
-                <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" Width="100%" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" Width="100%" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" OnSelectedIndexChanged="gvOrder_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="orderID" HeaderText="orderID" InsertVisible="False" ReadOnly="True" SortExpression="orderID" />
                         <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
@@ -44,6 +32,41 @@
                 </asp:GridView>
                 </div>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, [Order].dateTime, [Order].orderStatus, OrderDetails.quantity, Payment.paymentAmount, [Order].orderType FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID INNER JOIN Product ON OrderDetails.productID = Product.productID INNER JOIN Payment ON [Order].orderID = Payment.orderID"></asp:SqlDataSource>
+            <br />
+            <br />
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" CssClass="text-white" Width="100%" Justify-content="center" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
+                <AlternatingItemStyle BackColor="#DCDCDC" />
+                <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
+                <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
+                <ItemStyle BackColor="#EEEEEE" ForeColor="Black" />
+                <ItemTemplate>
+                    orderID:
+                    <asp:Label ID="orderIDLabel" runat="server" Text='<%# Eval("orderID") %>' />
+                    <br />
+                    productID:
+                    <asp:Label ID="productIDLabel" runat="server" Text='<%# Eval("productID") %>' />
+                    <br />
+                    unitPrice:
+                    <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("unitPrice") %>' />
+                    <br />
+                    quantity:
+                    <asp:Label ID="quantityLabel" runat="server" Text='<%# Eval("quantity") %>' />
+                    <br />
+                    name:
+                    <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                    <br />
+                    description:
+                    <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
+                    <br />
+<br />
+                </ItemTemplate>
+                <SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
+            </asp:DataList>
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, OrderDetails.productID, OrderDetails.unitPrice, OrderDetails.quantity, Product.name, Product.description FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID INNER JOIN Product ON OrderDetails.productID = Product.productID  WHERE([Order].orderID = @orderId)">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="gvOrder" Name="orderId" PropertyName="SelectedValue" />
+                </SelectParameters>
+            </asp:SqlDataSource>
             </p>
             <%--<%--<%--<p class="fs-4 mb-3" style="color: white; text-align: center;">
                 &nbsp;</p>

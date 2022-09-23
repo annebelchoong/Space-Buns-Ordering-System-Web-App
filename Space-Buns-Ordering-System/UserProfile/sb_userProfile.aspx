@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_userProfile.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_userProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+    .auto-style1 {
+        font-size: x-large;
+    }
+    .auto-style2 {
+        color: #fff;
+        font-size: x-large;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -17,21 +26,36 @@
                     <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/UserProfile/sb_changePassword.aspx" />
                     <br />
                 </div>
-                <asp:Label ID="username" runat="server" Text="Username: " ForeColor="White"></asp:Label>
-                <asp:LoginName ID="LoginName1" runat="server" ForeColor="white" />
+                <strong>
+                <asp:Label ID="username" runat="server" Text="Username: " ForeColor="White" CssClass="auto-style1"></asp:Label>
+                </strong>
+                <asp:LoginName ID="LoginName1" runat="server" ForeColor="white" CssClass="auto-style1" />
+                <br />
                 <div>
-                    <span class="text-white">Name: </span>
-                    <asp:Label ID="lblName" runat="server" ForeColor="white" CssClass="text-white"></asp:Label><br class="text-white" />
-                    <span class="text-white">Email: </span>
-                    <asp:Label ID="lblEmail" runat="server" ForeColor="white" CssClass="text-white"></asp:Label><br class="text-white" />
-                    <span class="text-white">Phone No: </span>
-                    <asp:Label ID="lblPhone" runat="server" ForeColor="white" CssClass="text-white"></asp:Label><br class="text-white" />
-                    <span class="text-white">Street: </span>
-                    <asp:Label ID="lblStreet" runat="server" ForeColor="white" CssClass="text-white"></asp:Label><br class="text-white" />
-                    <span class="text-white">Postcode: </span>
-                    <asp:Label ID="lblZipcode" runat="server" ForeColor="white" CssClass="text-white"></asp:Label>
+                    <span class="auto-style2"><strong>
+                    <br />
+                    Name: </strong> </span>
+                    <asp:Label ID="lblName" runat="server" ForeColor="white" CssClass="auto-style2"></asp:Label>
+                    <br class="auto-style1" />
+                    <br class="auto-style2" />
+                    <span class="text-white"><strong><span class="auto-style1">Email:</span></strong><span class="auto-style1"> </span> </span>
+                    <asp:Label ID="lblEmail" runat="server" ForeColor="white" CssClass="auto-style2"></asp:Label>
+                    <br class="auto-style1" />
+                    <br class="auto-style2" />
+                    <span class="auto-style2"><strong>Phone No: </strong> </span>
+                    <asp:Label ID="lblPhone" runat="server" ForeColor="white" CssClass="auto-style2"></asp:Label>
+                    <br class="auto-style1" />
+                    <br class="auto-style2" />
+                    <span class="text-white"><strong><span class="auto-style1">Street:</span></strong><span class="auto-style1"> </span> </span>
+                    <asp:Label ID="lblStreet" runat="server" ForeColor="white" CssClass="auto-style2"></asp:Label>
+                    <br class="auto-style1" />
+                    <br class="auto-style2" />
+                    <span class="text-white"><strong><span class="auto-style1">Postcode:</span></strong><span class="auto-style1"> </span> </span>
+                    <asp:Label ID="lblZipcode" runat="server" ForeColor="white" CssClass="auto-style2"></asp:Label>
                     <span class="text-white">
+                    <span class="auto-style1">
                     <%--<asp:Label ID="lblUserProfile" runat="server" ForeColor="white"></asp:Label>--%>
+                    </span>
                     <br />
                     <%--<table style="width: 100%;">
                     <tr>
