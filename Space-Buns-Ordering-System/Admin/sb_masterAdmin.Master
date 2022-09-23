@@ -29,12 +29,14 @@
                         class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="adminCustomers.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-user me-2"></i>Customers</a>
+                    <a href="adminRoles.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-user-tie me-2"></i>Roles</a>
                     <br />
                     <a href="adminBranches.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-store me-2"></i>Store Branches</a>
                     <a href="adminEvents.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-address-book me-2"></i>Events & Contacts</a>
-<%--                    <a href="adminEvents.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    <%--                    <a href="adminEvents.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                         class="fas fa-calendar me-2"></i>Contacts</a>--%>
                     <br />
                     <a href="adminCategories.aspx" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
@@ -73,10 +75,10 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-user me-2 primary-text"></i>John Doe
+                                    <i class="fas fa-user me-2 primary-text"></i>John Doe<asp:LoginName ID="LoginName1" runat="server" />
                                 </a>
                                 <ul class="dropdown-menu primary-text" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="adminUserProfile.aspx">Profile</a></li>
                                     <li><a class="dropdown-item" href="#">Settings</a></li>
                                     <li><a class="dropdown-item" href="#">Logout</a></li>
                                 </ul>

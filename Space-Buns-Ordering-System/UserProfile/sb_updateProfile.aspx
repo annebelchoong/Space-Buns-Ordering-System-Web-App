@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_editProfile.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_editProfile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_updateProfile.aspx.cs" Inherits="Space_Buns_Ordering_System.UserProfile.sb_updateProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -55,7 +55,7 @@
         <div class="overview">
             <div class="title">
                 <i class="fas fa-user bg-transparent"></i>
-                <span class="text">Edit User Profile</span>
+                <span class="text">Update User Profile</span>
                 <br />
                 <br />
             </div>

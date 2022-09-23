@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_masterProfile.master.cs" Inherits="Space_Buns_Ordering_System.sb_masterProfile" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -27,7 +29,7 @@
             height: 20px;*/
             background-color: #1A1A1A;
             color: #B97836;
-            border: 1px #B97836 solid;
+            border: 1px black solid;
             font-weight: bold;
             border-radius: 20px;
             margin-left: 48px;
@@ -41,8 +43,8 @@
                 transition: 250ms;
             }
 
-        .removeUnderline{
-            text-decoration:none;
+        .removeUnderline {
+            text-decoration: none;
         }
     </style>
 
@@ -78,15 +80,19 @@
                 <div>
                     <div class="logo-name">
                         <div class="logo-image">
-                            <img src="/Media/Icons/profile_pic.jpg" />
+                            <%--<img src="../Media/Profile/profile_pic.jpg" />--%>
+                            <asp:Image ID="Image2" runat="server" />
                         </div>
                     </div>
                     <br />
                     <div class="container">
                         <asp:Button ID="btnEditPic" runat="server" class="userProfileButtons" Text="Edit Pic" />
+                        <asp:Label ID="lblEditImg" runat="server"></asp:Label>
                     </div>
                     <div class="logo-name">
-                        <h3><strong>Corn Jena</strong></h3>
+                        <h3><strong>
+                            <asp:LoginName ID="LoginName1" runat="server" />
+                        </strong></h3>
                     </div>
                 </div>
 
@@ -116,15 +122,34 @@
                         class="fas fa-user me-2"></i>User Profile</a>
                     <a href="sb_orderHistory.aspx" class="list-group-item list-group-item-action bg-transparent text-white fw-bold"><i
                         class="fas fa-clipboard me-2"></i>My Orders</a>
-                    <div class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>
-                    <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="list-group-item-action bg-transparent text-danger fw-bold removeUnderline" LogoutPageUrl="~/sb_index.aspx" />
+                    <div class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
+                        <i
+                            class="fas fa-power-off me-2"></i>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="list-group-item-action bg-transparent text-danger fw-bold removeUnderline" LogoutPageUrl="~/sb_index.aspx" />
 
                     </div>
                 </div>
 
             </div>
         </nav>
+
+        <asp:Panel ID="Panel1" runat="server" CssClass="modalpopup">
+
+            <h2 class="footer-socialLinks">Upload Image</h2>
+            <asp:FileUpload ID="imgUpload" runat="server" justify-content="center" class="userProfileButtons" />
+            <br />
+            <br />
+            <asp:Image ID="Image1" runat="server" Height="200" Width="200" />
+            <br />
+            <br />
+            <br />
+            <asp:Button ID="btnUpload" runat="server" Text="Update Image" OnClick="btnUpload_Click" class="userProfileButtons" />
+            <asp:Button ID="btnClose" runat="server" Text="Close" class="userProfileButtons" />
+            <asp:Label ID="lblMessage" runat="server"></asp:Label>
+        </asp:Panel>
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panel1" TargetControlID="btnEditPic" CancelControlID="btnClose" BackgroundCssClass="modalBackground"></ajaxToolkit:ModalPopupExtender>
 
         <section class="dashboard">
             <div>

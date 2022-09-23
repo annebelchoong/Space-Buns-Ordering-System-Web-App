@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Space_Buns_Ordering_System
+namespace Space_Buns_Ordering_System.UserProfile
 {
 
 
-    public partial class sb_editProfile
+    public partial class sb_updateProfile
     {
 
         /// <summary>

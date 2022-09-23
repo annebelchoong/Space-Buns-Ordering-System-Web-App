@@ -97,7 +97,9 @@
     <Content Include="Admin\adminOrderDetail.aspx" />
     <Content Include="Admin\adminOrders.aspx" />
     <Content Include="Admin\adminProducts.aspx" />
+    <Content Include="Admin\adminRoles.aspx" />
     <Content Include="Admin\adminSales.aspx" />
+    <Content Include="Admin\adminUserProfile.aspx" />
     <Content Include="App_Data\Advertisements.xml" />
     <Content Include="App_Data\SpaceBunsDB.MDF" />
     <Content Include="App_Data\SpaceBunsDB_log.ldf">
@@ -212,6 +214,7 @@
     <Content Include="UserProfile\sb_orderDetail.aspx" />
     <Content Include="UserProfile\sb_orderHistory.aspx" />
     <Content Include="sb_registration.aspx" />
+    <Content Include="UserProfile\sb_updateProfile.aspx" />
     <Content Include="UserProfile\sb_userProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Ads.xml" />
@@ -259,12 +262,26 @@
     <Compile Include="Admin\adminProducts.aspx.designer.cs">
       <DependentUpon>adminProducts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\adminRoles.aspx.cs">
+      <DependentUpon>adminRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminRoles.aspx.designer.cs">
+      <DependentUpon>adminRoles.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\adminSales.aspx.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\adminSales.aspx.designer.cs">
       <DependentUpon>adminSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\adminUserProfile.aspx.cs">
+      <DependentUpon>adminUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminUserProfile.aspx.designer.cs">
+      <DependentUpon>adminUserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="CartItem.cs" />
     <Compile Include="Global.asax.cs">
@@ -437,6 +454,13 @@
     </Compile>
     <Compile Include="sb_registration.aspx.designer.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\sb_updateProfile.aspx.cs">
+      <DependentUpon>sb_updateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile\sb_updateProfile.aspx.designer.cs">
+      <DependentUpon>sb_updateProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile\sb_userProfile.aspx.cs">
       <DependentUpon>sb_userProfile.aspx</DependentUpon>

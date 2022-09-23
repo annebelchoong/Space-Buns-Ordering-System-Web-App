@@ -122,7 +122,7 @@
                                         <tr>
                                             <td class="auto-style6">
                                                 <asp:Button ID="loginButton" runat="server" class="btn" CommandName="Login" Text="Login"
-                                                    ValidationGroup="Login1" />
+                                                    ValidationGroup="Login1" OnClick="loginButton_Click" />
                                             </td>
                                         </tr>
                                         <tr>
