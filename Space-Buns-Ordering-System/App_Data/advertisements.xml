@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+	<Ad>
+		<ImageUrl>/Media/Ads/foodbank.jpg</ImageUrl>
+		<AlternateText>Food Donation Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/foodbank.jpg</NavigateUrl>
+	</Ad>
+	<Ad>
+		<ImageUrl>/Media/Ads/gogreen.jpg</ImageUrl>
+		<AlternateText>Go Green Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/gogreen.jpg</NavigateUrl>
+	</Ad>
+	<Ad>
+		<ImageUrl>/Media/Promotions/Alien Day.png</ImageUrl>
+		<AlternateText>Alien Day</AlternateText>
+		<NavigateUrl>/Media/Promotions/Alien Day.png</NavigateUrl>
+	</Ad>
+	<!--<Ad>
+		<ImageUrl>/Media/Promotions/Big Blast.jpg</ImageUrl>
+		<AlternateText>Big Blast Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/Big Blast.jpg</NavigateUrl>
+	</Ad>-->
+	<Ad>
+		<ImageUrl>/Media/Promotions/Buy1Free1.png</ImageUrl>
+		<AlternateText>Buy1Free1 Ad</AlternateText>
+		<NavigateUrl>/Media/Promotions/Buy1Free1.png</NavigateUrl>
+	</Ad>
+	<!--<Ad>
+		<ImageUrl>/Media/Promotions/Fiery Fiesta.jpg</ImageUrl>
+		<AlternateText>Fiery Fiesta Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/Fiery Fiesta.jpg</NavigateUrl>
+	</Ad>
+	<Ad>
+		<ImageUrl>/Media/Promotions/Meat Mania.jpg</ImageUrl>
+		<AlternateText>Meat Mania Ad</AlternateText>
+		<NavigateUrl>/Media/Ads/Meat Mania.jpg</NavigateUrl>
+	</Ad>-->
+</Advertisements>

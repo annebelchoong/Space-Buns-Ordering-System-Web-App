@@ -34,7 +34,8 @@
             <div class="navbar-login">
                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
                 <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                <asp:LoginStatus ID="LoginStatus1" runat="server" />    <%--for test--%>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                <%--for test--%>
             </div>
 
         </nav>
@@ -142,9 +143,34 @@
                                 <asp:Label ID="lblFinalAmount" runat="server" Text="34.00"></asp:Label>
                         </div>
                     </div>
-                    <div>
+
+
+
+
+                    <%--                    <div>
                         <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
+                    </div>--%>
+
+                    <div>
+                        <%
+                            bool isLoggedIn = HttpContext.Current.User.Identity.IsAuthenticated;
+                            if (!isLoggedIn)
+                            {
+                        %>
+                        <asp:Button ID="yes" type="submit" runat="server" Text="Login" CssClass="btnCheckout" PostBackUrl="~/sb_login.aspx" />
+                        <%
+                            }
+                            else
+                            {
+                        %>
+                        <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
+                        <%
+                            }
+                        %>
                     </div>
+
+
+
                 </div>
 
             </asp:Panel>
@@ -213,6 +239,7 @@
     </script>
 
 
+
     <%--stripe integration--%>
     <script src="https://js.stripe.com/v3/"></script>
     <script>
@@ -237,5 +264,8 @@
             });
         });
     </script>
+
+
+
 </body>
 </html>

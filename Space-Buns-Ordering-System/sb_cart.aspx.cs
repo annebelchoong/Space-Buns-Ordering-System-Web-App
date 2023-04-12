@@ -7,10 +7,9 @@ using System.Web.UI.WebControls;
 using Stripe;
 using Stripe.Checkout;
 
-
 namespace Space_Buns_Ordering_System
 {
-    public partial class sb_checkout : System.Web.UI.Page
+    public partial class sb_cart : System.Web.UI.Page
     {
         public string sessionId = "";
 
@@ -130,6 +129,30 @@ namespace Space_Buns_Ordering_System
             var service = new SessionService();
             Session session = service.Create(options);
             sessionId = session.Id;
+        }
+        protected void btnDecrement_onClick(object sender, EventArgs e)
+        {
+
+            int quantity = Convert.ToInt32((Repeater1.Items[0].FindControl("txtQuantity") as TextBox).Text);
+            if (quantity > 1)
+            {
+                (Repeater1.Items[0].FindControl("txtQuantity") as TextBox).Text = (quantity - 1).ToString();
+
+            }
+
+        }
+
+        protected void btnIncrement_onClick(object sender, EventArgs e)
+        {
+
+            int quantity = Convert.ToInt32((Repeater1.Items[0].FindControl("txtQuantity") as TextBox).Text);
+            if (quantity < 99)
+            {
+
+                (Repeater1.Items[0].FindControl("txtQuantity") as TextBox).Text = (quantity + 1).ToString();
+            }
+
+
         }
 
     }

@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Space_Buns_Ordering_System
 {
@@ -12,26 +16,22 @@ namespace Space_Buns_Ordering_System
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+
         }
 
-        protected void RblSetSelection_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DataList_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            //if (IsPostBack)
-            //{
-            if (rblSetSelection.SelectedItem.Value == "A Lar Carte")
+            if (e.CommandName == "Select")
             {
-                //Accordion1.Visible = false;
-                Pane2.Visible = false;
-                Pane3.Visible = false;
-                lblTest.Text = "A Lar Carte is selected";
-            }
-            else
-            {
-                Pane2.Visible = true;
-                Pane3.Visible = true;
+                Response.Redirect("sb_productDetails.aspx?name=" + e.CommandArgument.ToString());
             }
 
-            //}
+        }
+
+        protected void DataList5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

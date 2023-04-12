@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Order Confirmed | SpaceBuns" Language="C#" MasterPageFile="~/sb_general.Master" AutoEventWireup="true" CodeBehind="sb_orderConfirmed.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_orderConfirm" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/sb_orderConfirmation.css" rel="stylesheet" />
 </asp:Content>
@@ -14,10 +15,8 @@
                 <%--<p>O1001</p>--%>
             <asp:Label ID="lblOrderID" runat="server" Text="O1001" CssClass="orderid-text"></asp:Label>
         </h2>
-
         <section>
             <div class="container">
-
                 <div class="box order-info-container">
                     <div class="order-info-box">
                         <div id="order-location" class="order-info">
@@ -37,10 +36,8 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="box order-summary">
                     <h3>Order Summary</h3>
-
                     <div class="table-container">
                         <table>
                             <tr>
@@ -48,7 +45,6 @@
                                 <th>Quantity</th>
                                 <th>Total</th>
                             </tr>
-
                             <tr>
                                 <td>
                                     <img src="Media/menuBurgers/chicken1.jpg" alt="Chicken 1" /></td>
@@ -58,7 +54,6 @@
                                 <td>2</td>
                                 <td>RM 17.00</td>
                             </tr>
-
                             <tr>
                                 <td>
                                     <img src="Media/menuBurgers/fish1.jpg" alt="Fish 1" /></td>
@@ -68,7 +63,6 @@
                                 <td>1</td>
                                 <td>RM 16.00</td>
                             </tr>
-
                             <tr>
                                 <td>
                                     <img src="Media/menuBurgers/beef1.jpg" alt="Beef 1" /></td>
@@ -78,7 +72,6 @@
                                 <td>3</td>
                                 <td>RM 15.00</td>
                             </tr>
-
                             <tr>
                                 <td>
                                     <img src="Media/menuBurgers/meatless1.jpg" alt="Meatless 1" /></td>
@@ -88,10 +81,8 @@
                                 <td>1</td>
                                 <td>RM 11.00</td>
                             </tr>
-
                         </table>
                     </div>
-
                     <div class="total-container">
                         <div class=" total-left">
                             <span class="total">No. of Items:</span>
@@ -104,21 +95,29 @@
                             <asp:Label ID="lblDataTotal" runat="server" Text="RM 106.00"></asp:Label>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="buttonsContainer">
                     <asp:HyperLink ID="btnViewOrder" runat="server" NavigateUrl="/UserProfile/sb_orderHistory.aspx" CssClass="buttons">View Order</asp:HyperLink>
                 </div>
-
                 <div class="buttonsContainer">
                     <asp:HyperLink ID="btnHome" runat="server" NavigateUrl="~/sb_index.aspx" CssClass="buttons">Back to Home</asp:HyperLink>
                 </div>
 
             </div>
-
         </section>
     </div>
-    <asp:AdRotator ID="AdRotator1" runat="server" AdvertisementFile="~/Ads.xml" />
+
+    <div id="ads" style="display: flex; justify-content: center; margin-bottom: 30px;">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:Timer ID="TopBannerTimer" Interval="1000" runat="server" />
+        <asp:UpdatePanel ID="BannerUpdatePanel" runat="server">
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="TopBannerTimer" EventName="Tick" />
+            </Triggers>
+            <ContentTemplate>
+                <asp:AdRotator runat="server" ID="AdRotator1" AdvertisementFile="App_Data/advertisements.xml" Width="850px" Height="500px" ToolTip="Click for more info" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
 
 </asp:Content>

@@ -15,70 +15,8 @@
         }
 
         .auto-style6 {
-            width: 74px;
-        }
-
-        .auto-style9 {
-            width: 363px;
-        }
-
-        .auto-style10 {
-            width: 1677px;
-        }
-
-        .auto-style17 {
-            width: 1260px;
-        }
-
-        .auto-style18 {
-            width: 155px;
-        }
-
-        .auto-style19 {
-            width: 109px;
-        }
-
-        .auto-style20 {
-            width: 1000px;
-        }
-
-        .auto-style21 {
-            width: 1260px;
-            height: 44px;
-        }
-
-        .auto-style22 {
-            width: 1677px;
-            height: 44px;
-        }
-
-        .auto-style23 {
-            width: 730px;
-            height: 44px;
-        }
-
-        .auto-style24 {
-            width: 363px;
-            height: 44px;
-        }
-
-        .auto-style25 {
-            width: 109px;
-            height: 44px;
-        }
-
-        .auto-style26 {
-            width: 155px;
-            height: 44px;
-        }
-
-        .auto-style27 {
-            width: 1000px;
-            height: 44px;
-        }
-
-        .auto-style28 {
-            width: 730px;
+            width: 781px;
+            height: 37px;
         }
     </style>
 </asp:Content>
@@ -94,7 +32,7 @@
                 <td colspan="3">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style1" rowspan="3" style="vertical-align: top; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Product Name :&nbsp;&nbsp;
+                <td class="auto-style1" rowspan="4" style="vertical-align: top; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Product Name :&nbsp;&nbsp;
                     <asp:TextBox ID="txtProdName" runat="server"></asp:TextBox>
                     &nbsp;&nbsp;&nbsp;<br />
                     <br />
@@ -115,322 +53,73 @@
                     <br />
                     <br />
                     Product Category :
-                    <asp:DropDownList ID="ddlProdStatus" runat="server">
-                        <asp:ListItem>Chicken</asp:ListItem>
-                        <asp:ListItem>Fish</asp:ListItem>
-                        <asp:ListItem>Beef</asp:ListItem>
-                        <asp:ListItem>Lamb</asp:ListItem>
-                        <asp:ListItem>Meatless</asp:ListItem>
-                        <asp:ListItem>Promotion</asp:ListItem>
-                        <asp:ListItem>Drinks</asp:ListItem>
-                        <asp:ListItem>Snacks</asp:ListItem>
+                    <asp:DropDownList ID="ddlProdStatus" runat="server" DataSourceID="SqlDataSource2" DataTextField="categoryID" DataValueField="categoryID">
+                        <asp:ListItem Value="2">Chicken</asp:ListItem>
+                        <asp:ListItem Value="3">Fish</asp:ListItem>
+                        <asp:ListItem Value="4">Beef</asp:ListItem>
+                        <asp:ListItem Value="5">Lamb</asp:ListItem>
+                        <asp:ListItem Value="6">Meatless</asp:ListItem>
+                        <asp:ListItem Value="1">Promotion</asp:ListItem>
+                        <asp:ListItem Value="7">Drinks</asp:ListItem>
+                        <asp:ListItem Value="8">Snacks</asp:ListItem>
+                        <asp:ListItem Value="9">Chips</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [categoryName], [categoryID] FROM [Category]"></asp:SqlDataSource>
                     <br />
                     <br />
-                    Set Status :
-                    <asp:DropDownList ID="ddlStatus" runat="server">
-                        <asp:ListItem>Available</asp:ListItem>
-                        <asp:ListItem>Not Available</asp:ListItem>
-                    </asp:DropDownList>
-                    <br />
-                    <br />
-                    <asp:Button ID="btnAdd" runat="server" Text="Add" />
+                    <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Style="width: 55px" />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Button ID="btnClear" runat="server" Text="Clear" />
+                    <asp:Button ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click" />
                 </td>
-                <td rowspan="2">&nbsp;</td>
+                <td rowspan="3">&nbsp;</td>
                 <td style="text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style5">Product List</td>
             </tr>
             <tr>
-                <td style="text-align: right; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style5">Search :&nbsp;
-                    <asp:TextBox runat="server" ForeColor="#999999" Height="24px" placeholder="ProductID"></asp:TextBox>
+                <td style="text-align: right; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;" class="auto-style6">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="text-align: center; font-weight: normal; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif; font-size: small;" class="auto-style5">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="productID" DataSourceID="SqlDataSource1" ForeColor="Black" AllowPaging="True">
+                        <Columns>
+                            <asp:CommandField ShowDeleteButton="True" />
+                            <asp:BoundField DataField="productID" HeaderText="productID" InsertVisible="False" ReadOnly="True" SortExpression="productID" Visible="False" />
+                            <asp:BoundField DataField="categoryID" HeaderText="categoryID" SortExpression="categoryID" />
+                            <asp:BoundField DataField="name" HeaderText="NAME" SortExpression="name" />
+                            <asp:ImageField DataImageUrlField="picture" HeaderText="PICTURE">
+                                <ControlStyle Height="65px" Width="65px" />
+                            </asp:ImageField>
+                            <asp:BoundField DataField="quantity" HeaderText="QUANTITY" SortExpression="quantity"></asp:BoundField>
+                            <asp:BoundField DataField="unitPrice" HeaderText="PRICE(RM)" SortExpression="unitPrice" />
+                            <asp:BoundField DataField="description" HeaderText="DESCRIPTION" SortExpression="description" />
+                            <asp:BoundField DataField="categoryName" HeaderText="CATEGORY NAME" SortExpression="categoryName" />
+                        </Columns>
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" />
+                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="Gray" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#383838" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT Product.productID, Product.categoryID, Product.name, Product.picture, Product.quantity, Product.unitPrice, Product.description, Category.categoryName FROM Product INNER JOIN Category ON Product.categoryID = Category.categoryID" DeleteCommand="DELETE FROM Product WHERE (name = @name) AND (picture = @picture) AND (quantity = @quantity) AND (unitPrice = @unitPrice) AND (description = @description) AND (categoryID = @productID)">
+                        <DeleteParameters>
+                            <asp:Parameter Name="name" />
+                            <asp:Parameter Name="picture" />
+                            <asp:Parameter Name="quantity" />
+                            <asp:Parameter Name="unitPrice" />
+                            <asp:Parameter Name="description" />
+                            <asp:Parameter Name="productID" />
+                        </DeleteParameters>
+                    </asp:SqlDataSource>
+                    <br />
+                    <br />
                 </td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td class="auto-style5">
-                    <table class="auto-style5">
-                        <tr>
-                            <td class="auto-style21" style="border-style: solid; border-width: thin; text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Name</td>
-                            <td class="auto-style22" style="border-style: solid; border-width: thin; text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Image</td>
-                            <td class="auto-style23" style="border-style: solid; border-width: thin; text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Price (RM)</td>
-                            <td class="auto-style24" style="border-style: solid; border-width: thin; text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Quantity</td>
-                            <td class="auto-style25" style="border-style: solid; border-width: thin; text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Category</td>
-                            <td class="auto-style26" style="border-style: solid; border-width: thin; text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Availability</td>
-                            <td class="auto-style27" style="border-style: solid; border-width: thin; text-align: center; font-weight: bold; font-style: italic; font-family: 'Segoe UI', Verdana, sans-serif;">Action</td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin;">Double Trouble</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton1" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/chicken1.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">17</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">50</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Chicken</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:HyperLink ID="HyperLink1" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink2" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Crispy Deluxe</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton2" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/chicken2.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">15</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">60</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Chicken</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink3" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink20" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Queen Chick</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton3" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/chicken3.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">14</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">40</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Chicken</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink4" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink21" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Salmon Fillet</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton4" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/fish1.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">16</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">55</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Fish</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink5" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink22" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                                &nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Jelly Fish</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton5" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/fish2.jpeg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">14</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">64</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Fish</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink6" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink23" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Little Burgermaid</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton6" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/fish3.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">13</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">58</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Fish</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink7" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink24" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">You Got Beef</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton7" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/beef1.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">15</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">35</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Beef</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink8" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink25" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Beefy Bros</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton8" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/beef2.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">16</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">57</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Beef</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink9" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink26" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">King Of Cheese</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton9" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/beef3.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">17</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">42</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Beef</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink10" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink27" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">City Buns</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton10" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/lamb1.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">15</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">68</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Lamb</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink11" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink28" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Spicy Swiss</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton11" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/lamb2.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">14</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">39</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Lamb</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink12" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink29" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Greek Lamb</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton12" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/lamb3.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">16</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">48</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Lamb</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink13" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink30" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Mushy Shrooms</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton13" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/meatless1.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">11</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">51</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Meatless</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink14" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink31" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Vegelicious</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton14" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/meatless2.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">12</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">69</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Meatless</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink15" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink32" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Rice Patties</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton15" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/menuBurgers/meatless3.jpg" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">14</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">65</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Meatless</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink16" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink33" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Alien&#39;s Day Special</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton16" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/Promotions/Alien Day.png" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">15</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">21</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Promotion</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink17" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink34" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Hari Raya Special</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton17" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/Promotions/HariRayaPoster.png" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">18</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">12</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Promotion</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; text-align: center; font-family: 'Segoe UI', Verdana, sans-serif;">
-                                <asp:HyperLink ID="HyperLink18" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink35" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="auto-style17" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; font-family: 'Segoe UI', Verdana, sans-serif;">Buy 1 Free 1</td>
-                            <td class="auto-style10" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; text-align: center;">
-                                <asp:ImageButton ID="ImageButton18" runat="server" Height="65px" ImageAlign="Middle" ImageUrl="~/Media/Promotions/Buy1Free1.png" Width="65px" />
-                            </td>
-                            <td class="auto-style28" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; text-align: center;">-</td>
-                            <td class="auto-style9" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; text-align: center;">-</td>
-                            <td class="auto-style19" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; text-align: center;">Promotion</td>
-                            <td class="auto-style18" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; text-align: center;">Available</td>
-                            <td class="auto-style20" style="border-right-style: solid; border-left-style: solid; border-right-width: thin; border-left-width: thin; border-bottom-style: solid; border-bottom-width: thin; text-align: center;">
-                                <asp:HyperLink ID="HyperLink19" runat="server" Font-Underline="True" CssClass="active">Edit</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;
-                                            <asp:HyperLink ID="HyperLink36" runat="server" CssClass="active" Font-Underline="True">Delete</asp:HyperLink>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
+                <td class="auto-style5">&nbsp;</td>
             </tr>
         </table>
     </div>

@@ -4,6 +4,35 @@
     <link href="CSS/sb_adminDashboard.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="Javascript/adminDashboard.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 439px;
+        }
+
+        .btn {
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform .2s ease;
+            /*            width: 150px;
+            height: 20px;*/
+            background-color: white;
+            color: #B97836;
+            border: 1px #B97836 solid;
+            font-weight: bold;
+            border-radius: 30px;
+            margin-left: 48px;
+            padding: 7px 12px;
+        }
+
+            .btn:hover {
+                text-decoration: none;
+                color: white;
+                background-color: #B97836;
+                transition: 250ms;
+            }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="CSS/sb_adminDashboard.css" rel="stylesheet" />
@@ -12,7 +41,175 @@
 
         <div class="row my-5">
             <h3 class="fs-4 mb-3"><strong>Customer List</strong></h3>
-            <div class="col">
+            <h3 class="fs-4 mb-3">
+                <table style="width: 100%;">
+                    <tr>
+                        <td class="auto-style1">Name :
+                            <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>
+                        </td>
+                        <td class="auto-style1">
+                            <asp:Button ID="btnSearch" runat="server" OnClick="btnSearch_Click" Text="Search" class="btn" />
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">&nbsp;</td>
+                        <td class="auto-style1">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style1">Search Result :</td>
+                        <td class="auto-style1">&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="text-center">
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="customerId" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="100%">
+                                    <Columns>
+                                        <asp:BoundField DataField="customerId" HeaderText="customerId" InsertVisible="False" ReadOnly="True" SortExpression="customerId" />
+                                        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                                        <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                                        <asp:CommandField ShowSelectButton="True" />
+                                    </Columns>
+                                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                                </asp:GridView>
+                            </div>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT customerId, name, email FROM Customer
+WHERE (name = @name)
+">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="txtSearch" DefaultValue="jasmine" Name="name" PropertyName="Text" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:DataList ID="DataList1" runat="server" DataKeyField="customerId" DataSourceID="SqlDataSource2" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="100%">
+                                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                <ItemTemplate>
+                                    customerId:
+                                    <asp:Label ID="customerIdLabel" runat="server" Text='<%# Eval("customerId") %>' />
+                                    <br />
+                                    name:
+                                    <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                                    <br />
+                                    email:
+                                    <asp:Label ID="emailLabel" runat="server" Text='<%# Eval("email") %>' />
+                                    <br />
+                                    <br />
+                                </ItemTemplate>
+                                <SelectedItemStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                            </asp:DataList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">Overall Customer List:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="text-center">
+                                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="customerId" DataSourceID="SqlDataSource3" ForeColor="Black" GridLines="Horizontal" Width="100%">
+                                    <Columns>
+                                        <asp:BoundField DataField="customerId" HeaderText="customerId" InsertVisible="False" ReadOnly="True" SortExpression="customerId" />
+                                        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                                        <asp:BoundField DataField="email" HeaderText="email" SortExpression="email" />
+                                        <asp:CommandField ShowSelectButton="True" />
+                                    </Columns>
+                                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                                </asp:GridView>
+                            </div>
+                            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [customerId], [name], [email] FROM [Customer]"></asp:SqlDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:DataList ID="DataList2" runat="server" DataKeyField="customerId" DataSourceID="SqlDataSource4" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="100%">
+                                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                                <ItemTemplate>
+                                    customerId:
+                                    <asp:Label ID="customerIdLabel" runat="server" Text='<%# Eval("customerId") %>' />
+                                    <br />
+                                    name:
+                                    <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                                    <br />
+                                    email:
+                                    <asp:Label ID="emailLabel" runat="server" Text='<%# Eval("email") %>' />
+                                    <br />
+                                    password:
+                                    <asp:Label ID="passwordLabel" runat="server" Text='<%# Eval("password") %>' />
+                                    <br />
+                                    phone:
+                                    <asp:Label ID="phoneLabel" runat="server" Text='<%# Eval("phone") %>' />
+                                    <br />
+                                    street:
+                                    <asp:Label ID="streetLabel" runat="server" Text='<%# Eval("street") %>' />
+                                    <br />
+                                    city:
+                                    <asp:Label ID="cityLabel" runat="server" Text='<%# Eval("city") %>' />
+                                    <br />
+                                    zipcode:
+                                    <asp:Label ID="zipcodeLabel" runat="server" Text='<%# Eval("zipcode") %>' />
+                                    <br />
+                                    profilePic:
+                                    <asp:Label ID="profilePicLabel" runat="server" Text='<%# Eval("profilePic") %>' />
+                                    <br />
+                                    adminID:
+                                    <asp:Label ID="adminIDLabel" runat="server" Text='<%# Eval("adminID") %>' />
+                                    <br />
+                                    <br />
+                                </ItemTemplate>
+                                <SelectedItemStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                            </asp:DataList>
+                            <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([customerId] = @customerId)">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="GridView2" Name="customerId" PropertyName="SelectedValue" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([customerId] = @customerId)">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="GridView1" Name="customerId" PropertyName="SelectedValue" Type="Int32" />
+                                </SelectParameters>
+                            </asp:SqlDataSource>
+                        </td>
+                    </tr>
+                </table>
+            </h3>
+            <%--<div class="col">
                 <table class="table bg-white rounded shadow-sm  table-hover">
                     <thead>
                         <tr>
@@ -46,7 +243,7 @@
                             <td>2022-02-12</td>
                             <td class="btnControl">
                                 <%--<asp:ImageButton ID="ImageButton10" runat="server" ImageUrl="~/Media/Icons/info.png" Width="25px" />--%>
-                                <asp:HyperLink ID="viewCustomerDetail1" runat="server" ImageUrl="~/Media/Icons/info.png" ImageWidth="25px"></asp:HyperLink>
+            <%--<asp:HyperLink ID="viewCustomerDetail1" runat="server" ImageUrl="~/Media/Icons/info.png" ImageWidth="25px"></asp:HyperLink>
                             </td>
                             <td class="btnControl">
                                 <asp:ImageButton ID="ImageButton11" runat="server" ImageUrl="~/Media/Icons/edit.png" Width="25px" />
@@ -121,7 +318,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div>--%>
         </div>
     </div>
 

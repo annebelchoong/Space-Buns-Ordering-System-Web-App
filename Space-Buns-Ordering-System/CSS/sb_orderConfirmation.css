@@ -241,7 +241,7 @@ body::-webkit-scrollbar-thumb {
 
 /* ##################### Footer ##################### */
 
-footer {
+/*footer {
     height: 30px;
     background-color: #1A1A1A;
     margin-top: auto;
@@ -250,7 +250,7 @@ footer {
 .copyright-small {
     font-size: 0.9em;
     text-align: center;
-}
+}*/
 
 /* ################## Media Query ##################### */
 
