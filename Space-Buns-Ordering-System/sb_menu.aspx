@@ -12,7 +12,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="content-area">
 
-<%--        <nav class="menu-nav">
+        <nav class="menu-nav">
             <ul>
                 <li>
                     <a href="#Chicken">Chicken</a>
@@ -22,7 +22,7 @@
                     <a href="#Meatless">Meatless</a>
                 </li>
             </ul>
-        </nav>--%>
+        </nav>
 
         <div class="cartButton">
             <%--<asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />--%>
