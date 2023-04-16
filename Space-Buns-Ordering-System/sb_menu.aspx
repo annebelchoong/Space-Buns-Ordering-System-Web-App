@@ -243,6 +243,128 @@
         </SelectParameters>
     </asp:SqlDataSource>--%>
 
+    <%-- POP up modal --%>
+    <asp:Panel ID="pnlCustomization" runat="server" CssClass="popupPanel" ScrollBars="Auto">
+        <div class="close-btn">
+            <asp:Button ID="btnClose" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnClose" />
+        </div>
+        <div class="description">
+            <div class="descriptionLeft">
+                <div class="productBanner">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Media/menuBurgers/chicken1.jpg" CssClass="imgBanner" />
+                </div>
+            </div>
+            <div class="descriptionRight">
+                <div class="productTitle">
+                    <asp:Label ID="lblProductTitle" runat="server" Text="Double Trouble"></asp:Label>
+                    <%--<h1>Chicken Burger</h1>--%>
+                </div>
+                <div class="productDesc">
+                    <asp:Label ID="lblProductDescription" runat="server" Text="<b>Double Trouble </b>is bla bla bla askldjf; klasjd lkj asdf asdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf as dfas df asdf asdf as df as"></asp:Label>
+                    <%--<p><b>Crispy chicken fillet </b>is bla bla bla askldjf; klasjd lkj asdf asdf asdf asdf asdf asdf asdf asdf asdfa sdf asdf asdf as dfas df asdf asdf as df as</p>--%>
+                </div>
+            </div>
+        </div>
+
+        <div class="setSelection">
+            <asp:RadioButtonList ID="rblSetSelection" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="RblSetSelection_SelectedIndexChanged" AutoPostBack="True" CellSpacing="-1">
+                <asp:ListItem Class="rblItems">&nbsp;Set Meal</asp:ListItem>
+                <asp:ListItem Class="rblItems">&nbsp;A Lar Carte</asp:ListItem>
+            </asp:RadioButtonList>
+            <asp:Label ID="lblTest" runat="server"></asp:Label>
+        </div>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div>
+                    <ajaxToolkit:Accordion ID="Accordion1" runat="server" FadeTransitions="False" TransitionDuration="250" RequireOpenedPane="False" Height="528px" SelectedIndex="-1" CssClass="accordian" ContentCssClass="accordianContent" HeaderCssClass="accordianHeader" HeaderSelectedCssClass="accordianHeaderSelected">
+                        <Panes>
+                            <ajaxToolkit:AccordionPane ID="Pane1" runat="server">
+                                <Header>
+                                    Add-on Patties
+                                </Header>
+                                <Content>
+                                    <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatLayout="Flow">
+                                        <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 1 more patty</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 2 more chicken patties</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </Content>
+
+                            </ajaxToolkit:AccordionPane>
+                            <ajaxToolkit:AccordionPane ID="Pane2" runat="server">
+                                <Header>
+                                    Choices of sides
+                                </Header>
+                                <Content>
+                                    <asp:RadioButtonList ID="RadioButtonList2" runat="server" RepeatLayout="Flow">
+                                        <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Fries</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Wedges</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </Content>
+
+                            </ajaxToolkit:AccordionPane>
+                            <ajaxToolkit:AccordionPane ID="Pane3" runat="server">
+                                <Header>
+                                    Choices of beverages
+                                </Header>
+                                <Content>
+                                    <asp:RadioButtonList ID="RadioButtonList4" runat="server" RepeatLayout="Flow">
+                                        <asp:ListItem Class="rblCustomize">&nbsp;Coke</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;Pepsi</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;100 Plus</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;Sprite</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;Fanta Orange</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;Heaven n Earth Ice Lemon Tea</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </Content>
+
+                            </ajaxToolkit:AccordionPane>
+                            <ajaxToolkit:AccordionPane ID="Pane4" runat="server">
+                                <Header>
+                                    Add-on Sauce
+                                </Header>
+                                <Content>
+                                    <asp:RadioButtonList ID="RadioButtonList5" runat="server" RepeatLayout="Flow">
+                                        <asp:ListItem Class="rblCustomize">&nbsp;BBQ Sauce</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;Cheese sauce</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;Spicy Mayo</asp:ListItem>
+                                        <asp:ListItem Class="rblCustomize">&nbsp;Mustard</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </Content>
+
+                            </ajaxToolkit:AccordionPane>
+                        </Panes>
+                    </ajaxToolkit:Accordion>
+                </div>
+                <div class="bottomContainer">
+                    <div class="quantityContainer">
+                        <div class="decrementButton">
+                            <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="buttonQuantity" />
+                        </div>
+                        <div class="quantityNumber">
+                            <asp:TextBox ID="txtQuantity" runat="server" Text="1" CssClass="textQuantity"></asp:TextBox>
+                        </div>
+                        <div class="incrementButton">
+                            <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="buttonQuantity" />
+                        </div>
+                    </div>
+                    <div>
+                        <asp:Label ID="lblTotalPrice" runat="server" CssClass="lblTotalPrice">RM 17.00</asp:Label>
+                    </div>
+                    <asp:Button ID="btnAddToCartConfirm" runat="server" Text="Add To Cart" CssClass="btnAddToCartConfirm" />
+
+                </div>
+            </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="rblSetSelection" EventName="SelectedIndexChanged" />
+            </Triggers>
+        </asp:UpdatePanel>
+
+    </asp:Panel>
+    <div>
+    </div>
+
+    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="pnlCustomization" TargetControlID="btnAddToCart" CancelControlID="btnClose" BackgroundCssClass="popupPanelBackground"></ajaxToolkit:ModalPopupExtender>
+
    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID ">
     </asp:SqlDataSource>
     <script src="Javascript/medium-zoom.min.js"></script>
