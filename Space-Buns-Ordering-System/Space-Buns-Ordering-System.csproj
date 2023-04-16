@@ -102,9 +102,7 @@
     <Content Include="Admin\adminUserProfile.aspx" />
     <Content Include="App_Data\Advertisements.xml" />
     <Content Include="App_Data\SpaceBunsDB.MDF" />
-    <Content Include="App_Data\SpaceBunsDB_log.ldf">
-      <DependentUpon>SpaceBunsDB.MDF</DependentUpon>
-    </Content>
+    <Content Include="App_Data\SpaceBunsDB_log.ldf" />
     <Content Include="CSS\sb_adminDashboard.css" />
     <Content Include="CSS\sb_adminOrderDetails.css" />
     <Content Include="CSS\sb_cart.css" />
