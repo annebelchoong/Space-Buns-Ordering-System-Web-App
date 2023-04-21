@@ -63,11 +63,11 @@
                         </div>
 
                     </div>
-                <div id="divPopup" style="display:none;"></div>
+                <%--<div id="divPopup" style="display:none;"></div>--%>
                 </ItemTemplate>
 
             </asp:DataList>
-            <asp:HiddenField ID="hidSelectedID" runat="server" />
+<%--            <asp:HiddenField ID="hidSelectedID" runat="server" />--%>
 
 
 

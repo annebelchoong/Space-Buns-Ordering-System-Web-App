@@ -210,25 +210,25 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
 }
 
 .setSelection {
-    padding-left: 30px;
+/*    padding-left: 30px;*/
     padding-bottom: 20px;
 }
 
 .rblItems {
     padding-right: 50px;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .accordian {
     width: 100%;
-    padding-left: 30px;
+/*    padding-left: 30px;*/
     padding-right: 30px;
     /*    padding-bottom: 30px;*/
 }
 
 .accordianHeader {
-    background-color: #252627;
+    background-color: #B97836;
     color: white;
     padding: 20px;
     border-radius: 20px;
@@ -239,6 +239,7 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     background-color: #252627;
     color: #B97836;
     padding: 20px;
+    font-weight: bold;
     border-radius: 20px 20px 0px 0px;
 }
 
@@ -499,6 +500,7 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
 .menuProductDetails {
     display: flex;
     width: 80%;
+
     justify-content: space-around;
     flex-direction: row;
 }
@@ -520,7 +522,7 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     display: flex;
     width: 70%;
     justify-content: center;
-    height: 500px;
+/*    height: 500px;*/
 }
 
 .txtQuantity {
