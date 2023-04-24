@@ -9,13 +9,12 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="container">
         <asp:LoginName ID="currentUsername" runat="server" Visible="True" />
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+
         <asp:DataList ID="DataList1" runat="server" DataKeyField="productID" DataSourceID="SqlDataSource1" OnItemCommand="DataList1_ItemCommand">
             <ItemTemplate>
                 <div class="header">
-
                     <h2>Product Detail</h2>
-                    <asp:Label ID="Label1" runat="server"></asp:Label>
-                    <asp:RadioButtonList ID="rblTest" runat="server"></asp:RadioButtonList>
                 </div>
                 <div class="menuProductDetails">
                     <div class="menuLeft">
@@ -27,83 +26,98 @@
                         <asp:Label ID="lblDescription" runat="server" Text='<%# Eval("description") %>' CssClass="lblDesc"></asp:Label>
                         <br />
                         <asp:Label ID="lblUnitPrice" runat="server" Text='<%# Eval("unitPrice", "{0:C}") %>' CssClass="lblPrice"></asp:Label>
-                        <div class="setSelection">
-                            <asp:RadioButtonList ID="rblSetSelection" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="RblSetSelection_SelectedIndexChanged" AutoPostBack="True" CellSpacing="-1">
-                                <asp:ListItem Class="rblItems">&nbsp;Set Meal</asp:ListItem>
-                                <asp:ListItem Class="rblItems">&nbsp;A Lar Carte</asp:ListItem>
-                            </asp:RadioButtonList>
-                        </div>
             </ItemTemplate>
         </asp:DataList>
-                        <div>
-                            <ajaxToolkit:Accordion ID="Accordion1" runat="server" FadeTransitions="False" TransitionDuration="250" RequireOpenedPane="False" Height="528px" SelectedIndex="-1" CssClass="accordian" ContentCssClass="accordianContent" HeaderCssClass="accordianHeader" HeaderSelectedCssClass="accordianHeaderSelected">
-                                <Panes>
-                                    <ajaxToolkit:AccordionPane ID="Pane1" runat="server">
-                                        <Header>
-                                            Add-on Patties
-                                        </Header>
-                                        <Content>
-                                            <asp:RadioButtonList ID="rblPatties" runat="server" RepeatLayout="Flow">
-                                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 1 more patty</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 2 more chicken patties</asp:ListItem>
-                                            </asp:RadioButtonList>
-                                        </Content>
-
-                                    </ajaxToolkit:AccordionPane>
-                                    <ajaxToolkit:AccordionPane ID="Pane2" runat="server">
-                                        <Header>
-                                            Choices of sides
-                                        </Header>
-                                        <Content>
-                                            <asp:RadioButtonList ID="rblSides" runat="server" RepeatLayout="Flow">
-                                                <%--<asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>--%>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Fries</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Wedges</asp:ListItem>
-                                            </asp:RadioButtonList>
-                                        </Content>
-
-                                    </ajaxToolkit:AccordionPane>
-                                    <ajaxToolkit:AccordionPane ID="Pane3" runat="server">
-                                        <Header>
-                                            Choices of beverages
-                                        </Header>
-                                        <Content>
-                                            <asp:RadioButtonList ID="rblBeverage" runat="server" RepeatLayout="Flow">
-                                                <%--<asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>--%>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;Coke</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;Pepsi</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;100 Plus</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;Sprite</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;Fanta Orange</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;Heaven n Earth Ice Lemon Tea</asp:ListItem>
-                                            </asp:RadioButtonList>
-                                        </Content>
-
-                                    </ajaxToolkit:AccordionPane>
-                                    <ajaxToolkit:AccordionPane ID="Pane4" runat="server">
-                                        <Header>
-                                            Add-on Sauce
-                                        </Header>
-                                        <Content>
-                                            <asp:RadioButtonList ID="rblSauce" runat="server" RepeatLayout="Flow">
-                                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;BBQ Sauce</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;Cheese sauce</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;Spicy Mayo</asp:ListItem>
-                                                <asp:ListItem Class="rblCustomize">&nbsp;Mustard</asp:ListItem>
-                                            </asp:RadioButtonList>
-                                        </Content>
-
-                                    </ajaxToolkit:AccordionPane>
-                                </Panes>
-                            </ajaxToolkit:Accordion>
-                        </div>
+        <div class="setSelection">
+            <asp:RadioButtonList ID="rblSetSelection" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="RblSetSelection_SelectedIndexChanged" AutoPostBack="True" CellSpacing="-1">
+                <asp:ListItem Class="rblItems">Set Meal</asp:ListItem>
+                <asp:ListItem Class="rblItems">A Lar Carte</asp:ListItem>
+            </asp:RadioButtonList>
+        </div>
         <div>
-            <asp:Label ID="lblPatties" runat="server" ></asp:Label>
-            <asp:Label ID="lblSides" runat="server" ></asp:Label>
-            <asp:Label ID="lblBeverage" runat="server" ></asp:Label>
-            <asp:Label ID="lblSauce" runat="server" ></asp:Label>
+
+
+
+            <%--<asp:Button ID="btnRedirect" runat="server" Text="sql Test" OnClick="btnRedirect_Click" />--%>
+
+            <ajaxToolkit:Accordion ID="Accordion1" runat="server" FadeTransitions="False" TransitionDuration="250" RequireOpenedPane="False" Height="528px" SelectedIndex="-1" CssClass="accordian" ContentCssClass="accordianContent" HeaderCssClass="accordianHeader" HeaderSelectedCssClass="accordianHeaderSelected">
+                <Panes>
+                    <ajaxToolkit:AccordionPane ID="Pane1" runat="server">
+                        <Header>
+                            Add-on Patties
+                        </Header>
+                        <Content>
+                            <asp:RadioButtonList ID="rblPatties" runat="server" RepeatLayout="Flow">
+                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 1 more patty</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 2 more chicken patties</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </Content>
+
+                    </ajaxToolkit:AccordionPane>
+                    <ajaxToolkit:AccordionPane ID="Pane2" runat="server">
+                        <Header>
+                            Choices of sides
+                        </Header>
+                        <Content>
+                            <asp:RadioButtonList ID="rblSides" runat="server" RepeatLayout="Flow">
+                                <%--<asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>--%>
+                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Fries</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Wedges</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </Content>
+
+                    </ajaxToolkit:AccordionPane>
+                    <ajaxToolkit:AccordionPane ID="Pane3" runat="server">
+                        <Header>
+                            Choices of beverages
+                        </Header>
+                        <Content>
+                            <asp:RadioButtonList ID="rblBeverage" runat="server" RepeatLayout="Flow">
+                                <%--<asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>--%>
+                                <asp:ListItem Class="rblCustomize">&nbsp;Coke</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;Pepsi</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;100 Plus</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;Sprite</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;Fanta Orange</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;Heaven n Earth Ice Lemon Tea</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </Content>
+
+                    </ajaxToolkit:AccordionPane>
+                    <ajaxToolkit:AccordionPane ID="Pane4" runat="server">
+                        <Header>
+                            Add-on Sauce
+                        </Header>
+                        <Content>
+                            <asp:RadioButtonList ID="rblSauce" runat="server" RepeatLayout="Flow">
+                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;BBQ Sauce</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;Cheese sauce</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;Spicy Mayo</asp:ListItem>
+                                <asp:ListItem Class="rblCustomize">&nbsp;Mustard</asp:ListItem>
+                            </asp:RadioButtonList>
+                        </Content>
+
+                    </ajaxToolkit:AccordionPane>
+                </Panes>
+            </ajaxToolkit:Accordion>
+        </div>
+        <div>
+            <asp:Label ID="lblPatties" runat="server"></asp:Label>
+            <asp:Label ID="lblSides" runat="server"></asp:Label>
+            <asp:Label ID="lblBeverage" runat="server"></asp:Label>
+            <asp:Label ID="lblSauce" runat="server"></asp:Label>
+            <asp:Label ID="lblProductID" runat="server"></asp:Label>
+            <asp:Label ID="lblProductName" runat="server"></asp:Label>
+            <asp:Label ID="lblCustId" runat="server"></asp:Label>
+            <asp:Label ID="lblUnitPrice" runat="server"></asp:Label>
+            <asp:Label ID="lblProductImage" runat="server"></asp:Label>
+                        <asp:Label ID="lblMealType" runat="server"></asp:Label>
+                        <asp:Label ID="lblSetMealBool" runat="server"></asp:Label>
+                        <asp:Button runat="server" Text="testButton " OnClick="Unnamed1_Click"></asp:Button>
+
+
         </div>
         <div class="productBottom">
             <div class="productQuantity">
@@ -120,7 +134,7 @@
                 <div class="buttons">
                     <div class="addToCart">
                         <%--<asp:Button ID="Button1" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' />--%>
-                        <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' PostBackUrl="~/sb_menu.aspx" OnClientClick="btnAddtoCart_onClick" />
+                        <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" OnClick="btnAddtoCart_onClick" />
                     </div>
 
                     <%-- <div class="back">
