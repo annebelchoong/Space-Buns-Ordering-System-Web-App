@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -129,6 +131,57 @@ namespace Space_Buns_Ordering_System
             var service = new SessionService();
             Session session = service.Create(options);
             sessionId = session.Id;
+
+
+            // get customer id based on the current user
+            String currentUser = currentUsername.ToString();
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            con.Open();
+
+            // get customer id
+            string custQuery = "SELECT * FROM Customer WHERE(username = @customerName)";
+            SqlCommand cmdCust = new SqlCommand(custQuery, con);
+            cmdCust.Parameters.AddWithValue("@customerName", currentUser);
+            SqlDataReader cust = cmdCust.ExecuteReader();
+
+            if (cust.HasRows)
+            {
+                while (cust.Read())
+                {
+                    lblCustId.Text = cust["customerId"].ToString();
+
+
+                }
+
+            }
+
+            con.Close();
+
+            // calculate the sum of the total price of the items in the cart
+            con.Open();
+            string sumQuery = "SELECT SUM(price) FROM Cart WHERE(customerId = @custId)";
+            SqlCommand cmdSum = new SqlCommand(sumQuery, con);
+            cmdSum.Parameters.AddWithValue("@custId", lblCustId.Text);
+            double sum = Convert.ToDouble(cmdSum.ExecuteScalar());
+
+            lblFinalAmount.Text = sum.ToString("C2");
+
+            con.Close();
+
+            // need to have one query to check the total item in the cart for the current user
+            con.Open();
+            string countQuery = "SELECT COUNT(*) FROM Cart WHERE(customerId = @custId)";
+            SqlCommand cmdCount = new SqlCommand(countQuery, con);
+            cmdCount.Parameters.AddWithValue("@custId", lblCustId.Text);
+            int count = Convert.ToInt32(cmdCount.ExecuteScalar());
+
+            lblNumOfItems.Text = count.ToString();
+
+            con.Close();
+
+
+
         }
         protected void btnDecrement_onClick(object sender, EventArgs e)
         {
@@ -154,6 +207,9 @@ namespace Space_Buns_Ordering_System
 
 
         }
+
+
+
 
     }
 }

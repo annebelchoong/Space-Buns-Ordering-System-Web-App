@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_cart.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_cart" %>
+﻿<%@ Page Title="Cart | Space Buns" Language="C#"  MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_cart.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_cart" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="CSS/sb_cart.css" rel="stylesheet" />
@@ -15,11 +15,13 @@
                 items
             </div>
             <div class="close-btn-cart">
-                <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnCloseCart" />
+                <asp:Button ID="btnCloseCart" runat="server" Text="&times;" UseSubmitBehavior="False" CssClass="btnCloseCart" /> 
             </div>
         </div>
         <div class="addressAndTime">
         </div>
+                <asp:LoginName ID="currentUsername" runat="server" Visible="False" />
+        <asp:Label ID="lblCustId" runat="server" Visible="False"></asp:Label>
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
                 <div class="cartProduct">
@@ -30,7 +32,7 @@
                                 <div class="productColumn">
                                     <div class="productTop">
                                         <div class="productName">
-                                            <asp:Label ID="lblProduct" runat="server" Text='<%# Eval("name") %>' />
+                                            <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("productName") %>' />
                                         </div>
                                         <div class="deleteProduct">
                                             <asp:ImageButton ID="imgbtnTrash" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" />
@@ -49,8 +51,7 @@
                                             </div>
                                         </div>
                                         <div class="totalPrice">
-                                            RM
-                                            <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("unitPrice") %>' />
+                                            <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("price", "{0:C}") %>' />
                                         </div>
                                     </div>
                                 </div>
@@ -66,8 +67,7 @@
                 Total
             </div>
             <div>
-                RM
-                                <asp:Label ID="lblFinalAmount" runat="server" Text="34.00" ForeColor="#B97836"></asp:Label>
+ <asp:Label ID="lblFinalAmount" runat="server" ForeColor="#B97836"></asp:Label>
             </div>
         </div>
         <div class="Checkout">
@@ -76,9 +76,9 @@
 
     </div>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Product.name, OrderDetails.unitPrice, OrderDetails.quantity, Product.picture FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID INNER JOIN Product ON OrderDetails.productID = Product.productID WHERE (Product.name = @name)">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT quantity, price, picture, productName, isSetMeal, addOnPatties, choiceOfSides, choiceOfBeverage, addOnSauce FROM Cart WHERE (customerID = @customerID)" DeleteCommand="DELETE FROM Cart WHERE (productName = @productName) AND (customerID = @customerID)">
         <SelectParameters>
-            <asp:QueryStringParameter Name="name" QueryStringField="name" />
+            <asp:ControlParameter ControlID="lblCustId" PropertyName="Text" Name="customerID"></asp:ControlParameter>
         </SelectParameters>
     </asp:SqlDataSource>
 

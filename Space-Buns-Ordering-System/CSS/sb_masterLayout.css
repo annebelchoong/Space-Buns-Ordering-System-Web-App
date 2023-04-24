@@ -466,6 +466,38 @@ footer.footer {
     cursor: pointer;
 }
 
+.quantityContainer {
+    display: flex;
+    align-items: center;
+}
+
+.buttonQuantity {
+    font-size: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: #1A1A1A;
+    cursor: pointer;
+    width: 40px;
+    height: 42px;
+}
+
+.textQuantity {
+    width: 40px;
+    background-color: #252627;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    text-align: center;
+}
+
+.lblTotalPrice {
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}   
+
 
 @media only screen and (max-width:768px) {
     body {

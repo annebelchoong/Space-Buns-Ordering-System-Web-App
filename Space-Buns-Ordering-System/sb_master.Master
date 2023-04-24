@@ -32,7 +32,9 @@
             </div>
 
             <div class="navbar-login">
-                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
+                <%--<asp:Button ID="hypCart" runat="server" Text="Button" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" />--%>
+                <%--<asp:ImageButton ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" CssClass="btnCart" Width="26px" OnClick="hypCart_Click" UseSubmitBehavior="false" OnClientClick="button_pressed();return false;" />--%>
+                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart" NavigateUrl="~/sb_cart.aspx"></asp:HyperLink>
                 <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
                 <%--for test--%>
@@ -57,7 +59,7 @@
                     <div>
                         <h2>Your cart</h2>
                         You've added
-                <asp:Label ID="lblNumOfItems" runat="server" Text="2"></asp:Label>
+                <asp:Label ID="lblNumOfItems" runat="server"></asp:Label>
                         items
                     </div>
                     <div class="close-btn-cart">

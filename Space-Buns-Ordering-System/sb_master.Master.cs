@@ -8,6 +8,7 @@ using Stripe;
 using Stripe.Checkout;
 using System.Data.SqlClient;
 using System.Configuration;
+using AjaxControlToolkit.HtmlEditor.ToolbarButtons;
 
 namespace Space_Buns_Ordering_System
 {
@@ -20,6 +21,7 @@ namespace Space_Buns_Ordering_System
             //int cartItems = GetCartCount();
             //Cart_Checkout(cartItems);
             Cart_Checkout();
+
 
         }
 
@@ -313,6 +315,9 @@ namespace Space_Buns_Ordering_System
             sessionId = session.Id;
         }
 
-
+        protected void hypCart_Click(object sender, ImageClickEventArgs e)
+        {
+            lblNumOfItems.Text = "230";
+        }
     }
 }
