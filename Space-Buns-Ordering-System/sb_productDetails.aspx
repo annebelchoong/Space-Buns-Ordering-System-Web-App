@@ -8,11 +8,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="container">
+        <asp:LoginName ID="currentUsername" runat="server" Visible="True" />
         <asp:DataList ID="DataList1" runat="server" DataKeyField="productID" DataSourceID="SqlDataSource1" OnItemCommand="DataList1_ItemCommand">
             <ItemTemplate>
                 <div class="header">
 
                     <h2>Product Detail</h2>
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
+                    <asp:RadioButtonList ID="rblTest" runat="server"></asp:RadioButtonList>
                 </div>
                 <div class="menuProductDetails">
                     <div class="menuLeft">
@@ -30,6 +33,8 @@
                                 <asp:ListItem Class="rblItems">&nbsp;A Lar Carte</asp:ListItem>
                             </asp:RadioButtonList>
                         </div>
+            </ItemTemplate>
+        </asp:DataList>
                         <div>
                             <ajaxToolkit:Accordion ID="Accordion1" runat="server" FadeTransitions="False" TransitionDuration="250" RequireOpenedPane="False" Height="528px" SelectedIndex="-1" CssClass="accordian" ContentCssClass="accordianContent" HeaderCssClass="accordianHeader" HeaderSelectedCssClass="accordianHeaderSelected">
                                 <Panes>
@@ -38,7 +43,8 @@
                                             Add-on Patties
                                         </Header>
                                         <Content>
-                                            <asp:RadioButtonList ID="RadioButtonList3" runat="server" RepeatLayout="Flow">
+                                            <asp:RadioButtonList ID="rblPatties" runat="server" RepeatLayout="Flow">
+                                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 1 more patty</asp:ListItem>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Add 2 more chicken patties</asp:ListItem>
                                             </asp:RadioButtonList>
@@ -50,7 +56,8 @@
                                             Choices of sides
                                         </Header>
                                         <Content>
-                                            <asp:RadioButtonList ID="RadioButtonList2" runat="server" RepeatLayout="Flow">
+                                            <asp:RadioButtonList ID="rblSides" runat="server" RepeatLayout="Flow">
+                                                <%--<asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>--%>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Fries</asp:ListItem>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;Wedges</asp:ListItem>
                                             </asp:RadioButtonList>
@@ -62,7 +69,8 @@
                                             Choices of beverages
                                         </Header>
                                         <Content>
-                                            <asp:RadioButtonList ID="RadioButtonList4" runat="server" RepeatLayout="Flow">
+                                            <asp:RadioButtonList ID="rblBeverage" runat="server" RepeatLayout="Flow">
+                                                <%--<asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>--%>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;Coke</asp:ListItem>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;Pepsi</asp:ListItem>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;100 Plus</asp:ListItem>
@@ -78,7 +86,8 @@
                                             Add-on Sauce
                                         </Header>
                                         <Content>
-                                            <asp:RadioButtonList ID="RadioButtonList5" runat="server" RepeatLayout="Flow">
+                                            <asp:RadioButtonList ID="rblSauce" runat="server" RepeatLayout="Flow">
+                                                <asp:ListItem Class="rblCustomize">&nbsp;&nbsp;None</asp:ListItem>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;BBQ Sauce</asp:ListItem>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;Cheese sauce</asp:ListItem>
                                                 <asp:ListItem Class="rblCustomize">&nbsp;Spicy Mayo</asp:ListItem>
@@ -90,35 +99,38 @@
                                 </Panes>
                             </ajaxToolkit:Accordion>
                         </div>
-                        <div class="productBottom">
-                            <div class="productQuantity">
-                                <div class="decrementButton">
-                                    <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="btnQuantity" OnClick="btnDecrement_onClick" />
-                                </div>
-                                <div class="quantityNumber">
-                                    <%--<asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Out of Range" ControlToValidate="txtQuantity" MinimumValue="1" MaximumValue="999"></asp:RangeValidator>--%>
-                                    <asp:TextBox ID="txtQuantity" runat="server" Text="1" CssClass="txtQuantity" />
-                                </div>
-                                <div class="incrementButton">
-                                    <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="btnQuantity" OnClick="btnIncrement_onClick" />
-                                </div>
-                                <div class="buttons">
-                                    <div class="addToCart">
-                                        <%--<asp:Button ID="Button1" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' />--%>
-                                        <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' PostBackUrl="~/sb_menu.aspx" />
-                                    </div>
+        <div>
+            <asp:Label ID="lblPatties" runat="server" ></asp:Label>
+            <asp:Label ID="lblSides" runat="server" ></asp:Label>
+            <asp:Label ID="lblBeverage" runat="server" ></asp:Label>
+            <asp:Label ID="lblSauce" runat="server" ></asp:Label>
+        </div>
+        <div class="productBottom">
+            <div class="productQuantity">
+                <div class="decrementButton">
+                    <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="btnQuantity" OnClick="btnDecrement_onClick" />
+                </div>
+                <div class="quantityNumber">
+                    <%--<asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Out of Range" ControlToValidate="txtQuantity" MinimumValue="1" MaximumValue="999"></asp:RangeValidator>--%>
+                    <asp:TextBox ID="txtQuantity" runat="server" Text="1" CssClass="txtQuantity" />
+                </div>
+                <div class="incrementButton">
+                    <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="btnQuantity" OnClick="btnIncrement_onClick" />
+                </div>
+                <div class="buttons">
+                    <div class="addToCart">
+                        <%--<asp:Button ID="Button1" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' />--%>
+                        <asp:Button ID="btnAddtoCart" runat="server" Text="Add To Cart" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' PostBackUrl="~/sb_menu.aspx" OnClientClick="btnAddtoCart_onClick" />
+                    </div>
 
-                                    <%-- <div class="back">
+                    <%-- <div class="back">
                                         <asp:Button ID="btnBack" runat="server" Text="Back" CssClass="btnAddToCart" CommandName="Add" CommandArgument='<%# Eval("name") %>' PostBackUrl="~/sb_menu.aspx" />
                                     </div>--%>
-                                </div>
+                </div>
 
-                            </div>
+            </div>
 
-                        </div>
-                       
-            </ItemTemplate>
-        </asp:DataList>
+        </div>
 
     </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Product] WHERE ([name] = @name)">
