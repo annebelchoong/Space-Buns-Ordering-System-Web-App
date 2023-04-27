@@ -195,6 +195,7 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="Reengineer2023\sb_login.aspx" />
     <Content Include="Reengineer2023\sb_registration.aspx" />
+    <Content Include="Reengineer2023\sb_userProfile.aspx" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
     <Content Include="sb_cart.aspx" />
@@ -294,12 +295,26 @@
     <Compile Include="Reengineer2023\sb_login.aspx.designer.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Reengineer2023\sb_masterProfile.Master.cs">
+      <DependentUpon>sb_masterProfile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_masterProfile.Master.designer.cs">
+      <DependentUpon>sb_masterProfile.Master</DependentUpon>
+    </Compile>
     <Compile Include="Reengineer2023\sb_registration.aspx.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reengineer2023\sb_registration.aspx.designer.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_userProfile.aspx.cs">
+      <DependentUpon>sb_userProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_userProfile.aspx.designer.cs">
+      <DependentUpon>sb_userProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_aboutUs.aspx.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>
@@ -485,6 +500,7 @@
     <Content Include="Admin\sb_masterAdmin.Master" />
     <Content Include="UserProfile\sb_masterProfile.Master" />
     <Content Include="sb_general.Master" />
+    <Content Include="Reengineer2023\sb_masterProfile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Space_Buns_Ordering_System.Reengineer2023
 {
-    public partial class sb_masterProfile : System.Web.UI.MasterPage
+    public partial class sb_userProfile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
