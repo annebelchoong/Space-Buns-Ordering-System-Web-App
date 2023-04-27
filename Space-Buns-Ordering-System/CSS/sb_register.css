@@ -114,6 +114,12 @@ input[type=text], input[type=password], input[type=tel], input[type=email] {
     transition: 250ms;
 }
 
+.btn:hover {
+            color: white;
+            background-color: #B97836;
+            transition: 250ms;
+        }
+
 @media (max-width: 1000px) {
     fieldset {
         width: 350px

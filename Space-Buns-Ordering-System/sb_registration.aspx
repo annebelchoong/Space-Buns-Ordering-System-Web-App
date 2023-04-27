@@ -75,7 +75,7 @@
                                     </tr>
                                     <tr>
                                         <td align="center" class="signupRow">
-                                            <asp:TextBox ID="Username" runat="server" placeholder="Username (min 6 max 12)"></asp:TextBox>
+                                            <asp:TextBox ID="Username" runat="server" placeholder="Username (min 6 max 12)" OnTextChanged="Username_TextChanged"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="UsernameRequired" runat="server" ControlToValidate="Username"
                                                 ErrorMessage="Username is required." ToolTip="User Name is required."
                                                 ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>

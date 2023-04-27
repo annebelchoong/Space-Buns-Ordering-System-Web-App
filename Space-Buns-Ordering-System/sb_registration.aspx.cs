@@ -18,5 +18,10 @@ namespace Space_Buns_Ordering_System
         {
 
         }
+
+        protected void Username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
