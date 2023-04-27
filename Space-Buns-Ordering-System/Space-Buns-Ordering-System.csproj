@@ -193,6 +193,7 @@
     <Content Include="Media\Reviews\Review 4.png" />
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
+    <Content Include="Reengineer2023\sb_registration.aspx" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
     <Content Include="sb_cart.aspx" />
@@ -285,6 +286,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reengineer2023\sb_registration.aspx.cs">
+      <DependentUpon>sb_registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_registration.aspx.designer.cs">
+      <DependentUpon>sb_registration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="sb_aboutUs.aspx.cs">
       <DependentUpon>sb_aboutUs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
