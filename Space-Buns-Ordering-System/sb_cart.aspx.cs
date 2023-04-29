@@ -133,53 +133,83 @@ namespace Space_Buns_Ordering_System
             sessionId = session.Id;
 
 
-            // get customer id based on the current user
-            String currentUser = currentUsername.ToString();
-
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            con.Open();
+            // get customer id based on the current user
+            String currentUser = User.Identity.Name;
 
-            // get customer id
-            string custQuery = "SELECT * FROM Customer WHERE(username = @customerName)";
-            SqlCommand cmdCust = new SqlCommand(custQuery, con);
-            cmdCust.Parameters.AddWithValue("@customerName", currentUser);
-            SqlDataReader cust = cmdCust.ExecuteReader();
-
-            if (cust.HasRows)
+            
+            // if no user show empty
+            if (!User.Identity.IsAuthenticated)
             {
-                while (cust.Read())
-                {
-                    lblCustId.Text = cust["customerId"].ToString();
+                lblNumOfItems.Text = "0";
+                lblNoItem.Text = "Not login";
+                lblFinalAmount.Text = "RM 0.00";
+                lblCustId.Text = "";
+            }
+            else
+            {
+                con.Open();
+                // get customer id
+                // issue! always get teh last one 
+                string custQuery = "SELECT * FROM Customer WHERE(username = username)";
+                SqlCommand cmdCust = new SqlCommand(custQuery, con);
+                cmdCust.Parameters.AddWithValue("@username", currentUser);
+                SqlDataReader cust = cmdCust.ExecuteReader();
+                lblCustId.Text = "2";
 
+                //if (cust.HasRows)
+                //{
+                    lblCustId.Text = "3";
+                lblUpdatedCustId.Text = cust.Read().ToString(); // false 
+                    while (cust.Read())
+                    {
+                    lblCustId.Text = "4";
+
+                    lblCustId.Text = cust["customerId"].ToString();
+                    }
+
+                //}
+
+
+                con.Close();
+
+                //need to have one query to check the total item in the cart for the current user
+
+               con.Open();
+                string countQuery = "SELECT COUNT(*) FROM Cart WHERE(customerId = @custId)";
+                SqlCommand cmdCount = new SqlCommand(countQuery, con);
+                cmdCount.Parameters.AddWithValue("@custId", lblCustId.Text);
+                int count = Convert.ToInt32(cmdCount.ExecuteScalar());
+
+                lblNumOfItems.Text = count.ToString();
+
+                con.Close();
+
+                if (lblNumOfItems.Text != "0")
+                {
+                    // calculate the sum of the total price of the items in the cart
+                    con.Open();
+                    string sumQuery = "SELECT SUM(price) FROM Cart WHERE(customerId = @custId)";
+                    SqlCommand cmdSum = new SqlCommand(sumQuery, con);
+                    cmdSum.Parameters.AddWithValue("@custId", lblCustId.Text);
+                    double sum = Convert.ToDouble(cmdSum.ExecuteScalar());
+
+                    lblFinalAmount.Text = sum.ToString("C2");
+
+                    con.Close();
+                }
+                else
+                {
+                    lblNoItem.Text = "count query = 0!";
+                    lblFinalAmount.Text = "RM 0.00";
 
                 }
-
             }
 
-            con.Close();
+            
 
-            // calculate the sum of the total price of the items in the cart
-            con.Open();
-            string sumQuery = "SELECT SUM(price) FROM Cart WHERE(customerId = @custId)";
-            SqlCommand cmdSum = new SqlCommand(sumQuery, con);
-            cmdSum.Parameters.AddWithValue("@custId", lblCustId.Text);
-            double sum = Convert.ToDouble(cmdSum.ExecuteScalar());
 
-            lblFinalAmount.Text = sum.ToString("C2");
-
-            con.Close();
-
-            // need to have one query to check the total item in the cart for the current user
-            con.Open();
-            string countQuery = "SELECT COUNT(*) FROM Cart WHERE(customerId = @custId)";
-            SqlCommand cmdCount = new SqlCommand(countQuery, con);
-            cmdCount.Parameters.AddWithValue("@custId", lblCustId.Text);
-            int count = Convert.ToInt32(cmdCount.ExecuteScalar());
-
-            lblNumOfItems.Text = count.ToString();
-
-            con.Close();
-
+            
 
 
         }

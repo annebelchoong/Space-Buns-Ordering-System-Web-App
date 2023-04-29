@@ -33,6 +33,15 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Button btnCloseCart;
 
         /// <summary>
+        /// lblNoItem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNoItem;
+
+        /// <summary>
         /// currentUsername control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Space_Buns_Ordering_System
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCustId;
+
+        /// <summary>
+        /// lblUpdatedCustId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUpdatedCustId;
 
         /// <summary>
         /// Repeater1 control.

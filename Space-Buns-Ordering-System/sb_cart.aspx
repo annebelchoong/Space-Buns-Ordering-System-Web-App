@@ -20,8 +20,10 @@
         </div>
         <div class="addressAndTime">
         </div>
-                <asp:LoginName ID="currentUsername" runat="server" Visible="False" />
-        <asp:Label ID="lblCustId" runat="server" Visible="False"></asp:Label>
+        <asp:Label ID="lblNoItem" runat="server"></asp:Label>
+                <asp:LoginName ID="currentUsername" runat="server" Visible="True" />
+        <asp:Label ID="lblCustId" runat="server" Visible="True"></asp:Label>
+        <asp:Label ID="lblUpdatedCustId" runat="server" Visible="True"></asp:Label>
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
                 <div class="cartProduct">
@@ -71,7 +73,7 @@
             </div>
         </div>
         <div class="Checkout">
-            <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="btnCheckout" />
+            <asp:Button ID="btnCheckout" runat="server" Text="Checkout" CssClass="btnCheckout" PostBackUrl="~/sb_checkout.aspx" />
         </div>
 
     </div>
