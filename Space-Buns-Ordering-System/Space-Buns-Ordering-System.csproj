@@ -195,7 +195,6 @@
     <Content Include="Media\Reviews\Review 6.png" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
-    <Content Include="sb_checkout.aspx" />
     <Content Include="sb_cart.aspx" />
     <Content Include="sb_orderCancelled.aspx" />
     <Content Include="sb_productDetails.aspx" />
@@ -299,13 +298,6 @@
     </Compile>
     <Compile Include="Admin\adminDashboard.aspx.designer.cs">
       <DependentUpon>adminDashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="sb_checkout.aspx.cs">
-      <DependentUpon>sb_checkout.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="sb_checkout.aspx.designer.cs">
-      <DependentUpon>sb_checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="sb_cart.aspx.cs">
       <DependentUpon>sb_cart.aspx</DependentUpon>
