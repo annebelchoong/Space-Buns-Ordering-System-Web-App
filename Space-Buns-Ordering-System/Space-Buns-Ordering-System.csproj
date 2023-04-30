@@ -196,6 +196,7 @@
     <Content Include="Reengineer2023\sb_index.aspx" />
     <Content Include="Reengineer2023\sb_login.aspx" />
     <Content Include="Reengineer2023\sb_registration.aspx" />
+    <Content Include="Reengineer2023\sb_updateProfile.aspx" />
     <Content Include="Reengineer2023\sb_userProfile.aspx" />
     <Content Include="sb_aboutUs.aspx" />
     <Content Include="Admin\adminDashboard.aspx" />
@@ -323,6 +324,13 @@
     </Compile>
     <Compile Include="Reengineer2023\sb_registration.aspx.designer.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_updateProfile.aspx.cs">
+      <DependentUpon>sb_updateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_updateProfile.aspx.designer.cs">
+      <DependentUpon>sb_updateProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reengineer2023\sb_userProfile.aspx.cs">
       <DependentUpon>sb_userProfile.aspx</DependentUpon>
