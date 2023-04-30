@@ -193,6 +193,7 @@
     <Content Include="Media\Reviews\Review 4.png" />
     <Content Include="Media\Reviews\Review 5.png" />
     <Content Include="Media\Reviews\Review 6.png" />
+    <Content Include="Reengineer2023\sb_index.aspx" />
     <Content Include="Reengineer2023\sb_login.aspx" />
     <Content Include="Reengineer2023\sb_registration.aspx" />
     <Content Include="Reengineer2023\sb_userProfile.aspx" />
@@ -288,12 +289,26 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reengineer2023\sb_index.aspx.cs">
+      <DependentUpon>sb_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_index.aspx.designer.cs">
+      <DependentUpon>sb_index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Reengineer2023\sb_login.aspx.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Reengineer2023\sb_login.aspx.designer.cs">
       <DependentUpon>sb_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_master.Master.cs">
+      <DependentUpon>sb_master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reengineer2023\sb_master.Master.designer.cs">
+      <DependentUpon>sb_master.Master</DependentUpon>
     </Compile>
     <Compile Include="Reengineer2023\sb_masterProfile.Master.cs">
       <DependentUpon>sb_masterProfile.Master</DependentUpon>
@@ -501,6 +516,7 @@
     <Content Include="UserProfile\sb_masterProfile.Master" />
     <Content Include="sb_general.Master" />
     <Content Include="Reengineer2023\sb_masterProfile.Master" />
+    <Content Include="Reengineer2023\sb_master.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

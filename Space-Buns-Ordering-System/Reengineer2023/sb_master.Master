@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.Master.cs" Inherits="Space_Buns_Ordering_System.sb_master" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="sb_master.Master.cs" Inherits="Space_Buns_Ordering_System.Reengineer2023.sb_Master" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
@@ -8,7 +8,7 @@
 <head runat="server">
     <title></title>
     <link rel="shortcut icon" href="Media/Icons/favicon.ico">
-    <link href="CSS/sb_masterLayout.css" rel="stylesheet" />
+    <link href="../CSS/sb_masterLayout.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
@@ -33,7 +33,7 @@
 
             <div class="navbar-login">
                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
-                <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
+                <a href="sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
                 <%--for test--%>
             </div>
@@ -157,7 +157,7 @@
                             if (!isLoggedIn)
                             {
                         %>
-                        <asp:Button ID="yes" type="submit" runat="server" Text="Login" CssClass="btnCheckout" PostBackUrl="~/sb_login.aspx" />
+                        <asp:Button ID="yes" type="submit" runat="server" Text="Login" CssClass="btnCheckout" PostBackUrl="~/Reengineer2023/sb_login.aspx" />
                         <%
                             }
                             else
@@ -255,14 +255,14 @@
         });--%>
 
 
-        var clickToCheckout = document.getElementById("btnCheckout")
+        <%--var clickToCheckout = document.getElementById("btnCheckout")
         clickToCheckout.addEventListener('click', function (e) {
             e.preventDefault();
 
             stripe.redirectToCheckout({
                 sessionId: "<%= sessionId %>"
             });
-        });
+        });--%>
     </script>
 </body>
 </html>

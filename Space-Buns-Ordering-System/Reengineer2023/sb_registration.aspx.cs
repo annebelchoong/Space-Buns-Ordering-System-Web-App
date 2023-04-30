@@ -57,7 +57,9 @@ namespace Space_Buns_Ordering_System.Reengineer2023
             else
             {
                 string script = "alert('Error!');";
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "Error", script, true);
             }
+
         }
     }
 }
