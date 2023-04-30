@@ -34,7 +34,7 @@
             <div class="navbar-login">
                 <%--<asp:Button ID="hypCart" runat="server" Text="Button" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" />--%>
                 <%--<asp:ImageButton ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" CssClass="btnCart" Width="26px" OnClick="hypCart_Click" UseSubmitBehavior="false" OnClientClick="button_pressed();return false;" />--%>
-                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart" NavigateUrl="~/sb_cart.aspx"></asp:HyperLink>
+                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
                 <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
                 <asp:LoginStatus ID="LoginStatus1" runat="server" />
                 <%--for test--%>
@@ -68,7 +68,57 @@
                 </div>
                 <div class="addressAndTime">
                 </div>
-                <div class="cartProduct">
+                <asp:Label ID="lblNoItem" runat="server"></asp:Label>
+                <asp:LoginName ID="currentUsername" runat="server" Visible="True" />
+                <asp:Label ID="lblCustId" runat="server" Visible="False"></asp:Label>
+                <asp:Label ID="lblUpdatedCustId" runat="server" Visible="False"></asp:Label>
+                <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="Repeater_ItemCommand">
+                    <ItemTemplate>
+                        <div class="cartProduct">
+                            <div class="products">
+                                <div class="product">
+                                    
+                                        <div>
+                                        <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" CssClass="imgCart" />
+
+                                        </div>
+                                        <div class="productColumn">
+                                            <div class="productTop">
+                                                <div class="productName">
+                                                    <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("productName") %>' />
+                                                </div>
+                                                <div class="deleteProduct">
+                                                    <asp:ImageButton ID="imgbtnTrash" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" CommandName="btnDeleteItem" />
+                                                </div>
+                                            </div>
+                                            <div class="productBottom">
+                                                <div class="productQuantity">
+                                                    <div class="decrementButton">
+                                                        <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="buttonQuantity" CommandName="btnDecrement" />
+                                                        <%--OnClick="btnDecrement_onClick"--%>
+                                                    </div>
+                                                    <div class="quantityNumber">
+                                                        <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("quantity") %>' CssClass="textQuantity" />
+                                                    </div>
+                                                    <div class="incrementButton">
+                                                        <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="buttonQuantity" CommandName="btnIncrement" />
+                                                        <%--OnClick="btnIncrement_onClick"--%>
+                                                    </div>
+                                                </div>
+                                                <div class="totalPrice">
+                                                    <asp:Label ID="lblTotalPrice" runat="server" Text='<%# Eval("price", "{0:C}") %>' />
+                                                    <asp:Label ID="lblUnitPrice" runat="server" Visible="false"></asp:Label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+
+                </asp:Repeater>
+                <%--<div class="cartProduct">
                     <div class="products">
                         <div class="product">
                             <div>
@@ -136,47 +186,54 @@
                             </div>
                         </div>
                     </div>
-                    <div class="finalAmount">
-                        <div>
-                            Total
-                        </div>
-                        <div>
-                            RM
-                                <asp:Label ID="lblFinalAmount" runat="server" Text="34.00"></asp:Label>
-                        </div>
+                </div>--%>
+                <div class="finalAmount">
+                    <div>
+                        Total
                     </div>
+                    <div>
+                        <asp:Label ID="lblFinalAmount" runat="server" ForeColor="#B97836"></asp:Label>
+
+                    </div>
+                </div>
 
 
 
 
-                    <%--                    <div>
+                <%--                    <div>
                         <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
                     </div>--%>
 
-                    <div>
-                        <%
-                            bool isLoggedIn = HttpContext.Current.User.Identity.IsAuthenticated;
-                            if (!isLoggedIn)
-                            {
-                        %>
-                        <asp:Button ID="yes" type="submit" runat="server" Text="Login" CssClass="btnCheckout" PostBackUrl="~/sb_login.aspx" />
-                        <%
-                            }
-                            else
-                            {
-                        %>
-                        <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
-                        <%
-                            }
-                        %>
-                    </div>
-
-
-
+                <div>
+                    <%
+                        bool isLoggedIn = HttpContext.Current.User.Identity.IsAuthenticated;
+                        if (!isLoggedIn)
+                        {
+                    %>
+                    <asp:Button ID="yes" type="submit" runat="server" Text="Login" CssClass="btnCheckout" PostBackUrl="~/sb_login.aspx" />
+                    <%
+                        }
+                        else
+                        {
+                    %>
+                    <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
+                    <%
+                        }
+                    %>
                 </div>
+
+
+
+
 
             </asp:Panel>
         </div>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT quantity, price, picture, productName, isSetMeal, addOnPatties, choiceOfSides, choiceOfBeverage, addOnSauce FROM Cart WHERE (customerID = @customerID)" DeleteCommand="DELETE FROM Cart WHERE (productName = @productName) AND (customerID = @customerID)">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="lblCustId" PropertyName="Text" Name="customerID"></asp:ControlParameter>
+        </SelectParameters>
+    </asp:SqlDataSource>
 
         <footer class="footer">
             <div class="footer-container">

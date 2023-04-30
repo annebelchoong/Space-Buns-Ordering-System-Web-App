@@ -136,7 +136,6 @@ namespace Space_Buns_Ordering_System
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             // get customer id based on the current user
             String currentUser = currentUsername.ToString();
-
             
             // if no user show empty
             if (!User.Identity.IsAuthenticated)

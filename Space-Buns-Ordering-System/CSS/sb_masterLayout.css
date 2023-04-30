@@ -376,6 +376,7 @@ footer.footer {
 }
 
 .imgCart {
+    border-radius: 10px;
     width: 80px;
     padding: 0px;
 }
@@ -387,6 +388,7 @@ footer.footer {
 }
 
 .productColumn {
+    padding-left: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -403,7 +405,6 @@ footer.footer {
 .productQuantity {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
     flex-direction: row;
 }
 
