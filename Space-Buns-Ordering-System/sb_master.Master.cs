@@ -9,6 +9,7 @@ using Stripe.Checkout;
 using System.Data.SqlClient;
 using System.Configuration;
 using AjaxControlToolkit.HtmlEditor.ToolbarButtons;
+using System.Drawing;
 
 namespace Space_Buns_Ordering_System
 {
@@ -125,7 +126,8 @@ namespace Space_Buns_Ordering_System
 
         private SessionLineItemOptions GetCartLineItem(CartItem cartItem)
         {
-            int unitAmount, quantity;
+            long unitAmount;
+                int quantity;
             String name;
             String description;
             String imgPath;
@@ -160,9 +162,71 @@ namespace Space_Buns_Ordering_System
 
         }
 
+        private List<SessionLineItemOptions> getLineItemsFromCart()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            var currentUserEmail = "";
+            var currentUserName = "";
+            var currentUserId = "";
+
+            //get current user details
+            String currentUser = currentUsername.ToString();
+            con.Open();
+            // get customer id
+            // issue! always get teh last one 
+            string custQuery = "SELECT * FROM Customer WHERE(username = @customerName)";
+            SqlCommand cmdCust = new SqlCommand(custQuery, con);
+            cmdCust.Parameters.AddWithValue("@customerName", currentUser);
+            SqlDataReader cust = cmdCust.ExecuteReader();
+
+            if (cust.HasRows)
+            {
+                while (cust.Read())
+                {
+                    currentUserEmail = cust["email"].ToString();
+                    currentUserName = cust["name"].ToString();
+                    currentUserId = cust["customerID"].ToString();
+                }
+
+            }
+
+
+            con.Close();
+
+            List<SessionLineItemOptions> LineItems = new List<SessionLineItemOptions> { };
+
+            // get cart items
+            con.Open();
+            // get customer id
+            string cartQuery = "SELECT * FROM Cart WHERE(customerID = @custID)";
+            SqlCommand cmdCart = new SqlCommand(cartQuery, con);
+            cmdCart.Parameters.AddWithValue("@custID", currentUserId);
+            SqlDataReader cart = cmdCart.ExecuteReader();
+
+            if (cart.HasRows)
+            {
+                while (cart.Read())
+                {
+                    //var productName = cart["productName"].ToString();
+                    //var unitPrice = (Convert.ToInt64(cart["price"]) / Convert.ToInt64(cart["quantity"]));
+                    //var quantity = Convert.ToInt64(cart["quantity"]);
+                    //var desc = cart["addOnPatties"].ToString() + ", " + cart["choiceOfSides"].ToString() + ", " + cart["choiceOfBeverage"].ToString() + ", " + cart["addOnSauce"].ToString();
+                    var pic = cart["picture"].ToString().Replace("~", "");
+
+                    LineItems.Add(GetCartLineItem(new CartItem(cart["productName"].ToString(), (Convert.ToInt64(cart["price"]) / Convert.ToInt64(cart["quantity"])), Convert.ToInt32(cart["quantity"]),cart["addOnPatties"].ToString() + ", " + cart["choiceOfSides"].ToString() + ", " + cart["choiceOfBeverage"].ToString() + ", " + cart["addOnSauce"].ToString(), "https://spacebuns.web.app"+ pic)));
+                }
+
+            }
+            con.Close();
+
+            return LineItems;
+        }
+
         //private void Cart_Checkout(int cartItems)
         private void Cart_Checkout()
         {
+
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             // create Checkout session and set `sessionId`
@@ -236,19 +300,7 @@ namespace Space_Buns_Ordering_System
 
             con.Close();
 
-            // get cart items
-            con.Open();
-            // get customer id
-            // issue! always get teh last one 
-            string cartQuery = "SELECT * FROM Cart WHERE(customerID = @custID)";
-            SqlCommand cmdCart = new SqlCommand(cartQuery, con);
-            cmdCart.Parameters.AddWithValue("@custID", currentUserId);
-            SqlDataReader cart = cmdCart.ExecuteReader();
-
-            if (cart.HasRows)
-            {
-                while (cart.Read())
-                {
+           
 
          
 
@@ -340,95 +392,97 @@ namespace Space_Buns_Ordering_System
                 },
 
                 //LineItems = CartLineItems,
+                LineItems = getLineItemsFromCart(),
                 //Convert.ToInt64(cart["price"])
 
-            LineItems = new List<SessionLineItemOptions>
-                {
+                //LineItems = new List<SessionLineItemOptions>
+                //    {
 
-                new SessionLineItemOptions
-                {
-                    PriceData = new SessionLineItemPriceDataOptions
-                    {
-                        Currency = "myr",
-                        UnitAmount = (Convert.ToInt64(cart["price"])/ Convert.ToInt64(cart["quantity"])) * 100,
-                        ProductData = new SessionLineItemPriceDataProductDataOptions
-                        {
-                            Name = (cart["productName"]).ToString(),
-                            Description = (cart["addOnPatties"]).ToString() + ", "+ (cart["choiceOfSides"]).ToString() + ", "+ (cart["choiceOfBeverage"]).ToString() + ", "+ (cart["addOnSauce"]).ToString(),
-                            //Amount = 1700,
-                            Images = new List<string>() {
-                               cart["picture"].ToString(),
-                            },
-                            //Price = "price_H5ggYwtDq4fbrJ",
-                        },
+                //    new SessionLineItemOptions
+                //    {
+                //        PriceData = new SessionLineItemPriceDataOptions
+                //        {
+                //            Currency = "myr",
+                //            UnitAmount = (Convert.ToInt64(cart["price"])/ Convert.ToInt64(cart["quantity"])) * 100,
+                //            ProductData = new SessionLineItemPriceDataProductDataOptions
+                //            {
+                //                Name = (cart["productName"]).ToString(),
+                //                Description = (cart["addOnPatties"]).ToString() + ", "+ (cart["choiceOfSides"]).ToString() + ", "+ (cart["choiceOfBeverage"]).ToString() + ", "+ (cart["addOnSauce"]).ToString(),
+                //                //Amount = 1700,
+                //                Images = new List<string>() {
+                //                   cart["picture"].ToString(),
+                //                },
+                //                //Price = "price_H5ggYwtDq4fbrJ",
+                //            },
 
 
-                    },
-                    Quantity = Convert.ToInt64(cart["quantity"]),
-                },
+                //        },
+                //        Quantity = Convert.ToInt64(cart["quantity"]),
 
-                    //new SessionLineItemOptions
-                    //{
-                    //    PriceData = new SessionLineItemPriceDataOptions
-                    //    {
-                    //        Currency = "myr",
-                    //        UnitAmount = 1600,
-                    //        ProductData = new SessionLineItemPriceDataProductDataOptions
-                    //        {
-                    //            Name = "Salmon Fillet",
-                    //            Description = "Salmon patty, " +
-                    //    "served with slices of tomatoes, lettuce, onions and mayo.",
-                    //            //Amount = 1600,
-                    //            Images = new List<string>() {
-                    //        "https://spacebuns.web.app/Media/menuBurgers/fish1.jpg"
-                    //    },
-                    //        },
+                //    },
 
-                    //    },
-                    //    Quantity = 1,
-                    //},
+                //new SessionLineItemOptions
+                //{
+                //    PriceData = new SessionLineItemPriceDataOptions
+                //    {
+                //        Currency = "myr",
+                //        UnitAmount = 1600,
+                //        ProductData = new SessionLineItemPriceDataProductDataOptions
+                //        {
+                //            Name = "Salmon Fillet",
+                //            Description = "Salmon patty, " +
+                //    "served with slices of tomatoes, lettuce, onions and mayo.",
+                //            //Amount = 1600,
+                //            Images = new List<string>() {
+                //        "https://spacebuns.web.app/Media/menuBurgers/fish1.jpg"
+                //    },
+                //        },
 
-                    //new SessionLineItemOptions
-                    //{
-                    //    PriceData = new SessionLineItemPriceDataOptions
-                    //    {
-                    //        Currency = "myr",
-                    //        UnitAmount = 1700,
-                    //        ProductData = new SessionLineItemPriceDataProductDataOptions
-                    //        {
-                    //            Name = "King of Cheese",
-                    //            Description = "A triple grilled Beef Patty covered with lots of mozarella cheese.",
-                    //            //Amount = 1700,
-                    //            Images = new List<string>() {
-                    //        "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg"
-                    //    },
-                    //        },
+                //    },
+                //    Quantity = 1,
+                //},
 
-                    //    },
-                    //    Quantity = 1,
-                    //},
+                //new SessionLineItemOptions
+                //{
+                //    PriceData = new SessionLineItemPriceDataOptions
+                //    {
+                //        Currency = "myr",
+                //        UnitAmount = 1700,
+                //        ProductData = new SessionLineItemPriceDataProductDataOptions
+                //        {
+                //            Name = "King of Cheese",
+                //            Description = "A triple grilled Beef Patty covered with lots of mozarella cheese.",
+                //            //Amount = 1700,
+                //            Images = new List<string>() {
+                //        "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg"
+                //    },
+                //        },
 
-                    //new SessionLineItemOptions
-                    //{
-                    //    PriceData = new SessionLineItemPriceDataOptions
-                    //    {
-                    //        Currency = "myr",
-                    //        UnitAmount = 250,
-                    //        ProductData = new SessionLineItemPriceDataProductDataOptions
-                    //        {
-                    //            Name = "Cupcake",
-                    //            Description = "This is a cupcake",
-                    //            //Amount = 250,
-                    //            Images = new List<string>() {
-                    //            "https://media.istockphoto.com/photos/pink-and-white-frosted-cupcake-isolated-on-white-picture-id167120918?k=20&m=167120918&s=612x612&w=0&h=SL7pPaRbqwf-7ewyqIF_aTvhMY-qKSbShkW5BetZtsI="
-                    //    },
-                    //        },
+                //    },
+                //    Quantity = 1,
+                //},
 
-                    //    },
-                    //    Quantity = 2,
-                    //},
+                //new SessionLineItemOptions
+                //{
+                //    PriceData = new SessionLineItemPriceDataOptions
+                //    {
+                //        Currency = "myr",
+                //        UnitAmount = 250,
+                //        ProductData = new SessionLineItemPriceDataProductDataOptions
+                //        {
+                //            Name = "Cupcake",
+                //            Description = "This is a cupcake",
+                //            //Amount = 250,
+                //            Images = new List<string>() {
+                //            "https://media.istockphoto.com/photos/pink-and-white-frosted-cupcake-isolated-on-white-picture-id167120918?k=20&m=167120918&s=612x612&w=0&h=SL7pPaRbqwf-7ewyqIF_aTvhMY-qKSbShkW5BetZtsI="
+                //    },
+                //        },
 
-                },
+                //    },
+                //    Quantity = 2,
+                //},
+
+                //},
 
                 Mode = "payment",
 
@@ -442,10 +496,7 @@ namespace Space_Buns_Ordering_System
             var service = new SessionService();
             Session session = service.Create(options);
             sessionId = session.Id;
-                }
 
-            }
-            con.Close();
         }
 
         protected void Repeater_ItemCommand(object sender, RepeaterCommandEventArgs e)

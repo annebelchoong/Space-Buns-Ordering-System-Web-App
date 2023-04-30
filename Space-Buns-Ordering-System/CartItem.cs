@@ -8,8 +8,8 @@ namespace Space_Buns_Ordering_System
     public class CartItem
     {
         public String productName = "Da Best Burger";
-        public int unitPrice = 15;
-        public int quantity = 5;
+        public long unitPrice = 0;
+        public int quantity = 1;
         public String addOnsDescription = "Extra cheese, extra patty";
         public String imgPath = "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg";
 
@@ -17,7 +17,7 @@ namespace Space_Buns_Ordering_System
         {
         }
 
-        public CartItem(string productName, int unitPrice, int quantity, string addOnsDescription, string imgPath)
+        public CartItem(string productName, long unitPrice, int quantity, string addOnsDescription, string imgPath)
         {
             this.productName = productName;
             this.unitPrice = unitPrice;
