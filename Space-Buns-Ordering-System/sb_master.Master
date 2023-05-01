@@ -216,7 +216,7 @@
                         else
                         {
                     %>
-                    <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
+                    <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" onClick="btnCheckout_Click"/>
                     <%
                         }
                     %>

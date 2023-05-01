@@ -76,9 +76,10 @@ namespace Space_Buns_Ordering_System
                         setMeal + "," + cart["addOnPatties"].ToString() + "," + cart["choiceOfSides"].ToString() + "," + cart["choiceOfBeverage"].ToString() + "," + cart["addOnSauce"].ToString() :
                         setMeal + "," + cart["addOnPatties"].ToString() + "," + cart["addOnSauce"].ToString();
                     pic = cart["picture"].ToString();
+
                     //items.Add(new OrderDetailsItem(2, "boo", 23, 3, "apple pe", "asdfasdfasdf", 17));
 
-                    items.Add(new OrderDetailsItem(Convert.ToInt32(prodId), prodName, Convert.ToInt64(prodPrice), Convert.ToInt32(prodQty), desc, pic, Convert.ToInt32(currentUserId)));
+                    items.Add(new OrderDetailsItem(Convert.ToInt32(prodId), prodName, Convert.ToDouble(prodPrice), Convert.ToInt32(prodQty), desc, pic, Convert.ToInt32(currentUserId)));
                 }
 
             }
@@ -146,6 +147,26 @@ namespace Space_Buns_Ordering_System
 
             }
 
+            // delete from cart
+            con.Open();
+            string deleteQuery = "DELETE FROM Cart WHERE(customerID = @custId)";
+            SqlCommand cmdDelete = new SqlCommand(deleteQuery, con);
+            cmdDelete.Parameters.AddWithValue("@custId", currentUserId);
+
+            int delete = cmdDelete.ExecuteNonQuery();
+            if (delete > 0)
+            {
+                //lblCustId.Text = "insert";
+                // try to change to make a dialog
+                Response.Write("Deleted!");
+                Response.Redirect("sb_index.aspx");
+            }
+            else
+            {
+                Response.Write("Ops, unable to delete from cart");
+            }
+            con.Close();
+
         }
         // a function to auto generate id
         public static string GenerateID()
@@ -162,13 +183,13 @@ namespace Space_Buns_Ordering_System
         public int custId;
         public int prodId;
         public String prodName;
-        public long prodPrice;
+        public double prodPrice;
         public int prodQty;
         public String desc;
         public String pic;
         public OrderDetailsItem() { }
 
-        public OrderDetailsItem( int prodId, String prodName, long prodPrice, int prodQty, String desc, String pic, int custId)
+        public OrderDetailsItem( int prodId, String prodName, double prodPrice, int prodQty, String desc, String pic, int custId)
         {
             this.prodId = prodId;
             this.prodName = prodName;

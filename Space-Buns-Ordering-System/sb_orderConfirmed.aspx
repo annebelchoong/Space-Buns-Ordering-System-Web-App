@@ -38,6 +38,7 @@
                 </div>--%>
                 <asp:LoginName ID="currentUsername" runat="server" Visible="False" />
                 <asp:Label ID="lblCustId" runat="server" Visible="False"></asp:Label>
+
                 <div class="box order-summary">
                     <h3>Order Summary</h3>
                     <%-- Add repeater --%>
@@ -63,10 +64,9 @@
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT orderID, productID, customerID, productName, price, quantity, picture, description, discount FROM OrderDetails WHERE (orderID = @orderID) AND (customerID = @custID)">
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT orderID, productID, customerID, productName, price, quantity, picture, description, discount FROM OrderDetails WHERE (orderID = @orderID)">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="lblOrderID" PropertyName="Text" Name="orderID"></asp:ControlParameter>
-                            <asp:ControlParameter ControlID="lblCustId" PropertyName="Text" Name="custID"></asp:ControlParameter>
                         </SelectParameters>
                     </asp:SqlDataSource>
     

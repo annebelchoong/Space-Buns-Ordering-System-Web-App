@@ -86,11 +86,15 @@ namespace Space_Buns_Ordering_System
                     lblFinalAmount.Text = sum.ToString("C2");
 
                     con.Close();
+                    btnCheckout.Enabled = true;
                 }
                 else
                 {
                     lblNoItem.Text = "count query = 0!";
                     lblFinalAmount.Text = "RM 0.00";
+                    btnCheckout.Enabled = false;
+                    btnCheckout.BackColor = Color.Gray;
+                    btnCheckout.ForeColor = Color.White;
 
                 }
 
@@ -501,8 +505,12 @@ namespace Space_Buns_Ordering_System
 
 
             var service = new SessionService();
+            if(getLineItemsFromCart() != null)
+            {
+
             Session session = service.Create(options);
             sessionId = session.Id;
+            }
 
         }
 
@@ -623,6 +631,11 @@ namespace Space_Buns_Ordering_System
 
         }
 
+        protected void btnCheckout_Click(object sender, EventArgs e)
+        {
+            //Cart_Checkout();
+
+        }
     }
 
 }
