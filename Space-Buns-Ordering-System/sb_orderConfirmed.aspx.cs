@@ -147,6 +147,37 @@ namespace Space_Buns_Ordering_System
 
             }
 
+            // create a new order in order table
+            con.Open();
+
+            var orderStatus = "pending";
+            var orderType = "delivery";
+
+            string orderQuery = "INSERT INTO [Order] (orderID, customerID, dateTime, orderStatus, orderType, note, branchID) VALUES (@orderID, @custID, @dateTime, @orderStatus, @orderType, @note, @branchID)";
+            SqlCommand cmdOrder = new SqlCommand(orderQuery, con);
+            cmdOrder.Parameters.AddWithValue("@custID", currentUserId);
+            cmdOrder.Parameters.AddWithValue("@orderID", orderID);
+            cmdOrder.Parameters.AddWithValue("@dateTime", DateTime.Now);
+            cmdOrder.Parameters.AddWithValue("@orderStatus", orderStatus);
+            cmdOrder.Parameters.AddWithValue("@orderType", orderType);
+            cmdOrder.Parameters.AddWithValue("@note", "asdf");
+            cmdOrder.Parameters.AddWithValue("@branchID", 1);
+
+
+            int insertOrder = cmdOrder.ExecuteNonQuery();
+
+            if (insertOrder > 0)
+            {
+                Response.Write("Added!");
+            }
+            else
+            {
+                Response.Write("Oops!");
+            }
+        
+
+            con.Close();
+
             // delete from cart
             con.Open();
             string deleteQuery = "DELETE FROM Cart WHERE(customerID = @custId)";

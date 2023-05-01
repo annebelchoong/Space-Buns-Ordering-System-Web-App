@@ -115,18 +115,28 @@ namespace Space_Buns_Ordering_System
         private int GetCartCount()
         {
             //Create connection
-            SqlConnection con;
-            string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(strCon);
-            //open connection
+            //SqlConnection con;
+            //string strCon = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            //con = new SqlConnection(strCon);
+            ////open connection
+            //con.Open();
+
+            //string strSearch = "SELECT COUNT(*) AS CartCount FROM[OrderDetails] WHERE OrderId = 2 ";
+
+            //SqlCommand cmdSearch = new SqlCommand(strSearch, con);
+            //int cartItems = (int)cmdSearch.ExecuteScalar();
+            //con.Close();
+            //return cartItems;
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            int cartCount = 0;
             con.Open();
+            string countQuery = "SELECT COUNT(*) FROM Cart WHERE(customerId = @custId)";
+            SqlCommand cmdCount = new SqlCommand(countQuery, con);
+            cmdCount.Parameters.AddWithValue("@custId", lblCustId.Text);
+            int count = Convert.ToInt32(cmdCount.ExecuteScalar());
 
-            string strSearch = "SELECT COUNT(*) AS CartCount FROM[OrderDetails] WHERE OrderId = 2 ";
-
-            SqlCommand cmdSearch = new SqlCommand(strSearch, con);
-            int cartItems = (int)cmdSearch.ExecuteScalar();
             con.Close();
-            return cartItems;
+            return cartCount;
             //lblTotalOrders.Text = totalOrders.ToString();
         }
 
@@ -229,7 +239,23 @@ namespace Space_Buns_Ordering_System
                 }
 
             }
+            else
+            {
+                LineItems.Add(GetCartLineItem(new CartItem("defult name", 200, 1, "default description", "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg")));
+            }
             con.Close();
+
+            return LineItems;
+        }
+
+        private List<SessionLineItemOptions> defaultLineItem()
+        {
+            
+
+            List<SessionLineItemOptions> LineItems = new List<SessionLineItemOptions> { };
+
+            LineItems.Add(GetCartLineItem(new CartItem("defult name", 200, 1, "default description", "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg")));
+
 
             return LineItems;
         }
@@ -313,7 +339,37 @@ namespace Space_Buns_Ordering_System
 
            
 
-         
+
+                var defaultOptions = new SessionCreateOptions
+                {
+                    CustomerEmail = currentUserEmail,
+
+                    //CustomerEmail = "jason@gmail.com",
+                    BillingAddressCollection = "required",
+                    //SuccessUrl = "https://localhost:52001/success?id={CHECKOUT_SESSION_ID}",
+                    SuccessUrl = "https://localhost:44358/sb_orderConfirmed.aspx",
+                    CancelUrl = "https://localhost:44358/sb_orderCancelled.aspx",   // show error, then should go back to cart 
+
+
+                    PaymentMethodTypes = new List<string>
+                {
+                    "card",
+                    "fpx",
+                    "grabpay",
+                    "alipay",
+       
+                },
+
+                    LineItems = {},
+
+                    Mode = "payment",
+
+                    AllowPromotionCodes = true,
+
+                    //CustomerEmail = "boon@gmail.com", // using this will disable users to edit their email
+                    //Customer = "Benn",
+                };
+            
 
 
             var options = new SessionCreateOptions
@@ -403,7 +459,33 @@ namespace Space_Buns_Ordering_System
                 },
 
                 //LineItems = CartLineItems,
-                LineItems = getLineItemsFromCart(),
+                LineItems =  getLineItemsFromCart(), // GetCartCount() == 0 ? defaultLineItem() : getLineItemsFromCart()
+                //new List<SessionLineItemOptions>
+                //   {
+
+                //   new SessionLineItemOptions
+                //   {
+                //       PriceData = new SessionLineItemPriceDataOptions
+                //       {
+                //           Currency = "myr",
+                //           UnitAmount = 200,
+                //           ProductData = new SessionLineItemPriceDataProductDataOptions
+                //           {
+                //               Name = "",
+                //               Description ="",
+                //               Images = new List<string>() {
+                //                 "",
+                //               },
+                //               //Price = "price_H5ggYwtDq4fbrJ",
+                //           },
+
+
+                //       },
+                //       Quantity = 1,
+
+                //   },
+                //}
+
                 //Convert.ToInt64(cart["price"])
 
                 //LineItems = new List<SessionLineItemOptions>
@@ -505,12 +587,8 @@ namespace Space_Buns_Ordering_System
 
 
             var service = new SessionService();
-            if(getLineItemsFromCart() != null)
-            {
-
             Session session = service.Create(options);
             sessionId = session.Id;
-            }
 
         }
 

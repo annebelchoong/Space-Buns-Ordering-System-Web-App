@@ -9,8 +9,8 @@
         <div class="row my-5">
             <h3 class="fs-4 mb-3" style="color: white;"><strong>My Order</strong> </h3>
             <p class="fs-4 mb-3" style="color: white; text-align: center;">
-                <div class="footer-socialLinks">
-                    <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" Width="100%" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" OnSelectedIndexChanged="gvOrder_SelectedIndexChanged">
+                <div class="gridview-order">
+                    <%--<asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" Width="100%" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" OnSelectedIndexChanged="gvOrder_SelectedIndexChanged">
                         <Columns>
                             <asp:BoundField DataField="orderID" HeaderText="orderID" InsertVisible="False" ReadOnly="True" SortExpression="orderID" />
                             <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" />
@@ -29,9 +29,28 @@
                         <SortedAscendingHeaderStyle BackColor="#808080" />
                         <SortedDescendingCellStyle BackColor="#CAC9C9" />
                         <SortedDescendingHeaderStyle BackColor="#383838" />
+                    </asp:GridView>--%>
+                    <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" Width="100%" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" OnRowDataBound="gvOrder_RowBoundData" SelectedIndexChanged="gvOrder_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField DataField="orderID" HeaderText="orderID" ReadOnly="True" SortExpression="orderID" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" />
+                            <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" />
+                            <asp:BoundField DataField="orderStatus" HeaderText="orderStatus" SortExpression="orderStatus" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" />
+                            <asp:BoundField DataField="orderType" HeaderText="orderType" SortExpression="orderType" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px"></asp:BoundField>
+                            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" />
+                            <asp:CommandField ShowSelectButton="True" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px"></asp:CommandField>
+                        </Columns>
+                        <FooterStyle BackColor="#CCCCCC" />
+                        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                        <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                        <RowStyle BackColor="White" />
+                        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="Black" />
+                        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                        <SortedAscendingHeaderStyle BackColor="#808080" />
+                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                        <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
                 </div>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, [Order].dateTime, [Order].orderStatus, OrderDetails.quantity, Payment.paymentAmount, [Order].orderType FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID INNER JOIN Product ON OrderDetails.productID = Product.productID INNER JOIN Payment ON [Order].orderID = Payment.orderID"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, [Order].dateTime, [Order].orderStatus, [Order].orderType, OrderDetails.price FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID"></asp:SqlDataSource>
                 <br />
                 <br />
                 <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" CssClass="text-white" Width="100%" Justify-content="center" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">
@@ -40,29 +59,29 @@
                     <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
                     <ItemStyle BackColor="#EEEEEE" ForeColor="Black" />
                     <ItemTemplate>
-                        orderID:
+                        Order ID:
                     <asp:Label ID="orderIDLabel" runat="server" Text='<%# Eval("orderID") %>' />
                         <br />
-                        productID:
+                        Product ID:
                     <asp:Label ID="productIDLabel" runat="server" Text='<%# Eval("productID") %>' />
                         <br />
-                        unitPrice:
-                    <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("unitPrice") %>' />
+                        Price:
+                    <asp:Label ID="unitPriceLabel" runat="server" Text='<%# Eval("price") %>' />
                         <br />
-                        quantity:
+                        Quantity:
                     <asp:Label ID="quantityLabel" runat="server" Text='<%# Eval("quantity") %>' />
                         <br />
-                        name:
-                    <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
+                        Name:
+                    <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("productName") %>' />
                         <br />
-                        description:
+                        Description:
                     <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
                         <br />
                         <br />
                     </ItemTemplate>
                     <SelectedItemStyle BackColor="#008A8C" Font-Bold="True" ForeColor="White" />
                 </asp:DataList>
-                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, OrderDetails.productID, OrderDetails.unitPrice, OrderDetails.quantity, Product.name, Product.description FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID INNER JOIN Product ON OrderDetails.productID = Product.productID  WHERE([Order].orderID = @orderId)">
+                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, OrderDetails.productID, OrderDetails.quantity, OrderDetails.productName, OrderDetails.price, OrderDetails.picture, OrderDetails.description FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID WHERE ([Order].orderID = @orderId)">
                     <SelectParameters>
                         <asp:ControlParameter ControlID="gvOrder" Name="orderId" PropertyName="SelectedValue" />
                     </SelectParameters>

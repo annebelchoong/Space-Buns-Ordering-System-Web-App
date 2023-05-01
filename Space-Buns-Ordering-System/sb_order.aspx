@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/sb_master.Master" AutoEventWireup="true" CodeBehind="sb_order.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_order" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcoj_spVvnhJbKvChuD9JZdgnhfknJYxA&callback=initMap&libraries=places&v=weekly"></script>
-    <link href="CSS/sb_order.css" rel="stylesheet" />
+    <link href="CSS/sb_order.css" rel="stylesheet" runat="server" />
 
 
 
@@ -12,10 +13,10 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="options-block">
         <b style="font-size: 2em; color: white; margin: 30px;">Start Ordering Now</b><br />
-            <asp:Button ID="btnDelivery" runat="server" Text="Delivery" OnClientClick="getDeliveryMap()" CssClass="btnDelivery" UseSubmitBehavior="False" />
+        <asp:Button ID="btnDelivery" runat="server" Text="Delivery" OnClientClick="getDeliveryMap()" CssClass="btnDelivery" UseSubmitBehavior="False" />
         <br />
 
-            <asp:Button ID="btnPickup" runat="server" Text="Pick-up" OnClientClick="getPickUpMap()"  CssClass="btnPickup" UseSubmitBehavior="False" />
+        <asp:Button ID="btnPickup" runat="server" Text="Pick-up" OnClientClick="getPickUpMap()" CssClass="btnPickup" UseSubmitBehavior="False" />
         <br />
         <br />
 
@@ -59,8 +60,28 @@
                 Select your preferred branch
             </div>
             <div class="mapContainer">
-            <div class="map" id="map_pickUp"></div>
+                <div class="map" id="map_pickUp"></div>
 
+
+                <%-- add a list of branch  --%>
+                <div class="repeaterContainer">
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                        <ItemTemplate>
+                            <div class="branch-content-1">
+                                <img width="50px" src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo" />
+                                <div class="branch-content-2">
+                                    <asp:Label ID="branchLocationLabel" runat="server" Text='<%# Eval("branchLocation") %>'></asp:Label>
+                                    <br />
+                                    <asp:Label ID="branchAddressLabel" runat="server" Text='<%# Eval("branchAddress") %>'></asp:Label>
+                                    <br />
+                                    <asp:Button ID="btnSelect" runat="server" Text="Select" CssClass="btnSelect" />
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [branchLocation], [branchAddress] FROM [Branch]"></asp:SqlDataSource>
+
+                </div>
             </div>
 
             <%--<div id="branch-content-1">
