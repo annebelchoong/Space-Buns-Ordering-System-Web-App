@@ -113,7 +113,7 @@ nav.checkout-bar h1 {
 
 .order-summary {
     text-align: center;
-    width: 390px;
+    width: 500px;
     padding: 1em;
     margin: 40px auto;
 }
@@ -125,6 +125,10 @@ nav.checkout-bar h1 {
 .table-container th {
     color: #8b8888;
     font-size: 00.8em;
+    /*padding: 0px 20px 10px;*/
+}
+
+.table-container td {
     padding: 0px 20px 10px;
 }
 

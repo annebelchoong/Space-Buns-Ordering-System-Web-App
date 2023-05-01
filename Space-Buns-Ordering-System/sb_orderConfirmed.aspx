@@ -21,18 +21,18 @@
                     <div class="order-info-box">
                         <div id="order-location" class="order-info">
                             <h3>Store Location:</h3>--%>
-                            <%--<p>Subang Jaya - Space Buns</p>--%>
-                           <%-- <asp:Label ID="lblBranchName" runat="server" Text="Subang Jaya - Space Buns" CssClass="order-info-text"></asp:Label>
+                <%--<p>Subang Jaya - Space Buns</p>--%>
+                <%-- <asp:Label ID="lblBranchName" runat="server" Text="Subang Jaya - Space Buns" CssClass="order-info-text"></asp:Label>
                         </div>
                         <div id="order-type" class="order-info">
                             <h3>Order Type:</h3>--%>
-                            <%--<p>Self Pickup</p>--%>
-                           <%-- <asp:Label ID="lblOrderType" runat="server" Text="Self Pickup" CssClass="order-info-text"></asp:Label>
+                <%--<p>Self Pickup</p>--%>
+                <%-- <asp:Label ID="lblOrderType" runat="server" Text="Self Pickup" CssClass="order-info-text"></asp:Label>
                         </div>
                         <div id="order-datetime" class="order-info">
                             <h3>Date and Time:</h3>--%>
-                            <%--<p>28 April 2021, 4:30pm</p>--%>
-                           <%-- <asp:Label ID="lblDateTime" runat="server" Text="28 August 2022, 4:30pm" CssClass="order-info-text"></asp:Label>
+                <%--<p>28 April 2021, 4:30pm</p>--%>
+                <%-- <asp:Label ID="lblDateTime" runat="server" Text="28 August 2022, 4:30pm" CssClass="order-info-text"></asp:Label>
                         </div>
                     </div>
                 </div>--%>
@@ -42,35 +42,56 @@
                 <div class="box order-summary">
                     <h3>Order Summary</h3>
                     <%-- Add repeater --%>
-                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
-                        <HeaderTemplate>
-<div class="table-container">
+                    <div class="table-container">
+
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                            <HeaderTemplate>
                                 <table>
                                     <tr>
-                                        <th colspan="2">Item</th>
+                                        <th></th>
+                                        <th>Item</th>
                                         <th>Quantity</th>
                                         <th>Total</th>
                                     </tr>
-                        </HeaderTemplate>
-                        <ItemTemplate>
-<tr>
-                                <td>
-                                    <img src="Media/menuBurgers/<%#Eval("picture") %>" alt="<%#Eval("productName") %>" /></td>
-                                <td>
-                                    <h6><%#Eval("productName") %></h6>
-                                </td>
-                                <td><%#Eval("quantity") %></td>
-                                <td>RM <%#Eval("price") %></td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT orderID, productID, customerID, productName, price, quantity, picture, description, discount FROM OrderDetails WHERE (orderID = @orderID)">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="lblOrderID" PropertyName="Text" Name="orderID"></asp:ControlParameter>
-                        </SelectParameters>
-                    </asp:SqlDataSource>
-    
-                    <%--<div class="table-container">
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <tr>
+                                    <td>
+                                        <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" CssClass="imgCart" />
+
+                                    <td>
+                                        <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("productName") %>'></asp:Label>
+
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblQuantity" runat="server" Text='<%# Eval("quantity") %>'></asp:Label>
+
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="lblPrice" runat="server" Text='<%# Eval("price", "{0:C}") %>'></asp:Label>
+
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </table>
+                            </FooterTemplate>
+                            <%--<ItemTemplate>
+                                                            <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" CssClass="imgCart" />
+                                                                <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("productName") %>'></asp:Label>
+                                                                <asp:Label ID="lblQuantity" runat="server" Text='<%# Eval("quantity") %>'></asp:Label>
+                                                                <asp:Label ID="lblPrice" runat="server" Text='<%# Eval("price", "{0:C}") %>'></asp:Label>
+
+                        </ItemTemplate>--%>
+                        </asp:Repeater>
+                        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT orderID, productID, customerID, productName, price, quantity, picture, description, discount FROM OrderDetails WHERE (orderID = @orderID)">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="lblOrderID" Name="orderID" PropertyName="Text" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </div>
+
+                        <%--<div class="table-container">
                         <table>
                             <tr>
                                 <th colspan="2">Item</th>
@@ -115,19 +136,21 @@
                             </tr>
                         </table>
                     </div>--%>
-                    <div class="total-container">
-                        <div class=" total-left">
-                            <span class="total">No. of Items:</span>
-                            <span class="total-total">Total: </span>
-                        </div>
-                        <div class="total-right">
-                            <%--<span class="data-num">7</span>--%>
-                            <%--<span class="data-total">RM 106.00</span>--%>
-                            <asp:Label ID="lblDataNum" runat="server" ></asp:Label>
-                            <asp:Label ID="lblDataTotal" runat="server"></asp:Label>
+                        <div class="total-container">
+                            <div class=" total-left">
+                                <asp:Label ID="lblNoOfItems" runat="server" Text="No. of Items:" CssClass="total"></asp:Label>
+                                <asp:Label ID="lblTotal" runat="server" Text="Total:" CssClass="total-total"></asp:Label>
+                                <%--<span class="total">No. of Items:</span>
+                                <span class="total-total">Total: </span>--%>
+                            </div>
+                            <div class="total-right">
+                                <%--<span class="data-num">7</span>--%>
+                                <%--<span class="data-total">RM 106.00</span>--%>
+                                <asp:Label ID="lblDataNum" runat="server" CssClass="total"></asp:Label>
+                                <asp:Label ID="lblDataTotal" runat="server" CssClass="total-total"></asp:Label>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <div class="buttonsContainer">
                     <asp:HyperLink ID="btnViewOrder" runat="server" NavigateUrl="/UserProfile/sb_orderHistory.aspx" CssClass="buttons">View Order</asp:HyperLink>
                 </div>

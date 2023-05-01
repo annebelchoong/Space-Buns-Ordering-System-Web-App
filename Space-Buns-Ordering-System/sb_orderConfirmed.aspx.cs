@@ -121,7 +121,7 @@ namespace Space_Buns_Ordering_System
             con.Open();
             string countQuery = "SELECT COUNT(*) FROM OrderDetails WHERE(customerId = @custId)";
             SqlCommand cmdCount = new SqlCommand(countQuery, con);
-            cmdCount.Parameters.AddWithValue("@custId", lblCustId.Text);
+            cmdCount.Parameters.AddWithValue("@custId", currentUserId);
             int count = Convert.ToInt32(cmdCount.ExecuteScalar());
 
             lblDataNum.Text = count.ToString();
@@ -134,7 +134,7 @@ namespace Space_Buns_Ordering_System
                 con.Open();
                 string sumQuery = "SELECT SUM(price) FROM OrderDetails WHERE(customerId = @custId)";
                 SqlCommand cmdSum = new SqlCommand(sumQuery, con);
-                cmdSum.Parameters.AddWithValue("@custId", lblCustId.Text);
+                cmdSum.Parameters.AddWithValue("@custId", currentUserId);
                 double sum = Convert.ToDouble(cmdSum.ExecuteScalar());
 
                 lblDataTotal.Text = sum.ToString("C2");
