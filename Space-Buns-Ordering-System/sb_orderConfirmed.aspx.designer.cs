@@ -33,31 +33,40 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.Label lblOrderID;
 
         /// <summary>
-        /// lblBranchName control.
+        /// currentUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBranchName;
+        protected global::System.Web.UI.WebControls.LoginName currentUsername;
 
         /// <summary>
-        /// lblOrderType control.
+        /// lblCustId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOrderType;
+        protected global::System.Web.UI.WebControls.Label lblCustId;
 
         /// <summary>
-        /// lblDateTime control.
+        /// Repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDateTime;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
+
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
         /// lblDataNum control.

@@ -13,32 +13,64 @@
         <asp:Label ID="lblOrderReadyTime" runat="server" Text="Order will be ready in 25mins" CssClass="orderReady-text"></asp:Label>
         <h2 class="orderID">Order ID:
                 <%--<p>O1001</p>--%>
-            <asp:Label ID="lblOrderID" runat="server" Text="O1001" CssClass="orderid-text"></asp:Label>
+            <asp:Label ID="lblOrderID" runat="server" CssClass="orderid-text"></asp:Label>
         </h2>
         <section>
             <div class="container">
-                <div class="box order-info-container">
+                <%--<div class="box order-info-container">
                     <div class="order-info-box">
                         <div id="order-location" class="order-info">
-                            <h3>Store Location:</h3>
+                            <h3>Store Location:</h3>--%>
                             <%--<p>Subang Jaya - Space Buns</p>--%>
-                            <asp:Label ID="lblBranchName" runat="server" Text="Subang Jaya - Space Buns" CssClass="order-info-text"></asp:Label>
+                           <%-- <asp:Label ID="lblBranchName" runat="server" Text="Subang Jaya - Space Buns" CssClass="order-info-text"></asp:Label>
                         </div>
                         <div id="order-type" class="order-info">
-                            <h3>Order Type:</h3>
+                            <h3>Order Type:</h3>--%>
                             <%--<p>Self Pickup</p>--%>
-                            <asp:Label ID="lblOrderType" runat="server" Text="Self Pickup" CssClass="order-info-text"></asp:Label>
+                           <%-- <asp:Label ID="lblOrderType" runat="server" Text="Self Pickup" CssClass="order-info-text"></asp:Label>
                         </div>
                         <div id="order-datetime" class="order-info">
-                            <h3>Date and Time:</h3>
+                            <h3>Date and Time:</h3>--%>
                             <%--<p>28 April 2021, 4:30pm</p>--%>
-                            <asp:Label ID="lblDateTime" runat="server" Text="28 August 2022, 4:30pm" CssClass="order-info-text"></asp:Label>
+                           <%-- <asp:Label ID="lblDateTime" runat="server" Text="28 August 2022, 4:30pm" CssClass="order-info-text"></asp:Label>
                         </div>
                     </div>
-                </div>
+                </div>--%>
+                <asp:LoginName ID="currentUsername" runat="server" Visible="False" />
+                <asp:Label ID="lblCustId" runat="server" Visible="False"></asp:Label>
                 <div class="box order-summary">
                     <h3>Order Summary</h3>
-                    <div class="table-container">
+                    <%-- Add repeater --%>
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                        <HeaderTemplate>
+<div class="table-container">
+                                <table>
+                                    <tr>
+                                        <th colspan="2">Item</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+<tr>
+                                <td>
+                                    <img src="Media/menuBurgers/<%#Eval("picture") %>" alt="<%#Eval("productName") %>" /></td>
+                                <td>
+                                    <h6><%#Eval("productName") %></h6>
+                                </td>
+                                <td><%#Eval("quantity") %></td>
+                                <td>RM <%#Eval("price") %></td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT orderID, productID, customerID, productName, price, quantity, picture, description, discount FROM OrderDetails WHERE (orderID = @orderID) AND (customerID = @custID)">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="lblOrderID" PropertyName="Text" Name="orderID"></asp:ControlParameter>
+                            <asp:ControlParameter ControlID="lblCustId" PropertyName="Text" Name="custID"></asp:ControlParameter>
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+    
+                    <%--<div class="table-container">
                         <table>
                             <tr>
                                 <th colspan="2">Item</th>
@@ -82,7 +114,7 @@
                                 <td>RM 11.00</td>
                             </tr>
                         </table>
-                    </div>
+                    </div>--%>
                     <div class="total-container">
                         <div class=" total-left">
                             <span class="total">No. of Items:</span>
@@ -91,8 +123,8 @@
                         <div class="total-right">
                             <%--<span class="data-num">7</span>--%>
                             <%--<span class="data-total">RM 106.00</span>--%>
-                            <asp:Label ID="lblDataNum" runat="server" Text="7"></asp:Label>
-                            <asp:Label ID="lblDataTotal" runat="server" Text="RM 106.00"></asp:Label>
+                            <asp:Label ID="lblDataNum" runat="server" ></asp:Label>
+                            <asp:Label ID="lblDataTotal" runat="server"></asp:Label>
                         </div>
                     </div>
                 </div>

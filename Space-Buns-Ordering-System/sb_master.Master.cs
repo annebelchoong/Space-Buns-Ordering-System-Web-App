@@ -93,16 +93,18 @@ namespace Space_Buns_Ordering_System
                     lblFinalAmount.Text = "RM 0.00";
 
                 }
-            
 
-            //   foreach(RepeaterItem item in Repeater1.Items)
-            //{        
-            //   Label1.Text += item.ItemIndex.ToString() + " - " +
-            //                  ((DataBoundLiteralControl)item.Controls[0]).Text +
-            //                  "<br />";
-            //}
 
-        }
+                //   foreach(RepeaterItem item in Repeater1.Items)
+                //{        
+                //   Label1.Text += item.ItemIndex.ToString() + " - " +
+                //                  ((DataBoundLiteralControl)item.Controls[0]).Text +
+                //                  "<br />";
+                //}
+
+               
+
+            }
 
     }
 
@@ -208,13 +210,18 @@ namespace Space_Buns_Ordering_System
             {
                 while (cart.Read())
                 {
+                    // if issetmeal is true, then print set meal
+                    var setMeal = cart["isSetMeal"].ToString() == "True" ? "Set Meal" : "A Lar Carte";
+                    var descrip = cart["isSetMeal"].ToString() == "True" ?
+                        setMeal + "," + cart["addOnPatties"].ToString() + "," + cart["choiceOfSides"].ToString() + "," + cart["choiceOfBeverage"].ToString() + "," + cart["addOnSauce"].ToString() :
+                        setMeal + "," + cart["addOnPatties"].ToString() + "," + cart["addOnSauce"].ToString();
                     //var productName = cart["productName"].ToString();
                     //var unitPrice = (Convert.ToInt64(cart["price"]) / Convert.ToInt64(cart["quantity"]));
                     //var quantity = Convert.ToInt64(cart["quantity"]);
                     //var desc = cart["addOnPatties"].ToString() + ", " + cart["choiceOfSides"].ToString() + ", " + cart["choiceOfBeverage"].ToString() + ", " + cart["addOnSauce"].ToString();
                     var pic = cart["picture"].ToString().Replace("~", "");
 
-                    LineItems.Add(GetCartLineItem(new CartItem(cart["productName"].ToString(), (Convert.ToInt64(cart["price"]) / Convert.ToInt64(cart["quantity"])), Convert.ToInt32(cart["quantity"]),cart["addOnPatties"].ToString() + ", " + cart["choiceOfSides"].ToString() + ", " + cart["choiceOfBeverage"].ToString() + ", " + cart["addOnSauce"].ToString(), "https://spacebuns.web.app"+ pic)));
+                    LineItems.Add(GetCartLineItem(new CartItem(cart["productName"].ToString(), (Convert.ToInt64(cart["price"]) / Convert.ToInt64(cart["quantity"])), Convert.ToInt32(cart["quantity"]), descrip, "https://spacebuns.web.app"+ pic)));
                 }
 
             }
@@ -235,11 +242,11 @@ namespace Space_Buns_Ordering_System
 
             //GetCartLineItem(cartItems);
             List<SessionLineItemOptions> CartLineItems = new List<SessionLineItemOptions> { };
-            CartLineItems.Add(GetCartLineItem(new CartItem("lousy burger", 15, 2, "extra 2 patties", "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg")));
-            CartLineItems.Add(GetCartLineItem(new CartItem("awesome burger", 16, 3, "extra patties", "https://spacebuns.web.app/Media/menuBurgers/chicken2.jpg")));
-            CartLineItems.Add(GetCartLineItem(new CartItem("cool burger", 17, 1, "extra cheese", "https://spacebuns.web.app/Media/menuBurgers/chicken3.jpg")));
-            CartLineItems.Add(GetCartLineItem(new CartItem("nice burger", 18, 5, "extra cheese and patties", "https://spacebuns.web.app/Media/menuBurgers/beef1.jpg")));
-            CartLineItems.Add(GetCartLineItem(new CartItem("expensive burger", 20, 2, "extra cheese and 2 patties", "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg")));
+            //CartLineItems.Add(GetCartLineItem(new CartItem("lousy burger", 15, 2, "extra 2 patties", "https://spacebuns.web.app/Media/menuBurgers/chicken1.jpg")));
+            //CartLineItems.Add(GetCartLineItem(new CartItem("awesome burger", 16, 3, "extra patties", "https://spacebuns.web.app/Media/menuBurgers/chicken2.jpg")));
+            //CartLineItems.Add(GetCartLineItem(new CartItem("cool burger", 17, 1, "extra cheese", "https://spacebuns.web.app/Media/menuBurgers/chicken3.jpg")));
+            //CartLineItems.Add(GetCartLineItem(new CartItem("nice burger", 18, 5, "extra cheese and patties", "https://spacebuns.web.app/Media/menuBurgers/beef1.jpg")));
+            //CartLineItems.Add(GetCartLineItem(new CartItem("expensive burger", 20, 2, "extra cheese and 2 patties", "https://spacebuns.web.app/Media/menuBurgers/beef3.jpg")));
             //CartLineItems.Add(GetCartLineItem(new CartItem()));
 
             //for (int i = 0; i < cartItems; i++)
@@ -598,7 +605,6 @@ namespace Space_Buns_Ordering_System
                 cmdDelete.Parameters.AddWithValue("@prodName", prodName);
 
                 int delete = cmdDelete.ExecuteNonQuery();
-                con.Close();
                 if (delete > 0)
                 {
                     //lblCustId.Text = "insert";
@@ -608,9 +614,13 @@ namespace Space_Buns_Ordering_System
                 }
                 else
                 {
-                    Response.Write("Ops, unable to add to cart");
+                    Response.Write("Ops, unable to delete from cart");
                 }
+                con.Close();
             }
+
+       
+
         }
 
     }

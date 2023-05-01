@@ -82,6 +82,10 @@
     </div>
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT quantity, price, picture, productName, isSetMeal, addOnPatties, choiceOfSides, choiceOfBeverage, addOnSauce FROM Cart WHERE (customerID = @customerID)" DeleteCommand="DELETE FROM Cart WHERE (productName = @productName) AND (customerID = @customerID)">
+        <DeleteParameters>
+            <asp:Parameter Name="productName"></asp:Parameter>
+            <asp:Parameter Name="customerID"></asp:Parameter>
+        </DeleteParameters>
         <SelectParameters>
             <asp:ControlParameter ControlID="lblCustId" PropertyName="Text" Name="customerID"></asp:ControlParameter>
         </SelectParameters>
