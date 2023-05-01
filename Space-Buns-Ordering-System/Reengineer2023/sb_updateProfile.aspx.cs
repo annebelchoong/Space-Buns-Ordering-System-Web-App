@@ -69,27 +69,25 @@ namespace Space_Buns_Ordering_System.Reengineer2023
                 {
                     while (drEmp.Read())
                     {
-                        lblUsername1.Text = username; // set the label text after data binding
-                        lblUsername1.DataBind();
-
                         txtFirstName.Text = drEmp["name"].ToString();
                         txtEmail.Text = drEmp["email"].ToString();
                         txtPhoneNo.Text = drEmp["phone"].ToString();
                         txtAddress.Text = drEmp["street"].ToString();
                         txtPostCode.Text = drEmp["zipcode"].ToString();
                     }
+
+                    // set the label text after data binding
+                    lblUsername1.Text = username;
+                    lblUsername1.DataBind();
                 }
                 else
                 {
                     // display success message using alert
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
-                        "alert('No record found!');", true);
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('No record found!');", true);
                 }
-
                 drEmp.Close();
                 con.Close();
             }
-
         }
 
         protected void btnSaveChange_Click(object sender, EventArgs e)
