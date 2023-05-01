@@ -42,13 +42,13 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         protected global::System.Web.UI.WebControls.Label lblUsername;
 
         /// <summary>
-        /// LoginName1 control.
+        /// lblUsername1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginName LoginName1;
+        protected global::System.Web.UI.WebControls.Label lblUsername1;
 
         /// <summary>
         /// lblEmail control.

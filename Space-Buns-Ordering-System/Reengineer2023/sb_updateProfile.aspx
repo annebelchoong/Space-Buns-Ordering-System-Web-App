@@ -22,12 +22,12 @@
             border-radius: 20px;
         }
 
-            .btn1:hover {
-                text-decoration: none;
-                color: white;
-                background-color: #B97836;
-                transition: 250ms;
-            }
+        .btn1:hover {
+            text-decoration: none;
+            color: white;
+            background-color: #B97836;
+            transition: 250ms;
+        }
 
         input {
             text-align: center;
@@ -35,9 +35,9 @@
             color: white;
         }
 
-            input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
-                border: 1px solid white;
-            }
+        input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
+            border: 1px solid white;
+        }
 
         .input {
             height: 50px;
@@ -88,8 +88,9 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:LoginName ID="LoginName1" runat="server" ForeColor="white" />
-                            <%--<asp:TextBox ID="txtUsername" runat="server" class="input" placeholder="Username"></asp:TextBox>--%>
+                            <asp:Label ID="lblUsername1" runat="server" Text='<%# Session["username"] %>' ForeColor="white"></asp:Label>
+                            <%--<asp:LoginName ID="LoginName1" runat="server" ForeColor="white" />
+                            <asp:TextBox ID="txtUsername" runat="server" class="input" placeholder="Username"></asp:TextBox>--%>
                             <%--<asp:Label ID="lblUsername1" runat="server" Text="Label"></asp:Label>--%>
                         </td>
                         <td class="auto-style5">&nbsp;</td>

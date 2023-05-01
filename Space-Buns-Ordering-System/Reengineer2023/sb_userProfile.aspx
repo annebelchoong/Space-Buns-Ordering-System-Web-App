@@ -21,7 +21,7 @@
                     <i class="fas fa-user bg-transparent"></i>
                     <span class="text" style="color: #FFFFFF">User Profile </span>
                     <br />
-                    <asp:Button ID="btnUpdateProfile" runat="server" class="userProfileButtons" Text="Update Profile" PostBackUrl="~/Reengineer2023/sb_updateProfile.aspx" />
+                    <asp:Button ID="btnUpdateProfile" runat="server" class="userProfileButtons" Text="Update Profile" PostBackUrl="~/Reengineer2023/sb_updateProfile.aspx" OnClick="btnUpdateProfile_Click" />
                     <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/UserProfile/sb_changePassword.aspx" />
                     <br />
                 </div>
@@ -29,7 +29,7 @@
                     <asp:Label ID="username" runat="server" Text="Username: " ForeColor="White" CssClass="auto-style1"></asp:Label>
                 </strong>
                 <asp:Label ID="lblUsername" runat="server" ForeColor="white" CssClass="auto-style2"></asp:Label>
-                <asp:LoginName ID="LoginName1" runat="server" ForeColor="white" CssClass="auto-style1" />
+                <%--<asp:LoginName ID="LoginName1" runat="server" ForeColor="white" CssClass="auto-style1" />--%>
                 <br />
                 <div>
                     <span class="auto-style2"><strong>

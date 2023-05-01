@@ -36,6 +36,7 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         {
             if (IsUserAuthenticated())
             {
+                Session["Username"] = txtUsername.Text;
                 Session["SuccessMessage"] = "Successfully logged in.";
                 Response.Redirect("~/Reengineer2023/sb_index.aspx");
             }
@@ -45,6 +46,9 @@ namespace Space_Buns_Ordering_System.Reengineer2023
             }
 
         }
+
+    }
+}
 
 
         //protected void btnLogin_Click(object sender, EventArgs e)
@@ -70,5 +74,5 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         //    sqlReader.Close();
         //    sqlConn.Close();
         //}
-    }
-}
+//    }
+//}
