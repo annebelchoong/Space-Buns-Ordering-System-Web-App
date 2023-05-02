@@ -104,7 +104,7 @@
     justify-content: space-around;
 }
 
-.btnConfirm {
+.btnConfirm, .btnSelect {
     width: 160px;
     border: none;
     color: var(--gold);
@@ -130,16 +130,68 @@
     padding-bottom: 50px;
     display: flex;
     flex-direction: row;
+    margin: 20px;
 }
 
 .repeaterContainer {
-    height: 300px;
-    background-color: hotpink;
+    height: 500px;
+    background-color: hsl(0, 0%, 10%);
     overflow: auto;
-    margin: 20px;
+    margin-left: 20px;
     border-radius: 20px;
 }
 
+    .repeaterContainer::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .repeaterContainer::-webkit-scrollbar-track {
+        background: #1A1A1A;
+        border-radius: 20px;
+    }
+
+    .repeaterContainer::-webkit-scrollbar-thumb {
+        background-color: #3c3c3c;
+        border-radius: 20px;
+    }
+
+.branch-content-1 {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: center;
+}
+
+.branch-content-2 {
+    margin-left: 30px;
+    width: 70%;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.branch-marker{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.branch-select{
+    display: flex;
+    justify-content: center;
+}
+
+.lblBranchLocation{
+    font-size: 25px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.lblBranchAddress {
+    text-align: left;
+    color: #FFFFFF;
+}
 
 .modalBackground {
     background-color: black;

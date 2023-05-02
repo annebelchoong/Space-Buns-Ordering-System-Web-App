@@ -6,6 +6,8 @@
 
     <div class="container-fluid" style="margin-top: 80px;">
 
+        <asp:LoginName ID="currentUsername" runat="server" Visible="False" />
+        <asp:Label ID="lblCustId" runat="server" Visible="False"></asp:Label>
         <div class="row my-5">
             <h3 class="fs-4 mb-3" style="color: white;"><strong>My Order</strong> </h3>
             <p class="fs-4 mb-3" style="color: white; text-align: center;">
@@ -32,12 +34,22 @@
                     </asp:GridView>--%>
                     <asp:GridView ID="gvOrder" runat="server" AutoGenerateColumns="False" DataKeyNames="orderID" DataSourceID="SqlDataSource1" Width="100%" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" OnRowDataBound="gvOrder_RowBoundData" SelectedIndexChanged="gvOrder_SelectedIndexChanged">
                         <Columns>
-                            <asp:BoundField DataField="orderID" HeaderText="orderID" ReadOnly="True" SortExpression="orderID" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" />
-                            <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" />
-                            <asp:BoundField DataField="orderStatus" HeaderText="orderStatus" SortExpression="orderStatus" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" />
-                            <asp:BoundField DataField="orderType" HeaderText="orderType" SortExpression="orderType" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px"></asp:BoundField>
-                            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" />
-                            <asp:CommandField ShowSelectButton="True" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px"></asp:CommandField>
+                            <asp:BoundField DataField="orderID" HeaderText="orderID" SortExpression="orderID" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" ReadOnly="True" >
+<HeaderStyle BackColor="#F0721F" BorderColor="Black" BorderWidth="1px" ForeColor="Black"></HeaderStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="dateTime" HeaderText="dateTime" SortExpression="dateTime" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px">
+<HeaderStyle BackColor="#F0721F" BorderColor="Black" BorderWidth="1px" ForeColor="Black"></HeaderStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="orderStatus" HeaderText="orderStatus" SortExpression="orderStatus" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" >
+<HeaderStyle BackColor="#F0721F" BorderColor="Black" BorderWidth="1px" ForeColor="Black"></HeaderStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="orderType" HeaderText="orderType" SortExpression="orderType" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" >
+<HeaderStyle BackColor="#F0721F" BorderColor="Black" BorderWidth="1px" ForeColor="Black"></HeaderStyle>
+                            </asp:BoundField>
+                            <asp:BoundField DataField="TotalPrice" HeaderText="TotalPrice" SortExpression="TotalPrice" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px" ReadOnly="True" >
+<HeaderStyle BackColor="#F0721F" BorderColor="Black" BorderWidth="1px" ForeColor="Black"></HeaderStyle>
+                            </asp:BoundField>
+                            <asp:CommandField ShowSelectButton="True" HeaderStyle-BackColor="#F0721F" HeaderStyle-ForeColor="Black" HeaderStyle-BorderColor="Black" HeaderStyle-BorderWidth="1px"/>
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" />
                         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -50,7 +62,11 @@
                         <SortedDescendingHeaderStyle BackColor="#383838" />
                     </asp:GridView>
                 </div>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Order].orderID, [Order].dateTime, [Order].orderStatus, [Order].orderType, OrderDetails.price FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT SUM(OrderDetails.price) AS TotalPrice, [Order].orderID, [Order].dateTime, [Order].orderStatus, [Order].orderType FROM [Order] INNER JOIN OrderDetails ON [Order].orderID = OrderDetails.orderID AND [Order].customerID = OrderDetails.customerID WHERE ([Order].customerID = @customerID) GROUP BY [Order].orderID, [Order].dateTime, [Order].orderStatus, [Order].orderType">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="lblCustId" Name="customerID" PropertyName="Text" />
+                    </SelectParameters>
+            </asp:SqlDataSource>
                 <br />
                 <br />
                 <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" CssClass="text-white" Width="100%" Justify-content="center" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Vertical">

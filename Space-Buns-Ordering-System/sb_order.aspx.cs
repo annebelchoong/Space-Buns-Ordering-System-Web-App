@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Space_Buns_Ordering_System
 {
@@ -69,6 +71,138 @@ namespace Space_Buns_Ordering_System
             //        ddlTime.Items.Add(new ListItem(ktr + ":" + mtr));
             //    }
             //}
+        }
+
+        protected void Repeater1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            var currentUserId = "";
+            var orderID = GenerateID();
+            lblOrderID.Text = orderID;
+
+            //get current user details
+            String currentUser = currentUsername.ToString();
+            con.Open();
+            // get customer id
+            // issue! always get teh last one 
+            string custQuery = "SELECT * FROM Customer WHERE(username = @customerName)";
+            SqlCommand cmdCust = new SqlCommand(custQuery, con);
+            cmdCust.Parameters.AddWithValue("@customerName", currentUser);
+            SqlDataReader cust = cmdCust.ExecuteReader();
+
+            if (cust.HasRows)
+            {
+                while (cust.Read())
+                {
+                    currentUserId = cust["customerID"].ToString();
+                }
+
+            }
+
+
+            con.Close();
+            if (e.CommandName == "btnSelectBranch")
+            {
+                con.Open();
+                // create a new order in order table
+
+                // get branch id upon selection 
+                var branchId = (e.Item.FindControl("lblBranchID") as Label).Text.ToString();
+                var orderStatus = "Pending";
+                var orderType = "Delivery"; // check which button selected 
+
+                string orderQuery = "INSERT INTO [Order] (orderID, customerID, dateTime, orderStatus, orderType, note, branchID, isActive) VALUES (@orderID, @custID, @dateTime, @orderStatus, @orderType, @note, @branchID, @isActive)";
+                SqlCommand cmdOrder = new SqlCommand(orderQuery, con);
+                cmdOrder.Parameters.AddWithValue("@custID", currentUserId);
+                cmdOrder.Parameters.AddWithValue("@orderID", orderID);
+                cmdOrder.Parameters.AddWithValue("@dateTime", DateTime.Now);
+                cmdOrder.Parameters.AddWithValue("@orderStatus", orderStatus);
+                cmdOrder.Parameters.AddWithValue("@orderType", orderType);
+                cmdOrder.Parameters.AddWithValue("@note", DBNull.Value);
+                cmdOrder.Parameters.AddWithValue("@branchID", branchId);
+                cmdOrder.Parameters.AddWithValue("@isActive", "True");
+
+
+
+                int insertOrder = cmdOrder.ExecuteNonQuery();
+
+                if (insertOrder > 0)
+                {
+                    Response.Write("Added!");
+                }
+                else
+                {
+                    Response.Write("Oops!");
+                }
+
+
+
+                con.Close();
+                ModalPopupExtender1.Show();
+            }
+        }
+        public static string GenerateID()
+        {
+            Random random = new Random();
+            string id = random.Next(0, 1000000).ToString("D6");
+            return id;
+        }
+
+        protected void btnOrder_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            var currentUserId = "";
+
+            String currentUser = currentUsername.ToString();
+            con.Open();
+            // get customer id
+            // issue! always get teh last one 
+            string custQuery = "SELECT * FROM Customer WHERE(username = @customerName)";
+            SqlCommand cmdCust = new SqlCommand(custQuery, con);
+            cmdCust.Parameters.AddWithValue("@customerName", currentUser);
+            SqlDataReader cust = cmdCust.ExecuteReader();
+
+            if (cust.HasRows)
+            {
+                while (cust.Read())
+                {
+                    currentUserId = cust["customerID"].ToString();
+                }
+
+            }
+
+
+            con.Close();
+
+            // update the datetime
+            con.Open();
+            var orderID = lblOrderID.Text;
+            var date = ddlDates.SelectedItem.Value;
+            var time = ddlTime.SelectedItem.Value;
+            DateTime dateTime = DateTime.Parse(date + time);
+
+            string orderQuery = "UPDATE [Order] SET dateTime = @dateTime WHERE(customerID = @custId) AND(orderID = @orderID)";
+            SqlCommand cmdOrder = new SqlCommand(orderQuery, con);
+            cmdOrder.Parameters.AddWithValue("@custID", currentUserId);
+            cmdOrder.Parameters.AddWithValue("@orderID", orderID);
+            cmdOrder.Parameters.AddWithValue("@dateTime", dateTime);
+
+            int insertOrder = cmdOrder.ExecuteNonQuery();
+
+            if (insertOrder > 0)
+            {
+                Response.Write("update time!");
+            }
+            else
+            {
+                Response.Write("Oops!");
+            }
+
+
+
+            con.Close();
         }
     }
 }
