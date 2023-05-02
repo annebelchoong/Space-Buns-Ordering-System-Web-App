@@ -77,11 +77,20 @@
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Phone No is required!" ForeColor="#CC0000" ToolTip="Phone No is required!" ControlToValidate="txtPhoneNo">*</asp:RequiredFieldValidator>
                  <br />
                  <br />
+                 <asp:CheckBox ID="chkSignUp" runat="server" Text="I have read and accept the "/>
+                    <asp:HyperLink ID="privacyLink" runat="server">Privacy Policy</asp:HyperLink>
+                 <asp:CustomValidator ID="chkSignUpCustomValidator" runat="server"
+                        ErrorMessage="You must accept the terms and conditions to sign up"
+                        OnServerValidate="chkSignUpCustomValidator_ServerValidate"
+                        ValidateEmptyText="true" ForeColor="#CC0000" ToolTip="You must accept the terms and conditions to sign up">*</asp:CustomValidator>
+
+                 <br />
+                 <br />
                  Already a member?
                  <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="~/Reengineer2023/sb_login.aspx">Login</asp:HyperLink>
                  <br />
                  <br />
-                 <asp:Button ID="btnSignUp" runat="server" class="btn" Text="Sign Up" BorderColor="#B97836" BorderStyle="Solid" BorderWidth="1px" Font-Bold="True" ForeColor="#B97836" BackColor="#1A1A1A" Height="40px" Width="90px" OnClick="btnSignUp_Click" />
+                 <asp:Button ID="btnSignUp" runat="server" class="btn" Text="Sign Up" ValidationGroup="SignUp" BorderColor="#B97836" BorderStyle="Solid" BorderWidth="1px" Font-Bold="True" ForeColor="#B97836" BackColor="#1A1A1A" Height="40px" Width="90px" OnClick="btnSignUp_Click" />
                  <br />
                  <br />
                  <asp:ValidationSummary ID="SignUpValidSummary" runat="server" DisplayMode="List" ForeColor="#CC0000" />

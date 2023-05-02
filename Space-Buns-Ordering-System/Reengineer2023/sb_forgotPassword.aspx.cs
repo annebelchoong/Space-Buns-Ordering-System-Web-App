@@ -19,6 +19,25 @@ namespace Space_Buns_Ordering_System.Reengineer2023
 
         }
 
+        protected bool IsUserAuthenticated(string username, string password)
+        {
+            string mainConn = ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString;
+            using (SqlConnection sqlConn = new SqlConnection(mainConn))
+            {
+                string sqlQuery = "select * from [dbo].[Customer] where username=@username and password=@password";
+                using (SqlCommand sqlComm = new SqlCommand(sqlQuery, sqlConn))
+                {
+                    sqlComm.Parameters.AddWithValue("@username", username);
+                    sqlComm.Parameters.AddWithValue("@password", password);
+                    sqlConn.Open();
+                    using (SqlDataReader sqlReader = sqlComm.ExecuteReader())
+                    {
+                        return sqlReader.HasRows;
+                    }
+                }
+            }
+        }
+
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text;
@@ -27,26 +46,30 @@ namespace Space_Buns_Ordering_System.Reengineer2023
             string connectionString = ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString;
             string query = "SELECT password FROM Customer WHERE email = @email";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection1 = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@email", email);
+                SqlCommand command1 = new SqlCommand(query, connection1);
+                command1.Parameters.AddWithValue("@email", email);
 
                 try
                 {
-                    connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    if (reader.Read())
+                    connection1.Open();
+                    SqlDataReader reader1 = command1.ExecuteReader();
+                    if (reader1.Read())
                     {
                         // Generate a new password
                         string newPassword = GenerateRandomPassword();
 
                         // Update the database with the new password
-                        string updateQuery = "UPDATE Customer SET password = @password WHERE email = @email";
-                        SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
-                        updateCommand.Parameters.AddWithValue("@password", newPassword);
-                        updateCommand.Parameters.AddWithValue("@email", email);
-                        updateCommand.ExecuteNonQuery();
+                        using (SqlConnection connection2 = new SqlConnection(connectionString))
+                        {
+                            string updateQuery = "UPDATE Customer SET password = @password WHERE email = @email";
+                            SqlCommand updateCommand = new SqlCommand(updateQuery, connection2);
+                            updateCommand.Parameters.AddWithValue("@password", newPassword);
+                            updateCommand.Parameters.AddWithValue("@email", email);
+                            connection2.Open();
+                            updateCommand.ExecuteNonQuery();
+                        }
 
                         // Send the password reset email
                         SendPasswordResetEmail(email, newPassword);
@@ -56,7 +79,7 @@ namespace Space_Buns_Ordering_System.Reengineer2023
                     {
                         lblMessage.Text = "Email not found in our database.";
                     }
-                    reader.Close();
+                    reader1.Close();
                 }
                 catch (Exception ex)
                 {
@@ -65,19 +88,51 @@ namespace Space_Buns_Ordering_System.Reengineer2023
             }
         }
 
+        //private void SendPasswordResetEmail(string email, string newPassword)
+        //{
+        //    string fromEmail = "noreply@example.com";
+        //    string toEmail = email;
+        //    string subject = "Password Reset Request";
+        //    string body = "Your new password is: " + newPassword;
+
+        //    using (MailMessage message = new MailMessage(fromEmail, toEmail, subject, body))
+        //    {
+        //        SmtpClient smtpClient = new SmtpClient("smtp.example.com", 587);
+        //        smtpClient.EnableSsl = true;
+        //        smtpClient.UseDefaultCredentials = false;
+        //        smtpClient.Credentials = new NetworkCredential("username", "password");
+        //        smtpClient.Send(message);
+        //    }
+        //}
+
         private void SendPasswordResetEmail(string email, string newPassword)
         {
-            string fromEmail = "noreply@example.com";
+            string fromEmail = "sender@example.com";
             string toEmail = email;
             string subject = "Password Reset Request";
             string body = "Your new password is: " + newPassword;
 
             using (MailMessage message = new MailMessage(fromEmail, toEmail, subject, body))
             {
-                SmtpClient smtpClient = new SmtpClient();
-                smtpClient.Send(message);
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential("username", "password");
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+                try
+                {
+                    smtpClient.Send(message);
+                    lblMessage.Text = "Password reset email has been sent.";
+                }
+                catch (Exception ex)
+                {
+                    lblMessage.Text = "Error: " + ex.Message;
+                    // Log the exception for further analysis
+                }
             }
         }
+
 
         private string GenerateRandomPassword()
         {
@@ -86,6 +141,7 @@ namespace Space_Buns_Ordering_System.Reengineer2023
             Random random = new Random();
             return new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
         }
+
 
 
         //protected void btnSubmit_Click(object sender, EventArgs e)
