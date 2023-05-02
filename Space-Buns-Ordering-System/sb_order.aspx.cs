@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Globalization;
 
 namespace Space_Buns_Ordering_System
 {
@@ -203,6 +204,18 @@ namespace Space_Buns_Ordering_System
 
 
             con.Close();
+        }
+
+        protected void testDate_Click(object sender, EventArgs e)
+        {
+            var date = ddlDates.SelectedItem.Value;
+            var time = ddlTime.SelectedItem.Value;
+            //DateTime dateTime = DateTime.Parse(date + time);
+
+            IFormatProvider culture = new CultureInfo("en-US", true);
+            lblDate.Text = DateTime.Parse(date).ToShortDateString();
+            lblTime.Text = time;
+            //lblDateTime.Text = dateTime.ToString();
         }
     }
 }

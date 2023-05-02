@@ -24,12 +24,34 @@
             </ul>
         </nav>--%>
 
+        <nav class="menu-nav">
+            <ul>
+                <li>
+                    <asp:LinkButton ID="lnkChicken" runat="server" Text="Chicken" OnClick="lnkCategory_Click" />
+                    <asp:LinkButton ID="lnkFish" runat="server" Text="Fish" OnClick="lnkCategory_Click" />
+                    <asp:LinkButton ID="lnkBeef" runat="server" Text="Beef" OnClick="lnkCategory_Click" />
+                    <asp:LinkButton ID="lnkLamb" runat="server" Text="Lamb" OnClick="lnkCategory_Click" />
+                    <asp:LinkButton ID="lnkMeatless" runat="server" Text="Meatless" OnClick="lnkCategory_Click" />
+                     <asp:LinkButton ID="lnkDrink" runat="server" Text="Drink" OnClick="lnkCategory_Click" />
+                     <asp:LinkButton ID="lnkSnack" runat="server" Text="Snack" OnClick="lnkCategory_Click" />
+                     <asp:LinkButton ID="lnkChips" runat="server" Text="Chips" OnClick="lnkCategory_Click" />
+                     <asp:LinkButton ID="lnkPizza" runat="server" Text="Pizza" OnClick="lnkCategory_Click" />
+                </li>
+            </ul>
+            <div class="filter-box">
+            <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..." CssClass="search-input" AutoPostBack="True" OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
+            <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="search-button" OnClick="btnSearch_Click" />
+            </div>
+        </nav>
+
         <div class="cartButton">
             <%--<asp:Button ID="btnCart" runat="server" Text="Cart" UseSubmitBehavior="False" />--%>
         </div>
 
         <div class="menu-container">
-
+            <div class="category-title">
+            <asp:Label ID="lblCategoryTitle" runat="server" CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
+            </div>
             <asp:DataList ID="DataList7" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
                 <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
                 <%--<HeaderTemplate>

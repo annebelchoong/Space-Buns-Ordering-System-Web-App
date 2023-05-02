@@ -136,6 +136,8 @@
             </div>
             <br />
             <div class="delay-text">
+                            <asp:Label ID="lblDate" runat="server" ></asp:Label>
+            <asp:Label ID="lblTime" runat="server" ></asp:Label>
                 <p>
                     Note : There may be a variance of 10-15 mins from
                                 your selected pickup/delivery time during peak hours.
@@ -143,7 +145,10 @@
                                 close to your selected time as possible 🙂
                 </p>
             </div>
+
+            <asp:Label ID="lblDateTime" runat="server" ></asp:Label>
             <div class="orderBtn">
+                <asp:Button ID="testDate" runat="server" Text="DateTime Button Test" OnClick="testDate_Click" />
                 <asp:Button ID="btnOrder" runat="server" Text="Order Now" CssClass="btnOrder" PostBackUrl="~/sb_menu.aspx" OnClick="btnOrder_Click" />
 
             </div>

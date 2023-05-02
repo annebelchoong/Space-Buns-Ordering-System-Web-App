@@ -201,7 +201,7 @@ namespace Space_Buns_Ordering_System
                 //lblCustId.Text = "insert";
                 // try to change to make a dialog
                 Response.Write("Deleted!");
-                Response.Redirect("sb_index.aspx");
+                //Response.Redirect("sb_index.aspx");
             }
             else
             {

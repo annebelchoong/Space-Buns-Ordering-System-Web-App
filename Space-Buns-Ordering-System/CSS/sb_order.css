@@ -177,9 +177,10 @@
     justify-content: center;
 }
 
-.branch-select{
+.branch-select {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .lblBranchLocation{
