@@ -544,6 +544,72 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     color: #B97836;
     padding-bottom: 30px;
 }
+
+/* Filter Box */
+.filter-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #185120;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.search-input {
+    width: 80%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-button {
+    background-color: #185120;
+    border: 1px solid #185120;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+.search-button:hover {
+    background-color: white;
+    color: #185120;
+    border: 1px solid #185120;
+}
+
+.category-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #185, 120, 54;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+/*.icon-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}*/
+
 /* ###################### Media Queries ###################### */
 
 @media only screen and (max-width:445px) {

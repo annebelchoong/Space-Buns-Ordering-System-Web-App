@@ -15,13 +15,21 @@
         <nav class="menu-nav">
             <ul>
                 <li>
-                    <a href="#Chicken">Chicken</a>
-                    <a href="#Fish">Fish</a>
-                    <a href="#Beef">Beef</a>
-                    <a href="#Lamb">Lamb</a>
-                    <a href="#Meatless">Meatless</a>
+                    <asp:LinkButton ID="lnkChicken" runat="server" Text="Chicken" OnClick="lnkCategory_Click" />
+                    <asp:LinkButton ID="lnkFish" runat="server" Text="Fish" OnClick="lnkCategory_Click" />
+                    <asp:LinkButton ID="lnkBeef" runat="server" Text="Beef" OnClick="lnkCategory_Click" />
+                    <asp:LinkButton ID="lnkLamb" runat="server" Text="Lamb" OnClick="lnkCategory_Click" />
+                    <asp:LinkButton ID="lnkMeatless" runat="server" Text="Meatless" OnClick="lnkCategory_Click" />
+                     <asp:LinkButton ID="lnkDrink" runat="server" Text="Drink" OnClick="lnkCategory_Click" />
+                     <asp:LinkButton ID="lnkSnack" runat="server" Text="Snack" OnClick="lnkCategory_Click" />
+                     <asp:LinkButton ID="lnkChips" runat="server" Text="Chips" OnClick="lnkCategory_Click" />
+                     <asp:LinkButton ID="lnkPizza" runat="server" Text="Pizza" OnClick="lnkCategory_Click" />
                 </li>
             </ul>
+            <div class="filter-box">
+            <asp:TextBox ID="txtSearch" runat="server" placeholder="Search..." CssClass="search-input" AutoPostBack="True" OnTextChanged="txtSearch_TextChanged"></asp:TextBox>
+            <asp:Button ID="btnSearch" runat="server" Text="Search" CssClass="search-button" OnClick="btnSearch_Click" />
+            </div>
         </nav>
 
         <div class="cartButton">
@@ -29,20 +37,24 @@
         </div>
 
         <div class="menu-container">
-
-            <asp:DataList ID="DataList7" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
+            <div class="category-title">
+            <asp:Label ID="lblCategoryTitle" runat="server" CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
+            </div>
+           <asp:DataList ID="DataList7" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
                 <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
-                <%--<HeaderTemplate>
-                    <div id="Chicken">
-                        <asp:Label ID="lblChicken" runat="server" Text='Chicken' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
+                
+            
 
-                    </div>
-                </HeaderTemplate>--%>
                 <ItemStyle Font-Bold="False" Font-Italic="False" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" />
                 <ItemTemplate>
+                    
+
 
                     <div>
                         <div class="menuProduct">
+                            <%--<div class="icon-container">
+                                <asp:Image ID="imgIcon" runat="server" ImageUrl='<%# GetIcon(Eval("categoryName").ToString()) %>' CssClass="icon" />
+                            </div>--%>
                             <div>
 
                                 <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="200px" Style="border-radius: 20px" ImageAlign="Middle" />
@@ -64,6 +76,23 @@
                 </ItemTemplate>
 
             </asp:DataList>
+            </div>
+               <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID ">
+            </asp:SqlDataSource>
+            <script src="Javascript/medium-zoom.min.js"></script>
+            <script>
+                mediumZoom('.zoom', {
+                    background: '#000D',
+                    opacity: 0.5,
+                    margin: 100
+                })
+
+
+    
+
+    </script>
+
+</asp:Content>
 
             <%--<asp:DataList ID="DataList6" runat="server" DataSourceID="SqlDataSource2" RepeatColumns="3" RepeatDirection="Horizontal" DataKeyField="productID" OnItemCommand="DataList_ItemCommand" CellPadding="0">
                 <HeaderStyle Font-Bold="False" Font-Italic="True" Font-Overline="False" Font-Strikeout="False" Font-Underline="False" HorizontalAlign="Left" />
@@ -213,7 +242,7 @@
 
             </asp:DataList>
 
-           <%-- <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
+              <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="Meatless" Name="categoryName" />
                 </SelectParameters>
@@ -235,23 +264,22 @@
         <SelectParameters>
             <asp:Parameter DefaultValue="fish" Name="categoryName" />
         </SelectParameters>
-    </asp:SqlDataSource>--%>
+    </asp:SqlDataSource>
 
-<%--    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID WHERE (Category.categoryName = @categoryName)">
         <SelectParameters>
             <asp:Parameter Name="categoryName" DefaultValue="Chicken" />
         </SelectParameters>
     </asp:SqlDataSource>--%>
 
-   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Category.categoryName, Product.name, Product.description, Product.unitPrice, Product.picture, Product.productID FROM Category INNER JOIN Product ON Category.categoryID = Product.categoryID ">
-    </asp:SqlDataSource>
-    <script src="Javascript/medium-zoom.min.js"></script>
-    <script>
-        mediumZoom('.zoom', {
-            background: '#000D',
-            opacity: 0.5,
-            margin: 100
-        })
-    </script>
 
-</asp:Content>
+       <%--<HeaderTemplate>
+                    <div id="Chicken">
+                        <asp:Label ID="lblChicken" runat="server" Text='Chicken' CssClass="lblCategory" ForeColor="185,120,54" Font-Size="35px" Font-Bold="True"></asp:Label>
+
+                    </div>
+                </HeaderTemplate>--%>
+
+
+
+
