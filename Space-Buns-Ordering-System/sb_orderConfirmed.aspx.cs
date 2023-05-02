@@ -49,7 +49,25 @@ namespace Space_Buns_Ordering_System
             var prodQty = "";
             var desc= "";
             var pic = "";
-            var orderID = GenerateID();
+            var orderID = 0;
+
+            // retrieve orderID 
+            con.Open();
+            // get customer id
+            string orderQuery = "SELECT * FROM [Order] WHERE(customerID = @custID) AND (isActive = 1)";
+            SqlCommand cmdOrder = new SqlCommand(orderQuery, con);
+            cmdOrder.Parameters.AddWithValue("@custID", currentUserId);
+            SqlDataReader order = cmdOrder.ExecuteReader();
+
+            if (order.HasRows)
+            {
+                while (order.Read())
+                {
+                    orderID = Convert.ToInt32(order["orderID"].ToString());
+                }
+
+            }
+            con.Close();
 
 
             List<OrderDetailsItem> items = new List<OrderDetailsItem>();
@@ -116,7 +134,7 @@ namespace Space_Buns_Ordering_System
 
 
             // read from order details table based on the order id
-            lblOrderID.Text = orderID;
+            lblOrderID.Text = orderID.ToString();
 
             con.Open();
             string countQuery = "SELECT COUNT(*) FROM OrderDetails WHERE(customerId = @custId)";
@@ -147,21 +165,14 @@ namespace Space_Buns_Ordering_System
 
             }
 
-            // create a new order in order table
+            // create a update the isactive to false in order table
             con.Open();
 
-            var orderStatus = "pending";
-            var orderType = "delivery";
 
-            string orderQuery = "INSERT INTO [Order] (orderID, customerID, dateTime, orderStatus, orderType, note, branchID) VALUES (@orderID, @custID, @dateTime, @orderStatus, @orderType, @note, @branchID)";
-            SqlCommand cmdOrder = new SqlCommand(orderQuery, con);
-            cmdOrder.Parameters.AddWithValue("@custID", currentUserId);
-            cmdOrder.Parameters.AddWithValue("@orderID", orderID);
-            cmdOrder.Parameters.AddWithValue("@dateTime", DateTime.Now);
-            cmdOrder.Parameters.AddWithValue("@orderStatus", orderStatus);
-            cmdOrder.Parameters.AddWithValue("@orderType", orderType);
-            cmdOrder.Parameters.AddWithValue("@note", "asdf");
-            cmdOrder.Parameters.AddWithValue("@branchID", 1);
+            string updateOrderQuery = "UPDATE [Order] SET isActive = 0 WHERE(customerID = @custId) AND(orderID = @orderID)";
+            SqlCommand cmdOrderUpdate = new SqlCommand(updateOrderQuery, con);
+            cmdOrderUpdate.Parameters.AddWithValue("@custID", currentUserId);
+            cmdOrderUpdate.Parameters.AddWithValue("@orderID", orderID);
 
 
             int insertOrder = cmdOrder.ExecuteNonQuery();
@@ -174,7 +185,7 @@ namespace Space_Buns_Ordering_System
             {
                 Response.Write("Oops!");
             }
-        
+
 
             con.Close();
 

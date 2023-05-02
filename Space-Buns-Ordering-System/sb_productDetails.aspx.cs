@@ -13,7 +13,67 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // check if user is logged in
+            if (User.Identity.IsAuthenticated)
+            {
+                //retrieve current user
 
+                String currentUser = currentUsername.ToString();
+                String currentProduct = Request.QueryString["name"];
+
+
+                /*Add the product into cart database*/
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                con.Open();
+
+                // get customer id
+                string custQuery = "SELECT * FROM Customer WHERE(username = @customerName)";
+                SqlCommand cmdCust = new SqlCommand(custQuery, con);
+                cmdCust.Parameters.AddWithValue("@customerName", currentUser);
+                SqlDataReader cust = cmdCust.ExecuteReader();
+
+                if (cust.HasRows)
+                {
+                    while (cust.Read())
+                    {
+                        lblCustId.Text = cust["customerId"].ToString();
+
+
+                    }
+
+                }
+
+                con.Close();
+                con.Open();
+
+                //get selected product details
+                string prodQuery = "SELECT productID, name, picture, quantity, unitPrice, description FROM Product WHERE(name = @productName)";
+                SqlCommand cmdProd = new SqlCommand(prodQuery, con);
+                cmdProd.Parameters.AddWithValue("@productName", currentProduct);
+                SqlDataReader product = cmdProd.ExecuteReader();
+
+
+                if (product.HasRows)
+                {
+                    while (product.Read())
+                    {
+
+                        
+                        lblProduct.Text = product["name"].ToString();
+                        lblProductName.Text = product["name"].ToString();
+                        imgProduct.ImageUrl = product["picture"].ToString();
+                        lblPrice.Text = product["unitPrice"].ToString();
+                        lblDescription.Text = product["description"].ToString();
+
+                    }
+
+                }
+                con.Close();
+            }
+            else
+            {
+                Response.Redirect("sb_login.aspx");
+            }
         }
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
@@ -181,6 +241,7 @@ namespace Space_Buns_Ordering_System
                 {
                     while (product.Read())
                     {
+
                         lblProductID.Text = product["productID"].ToString();
                         lblProductName.Text = product["name"].ToString();
                         lblProductImage.Text = product["picture"].ToString();
@@ -235,23 +296,23 @@ namespace Space_Buns_Ordering_System
 
             protected void RblSetSelection_SelectedIndexChanged(object sender, EventArgs e)
             {
-                //if (IsPostBack)
-                //{
-                //if (rblSetSelection.SelectedItem.Value == "A Lar Carte")
-                //{
-                //    //Accordion1.Visible = false;
-                //    Pane2.Visible = false;
-                //    Pane3.Visible = false;
-                //    lblTest.Text = "A Lar Carte is selected";
-                //}
-                //else
-                //{
-                //    Pane2.Visible = true;
-                //    Pane3.Visible = true;
-                //}
-
-                //}
+            //if (IsPostBack)
+            //{
+            if (rblSetSelection.SelectedItem.Value == "A Lar Carte")
+            {
+                //Accordion1.Visible = false;
+                Pane2.Visible = false;
+                Pane3.Visible = false;
+                //lblTest.Text = "A Lar Carte is selected";
             }
+            else
+            {
+                Pane2.Visible = true;
+                Pane3.Visible = true;
+            }
+
+            //}
+        }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
         {

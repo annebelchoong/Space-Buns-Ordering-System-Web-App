@@ -11,6 +11,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:LoginName ID="currentUsername" runat="server" Visible="False" />
+    <asp:Label ID="lblOrderID" runat="server" Visible ="False"></asp:Label>
     <div class="options-block">
         <b style="font-size: 2em; color: white; margin: 30px;">Start Ordering Now</b><br />
         <asp:Button ID="btnDelivery" runat="server" Text="Delivery" OnClientClick="getDeliveryMap()" CssClass="btnDelivery" UseSubmitBehavior="False" />
@@ -65,21 +67,30 @@
 
                 <%-- add a list of branch  --%>
                 <div class="repeaterContainer">
-                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="Repeater1_ItemCommand">
                         <ItemTemplate>
                             <div class="branch-content-1">
-                                <img width="50px" src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo" />
+                                <div class="branch-marker">
+
+                                    <i class='fas fa-map-marker-alt' id="location"
+                                        style='font-size: 24px; color: red; text-shadow: 1px 1px 10px black;'></i>
+                                </div>
+
                                 <div class="branch-content-2">
-                                    <asp:Label ID="branchLocationLabel" runat="server" Text='<%# Eval("branchLocation") %>'></asp:Label>
-                                    <br />
-                                    <asp:Label ID="branchAddressLabel" runat="server" Text='<%# Eval("branchAddress") %>'></asp:Label>
-                                    <br />
-                                    <asp:Button ID="btnSelect" runat="server" Text="Select" CssClass="btnSelect" />
+                                    <asp:Label ID="lblBranchID" runat="server" Text='<%# Eval("branchId") %>' Visible ="True"></asp:Label>
+
+                                    <asp:Label ID="lblBranchLocation" runat="server" Text='<%# Eval("branchLocation") %>' CssClass="lblBranchLocation"></asp:Label>
+                                    
+                                    <asp:Label ID="lblBranchAddress" runat="server" Text='<%# Eval("branchAddress") %>' CssClass="lblBranchAddress"></asp:Label>
+                                    <div class="branch-select">
+
+                                    <asp:Button ID="btnSelect" runat="server" Text="Select" CssClass="btnSelect" CommandName="btnSelectBranch" />
+                                    </div>
                                 </div>
                             </div>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [branchLocation], [branchAddress] FROM [Branch]"></asp:SqlDataSource>
+                    <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [branchLocation], [branchAddress], [branchId] FROM [Branch]"></asp:SqlDataSource>
 
                 </div>
             </div>
@@ -133,7 +144,7 @@
                 </p>
             </div>
             <div class="orderBtn">
-                <asp:Button ID="btnOrder" runat="server" Text="Order Now" CssClass="btnOrder" PostBackUrl="~/sb_menu.aspx" />
+                <asp:Button ID="btnOrder" runat="server" Text="Order Now" CssClass="btnOrder" PostBackUrl="~/sb_menu.aspx" OnClick="btnOrder_Click" />
 
             </div>
         </asp:Panel>

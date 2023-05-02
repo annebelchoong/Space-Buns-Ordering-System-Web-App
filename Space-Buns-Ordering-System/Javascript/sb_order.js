@@ -38,12 +38,12 @@ function getPickUpMap() {
     var infoWindow1 = new google.maps.InfoWindow();
 
     //add Marker
-    /*google.maps.event.addDomListener(button, 'click', showPopUp);*/
+    google.maps.event.addDomListener(button, 'click', showPopUp);
 
     function addMarker(branches) {
-        //var button = '<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>';
-       /* var btnSelect = document.createElement('button');*/
-        //btnSelect.innerHTML = button;
+        var button = '<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>';
+        var btnSelect = document.createElement('button');
+        btnSelect.innerHTML = button;
         var branchMarker = new google.maps.Marker({
             position: branches.coordinates,
             map: pickUpMap,
@@ -52,24 +52,24 @@ function getPickUpMap() {
 
         if (branches.title) {
             branchMarker.addListener('click', function () {
-                //location.href = '#location-' + branches.title
-                //branchMarker.setIcon(imageMarker);
-                //infoWindow1.setContent(
-                //    '<div id="branch-content">' +
-                //    '<h3 class="branch-title"> <img width="30px" src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo">Space Buns @ ' +
-                //    branches.title + '</a></h3>' +
-                //    "</div>"
-                //);
+                location.href = '#location-' + branches.title
+                branchMarker.setIcon(imageMarker);
                 infoWindow1.setContent(
                     '<div id="branch-content">' +
-                    '<img width="50px" src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo">' +
-                    '<h3 class="branch-title">' +
-                    branches.title + ' branch</h3>' +
-                    '<a href="https://www.google.com/maps" target="_blank">Directions</a></br>' +
-                    btnSelect.innerHTML +
-                    //'<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>' +
+                    '<h3 class="branch-title"> <img width="30px" src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo">Space Buns @ ' +
+                    branches.title + '</a></h3>' +
                     "</div>"
                 );
+                //infoWindow1.setContent(
+                //    '<div id="branch-content">' +
+                //    '<img width="50px" src="Media/icons/SpaceBunsLogo.png" alt="Space Buns Logo">' +
+                //    '<h3 class="branch-title">' +
+                //    branches.title + ' branch</h3>' +
+                //    '<a href="https://www.google.com/maps" target="_blank">Directions</a></br>' +
+                //    btnSelect.innerHTML +
+                //    //'<button id="pickup-button" class="button" onclick="showPopUp()">Select</button>' +
+                //    "</div>"
+                //);
                 infoWindow1.open(pickUpMap, branchMarker);
                 pickUpMap.panTo(branches.coordinates);
 
