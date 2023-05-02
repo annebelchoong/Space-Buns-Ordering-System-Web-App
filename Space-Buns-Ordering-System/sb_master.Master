@@ -68,11 +68,8 @@
                 </div>
                 <div class="addressAndTime">
                 </div>
-                <div class="empty-cart">
-
-                    <asp:Label ID="lblNoItem" runat="server" CssClass="lblNoItem"></asp:Label>
-                </div>
-                <asp:LoginName ID="currentUsername" runat="server" Visible="False" />
+                <asp:Label ID="lblNoItem" runat="server"></asp:Label>
+                <asp:LoginName ID="currentUsername" runat="server" Visible="True" />
                 <asp:Label ID="lblCustId" runat="server" Visible="False"></asp:Label>
                 <asp:Label ID="lblUpdatedCustId" runat="server" Visible="False"></asp:Label>
                 <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1" OnItemCommand="Repeater_ItemCommand">
@@ -80,42 +77,41 @@
                         <div class="cartProduct">
                             <div class="products">
                                 <div class="product">
-
-                                    <div>
+                                    
+                                        <div>
                                         <asp:Image ID="imgProduct" runat="server" ImageUrl='<%# Eval("picture") %>' Width="100px" CssClass="imgCart" />
 
-                                    </div>
-                                    <div class="productColumn">
-                                        <div class="productTop">
-                                            <div class="productName">
-                                                <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("productName") %>' />
-                                                <asp:Label ID="lblDesc" runat="server"></asp:Label>
+                                        </div>
+                                        <div class="productColumn">
+                                            <div class="productTop">
+                                                <div class="productName">
+                                                    <asp:Label ID="lblProductName" runat="server" Text='<%# Eval("productName") %>' />
+                                                </div>
+                                                <div class="deleteProduct">
+                                                    <asp:ImageButton ID="imgbtnTrash" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" CommandName="btnDeleteItem" />
+                                                </div>
                                             </div>
-                                            <div class="deleteProduct">
-                                                <asp:ImageButton ID="imgbtnTrash" runat="server" ImageUrl="~/Media/Icons/trash.svg" Height="20px" CommandName="btnDeleteItem" />
+                                            <div class="productBottom">
+                                                <div class="productQuantity">
+                                                    <div class="decrementButton">
+                                                        <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="buttonQuantity" CommandName="btnDecrement" />
+                                                        <%--OnClick="btnDecrement_onClick"--%>
+                                                    </div>
+                                                    <div class="quantityNumber">
+                                                        <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("quantity") %>' CssClass="textQuantity" />
+                                                    </div>
+                                                    <div class="incrementButton">
+                                                        <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="buttonQuantity" CommandName="btnIncrement" />
+                                                        <%--OnClick="btnIncrement_onClick"--%>
+                                                    </div>
+                                                </div>
+                                                <div class="totalPrice">
+                                                    <asp:Label ID="lblTotalPrice" runat="server" Text='<%# Eval("price", "{0:C}") %>' />
+                                                    <asp:Label ID="lblUnitPrice" runat="server" Visible="false"></asp:Label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="productBottom">
-                                            <div class="productQuantity">
-                                                <div class="decrementButton">
-                                                    <asp:Button ID="btnDecrement" runat="server" Text="-" CssClass="buttonQuantity" CommandName="btnDecrement" />
-                                                    <%--OnClick="btnDecrement_onClick"--%>
-                                                </div>
-                                                <div class="quantityNumber">
-                                                    <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("quantity") %>' CssClass="textQuantity" />
-                                                </div>
-                                                <div class="incrementButton">
-                                                    <asp:Button ID="btnIncrement" runat="server" Text="+" CssClass="buttonQuantity" CommandName="btnIncrement" />
-                                                    <%--OnClick="btnIncrement_onClick"--%>
-                                                </div>
-                                            </div>
-                                            <div class="totalPrice">
-                                                <asp:Label ID="lblUnitPrice" runat="server"></asp:Label>
-                                                <asp:Label ID="lblTotalPrice" runat="server" Text='<%# Eval("price", "{0:C}") %>' />
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    
                                 </div>
                             </div>
                         </div>
@@ -220,7 +216,7 @@
                         else
                         {
                     %>
-                    <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" OnClick="btnCheckout_Click" />
+                    <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" onClick="btnCheckout_Click"/>
                     <%
                         }
                     %>
@@ -234,10 +230,10 @@
         </div>
 
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT quantity, price, picture, productName, isSetMeal, addOnPatties, choiceOfSides, choiceOfBeverage, addOnSauce FROM Cart WHERE (customerID = @customerID)" DeleteCommand="DELETE FROM Cart WHERE (productName = @productName) AND (customerID = @customerID)">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="lblCustId" PropertyName="Text" Name="customerID"></asp:ControlParameter>
-            </SelectParameters>
-        </asp:SqlDataSource>
+        <SelectParameters>
+            <asp:ControlParameter ControlID="lblCustId" PropertyName="Text" Name="customerID"></asp:ControlParameter>
+        </SelectParameters>
+    </asp:SqlDataSource>
 
         <footer class="footer">
             <div class="footer-container">

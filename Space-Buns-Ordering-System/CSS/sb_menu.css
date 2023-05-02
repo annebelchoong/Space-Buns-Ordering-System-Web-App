@@ -522,8 +522,7 @@ nav.menu-nav ul li a:link, nav.menu-nav ul li a:visited {
     display: flex;
     width: 70%;
     justify-content: center;
-    flex-direction: column;
-    /*    height: 500px;*/
+/*    height: 500px;*/
 }
 
 .txtQuantity {

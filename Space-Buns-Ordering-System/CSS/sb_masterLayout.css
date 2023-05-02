@@ -497,18 +497,7 @@ footer.footer {
     font-size: 30px;
     font-weight: 500;
     color: white;
-}
-
-.lblNoItem {
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.empty-cart{
-    display: flex;
-    justify-content: center;
-}
+}   
 
 
 @media only screen and (max-width:768px) {

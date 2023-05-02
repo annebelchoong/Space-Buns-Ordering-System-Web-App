@@ -25,27 +25,6 @@ namespace Space_Buns_Ordering_System
         //string sessionId = System.Web.HttpContext.Current.Session.SessionID;
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-
-            //get current user details
-            String currentUser = currentUsername.ToString();
-            con.Open();
-            // get customer id
-            // issue! always get teh last one 
-            string custQuery = "SELECT * FROM Customer WHERE(username = @customerName)";
-            SqlCommand cmdCust = new SqlCommand(custQuery, con);
-            cmdCust.Parameters.AddWithValue("@customerName", currentUser);
-            SqlDataReader cust = cmdCust.ExecuteReader();
-
-            if (cust.HasRows)
-            {
-                while (cust.Read())
-                {
-                    lblCustId.Text= cust["customerID"].ToString();
-                }
-
-            }
             //// this.gvOrder.GridLines = Color.Black ;
 
 

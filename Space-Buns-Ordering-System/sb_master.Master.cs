@@ -90,16 +90,14 @@ namespace Space_Buns_Ordering_System
                 }
                 else
                 {
-                    lblNoItem.Text = "Your Cart is Empty! ";
+                    lblNoItem.Text = "count query = 0!";
                     lblFinalAmount.Text = "RM 0.00";
                     btnCheckout.Enabled = false;
                     btnCheckout.BackColor = Color.Gray;
                     btnCheckout.ForeColor = Color.White;
-                    btnCheckout.BorderColor = Color.Gray;
 
                 }
 
-               
 
                 //   foreach(RepeaterItem item in Repeater1.Items)
                 //{        
@@ -599,7 +597,6 @@ namespace Space_Buns_Ordering_System
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             // get the item 
             var prodName = (e.Item.FindControl("lblProductName") as Label).Text;
-            var desc = (e.Item.FindControl("lblDesc") as Label).Text;
             // get quantity
             int quantity = Convert.ToInt32((e.Item.FindControl("txtQuantity") as TextBox).Text);
             if (e.CommandName == "btnDecrement" && quantity > 1)
@@ -707,8 +704,6 @@ namespace Space_Buns_Ordering_System
                 }
                 con.Close();
             }
-
-            // description
 
        
 
