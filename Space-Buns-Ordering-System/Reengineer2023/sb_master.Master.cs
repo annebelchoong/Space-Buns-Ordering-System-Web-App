@@ -8,6 +8,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Diagnostics;
 
 namespace Space_Buns_Ordering_System.Reengineer2023
 {
@@ -15,8 +16,54 @@ namespace Space_Buns_Ordering_System.Reengineer2023
     {
         public string sessionId = "";
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["IsLoggedIn"] != null && (bool)Session["IsLoggedIn"])
+            {
+                // User is logged in
+                lblLoginStatus.Text = "Logout";
+                lblLoginStatus.Attributes.Add("OnClick", "location.href='sb_login.aspx'");
+            }
+            else
+            {
+                // User is logged out
+                lblLoginStatus.Text = "Login";
+                lblLoginStatus.Attributes.Add("OnClick", "location.href='sb_login.aspx'");
+            }
+
+
+            //if (!IsPostBack)
+            //{
+            //    Label lblLoginStatus = (Label)Master.FindControl("ContentPlaceHolder1").FindControl("lblLoginStatus");
+
+            //    if (Session["Username"] != null && (bool)Session["IsLoggedIn"])
+            //    {
+            //        // User is logged in
+            //        LoginStatus1.LogoutText = "Logout";
+            //        lblLoginStatus.Text = "Logged in as " + Session["Username"].ToString();
+            //    }
+            //    else
+            //    {
+            //        // User is logged out
+            //        LoginStatus1.LoginText = "Login";
+            //        lblLoginStatus.Text = "Not logged in";
+            //    }
+            //}
+
+            //if (!IsPostBack)
+            //{
+            //    bool isLoggedIn = (Session["username"] != null);
+
+            //    if (isLoggedIn)
+            //    {
+            //        LoginStatus1.LogoutText = "Logout";
+            //    }
+            //    else
+            //    {
+            //        LoginStatus1.LoginText = "Login";
+            //    }
+            //}
             //int cartItems = GetCartCount();
             //Cart_Checkout(cartItems);
             Cart_Checkout();
@@ -311,5 +358,7 @@ namespace Space_Buns_Ordering_System.Reengineer2023
             Session session = service.Create(options);
             sessionId = session.Id;
         }
+
+        
     }
 }

@@ -96,13 +96,13 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         protected global::System.Web.UI.WebControls.HyperLink hypCart;
 
         /// <summary>
-        /// LoginStatus1 control.
+        /// lblLoginStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginStatus LoginStatus1;
+        protected global::System.Web.UI.WebControls.Label lblLoginStatus;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

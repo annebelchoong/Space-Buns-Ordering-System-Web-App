@@ -1,10 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserProfile/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_changePassword.aspx.cs" Inherits="Space_Buns_Ordering_System.sb_changePassword" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Reengineer2023/sb_masterProfile.Master" AutoEventWireup="true" CodeBehind="sb_updatePassword.aspx.cs" Inherits="Space_Buns_Ordering_System.Reengineer2023.sb_updatePassword" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <style type="text/css">
         .btn1 {
             justify-content: center;
@@ -21,12 +20,12 @@
             border-radius: 20px;
         }
 
-            .btn1:hover {
-                text-decoration: none;
-                color: white;
-                background-color: #B97836;
-                transition: 250ms;
-            }
+        .btn1:hover {
+            text-decoration: none;
+            color: white;
+            background-color: #B97836;
+            transition: 250ms;
+        }
 
         input {
             text-align: center;
@@ -34,9 +33,9 @@
             color: white;
         }
 
-            input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
-                border: 1px solid white;
-            }
+        input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
+            border: 1px solid white;
+        }
 
         .input {
             height: 30px;
@@ -105,5 +104,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

@@ -34,7 +34,11 @@
             <div class="navbar-login">
                 <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
                 <a href="sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                <%--<asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/sb_login.aspx" />--%>
+                <%--<asp:Label ID="lblLoginStatus" runat="server" Text="Login"></asp:Label>--%>
+                <a href="#">
+                    <asp:Label ID="lblLoginStatus" runat="server" Text="Login" ></asp:Label>
+                </a>
                 <%--for test--%>
             </div>
 

@@ -150,15 +150,15 @@
                         <td class="auto-style2">
                             <asp:Label ID="lblPostCode" runat="server" ForeColor="#999999" Text="Post Code"></asp:Label>
                         </td>
-                        <td class="auto-style5">
+                        <%--<td class="auto-style5">
                             <asp:Label ID="lblState" runat="server" ForeColor="#999999" Text="State"></asp:Label>
-                        </td>
+                        </td>--%>
                     </tr>
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox ID="txtPostCode" runat="server" class="input" placeholder="Post Code"></asp:TextBox>
                         </td>
-                        <td class="auto-style5">
+                        <%--<td class="auto-style5">
                             <asp:DropDownList ID="ddlState" runat="server" class="input" ForeColor="White">
                                 <asp:ListItem>Johor</asp:ListItem>
                                 <asp:ListItem>Kedah</asp:ListItem>
@@ -174,7 +174,7 @@
                                 <asp:ListItem>Selangor</asp:ListItem>
                                 <asp:ListItem>Terengganu</asp:ListItem>
                             </asp:DropDownList>
-                        </td>
+                        </td>--%>
                     </tr>
                     <tr>
                         <td class="auto-style2">&nbsp;</td>

@@ -22,7 +22,7 @@
                     <span class="text" style="color: #FFFFFF">User Profile </span>
                     <br />
                     <asp:Button ID="btnUpdateProfile" runat="server" class="userProfileButtons" Text="Update Profile" PostBackUrl="~/Reengineer2023/sb_updateProfile.aspx" OnClick="btnUpdateProfile_Click" />
-                    <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/UserProfile/sb_changePassword.aspx" />
+                    <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/Reengineer2023/sb_updatePassword.aspx" />
                     <br />
                 </div>
                 <strong>

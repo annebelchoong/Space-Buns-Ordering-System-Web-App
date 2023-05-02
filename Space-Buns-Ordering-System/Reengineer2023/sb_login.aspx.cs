@@ -6,14 +6,29 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
+using AjaxControlToolkit.HtmlEditor.ToolbarButtons;
 
 namespace Space_Buns_Ordering_System.Reengineer2023
 {
     public partial class sb_login : System.Web.UI.Page
     {
+        string username; // declare the variable at the class level
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                // check if the cookie exists and set the username and password values
+                HttpCookie cookie = Request.Cookies["MyAppLogin"];
+                if (cookie != null && cookie["username"] != null && cookie["password"] != null)
+                {
+                    username = cookie["username"]; // assign the value to the class-level variable
+                    string password = cookie["password"];
+                    txtUsername.Text = username;
+                    txtPassword.Attributes["value"] = password;
+                    RememberMe.Checked = true;
+                }
+            }
         }
 
         protected bool IsUserAuthenticated()
@@ -37,6 +52,7 @@ namespace Space_Buns_Ordering_System.Reengineer2023
             if (IsUserAuthenticated())
             {
                 Session["Username"] = txtUsername.Text;
+                Session["IsLoggedIn"] = true; // set IsLoggedIn session variable to true
                 Session["SuccessMessage"] = "Successfully logged in.";
                 Response.Redirect("~/Reengineer2023/sb_index.aspx");
             }
@@ -47,32 +63,28 @@ namespace Space_Buns_Ordering_System.Reengineer2023
 
         }
 
+        protected void RememberMe_CheckedChanged(object sender, EventArgs e)
+        {
+            HttpCookie cookie = new HttpCookie("MyAppLogin");
+
+            if (RememberMe.Checked)
+            {
+                // Set the cookie to expire in 30 days
+                cookie.Expires = DateTime.Now.AddDays(30);
+
+                // Set the cookie value to the user's login information
+                cookie.Values["username"] = txtUsername.Text;
+                cookie.Values["password"] = txtPassword.Text;
+            }
+            else
+            {
+                // Set the cookie to expire immediately
+                cookie.Expires = DateTime.Now.AddDays(-1);
+            }
+
+            // Add the cookie to the response
+            Response.Cookies.Add(cookie);
+
+        }
     }
 }
-
-
-        //protected void btnLogin_Click(object sender, EventArgs e)
-        //{
-        //    string mainConn = ConfigurationManager.ConnectionStrings["LocalSqlServer"].ConnectionString;
-        //    SqlConnection sqlConn = new SqlConnection(mainConn);
-        //    string sqlQuery = "select * from [dbo].[Customer] where username=@username and password=@password";
-        //    SqlCommand sqlComm = new SqlCommand(sqlQuery, sqlConn);
-        //    sqlComm.Parameters.AddWithValue("@username", txtUsername.Text);
-        //    sqlComm.Parameters.AddWithValue("@password", txtPassword.Text);
-        //    sqlConn.Open();
-        //    SqlDataReader sqlReader = sqlComm.ExecuteReader();
-        //    if (sqlReader.HasRows)
-        //    {
-        //        // Login successful, redirect to main page
-        //        Response.Redirect("sb_index.aspx");
-        //    }
-        //    else
-        //    {
-        //        // Login unsuccessful, display alert message
-        //        ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", "alert('Invalid username or password.');", true);
-        //    }
-        //    sqlReader.Close();
-        //    sqlConn.Close();
-        //}
-//    }
-//}

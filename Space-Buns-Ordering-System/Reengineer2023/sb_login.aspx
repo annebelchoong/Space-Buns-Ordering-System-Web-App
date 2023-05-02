@@ -48,11 +48,21 @@
                  <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
                  <asp:RequiredFieldValidator ID="ValidPassword" runat="server" ErrorMessage="Password is required!" ForeColor="#CC0000" ToolTip="Password is required!" ControlToValidate="txtPassword">*</asp:RequiredFieldValidator>
                  <br />
+                 <br />
+                 <asp:CheckBox ID="RememberMe" runat="server" Text=" Remember me next time." OnCheckedChanged="RememberMe_CheckedChanged" />
+                 <br />
+                 <br />
+                 <asp:Button ID="btnLogin" runat="server" class="btn" Text="Login" BorderColor="#B97836" BorderStyle="Solid" BorderWidth="1px" Font-Bold="True" ForeColor="#B97836" BackColor="#1A1A1A" Height="40px" Width="90px" OnClick="btnLogin_Click" />
+                 <br />
+                 <br />
+                 <br />
+                 <br />
+                 <asp:HyperLink ID="forgetPwLink" runat="server" NavigateUrl="~/Reengineer2023/sb_forgotPassword.aspx">Forget Password</asp:HyperLink>
+                 <br />
                  <br />Not a member?
                  <asp:HyperLink ID="lnkRegister" runat="server" NavigateUrl="~/Reengineer2023/sb_registration.aspx">Sign Up</asp:HyperLink>
                  <br />
                  <br />
-                 <asp:Button ID="btnLogin" runat="server" class="btn" Text="Login" BorderColor="#B97836" BorderStyle="Solid" BorderWidth="1px" Font-Bold="True" ForeColor="#B97836" BackColor="#1A1A1A" Height="40px" Width="90px" OnClick="btnLogin_Click" />
                  <br />
                  <br />
                  <asp:ValidationSummary ID="LoginValidSummary" runat="server" DisplayMode="List" ForeColor="#CC0000" />
