@@ -45,7 +45,7 @@
                 <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
             </div>
              <div>
-                 <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                  <asp:RequiredFieldValidator ID="ValidPassword" runat="server" ErrorMessage="Password is required!" ForeColor="#CC0000" ToolTip="Password is required!" ControlToValidate="txtPassword">*</asp:RequiredFieldValidator>
                  <br />
                  <br />

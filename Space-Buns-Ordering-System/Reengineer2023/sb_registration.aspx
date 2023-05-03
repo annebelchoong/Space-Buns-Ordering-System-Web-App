@@ -46,8 +46,9 @@
                 <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
             </div>
              <div>
-                 <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
                  <asp:RequiredFieldValidator ID="ValidPassword" runat="server" ErrorMessage="Password is required!" ForeColor="#CC0000" ToolTip="Password is required!" ControlToValidate="txtPassword">*</asp:RequiredFieldValidator>
+                 <button type="button" onclick="togglePasswordVisibility()"><i class="fas fa-eye" id="btnVisible"></i></button>
                  <br />
                  <br />
              </div>
@@ -55,7 +56,7 @@
                 <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password:"></asp:Label>
             </div>
              <div>
-                 <asp:TextBox ID="txtConfirmPassword" runat="server"></asp:TextBox>
+                 <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Confirm password is required!" ForeColor="#CC0000" ToolTip="Confirm password is required!" ControlToValidate="txtConfirmPassword">*</asp:RequiredFieldValidator>
                  <br />
                  <br />
@@ -98,5 +99,18 @@
              </div>
          </fieldset>
     </form>
+    <script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById("txtPassword");
+        var visibilityButton = document.querySelector("button[onclick='togglePasswordVisibility()']");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            visibilityButton.innerHTML = "<i class='fas fa-eye-slash'></i>";
+        } else {
+            passwordInput.type = "password";
+            visibilityButton.innerHTML = "<i class='fas fa-eye'></i>";
+        }
+    }
+    </script>
 </body>
 </html>

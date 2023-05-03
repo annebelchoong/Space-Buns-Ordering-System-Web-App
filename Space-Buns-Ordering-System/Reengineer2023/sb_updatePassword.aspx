@@ -76,13 +76,13 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:Label ID="lblRetypePassword" runat="server" ForeColor="#999999" Text="Retype New Password"></asp:Label>
+                            <asp:Label ID="lblRetypePassword" runat="server" TextMode="Password" ForeColor="#999999" Text="Retype New Password"></asp:Label>
                         </td>
                         <td class="auto-style5">&nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtRetypePassword" runat="server" class="input" placeholder="Retype New Password"></asp:TextBox>
+                            <asp:TextBox ID="txtRetypePassword" runat="server" TextMode="Password" class="input" placeholder="Retype New Password"></asp:TextBox>
                         </td>
                         <td class="auto-style5">&nbsp;</td>
                     </tr>
