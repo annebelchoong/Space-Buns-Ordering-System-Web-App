@@ -335,7 +335,22 @@ footer.footer {
     z-index: 20;
     color: white;
     -webkit-transition: all 0.5s ease-in-out;
+    overflow: auto;
 }
+
+    .cart-panel::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .cart-panel::-webkit-scrollbar-track {
+        background: #1A1A1A;
+        border-radius: 20px;
+    }
+
+    .cart-panel::-webkit-scrollbar-thumb {
+        background-color: #3c3c3c;
+        border-radius: 20px;
+    }
 
 .open {
     right: 0 !important;

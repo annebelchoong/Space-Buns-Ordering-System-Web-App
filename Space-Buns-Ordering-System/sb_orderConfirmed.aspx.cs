@@ -138,9 +138,10 @@ namespace Space_Buns_Ordering_System
            
 
             con.Open();
-            string countQuery = "SELECT COUNT(*) FROM OrderDetails WHERE(customerId = @custId)";
+            string countQuery = "SELECT COUNT(*) FROM OrderDetails WHERE(customerId = @custId)  AND (orderID = @orderID)";
             SqlCommand cmdCount = new SqlCommand(countQuery, con);
             cmdCount.Parameters.AddWithValue("@custId", currentUserId);
+            cmdCount.Parameters.AddWithValue("@orderID", lblOrderID.Text);
             int count = Convert.ToInt32(cmdCount.ExecuteScalar());
 
             lblDataNum.Text = count.ToString();
@@ -151,9 +152,10 @@ namespace Space_Buns_Ordering_System
             {
                 // calculate the sum of the total price of the items in the cart
                 con.Open();
-                string sumQuery = "SELECT SUM(price) FROM OrderDetails WHERE(customerId = @custId)";
+                string sumQuery = "SELECT SUM(price) FROM OrderDetails WHERE(customerId = @custId) AND (orderID = @orderID)";
                 SqlCommand cmdSum = new SqlCommand(sumQuery, con);
                 cmdSum.Parameters.AddWithValue("@custId", currentUserId);
+                cmdSum.Parameters.AddWithValue("@orderID", lblOrderID.Text);
                 double sum = Convert.ToDouble(cmdSum.ExecuteScalar());
 
                 lblDataTotal.Text = sum.ToString("C2");
