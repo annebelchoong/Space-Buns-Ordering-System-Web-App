@@ -49,7 +49,7 @@ namespace Space_Buns_Ordering_System
             var prodQty = "";
             var desc= "";
             var pic = "";
-            var orderID = 0;
+            int orderID = 0;
 
             // retrieve orderID 
             con.Open();
@@ -69,6 +69,8 @@ namespace Space_Buns_Ordering_System
             }
             con.Close();
 
+            // read from order details table based on the order id
+            lblOrderID.Text = orderID.ToString();
 
             List<OrderDetailsItem> items = new List<OrderDetailsItem>();
 
@@ -110,7 +112,7 @@ namespace Space_Buns_Ordering_System
                 string orderDetailQuery = "INSERT INTO OrderDetails( orderID, productID, customerID, productName, price, quantity, picture, description) VALUES (@orderID, @prodID,  @custID, @prodName, @prodPrice, @prodQty, @prodPic, @desc )";
                 SqlCommand cmdOrderDetail = new SqlCommand(orderDetailQuery, con);
                 cmdOrderDetail.Parameters.AddWithValue("@custID", lineItems.custId);
-                cmdOrderDetail.Parameters.AddWithValue("@orderID", orderID);
+                cmdOrderDetail.Parameters.AddWithValue("@orderID", lblOrderID.Text);
                 cmdOrderDetail.Parameters.AddWithValue("@prodID", lineItems.prodId);
                 cmdOrderDetail.Parameters.AddWithValue("@prodName", lineItems.prodName.ToString());
                 cmdOrderDetail.Parameters.AddWithValue("@prodPrice", lineItems.prodPrice);
@@ -133,8 +135,7 @@ namespace Space_Buns_Ordering_System
             con.Close();
 
 
-            // read from order details table based on the order id
-            lblOrderID.Text = orderID.ToString();
+           
 
             con.Open();
             string countQuery = "SELECT COUNT(*) FROM OrderDetails WHERE(customerId = @custId)";
@@ -165,29 +166,7 @@ namespace Space_Buns_Ordering_System
 
             }
 
-            // create a update the isactive to false in order table
-            con.Open();
-
-
-            string updateOrderQuery = "UPDATE [Order] SET isActive = 0 WHERE(customerID = @custId) AND(orderID = @orderID)";
-            SqlCommand cmdOrderUpdate = new SqlCommand(updateOrderQuery, con);
-            cmdOrderUpdate.Parameters.AddWithValue("@custID", currentUserId);
-            cmdOrderUpdate.Parameters.AddWithValue("@orderID", orderID);
-
-
-            int insertOrder = cmdOrder.ExecuteNonQuery();
-
-            if (insertOrder > 0)
-            {
-                Response.Write("Added!");
-            }
-            else
-            {
-                Response.Write("Oops!");
-            }
-
-
-            con.Close();
+           
 
             // delete from cart
             con.Open();
@@ -207,6 +186,30 @@ namespace Space_Buns_Ordering_System
             {
                 Response.Write("Ops, unable to delete from cart");
             }
+            con.Close();
+
+            // create a update the isactive to false in order table
+            con.Open();
+
+
+            string updateOrderQuery = "UPDATE [Order] SET isActive = 0 WHERE (customerID = @custId) AND (orderID = @orderID)";
+            SqlCommand cmdOrderUpdate = new SqlCommand(updateOrderQuery, con);
+            cmdOrderUpdate.Parameters.AddWithValue("@custID", currentUserId);
+            cmdOrderUpdate.Parameters.AddWithValue("@orderID", lblOrderID.Text);
+
+
+            int insertOrder = cmdOrder.ExecuteNonQuery();
+
+            if (insertOrder > 0)
+            {
+                Response.Write("Updated to false!");
+            }
+            else
+            {
+                Response.Write("Oops!");
+            }
+
+
             con.Close();
 
         }

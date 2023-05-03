@@ -177,22 +177,13 @@ namespace Space_Buns_Ordering_System
         protected global::System.Web.UI.WebControls.DropDownList ddlTime;
 
         /// <summary>
-        /// lblDate control.
+        /// lblDateTimeTest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDate;
-
-        /// <summary>
-        /// lblTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTime;
+        protected global::System.Web.UI.WebControls.Label lblDateTimeTest;
 
         /// <summary>
         /// lblDateTime control.
@@ -202,15 +193,6 @@ namespace Space_Buns_Ordering_System
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDateTime;
-
-        /// <summary>
-        /// testDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button testDate;
 
         /// <summary>
         /// btnOrder control.

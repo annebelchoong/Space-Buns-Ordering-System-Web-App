@@ -99,7 +99,7 @@ namespace Space_Buns_Ordering_System
 
                 }
 
-               
+
 
                 //   foreach(RepeaterItem item in Repeater1.Items)
                 //{        
@@ -709,8 +709,30 @@ namespace Space_Buns_Ordering_System
             }
 
             // description
+            con.Open();
+            // get customer id
+            string cartQuery = "SELECT * FROM Cart WHERE(customerID = @custID)";
+            SqlCommand cmdCart = new SqlCommand(cartQuery, con);
+            cmdCart.Parameters.AddWithValue("@custID", lblCustId.Text);
+            SqlDataReader cart = cmdCart.ExecuteReader();
 
-       
+
+            if (cart.HasRows)
+            {
+                while (cart.Read())
+                {
+                    var setMeal = cart["isSetMeal"].ToString() == "True" ? "Set Meal" : "A Lar Carte";
+                    var setMealDesc = "Set Meal: " + setMeal + "\nAdd Patties: " + cart["addOnPatties"] + "\nAdd Sauce:" + cart["addOnSauce"]
+                        + "\nSides:" + cart["choiceOfSides"] + "\nBeverage: " + cart["choiceOfBeverages"];
+                    var aLaCarteDesc = "Set Meal: " + setMeal + "\nAdd Patties: " + cart["addOnPatties"] + "\nAdd Sauce:" + cart["addOnSauce"];
+                    (e.Item.FindControl("lblDesc") as Label).Text = setMeal == "Set Meal" ? setMealDesc : aLaCarteDesc;
+
+
+                }
+
+            }
+            con.Close();
+
 
         }
 

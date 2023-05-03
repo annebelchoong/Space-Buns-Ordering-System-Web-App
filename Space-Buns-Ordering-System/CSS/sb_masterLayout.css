@@ -510,6 +510,14 @@ footer.footer {
     justify-content: center;
 }
 
+.prodDescription {
+    display: flex;
+    flex-direction: column;
+    font-weight: normal;
+    font-size: 15px;
+}
+}
+
 
 @media only screen and (max-width:768px) {
     body {

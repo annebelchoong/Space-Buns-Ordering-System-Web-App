@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
-using System.Globalization;
 
 namespace Space_Buns_Ordering_System
 {
@@ -111,7 +110,7 @@ namespace Space_Buns_Ordering_System
                 // get branch id upon selection 
                 var branchId = (e.Item.FindControl("lblBranchID") as Label).Text.ToString();
                 var orderStatus = "Pending";
-                var orderType = "Delivery"; // check which button selected 
+                var orderType = "PickUp"; // check which button selected 
 
                 string orderQuery = "INSERT INTO [Order] (orderID, customerID, dateTime, orderStatus, orderType, note, branchID, isActive) VALUES (@orderID, @custID, @dateTime, @orderStatus, @orderType, @note, @branchID, @isActive)";
                 SqlCommand cmdOrder = new SqlCommand(orderQuery, con);
@@ -182,7 +181,8 @@ namespace Space_Buns_Ordering_System
             var orderID = lblOrderID.Text;
             var date = ddlDates.SelectedItem.Value;
             var time = ddlTime.SelectedItem.Value;
-            DateTime dateTime = DateTime.Parse(date + time);
+            var datedate = DateTime.Parse(date).ToShortDateString();
+            DateTime dateTime = DateTime.Parse(datedate + time);
 
             string orderQuery = "UPDATE [Order] SET dateTime = @dateTime WHERE(customerID = @custId) AND(orderID = @orderID)";
             SqlCommand cmdOrder = new SqlCommand(orderQuery, con);
@@ -206,16 +206,16 @@ namespace Space_Buns_Ordering_System
             con.Close();
         }
 
-        protected void testDate_Click(object sender, EventArgs e)
-        {
-            var date = ddlDates.SelectedItem.Value;
-            var time = ddlTime.SelectedItem.Value;
-            //DateTime dateTime = DateTime.Parse(date + time);
+        //protected void testDate_Click(object sender, EventArgs e)
+        //{
+        //    var date = ddlDates.SelectedItem.Value;
+        //    var time = ddlTime.SelectedItem.Value;
+        //    var datedate = DateTime.Parse(date).ToShortDateString();
+        //    DateTime dateTime = DateTime.Parse(datedate + time);
 
-            IFormatProvider culture = new CultureInfo("en-US", true);
-            lblDate.Text = DateTime.Parse(date).ToShortDateString();
-            lblTime.Text = time;
-            //lblDateTime.Text = dateTime.ToString();
-        }
+        //    //lblDate.Text = DateTime.Parse(date).ToShortDateString();
+        //    //lblTime.Text = time;
+        //    lblDateTimeTest.Text = dateTime.ToString();
+        //}
     }
 }
