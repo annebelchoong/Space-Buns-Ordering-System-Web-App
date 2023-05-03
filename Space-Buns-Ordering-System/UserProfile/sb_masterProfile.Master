@@ -69,7 +69,9 @@
             <div class="navbar-login">
                 <%--<a href="../sb_login.aspx"><i class="far fa-user-circle"></i></a>--%>
                 <a href="sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                <asp:LoginStatus ID="LoginStatus2" runat="server" />
+                 <a href="#">
+                    <asp:Label ID="lblLoginStatus" runat="server" Text="Login" ></asp:Label>
+                </a>
             </div>
 
         </nav>

@@ -31,12 +31,22 @@
                 <asp:HyperLink ID="hlNavOrder" runat="server" CssClass="navbar-links" NavigateUrl="~/sb_order.aspx">Order Now</asp:HyperLink>
             </div>
 
-            <div class="navbar-login">
+            <%--<div class="navbar-login">--%>
                 <%--<asp:Button ID="hypCart" runat="server" Text="Button" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" />--%>
                 <%--<asp:ImageButton ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" CssClass="btnCart" Width="26px" OnClick="hypCart_Click" UseSubmitBehavior="false" OnClientClick="button_pressed();return false;" />--%>
-                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
+                <%--<asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
                 <a href="UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />--%>
+                <%--for test--%>
+           <%-- </div>--%>
+            <div class="navbar-login">
+                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
+                <a href="/UserProfile/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
+                <%--<asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/sb_login.aspx" />--%>
+                <%--<asp:Label ID="lblLoginStatus" runat="server" Text="Login"></asp:Label>--%>
+                <a href="#">
+                    <asp:Label ID="lblLoginStatus" runat="server" Text="Login" ></asp:Label>
+                </a>
                 <%--for test--%>
             </div>
 

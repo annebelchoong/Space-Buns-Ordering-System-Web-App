@@ -212,6 +212,7 @@
     <Content Include="UserProfile\sb_orderDetail.aspx" />
     <Content Include="UserProfile\sb_orderHistory.aspx" />
     <Content Include="sb_registration.aspx" />
+    <Content Include="UserProfile\sb_updatePassword.aspx" />
     <Content Include="UserProfile\sb_updateProfile.aspx" />
     <Content Include="UserProfile\sb_userProfile.aspx" />
     <Content Include="Web.config" />
@@ -445,6 +446,13 @@
     </Compile>
     <Compile Include="sb_registration.aspx.designer.cs">
       <DependentUpon>sb_registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile\sb_updatePassword.aspx.cs">
+      <DependentUpon>sb_updatePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile\sb_updatePassword.aspx.designer.cs">
+      <DependentUpon>sb_updatePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserProfile\sb_updateProfile.aspx.cs">
       <DependentUpon>sb_updateProfile.aspx</DependentUpon>

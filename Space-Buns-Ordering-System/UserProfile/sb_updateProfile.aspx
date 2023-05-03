@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <style type="text/css">
+   <style type="text/css">
         .btn1 {
             justify-content: center;
             text-decoration: none;
@@ -23,12 +23,12 @@
             border-radius: 20px;
         }
 
-            .btn1:hover {
-                text-decoration: none;
-                color: white;
-                background-color: #B97836;
-                transition: 250ms;
-            }
+        .btn1:hover {
+            text-decoration: none;
+            color: white;
+            background-color: #B97836;
+            transition: 250ms;
+        }
 
         input {
             text-align: center;
@@ -36,9 +36,9 @@
             color: white;
         }
 
-            input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
-                border: 1px solid white;
-            }
+        input[type=text]:focus, input[type=password]:focus, input[type=tel]:focus, input[type=email]:focus {
+            border: 1px solid white;
+        }
 
         .input {
             height: 50px;
@@ -89,8 +89,9 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:LoginName ID="LoginName1" runat="server" ForeColor="white" />
-                            <%--<asp:TextBox ID="txtUsername" runat="server" class="input" placeholder="Username"></asp:TextBox>--%>
+                            <asp:Label ID="lblUsername1" runat="server" Text='<%# Session["username"] %>' ForeColor="white"></asp:Label>
+                            <%--<asp:LoginName ID="LoginName1" runat="server" ForeColor="white" />
+                            <asp:TextBox ID="txtUsername" runat="server" class="input" placeholder="Username"></asp:TextBox>--%>
                             <%--<asp:Label ID="lblUsername1" runat="server" Text="Label"></asp:Label>--%>
                         </td>
                         <td class="auto-style5">&nbsp;</td>
@@ -150,15 +151,15 @@
                         <td class="auto-style2">
                             <asp:Label ID="lblPostCode" runat="server" ForeColor="#999999" Text="Post Code"></asp:Label>
                         </td>
-                        <td class="auto-style5">
+                        <%--<td class="auto-style5">
                             <asp:Label ID="lblState" runat="server" ForeColor="#999999" Text="State"></asp:Label>
-                        </td>
+                        </td>--%>
                     </tr>
                     <tr>
                         <td class="auto-style2">
                             <asp:TextBox ID="txtPostCode" runat="server" class="input" placeholder="Post Code"></asp:TextBox>
                         </td>
-                        <td class="auto-style5">
+                        <%--<td class="auto-style5">
                             <asp:DropDownList ID="ddlState" runat="server" class="input" ForeColor="White">
                                 <asp:ListItem>Johor</asp:ListItem>
                                 <asp:ListItem>Kedah</asp:ListItem>
@@ -174,7 +175,7 @@
                                 <asp:ListItem>Selangor</asp:ListItem>
                                 <asp:ListItem>Terengganu</asp:ListItem>
                             </asp:DropDownList>
-                        </td>
+                        </td>--%>
                     </tr>
                     <tr>
                         <td class="auto-style2">&nbsp;</td>
@@ -182,7 +183,7 @@
                             <asp:Label ID="lblResults" runat="server"></asp:Label>
                         </td>
                     </tr>
-                    <tr>
+                    <%--<tr>
                         <td class="auto-style2">
                             <asp:Label ID="lblDoBirth" runat="server" ForeColor="#999999" Text="Date of Birth"></asp:Label>
                         </td>
@@ -194,7 +195,7 @@
                             <asp:TextBox ID="txtDoB" runat="server" class="input"></asp:TextBox>
                         </td>
                         <td class="auto-style5">&nbsp;</td>
-                    </tr>
+                    </tr>--%>
                     <tr>
                         <td class="auto-style2">&nbsp;</td>
                         <td class="auto-style5">&nbsp;</td>

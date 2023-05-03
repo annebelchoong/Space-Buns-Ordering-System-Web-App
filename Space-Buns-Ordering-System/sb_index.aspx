@@ -14,9 +14,9 @@
             <!-- Intro Video Starts -->
             <div class="introVideo">
                 <video width=70% margin=0 controls loop style="border: 1.5px solid #B97836;">
-                    <source src="Media/Home/intro_video.mov" type="video/mp4">
-                    <source src="Media/Home/intro_video.ogg" type="video/ogg">
-                    <source src="Media/Home/intro_video.webm" type="video/webm">
+                    <source src="../Media/Home/intro_video.mov" type="video/mp4">
+                    <source src="../Media/Home/intro_video.ogg" type="video/ogg">
+                    <source src="../Media/Home/intro_video.webm" type="video/webm">
                     Your browser does not support HTML video. Please download HTML5 browsers.
                 </video>
 
@@ -50,7 +50,7 @@
             <article class=maincontent2>
                 <h1 class="mainh1">Best Sellers</h1>
                 <div class="imageMap-container">
-                    <img src="Media/Home/Recommend.jpg" width="100%" height="100%" usemap="#recommend-map"
+                    <img src="../Media/Home/Recommend.jpg" width="100%" height="100%" usemap="#recommend-map"
                         alt="Recommendations Image">
 
                     <map name="recommend-map">
@@ -72,11 +72,11 @@
                         <i class="fa fa-chevron-left" id="prevBtn"></i>
                         <i class="fa fa-chevron-right" id="nextBtn"></i>
                         <a class="carousel-slide" href="sb_promotions.html">
-                            <img src="Media/Promotions/Buy1Free1.png" id="lastClone"><!-- third image -->
-                            <img src="Media/Promotions/Alien Day.png">
-                            <img src="Media/Promotions/HariRayaPoster.png">
-                            <img src="Media/Promotions/Buy1Free1.png">
-                            <img src="Media/Promotions/Alien Day.png" id="firstClone"> </td><!-- first image-->
+                            <img src="../Media/Promotions/Buy1Free1.png" id="lastClone"><!-- third image -->
+                            <img src="../Media/Promotions/Alien Day.png">
+                            <img src="../Media/Promotions/HariRayaPoster.png">
+                            <img src="../Media/Promotions/Buy1Free1.png">
+                            <img src="../Media/Promotions/Alien Day.png" id="firstClone"> </td><!-- first image-->
                         </a>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
 
                         <article class="eventsContents">
                             <div class="eventsImg">
-                                <img src="Media/Home/event1.jpg" alt="Corporate Events Image">
+                                <img src="../Media/Home/event1.jpg" alt="Corporate Events Image">
                             </div>
 
                             <h2 class="eventsHeader">CORPORATE EVENTS</h2>
@@ -107,7 +107,7 @@
 
                         <article class="eventsContents">
                             <div class="eventsImg">
-                                <img src="Media/Home/event4.jpg" alt="Weddings Event Image">
+                                <img src="../Media/Home/event4.jpg" alt="Weddings Event Image">
                             </div>
                             <h2 class="eventsHeader">WEDDINGS</h2>
                             <div class="eventsDesc">
@@ -138,7 +138,7 @@
                         <!-- custReview div start -->
                         <div class="custReview-left">
                             <a href="https://www.instagram.com/pewdiepie/" target="_blank">
-                                <img id="felixK" src="Media/Home/felix_K.jpeg">
+                                <img id="felixK" src="../Media/Home/felix_K.jpeg">
                             </a>
                             <p>
                                 <a href="sb_reviews.aspx">
@@ -152,7 +152,7 @@
 
                         <div class="custReview-right">
                             <a href="https://www.instagram.com/iswarya.menon/?hl=en" target="_blank">
-                                <img id="iswaryaM" src="Media/Home/iswarya_M.jpeg">
+                                <img id="iswaryaM" src="../Media/Home/iswarya_M.jpeg">
                             </a>
                             <p>
                                 <a href="sb_reviews.aspx">
@@ -167,7 +167,7 @@
 
                 <div>
                     <h2>Featured In</h2>
-                    <img id="featuredIn" src="Media/Reviews/featured.png">
+                    <img id="featuredIn" src="../Media/Reviews/featured.png">
                     <p style="color: aliceblue; font-size: 0.4em;">
                         *image for illustration purposes only. Images are used for education purposes to complete TAR UC
                         assignments.

@@ -15,55 +15,83 @@ namespace Space_Buns_Ordering_System.UserProfile
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
+            if (Request.QueryString["username"] != null)
+            {
+                string username = Request.QueryString["username"].ToString();
 
-        protected void calDoB_SelectionChanged(object sender, EventArgs e)
-        {
-            txtDoB.Text = calDoB.SelectedDate.ToString();
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                con.Open();
+
+                string query = "Select * from [Customer] WHERE username = @username";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@username", username);
+
+                SqlDataReader drEmp = cmd.ExecuteReader();
+
+                if (drEmp.HasRows)
+                {
+                    while (drEmp.Read())
+                    {
+                        txtFirstName.Text = drEmp["name"].ToString();
+                        txtEmail.Text = drEmp["email"].ToString();
+                        txtPhoneNo.Text = drEmp["phone"].ToString();
+                        txtAddress.Text = drEmp["street"].ToString();
+                        txtPostCode.Text = drEmp["zipcode"].ToString();
+                    }
+
+                    // set the label text after data binding
+                    lblUsername1.Text = username;
+                    lblUsername1.DataBind();
+                }
+                else
+                {
+                    // display success message using alert
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", "alert('No record found!');", true);
+                }
+                drEmp.Close();
+                con.Close();
+            }
         }
 
         protected void btnSaveChange_Click(object sender, EventArgs e)
         {
-            String user = LoginName1.ToString();
+            string username = Session["username"].ToString();
+            Response.Write("Username: " + username);
 
-            SqlConnection con;
-            string sss = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            con = new SqlConnection(sss);
+            //// Get selected state from DropDownList
+            //string state = ddlState.SelectedValue;
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             con.Open();
 
-            string query = "UPDATE Customer SET email = @email, phone = @phone, street = @street, zipcode = @zipcode, name = @name, password = @password, username = @username WHERE username = @username";
-
-
+            string query = "UPDATE [Customer] SET name=@name, email=@email, "
+                + "phone=@phone, street=@street, zipcode=@zipcode WHERE username=@username";
             SqlCommand cmd = new SqlCommand(query, con);
-            string state = ddlState.SelectedItem.Value;
+            cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@name", txtFirstName.Text);
-            cmd.Parameters.AddWithValue("@username", user);
             cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@password", "asdfasdf");
-            cmd.Parameters.AddWithValue("@zipcode", txtPostCode.Text);
             cmd.Parameters.AddWithValue("@phone", txtPhoneNo.Text);
             cmd.Parameters.AddWithValue("@street", txtAddress.Text);
-            cmd.Parameters.AddWithValue("@dateofbirth", calDoB.SelectedDate.ToString());
+            cmd.Parameters.AddWithValue("@zipcode", txtPostCode.Text);
+            //cmd.Parameters.AddWithValue("@state", state);
 
+            int result = cmd.ExecuteNonQuery();
 
-            int insert = cmd.ExecuteNonQuery();
-            //cmd.Dispose();
             con.Close();
-            //Response.Write("alert('Profile saved!')");
-            //Response.Redirect("sb_userProfile.aspx");
 
-            if (insert > 0)
+            if (result > 0)
             {
-                //lblResults.Text = "Insert successfully";
-                string script = "alert('Profile saved!');";
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
+                // display success message using alert
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
+                    "alert('Profile updated successfully!');", true);
                 Response.Redirect("sb_userProfile.aspx");
             }
             else
             {
-                lblResults.Text = "fail to insert";
+                // display error message using alert
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alert",
+                    "alert('Failed to update profile.');", true);
             }
-
         }
     }
 }

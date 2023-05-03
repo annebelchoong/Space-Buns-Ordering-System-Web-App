@@ -4,201 +4,99 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <link href="CSS/sb_register.css" rel="stylesheet" />
+    <title>Sign Up</title>
+    <link href="../CSS/sb_register.css" rel="stylesheet" />
     <style type="text/css">
-        .auto-style2 {
-            text-align: center;
-            width: 550px;
-        }
-
-        .auto-style5 {
-            width: 544px;
-        }
-
         .btn {
-            display: flex;
-            align: center;
-            justify-content: center;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 1em;
+            border-radius: 15px;
             transition: transform .2s ease;
-            width: 90px;
             height: 40px;
-            background-color: #1A1A1A;
-            color: #B97836;
-            border: 1px #B97836 solid;
-            font-weight: bold;
-            border-radius: 20px;
-            margin-left: 120px;
         }
-
-        btn:hover {
-            text-decoration: none;
+        .btn:hover {
             color: white;
-            background-color: #B97836;
+            background-color:#B97836;
+            transform: scale(1.1);
             transition: 250ms;
+        }
+        .auto-style1 {
+            font-size: 100px;
         }
     </style>
     <script src="jquery-3.6.0.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var btn = $("#CreateUserWizard1___CustomNav0_StepNextButtonButton");
-            btn.parent().attr('align', 'left');
-
-        });
-    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <fieldset
-            style="text-align: center; background-image: url(Media/Login&Signup/logbackg2.jpg); background-size: contain;">
-            <legend>Sign Up</legend>
+         <fieldset
+            style="text-align: center; background-image: url(../Media/LoginandSignup/logbackg2.jpg); background-size: contain;">
+            <legend style="text-align: center; " class="auto-style1">Sign Up</legend>
+             <br />
             <asp:HyperLink ID="lnkSpaceBunLogo" runat="server" ImageHeight="80px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx"></asp:HyperLink>
-
-            <div class="auto-style2">
-                <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" OnCreatedUser="CreateUserWizard1_CreatedUser" Width="557px" align="center" CreateUserButtonText="Sign Up" ContinueDestinationPageUrl="~/UserProfile/sb_editProfile.aspx">
-                    <CreateUserButtonStyle BackColor="Black" CssClass="btn" />
-                    <WizardSteps>
-                        <asp:CreateUserWizardStep runat="server">
-                            <ContentTemplate>
-                                <table>
-                                    <tr>
-                                        <td align="center" class="signupRow">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <i class='fas fa-user-alt'></i>
-                                            <asp:Label ID="UsernameLabel" runat="server" AssociatedControlID="Username">Username</asp:Label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:TextBox ID="Username" runat="server" placeholder="Username (min 6 max 12)"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="UsernameRequired" runat="server" ControlToValidate="Username"
-                                                ErrorMessage="Username is required." ToolTip="User Name is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password</asp:Label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:TextBox ID="Password" runat="server" TextMode="Password" placeholder="Password (min 8 max 12)"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
-                                                ErrorMessage="Password is required." ToolTip="Password is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:Label ID="ConfirmPasswordLabel" runat="server"
-                                                AssociatedControlID="ConfirmPassword">Password Confirmation</asp:Label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" placeholder="Re-enter Password"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword"
-                                                ErrorMessage="Confirm Password is required." ToolTip="Confirm Password is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:Label ID="EmailLabel" runat="server" AssociatedControlID="Email">Email</asp:Label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:TextBox ID="Email" runat="server" placeholder="spacebuns@gmail.com"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email"
-                                                ErrorMessage="Email is required." ToolTip="Email is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:Label ID="PhoneNoLabel" runat="server" Text="Phone Number"></asp:Label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:TextBox ID="PhoneNo" runat="server" placeholder="0123456789" pattern="^(01)[0-9][0-9]*[0-9]{7,8}$" required></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="PhoneNoRequired" runat="server" ControlToValidate="PhoneNo"
-                                                ErrorMessage="Phone Number is required." ToolTip="Phone Number is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">&nbsp;</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="signupRow">
-                                            <asp:CheckBox ID="chkboxSignUp" runat="server" ValidationGroup="CheckBox" />
-                                            I have read and accept the
-                                    <asp:HyperLink ID="privacyLink" runat="server">Privacy Policy</asp:HyperLink>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="auto-style5">Already a member?
-                                    <asp:HyperLink ID="loginLink" runat="server" NavigateUrl="~/sb_login.aspx">Login</asp:HyperLink>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="auto-style5">
-                                            <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password"
-                                                ControlToValidate="ConfirmPassword" Display="Dynamic"
-                                                ErrorMessage="The Password and Confirmation Password must match."
-                                                ValidationGroup="CreateUserWizard1"></asp:CompareValidator>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" class="auto-style5">
-                                            <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </ContentTemplate>
-                        </asp:CreateUserWizardStep>
-                        <asp:CompleteWizardStep runat="server">
-                            <ContentTemplate>
-                                <table>
-                                    <tr>
-                                        <td align="center">Complete</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Your account has been successfully created.</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="auto-style5">
-                                            <asp:Button ID="btnContinue" runat="server" class="btn" CausesValidation="False" CommandName="Continue"
-                                                Text="Continue" ValidationGroup="CreateUserWizard1" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </ContentTemplate>
-                        </asp:CompleteWizardStep>
-                    </WizardSteps>
-                </asp:CreateUserWizard>
+             <br />
+             <br />
+            <div>
+                <asp:Label ID="lblUsername" runat="server" Text="Username:"></asp:Label>
             </div>
-        </fieldset>
+             <div>
+                 <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="ValidUsername" runat="server" ErrorMessage="Username is required!" ForeColor="#CC0000" ToolTip="Username is required!" ControlToValidate="txtUsername">*</asp:RequiredFieldValidator>
+                 <br />
+                 <br />
+             </div>
+             <div>
+                <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+            </div>
+             <div>
+                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="ValidPassword" runat="server" ErrorMessage="Password is required!" ForeColor="#CC0000" ToolTip="Password is required!" ControlToValidate="txtPassword">*</asp:RequiredFieldValidator>
+                 <br />
+                 <br />
+             </div>
+             <div>
+                <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password:" ></asp:Label>
+            </div>
+             <div>
+                 <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Confirm password is required!" ForeColor="#CC0000" ToolTip="Confirm password is required!" ControlToValidate="txtConfirmPassword">*</asp:RequiredFieldValidator>
+                 <br />
+                 <br />
+             </div>
+             <div>
+                <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
+            </div>
+             <div>
+                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Email is required!" ForeColor="#CC0000" ToolTip="Email is required!" ControlToValidate="txtEmail">*</asp:RequiredFieldValidator>
+                 <br />
+                 <br />
+             </div>
+             <div>
+                <asp:Label ID="lblPhoneNo" runat="server" Text="Phone No:"></asp:Label>
+            </div>
+             <div>
+                 <asp:TextBox ID="txtPhoneNo" runat="server" ></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Phone No is required!" ForeColor="#CC0000" ToolTip="Phone No is required!" ControlToValidate="txtPhoneNo">*</asp:RequiredFieldValidator>
+                 <br />
+                 <br />
+                 <asp:CheckBox ID="chkSignUp" runat="server" Text="I have read and accept the "/>
+                    <asp:HyperLink ID="privacyLink" runat="server">Privacy Policy</asp:HyperLink>
+                 <asp:CustomValidator ID="chkSignUpCustomValidator" runat="server"
+                        ErrorMessage="You must accept the terms and conditions to sign up"
+                        OnServerValidate="chkSignUpCustomValidator_ServerValidate"
+                        ValidateEmptyText="true" ForeColor="#CC0000" ToolTip="You must accept the terms and conditions to sign up">*</asp:CustomValidator>
+
+                 <br />
+                 <br />
+                 Already a member?
+                 <asp:HyperLink ID="lnkLogin" runat="server" NavigateUrl="sb_login.aspx">Login</asp:HyperLink>
+                 <br />
+                 <br />
+                 <asp:Button ID="btnSignUp" runat="server" class="btn" Text="Sign Up" ValidationGroup="SignUp" BorderColor="#B97836" BorderStyle="Solid" BorderWidth="1px" Font-Bold="True" ForeColor="#B97836" BackColor="#1A1A1A" Height="40px" Width="90px" OnClick="btnSignUp_Click" />
+                 <br />
+                 <br />
+                 <asp:ValidationSummary ID="SignUpValidSummary" runat="server" DisplayMode="List" ForeColor="#CC0000" />
+                 <br />
+             </div>
+         </fieldset>
     </form>
 </body>
 </html>

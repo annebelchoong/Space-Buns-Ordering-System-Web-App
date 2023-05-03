@@ -2,109 +2,59 @@
 
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <link href="CSS/sb_forgetPw.css" rel="stylesheet" />
+    <title>Forgot Password</title>
+    <link href="../CSS/sb_register.css" rel="stylesheet" />
     <style type="text/css">
-        .auto-style1 {
-            width: 664px;
-            text-align: center;
-        }
-        .auto-style2 {
-            width: 664px;
-        }
-         .btn{
-            justify-content:center;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 1em;
+        .btn {
+            border-radius: 15px;
             transition: transform .2s ease;
-            width: 90px;
             height: 40px;
-            background-color: #1A1A1A;
-            color: #B97836;
-            border: 1px #B97836 solid;
-            font-weight: bold;
-            border-radius: 20px;
         }
-        btn:hover {
-            text-decoration: none;
+        .btn:hover {
             color: white;
-            background-color: #B97836;
+            background-color:#B97836;
+            transform: scale(1.1);
             transition: 250ms;
         }
-        input:focus {
-            border: 1px solid white;
-        }
-
-        .input{
-            height: 12px;
-            border-radius: 6px;
-            border: 1px #B97836 solid;
-            background-color: #1A1A1A;
-            margin: 10px 0px;
-            padding: 10px;
+        .auto-style1 {
+            font-size: 100px;
         }
     </style>
-    </head>
+</head>
 <body>
     <form id="form1" runat="server">
         <fieldset
-            style="text-align: center;background-image: url(Media/Login&Signup/logbackg2.jpg); background-size: contain;">
-             <legend>Forget Your Password?</legend>
-                <a href="sb_master.Master">
-                    <img id="companylogo" src="Media/Icons/SpaceBunsLogo.png" alt="Space Buns Logo" width="120px"
-                        style="padding-top: 5%;"> </a>
-                <div>
-                    <asp:PasswordRecovery ID="PasswordRecovery1" runat="server" Width="666px"  >
-                        <UserNameTemplate>
-                            <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;" class="auto-style1">
-                                <tr>
-                                    <td>
-                                        <table cellpadding="0" class="auto-style2" >
-                                            <tr>
-                                                <td align="center" colspan="2">&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center" colspan="2">Enter your Username to receive your password.</td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center" colspan="2">&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center" colspan="2">
-                                                    <asp:Label ID="UsernameLabel" runat="server" AssociatedControlID="UserName">Username</asp:Label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center" colspan="2">
-                                                    <asp:TextBox ID="Username" runat="server" CssClass="input"></asp:TextBox>
-                                                    <asp:RequiredFieldValidator ID="UsernameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="Username is required." ForeColor="Red" ToolTip="Username is required." ValidationGroup="PasswordRecovery1">*</asp:RequiredFieldValidator>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>&nbsp;</td>
-                                                <td>&nbsp;</td>
-                                            </tr>
-                                            <tr>
-                                                <td align="center" colspan="2" style="color:Red;">
-                                                    <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2" >
-                                                    <asp:Button ID="submitButton" runat="server" class="btn" CommandName="Submit" Text="Submit" ValidationGroup="PasswordRecovery1" />
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </UserNameTemplate>
-                    </asp:PasswordRecovery>
-                </div>
-            </fieldset>
+            style="text-align: center; background-image: url(../Media/LoginandSignup/logbackg2.jpg); background-size: contain;">
+            <legend style="text-align: center; " class="auto-style1">Forgot Password</legend>
+             <br />
+            <asp:HyperLink ID="lnkSpaceBunLogo" runat="server" ImageHeight="80px" ImageUrl="~/Media/Icons/SpaceBunsLogo.png" NavigateUrl="~/sb_index.aspx"></asp:HyperLink>
+             <br />
+             <br />
+            <div>
+                <asp:Label ID="lblText" runat="server" Text="Please enter your email address to receive a password reset link."></asp:Label>
+            </div>
+             <div>
+                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                 <asp:RequiredFieldValidator ID="ValidEmail" runat="server" ErrorMessage="Email is required!" ForeColor="#CC0000" ToolTip="Email is required!" ControlToValidate="txtEmail">*</asp:RequiredFieldValidator>
+                 <br />
+                 <br />
+             </div>
+             
+             <div>
+                 
+                 <asp:Button ID="btnSubmit" runat="server" class="btn" Text="Submit" BorderColor="#B97836" BorderStyle="Solid" BorderWidth="1px" Font-Bold="True" ForeColor="#B97836" BackColor="#1A1A1A" Height="40px" Width="90px" OnClick="btnSubmit_Click" />
+                 <br />
+                 <br />
+                 <asp:Label ID="lblMessage" runat="server"></asp:Label>
+                 <br />
+                 <asp:ValidationSummary ID="forgotPasswordValidSummary" runat="server" DisplayMode="List" ForeColor="#CC0000" />
+                 <br />
+             </div>
+         </fieldset>
     </form>
 </body>
 </html>

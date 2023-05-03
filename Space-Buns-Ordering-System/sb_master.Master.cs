@@ -19,6 +19,18 @@ namespace Space_Buns_Ordering_System
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["IsLoggedIn"] != null && (bool)Session["IsLoggedIn"])
+            {
+                // User is logged in
+                lblLoginStatus.Text = "Logout";
+                lblLoginStatus.Attributes.Add("OnClick", "location.href='sb_login.aspx'");
+            }
+            else
+            {
+                // User is logged out
+                lblLoginStatus.Text = "Login";
+                lblLoginStatus.Attributes.Add("OnClick", "location.href='sb_login.aspx'");
+            }
             //int cartItems = GetCartCount();
             //Cart_Checkout(cartItems);
             Cart_Checkout();

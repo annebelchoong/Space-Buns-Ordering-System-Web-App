@@ -11,7 +11,11 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty((string)Session["SuccessMessage"]))
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "alertMessage", $"alert('{Session["SuccessMessage"].ToString()}');", true);
+                Session["SuccessMessage"] = null;
+            }
         }
     }
 }

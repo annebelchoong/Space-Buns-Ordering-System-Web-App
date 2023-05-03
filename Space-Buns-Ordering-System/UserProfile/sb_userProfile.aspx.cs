@@ -14,63 +14,71 @@ namespace Space_Buns_Ordering_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            String user = LoginName1.ToString();
-
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            con.Open();
-
-            //string query = "Select * from [Customer] WHERE username = @username";
-            string query = "Select * from [Customer] WHERE username = username";
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            cmd.Parameters.AddWithValue("@username", user);
-            //String str = cmd.ExecuteReader().ToString();
-
-            //lblUserProfile.Text = str.ToString();
-
-            SqlDataReader drEmp = cmd.ExecuteReader();
-            //string strDisplay = "";
-
-            if (drEmp.HasRows)
+            if (!IsPostBack)
             {
-                while (drEmp.Read())
+                if (Session["username"] == null)
                 {
-                    //strDisplay = "Employee Name: " + drEmp["LastName"].ToString() + " " + drEmp["FirstName"].ToString();
-                    //strDisplay =
-                    //    drEmp["name"].ToString() +
-                    //    drEmp["email"].ToString() +
-                    //    Double.Parse(drEmp["phone"].ToString()) +
-                    //    drEmp["street"].ToString() +
-                    //    drEmp["zipcode"].ToString();
-
-
-                    lblName.Text = drEmp["name"].ToString();
-                    lblEmail.Text = drEmp["email"].ToString();
-                    lblPhone.Text = drEmp["phone"].ToString();
-                    lblStreet.Text = drEmp["street"].ToString();
-                    lblZipcode.Text = drEmp["zipcode"].ToString();
+                    // user not logged in, redirect to login page
+                    Response.Redirect("sb_login.aspx");
+                    return;
                 }
-                //lblUserProfile.Text = strDisplay;
+
+                string username = Session["username"].ToString();
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+                con.Open();
+
+                string query = "Select * from [Customer] WHERE username = @username";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@username", username);
+
+                SqlDataReader drEmp = cmd.ExecuteReader();
+
+                if (drEmp.HasRows)
+                {
+                    while (drEmp.Read())
+                    {
+                        lblUsername.Text = drEmp["username"].ToString();
+                        lblName.Text = drEmp["name"].ToString();
+                        lblEmail.Text = drEmp["email"].ToString();
+                        lblPhone.Text = drEmp["phone"].ToString();
+                        lblStreet.Text = drEmp["street"].ToString();
+                        lblZipcode.Text = drEmp["zipcode"].ToString();
+
+                    }
+                }
+                else
+                {
+                    lblUsername.Text = "No record found!";
+                    lblName.Text = "No record found!";
+                    lblEmail.Text = "No record found!";
+                    lblPhone.Text = "No record found!";
+                    lblStreet.Text = "No record found!";
+                    lblZipcode.Text = "No record found!";
+                }
+
+                drEmp.Close();
+                con.Close();
             }
-            else
+        }
+
+        protected void btnUpdateProfile_Click(object sender, EventArgs e)
+        {
+            // Check if username is stored in session
+            if (Session["username"] == null)
             {
-                //lblUserProfile.Text = "No record found!";
-                lblName.Text = "No record found!";
-                lblEmail.Text = "No record found!";
-                lblPhone.Text = "No record found!";
-                lblStreet.Text = "No record found!";
-                lblZipcode.Text = "No record found!";
+                // Redirect to login page or display error message
+                Response.Redirect("sb_login.aspx");
+                return;
             }
 
+            // Get username from session
+            string username = Session["username"].ToString();
 
+            // Debugging: check value of username
+            Response.Write("Username: " + username);
 
-            //SqlDataReader dr = cmd.ExecuteReader();
-
-            //while (dr.Read())
-            //{
-            //    lblUserProfile.Text = dr.GetValue(0).ToString();
-            //}
+            // Redirect to update profile page
+            Response.Redirect("sb_updateProfile.aspx?username=" + username);
 
         }
 

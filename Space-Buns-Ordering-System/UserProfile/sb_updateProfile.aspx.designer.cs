@@ -42,13 +42,13 @@ namespace Space_Buns_Ordering_System.UserProfile
         protected global::System.Web.UI.WebControls.Label lblUsername;
 
         /// <summary>
-        /// LoginName1 control.
+        /// lblUsername1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginName LoginName1;
+        protected global::System.Web.UI.WebControls.Label lblUsername1;
 
         /// <summary>
         /// lblEmail control.
@@ -114,15 +114,6 @@ namespace Space_Buns_Ordering_System.UserProfile
         protected global::System.Web.UI.WebControls.Label lblPostCode;
 
         /// <summary>
-        /// lblState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblState;
-
-        /// <summary>
         /// txtPostCode control.
         /// </summary>
         /// <remarks>
@@ -132,15 +123,6 @@ namespace Space_Buns_Ordering_System.UserProfile
         protected global::System.Web.UI.WebControls.TextBox txtPostCode;
 
         /// <summary>
-        /// ddlState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlState;
-
-        /// <summary>
         /// lblResults control.
         /// </summary>
         /// <remarks>
@@ -148,33 +130,6 @@ namespace Space_Buns_Ordering_System.UserProfile
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblResults;
-
-        /// <summary>
-        /// lblDoBirth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDoBirth;
-
-        /// <summary>
-        /// calDoB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calDoB;
-
-        /// <summary>
-        /// txtDoB control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDoB;
 
         /// <summary>
         /// btnSaveChange control.
