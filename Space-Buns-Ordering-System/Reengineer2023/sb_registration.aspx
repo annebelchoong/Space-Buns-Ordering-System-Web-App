@@ -37,8 +37,9 @@
                 <asp:Label ID="lblUsername" runat="server" Text="Username:"></asp:Label>
             </div>
              <div>
-                 <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
-                 <asp:RequiredFieldValidator ID="ValidUsername" runat="server" ErrorMessage="Username is required!" ForeColor="#CC0000" ToolTip="Username is required!" ControlToValidate="txtUsername">*</asp:RequiredFieldValidator>
+                 <asp:TextBox ID="txtUsername" runat="server" placeholder="Username"></asp:TextBox>
+                 <br />
+                 <asp:RequiredFieldValidator ID="ValidUsername" runat="server" ErrorMessage="Username is required!" ForeColor="#CC0000" ToolTip="Username is required!" ControlToValidate="txtUsername" ValidationGroup="SignUp">*</asp:RequiredFieldValidator>
                  <br />
                  <br />
              </div>
@@ -46,9 +47,12 @@
                 <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
             </div>
              <div>
-                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
-                 <asp:RequiredFieldValidator ID="ValidPassword" runat="server" ErrorMessage="Password is required!" ForeColor="#CC0000" ToolTip="Password is required!" ControlToValidate="txtPassword">*</asp:RequiredFieldValidator>
-                 <button type="button" onclick="togglePasswordVisibility()"><i class="fas fa-eye" id="btnVisible"></i></button>
+                 <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Password (min 8 max 12)"></asp:TextBox>
+                 <br />
+                 <asp:RequiredFieldValidator ID="ValidPassword" runat="server" ErrorMessage="Password is required!" ForeColor="#CC0000" ToolTip="Password is required!" ControlToValidate="txtPassword" ValidationGroup="SignUp">*</asp:RequiredFieldValidator>
+                 <asp:RegularExpressionValidator ID="ValidPasswordLength" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password must be at least 6 characters long" ValidationExpression="^.{6,}$" ForeColor="#CC0000" ValidationGroup="SignUp">*</asp:RegularExpressionValidator>
+                 <asp:RegularExpressionValidator ID="ValidPasswordComplexity" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password must include at least one letter and one number" ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$" ForeColor="#CC0000" ValidationGroup="SignUp">*</asp:RegularExpressionValidator>
+                 <%--<button type="button" onclick="togglePasswordVisibility()"><i class="fas fa-eye" id="btnVisible"></i></button>--%>
                  <br />
                  <br />
              </div>
@@ -56,8 +60,10 @@
                 <asp:Label ID="lblConfirmPassword" runat="server" Text="Confirm Password:"></asp:Label>
             </div>
              <div>
-                 <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
-                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Confirm password is required!" ForeColor="#CC0000" ToolTip="Confirm password is required!" ControlToValidate="txtConfirmPassword">*</asp:RequiredFieldValidator>
+                 <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" placeholder="Re-enter Password"></asp:TextBox>
+                 <br />
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Confirm password is required!" ForeColor="#CC0000" ToolTip="Confirm password is required!" ControlToValidate="txtConfirmPassword" ValidationGroup="SignUp">*</asp:RequiredFieldValidator>
+                 <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToValidate="txtConfirmPassword" ControlToCompare="txtPassword" ErrorMessage="Passwords must match!" ForeColor="#CC0000" ValidationGroup="SignUp">*</asp:CompareValidator>
                  <br />
                  <br />
              </div>
@@ -65,8 +71,10 @@
                 <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
             </div>
              <div>
-                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Email is required!" ForeColor="#CC0000" ToolTip="Email is required!" ControlToValidate="txtEmail">*</asp:RequiredFieldValidator>
+                 <asp:TextBox ID="txtEmail" runat="server" placeholder="spacebuns@gmail.com"></asp:TextBox>
+                 <br />
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Email is required!" ForeColor="#CC0000" ToolTip="Email is required!" ControlToValidate="txtEmail" ValidationGroup="SignUp">*</asp:RequiredFieldValidator>
+                 <asp:RegularExpressionValidator ID="regexEmail" runat="server" ErrorMessage="Invalid email address!" ControlToValidate="txtEmail" ValidationExpression="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" ForeColor="#CC0000" ValidationGroup="SignUp">*</asp:RegularExpressionValidator>
                  <br />
                  <br />
              </div>
@@ -74,8 +82,10 @@
                 <asp:Label ID="lblPhoneNo" runat="server" Text="Phone No:"></asp:Label>
             </div>
              <div>
-                 <asp:TextBox ID="txtPhoneNo" runat="server" ></asp:TextBox>
-                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Phone No is required!" ForeColor="#CC0000" ToolTip="Phone No is required!" ControlToValidate="txtPhoneNo">*</asp:RequiredFieldValidator>
+                 <asp:TextBox ID="txtPhoneNo" runat="server" placeholder="0123456789"></asp:TextBox>
+                 <br />
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Phone No is required!" ForeColor="#CC0000" ToolTip="Phone No is required!" ControlToValidate="txtPhoneNo" ValidationGroup="SignUp">*</asp:RequiredFieldValidator>
+                 <asp:RegularExpressionValidator ID="regexPhoneNo" runat="server" ErrorMessage="Invalid phone number!" ControlToValidate="txtPhoneNo" ValidationExpression="^[0-9]{11}$" ForeColor="#CC0000" ValidationGroup="SignUp">*</asp:RegularExpressionValidator>
                  <br />
                  <br />
                  <asp:CheckBox ID="chkSignUp" runat="server" Text="I have read and accept the "/>
@@ -99,7 +109,7 @@
              </div>
          </fieldset>
     </form>
-    <script>
+   <%-- <script>
     function togglePasswordVisibility() {
         var passwordInput = document.getElementById("txtPassword");
         var visibilityButton = document.querySelector("button[onclick='togglePasswordVisibility()']");
@@ -111,6 +121,6 @@
             visibilityButton.innerHTML = "<i class='fas fa-eye'></i>";
         }
     }
-    </script>
+    </script>--%>
 </body>
 </html>

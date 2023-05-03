@@ -76,9 +76,6 @@
                                     <tr>
                                         <td align="center" class="signupRow">
                                             <asp:TextBox ID="Username" runat="server" placeholder="Username (min 6 max 12)" OnTextChanged="Username_TextChanged"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="UsernameRequired" runat="server" ControlToValidate="Username"
-                                                ErrorMessage="Username is required." ToolTip="User Name is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -92,9 +89,6 @@
                                     <tr>
                                         <td align="center" class="signupRow">
                                             <asp:TextBox ID="Password" runat="server" TextMode="Password" placeholder="Password (min 8 max 12)"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
-                                                ErrorMessage="Password is required." ToolTip="Password is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -109,9 +103,6 @@
                                     <tr>
                                         <td align="center" class="signupRow">
                                             <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password" placeholder="Re-enter Password"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword"
-                                                ErrorMessage="Confirm Password is required." ToolTip="Confirm Password is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -125,9 +116,6 @@
                                     <tr>
                                         <td align="center" class="signupRow">
                                             <asp:TextBox ID="Email" runat="server" placeholder="spacebuns@gmail.com"></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Email"
-                                                ErrorMessage="Email is required." ToolTip="Email is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
                                         </td>
                                     </tr>
                                     <tr>
@@ -140,10 +128,7 @@
                                     </tr>
                                     <tr>
                                         <td align="center" class="signupRow">
-                                            <asp:TextBox ID="PhoneNo" runat="server" placeholder="0123456789" pattern="^(01)[0-9][0-9]*[0-9]{7,8}$" required></asp:TextBox>
-                                            <asp:RequiredFieldValidator ID="PhoneNoRequired" runat="server" ControlToValidate="PhoneNo"
-                                                ErrorMessage="Phone Number is required." ToolTip="Phone Number is required."
-                                                ValidationGroup="CreateUserWizard1" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                            <asp:TextBox ID="PhoneNo" runat="server" placeholder="0123456789" ></asp:TextBox>
                                         </td>
                                     </tr>
                                     <tr>
@@ -163,16 +148,11 @@
                                     </tr>
                                     <tr>
                                         <td align="center" class="auto-style5">
-                                            <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password"
-                                                ControlToValidate="ConfirmPassword" Display="Dynamic"
-                                                ErrorMessage="The Password and Confirmation Password must match."
-                                                ValidationGroup="CreateUserWizard1"></asp:CompareValidator>
-                                        </td>
+                                            &nbsp;</td>
                                     </tr>
                                     <tr>
                                         <td align="center" class="auto-style5">
-                                            <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
-                                        </td>
+                                            &nbsp;</td>
                                     </tr>
                                 </table>
                             </ContentTemplate>
