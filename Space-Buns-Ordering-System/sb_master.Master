@@ -221,12 +221,14 @@
 
 
 
-
+                <div>
+                    <asp:Button ID="btnCheckout" type="submit" runat="server" CssClass="btnCheckout" OnClick="btnCheckout_Click" />
+                </div>
                 <%--                    <div>
                         <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" />
                     </div>--%>
 
-                <div>
+               <%-- <div>
                     <%
                         bool isLoggedIn = HttpContext.Current.User.Identity.IsAuthenticated;
                         if (!isLoggedIn)
@@ -237,12 +239,12 @@
                         }
                         else
                         {
+                    
                     %>
-                    <asp:Button ID="btnCheckout" type="submit" runat="server" Text="Checkout" CssClass="btnCheckout" OnClick="btnCheckout_Click" />
                     <%
                         }
                     %>
-                </div>
+                </div>--%>
 
 
 

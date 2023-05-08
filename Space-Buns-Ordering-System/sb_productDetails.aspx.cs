@@ -14,7 +14,8 @@ namespace Space_Buns_Ordering_System
         protected void Page_Load(object sender, EventArgs e)
         {
             // check if user is logged in
-            if (User.Identity.IsAuthenticated)
+            //if (User.Identity.IsAuthenticated)
+            if (Session["IsLoggedIn"] != null && (bool)Session["IsLoggedIn"])
             {
                 //retrieve current user
 

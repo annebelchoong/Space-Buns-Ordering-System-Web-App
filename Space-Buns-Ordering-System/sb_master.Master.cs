@@ -24,12 +24,15 @@ namespace Space_Buns_Ordering_System
                 // User is logged in
                 lblLoginStatus.Text = "Logout";
                 lblLoginStatus.Attributes.Add("OnClick", "location.href='sb_login.aspx'");
+                btnCheckout.Text = "Checkout";
             }
             else
             {
                 // User is logged out
                 lblLoginStatus.Text = "Login";
                 lblLoginStatus.Attributes.Add("OnClick", "location.href='sb_login.aspx'");
+                btnCheckout.Text = "Login";
+
             }
             //int cartItems = GetCartCount();
             //Cart_Checkout(cartItems);
@@ -43,7 +46,7 @@ namespace Space_Buns_Ordering_System
             
 
             // if no user show empty
-            if (!HttpContext.Current.User.Identity.IsAuthenticated)
+            if (Session["IsLoggedIn"] == null)
             {
                 lblNumOfItems.Text = "0";
                 lblNoItem.Text = "Not login";
