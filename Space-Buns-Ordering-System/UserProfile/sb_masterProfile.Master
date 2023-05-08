@@ -120,8 +120,8 @@
                 <div style="margin-bottom: 550px">
                     <a href="sb_userProfile.aspx" class="list-group-item list-group-item-action bg-transparent text-white fw-bold"><i
                         class="fas fa-user me-2"></i>User Profile</a>
-                    <a href="sb_orderHistory.aspx" class="list-group-item list-group-item-action bg-transparent text-white fw-bold"><i
-                        class="fas fa-clipboard me-2"></i>My Orders</a>
+                    <%--<a href="sb_orderHistory.aspx" class="list-group-item list-group-item-action bg-transparent text-white fw-bold"><i
+                        class="fas fa-clipboard me-2"></i>My Orders</a>--%>
                     <div class="list-group-item list-group-item-action bg-transparent text-danger fw-bold">
                         <i
                             class="fas fa-power-off me-2"></i>

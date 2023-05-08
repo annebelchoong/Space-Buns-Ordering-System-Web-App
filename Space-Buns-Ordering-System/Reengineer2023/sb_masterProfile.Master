@@ -67,9 +67,10 @@
             </div>
 
             <div class="navbar-login">
+                <asp:HyperLink ID="hypCart" runat="server" ImageUrl="~/Media/Icons/shopping-cart.svg" ImageWidth="26px" CssClass="btnCart"></asp:HyperLink>
                 <%--<a href="../sb_login.aspx"><i class="far fa-user-circle"></i></a>--%>
                 <a href="~/Reengineer2023/sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
-                 <a href="#">
+                 <a href="~/Reengineer2023/sb_login.aspx">
                     <asp:Label ID="lblLoginStatus" runat="server" Text="Login" ></asp:Label>
                 </a>
             </div>

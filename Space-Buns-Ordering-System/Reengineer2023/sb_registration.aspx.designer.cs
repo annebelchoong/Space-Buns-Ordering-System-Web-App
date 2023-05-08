@@ -42,15 +42,6 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         protected global::System.Web.UI.WebControls.Label lblUsername;
 
         /// <summary>
-        /// txtUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
-
-        /// <summary>
         /// ValidUsername control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidUsername;
+
+        /// <summary>
+        /// txtUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUsername;
 
         /// <summary>
         /// lblPassword control.
@@ -69,15 +69,6 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         protected global::System.Web.UI.WebControls.Label lblPassword;
 
         /// <summary>
-        /// txtPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
-        /// <summary>
         /// ValidPassword control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator ValidPassword;
+
+        /// <summary>
+        /// txtPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
         /// ValidPasswordLength control.
@@ -114,15 +114,6 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         protected global::System.Web.UI.WebControls.Label lblConfirmPassword;
 
         /// <summary>
-        /// txtConfirmPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
-
-        /// <summary>
         /// RequiredFieldValidator1 control.
         /// </summary>
         /// <remarks>
@@ -141,6 +132,15 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
 
         /// <summary>
+        /// txtConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtConfirmPassword;
+
+        /// <summary>
         /// lblEmail control.
         /// </summary>
         /// <remarks>
@@ -148,15 +148,6 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmail;
-
-        /// <summary>
-        /// txtEmail control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
         /// RequiredFieldValidator2 control.
@@ -177,6 +168,15 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regexEmail;
 
         /// <summary>
+        /// txtEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+
+        /// <summary>
         /// lblPhoneNo control.
         /// </summary>
         /// <remarks>
@@ -186,15 +186,6 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         protected global::System.Web.UI.WebControls.Label lblPhoneNo;
 
         /// <summary>
-        /// txtPhoneNo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPhoneNo;
-
-        /// <summary>
         /// RequiredFieldValidator3 control.
         /// </summary>
         /// <remarks>
@@ -202,6 +193,15 @@ namespace Space_Buns_Ordering_System.Reengineer2023
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
+
+        /// <summary>
+        /// txtPhoneNo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPhoneNo;
 
         /// <summary>
         /// regexPhoneNo control.

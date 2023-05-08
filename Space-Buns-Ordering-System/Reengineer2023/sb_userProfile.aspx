@@ -22,13 +22,13 @@
                     <span class="text" style="color: #FFFFFF">User Profile </span>
                     <br />
                     <asp:Button ID="btnUpdateProfile" runat="server" class="userProfileButtons" Text="Update Profile" PostBackUrl="~/Reengineer2023/sb_updateProfile.aspx" OnClick="btnUpdateProfile_Click" />
-                    <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/Reengineer2023/sb_updatePassword.aspx" />
+                    <asp:Button ID="btnChangePassword" runat="server" class="userProfileButtons" Text="Change Password" PostBackUrl="~/Reengineer2023/sb_updatePassword.aspx" OnClick="btnChangePassword_Click" />
                     <br />
                 </div>
-                <strong>
+                <%--<strong>
                     <asp:Label ID="username" runat="server" Text="Username: " ForeColor="White" CssClass="auto-style1"></asp:Label>
-                </strong>
-                <asp:Label ID="lblUsername" runat="server" ForeColor="white" CssClass="auto-style2"></asp:Label>
+                </strong>--%>
+                <asp:Label ID="lblUsername" runat="server" ForeColor="white" CssClass="auto-style2" Visible="false"></asp:Label>
                 <%--<asp:LoginName ID="LoginName1" runat="server" ForeColor="white" CssClass="auto-style1" />--%>
                 <br />
                 <div>

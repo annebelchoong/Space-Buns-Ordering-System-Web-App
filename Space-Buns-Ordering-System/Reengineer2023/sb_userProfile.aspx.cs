@@ -82,5 +82,24 @@ namespace Space_Buns_Ordering_System.Reengineer2023
 
         }
 
+        protected void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            // Check if username is stored in session
+            if (Session["username"] == null)
+            {
+                // Redirect to login page or display error message
+                Response.Redirect("~/Reengineer2023/sb_login.aspx");
+                return;
+            }
+
+            // Get username from session
+            string username = Session["username"].ToString();
+
+            // Debugging: check value of username
+            Response.Write("Username: " + username);
+
+            // Redirect to update profile page
+            Response.Redirect("~/Reengineer2023/sb_updatePassword.aspx");
+        }
     }
 }

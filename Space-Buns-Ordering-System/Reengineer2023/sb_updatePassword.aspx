@@ -66,7 +66,7 @@
                     </tr>
                     <tr>
                         <td class="auto-style2">
-                            <asp:TextBox ID="txtNewPassword" runat="server" class="input" placeholder="Password"></asp:TextBox>
+                            <asp:TextBox ID="txtNewPassword" runat="server" TextMode="Password" class="input" placeholder="Password"></asp:TextBox>
                         </td>
                         <td class="auto-style5">&nbsp;</td>
                     </tr>

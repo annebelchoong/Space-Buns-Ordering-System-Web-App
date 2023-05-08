@@ -36,7 +36,7 @@
                 <a href="sb_userProfile.aspx"><i class="far fa-user-circle"></i></a>
                 <%--<asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/sb_login.aspx" />--%>
                 <%--<asp:Label ID="lblLoginStatus" runat="server" Text="Login"></asp:Label>--%>
-                <a href="#">
+                <a href="~/Reengineer2023/sb_login.aspx">
                     <asp:Label ID="lblLoginStatus" runat="server" Text="Login" ></asp:Label>
                 </a>
                 <%--for test--%>
