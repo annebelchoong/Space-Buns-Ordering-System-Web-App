@@ -181,7 +181,7 @@ namespace Space_Buns_Ordering_System
         {
 
             // check if user is logged in
-            if (User.Identity.IsAuthenticated)
+            if (Session["IsLoggedIn"] != null && (bool)Session["IsLoggedIn"])
             {
                 //retrieve current user
 
@@ -331,7 +331,7 @@ namespace Space_Buns_Ordering_System
             //string beverage = rblBeverage.SelectedItem.Value;
             //string sauce = rblSauce.SelectedItem.Value;
 
-            if (User.Identity.IsAuthenticated)
+            if (Session["IsLoggedIn"] != null && (bool)Session["IsLoggedIn"])
             {
 
                 String currentUser = currentUsername.ToString();
